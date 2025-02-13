@@ -141,50 +141,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/praia-da-lagoinha" class="blog-item-wrap w-inline-block">
+                            <a href="/post/guia-de-hospedagem-em-ubatuba-hoteis-pousadas-e-aluguel-de-casas" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/lagoinha.jpg"
+                                        src="https://img.mediakitlabs.com/ubatuba/posts/hospitability_beach_1.jpg"
                                         loading="lazy"
-                                        alt="Praia da Lagoinha"
+                                        alt="Guia de Hospedagem em Ubatuba: Hotéis, Pousadas e Aluguel de Casas"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Praias</div>
-                                <div class="blog-item-name">Praia da Lagoinha</div>
-                                <p class="blog-item-summary">A Praia da Lagoinha é uma bela praia localizada em Ubatuba, um município no litoral norte do estado de São Paulo, no Brasil.</p>
+                                <div class="blog-item-category">natureza</div>
+                                <div class="blog-item-name">Guia de Hospedagem em Ubatuba: Hotéis, Pousadas e Aluguel de Casas</div>
+                                <p class="blog-item-summary">Planejando sua viagem para Ubatuba? Confira nosso guia de hospedagem com opções de hotéis, pousadas e aluguel de casas. Encontre o lugar perfeito para desfrutar das belezas naturais dessa encantadora cidade litorânea.</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/eco-turismo-em-ubatuba-preservacao-e-desenvolvimento-sustentavel" class="blog-item-wrap w-inline-block">
+                            <a href="/post/ubatuba-um-paraiso-para-ciclistas-roteiros-e-dicas-para-uma-viagem-de-bicicleta" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/501.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/491.png"
                                         loading="lazy"
-                                        alt="Eco-Turismo em Ubatuba: Preservação e Desenvolvimento Sustentável"
+                                        alt="Ubatuba, um Paraíso para Ciclistas: Roteiros e Dicas para uma Viagem de Bicicleta"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">ecoturismo</div>
-                                <div class="blog-item-name">Eco-Turismo em Ubatuba: Preservação e Desenvolvimento Sustentável</div>
-                                <p class="blog-item-summary">Descubra o eco-turismo em Ubatuba, uma cidade brasileira que combina preservação da natureza com desenvolvimento sustentável.</p>
+                                <div class="blog-item-category">Ubatuba</div>
+                                <div class="blog-item-name">Ubatuba, um Paraíso para Ciclistas: Roteiros e Dicas para uma Viagem de Bicicleta</div>
+                                <p class="blog-item-summary">Descubra as rotas e dicas para uma viagem de bicicleta na cidade de Ubatuba, um paraíso para ciclistas no litoral Norte do Estado de São Paulo.</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/a-festa-de-nossa-senhora-da-aparecida" class="blog-item-wrap w-inline-block">
+                            <a href="/post/culinaria-de-ubatuba-receitas-e-tradicionais-gastronomicas" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/_6d62035b-f2eb-4449-9ea3-13fe620c1093.jfif"
+                                        src="https://img.sociap.com.br/ubatuba/posts/188.png"
                                         loading="lazy"
-                                        alt="A Festa de Nossa Senhora da Aparecida"
+                                        alt="Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Nossa Senhora da Aparecida</div>
-                                <div class="blog-item-name">A Festa de Nossa Senhora da Aparecida</div>
-                                <p class="blog-item-summary">Descubra sobre a festa de Nossa Senhora da Aparecida, a maior festa religiosa do Brasil</p>
+                                <div class="blog-item-category">Culinária de Ubatuba</div>
+                                <div class="blog-item-name">Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas</div>
+                                <p class="blog-item-summary">Desvende as tradições gastronômicas da cidade de Ubatuba, na costa sudeste do Brasil, e aprenda a preparar receitas incríveis com essa culinária.</p>
                             </a>
                         </div>
                 

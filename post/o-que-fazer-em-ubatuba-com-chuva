@@ -158,50 +158,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/a-historia-do-turismo-em-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/trilha-do-saco-grande-em-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/207.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/332.png"
                                         loading="lazy"
-                                        alt="A História do Turismo em Ubatuba"
+                                        alt="Trilha do Saco Grande em Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">turismo</div>
-                                <div class="blog-item-name">A História do Turismo em Ubatuba</div>
-                                <p class="blog-item-summary">Descubra a evolução do turismo em Ubatuba e suas raízes históricas</p>
+                                <div class="blog-item-category">trilhas</div>
+                                <div class="blog-item-name">Trilha do Saco Grande em Ubatuba</div>
+                                <p class="blog-item-summary">Descubra a Trilha do Saco Grande em Ubatuba: Um Paraíso Natural na Ilha Anchieta</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/roteiro-de-fim-de-semana-em-ubatuba-o-que-fazer-e-onde-ir-em-dois-dias" class="blog-item-wrap w-inline-block">
+                            <a href="/post/discover-the-wonders-of-the-best-beaches-of-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/beaches1.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/DSC_0033.JPG"
                                         loading="lazy"
-                                        alt="Roteiro de fim de semana em Ubatuba: O que fazer e onde ir em dois dias."
+                                        alt="Discover the Wonders of the Best Beaches in Ubatuba"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">surf</div>
+                                <div class="blog-item-name">Discover the Wonders of the Best Beaches in Ubatuba</div>
+                                <p class="blog-item-summary">Discover the best beaches in Ubatuba, on the north coast of São Paulo. Surf, exuberant nature and paradisiacal scenery await you in this Brazilian coastal paradise.</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/dicas-para-viajar-para-ubatuba-com-criancas" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.mediakitlabs.com/ubatuba/posts/kids_in_park_1.jpg"
+                                        loading="lazy"
+                                        alt="Dicas para viajar para Ubatuba com crianças"
                                         class="blog-thumbnail"
                                     />
                                 </div>
                                 <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Roteiro de fim de semana em Ubatuba: O que fazer e onde ir em dois dias.</div>
-                                <p class="blog-item-summary">Ubatuba, litoral norte de SP, famosa por praias paradisíacas, cachoeiras e biodiversidade. Roteiro de 2 dias para aproveitar o máximo.</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/culinaria-de-ubatuba-receitas-e-tradicionais-gastronomicas" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/188.png"
-                                        loading="lazy"
-                                        alt="Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">Culinária de Ubatuba</div>
-                                <div class="blog-item-name">Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas</div>
-                                <p class="blog-item-summary">Desvende as tradições gastronômicas da cidade de Ubatuba, na costa sudeste do Brasil, e aprenda a preparar receitas incríveis com essa culinária.</p>
+                                <div class="blog-item-name">Dicas para viajar para Ubatuba com crianças</div>
+                                <p class="blog-item-summary">Planejando uma viagem para Ubatuba com crianças? Confira essas dicas incríveis para aproveitar as praias, passeios de barco, aquário, trilhas e cachoeiras, tornando a viagem divertida e segura para os pequenos.</p>
                             </a>
                         </div>
                 

@@ -136,10 +136,10 @@
             
                 <div class="collection-item-advertising">
                     <div class="div-block-3">
-                        <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" loading="lazy" width="233" class="image-2">
-                        <div class="advertiser_title">Ubatuba Praia Hotel</div>
-                        <div class="advertiser_subtitle">O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.</div>
-                        <a href="https://ubatubapraiahotel.com/" target="_blank" class="button-2 w-button">Conheça</a>
+                        <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" loading="lazy" width="233" class="image-2">
+                        <div class="advertiser_title">Ubatuba Praia Grande Hotel</div>
+                        <div class="advertiser_subtitle">De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.</div>
+                        <a href="https://www.upghotel.com.br/" target="_blank" class="button-2 w-button">Conheça</a>
                     </div>
                 </div>
             
@@ -174,20 +174,6 @@
                 </div>
             
                 <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                    <a href="/post/trilha-das-sete-praias" class="posts-image w-inline-block">
-                        
-                            <img alt="Trilha das 7 praias" src="https://img.sociap.com.br/ubatuba/posts/7-praias.jpeg" width="400" height="400" style="object-fit: cover;"/>
-                        
-                    </a>
-                    <div class="post-info-text">
-                        <a href="/c/lugares" class="category-link">Lugares</a>
-                        <a href="/post/trilha-das-sete-praias" class="post-title w-inline-block">
-                            <h2 class="h3">Trilha das 7 praias</h2>
-                        </a>
-                    </div>
-                </div>
-            
-                <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
                     <a href="/post/surf-em-ubatuba-conheca-as-melhores-praias-para-pegar-ondas" class="posts-image w-inline-block">
                         
                             <img alt="Surf em Ubatuba: Conheça as melhores praias para pegar ondas." src="https://img.sociap.com.br/ubatuba/posts/surfe.jpg" width="400" height="400" style="object-fit: cover;"/>
@@ -197,6 +183,20 @@
                         <a href="/c/lugares" class="category-link">Lugares</a>
                         <a href="/post/surf-em-ubatuba-conheca-as-melhores-praias-para-pegar-ondas" class="post-title w-inline-block">
                             <h2 class="h3">Surf em Ubatuba: Conheça as melhores praias para pegar ondas.</h2>
+                        </a>
+                    </div>
+                </div>
+            
+                <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
+                    <a href="/post/trilha-das-sete-praias" class="posts-image w-inline-block">
+                        
+                            <img alt="Trilha das 7 praias" src="https://img.sociap.com.br/ubatuba/posts/7-praias.jpeg" width="400" height="400" style="object-fit: cover;"/>
+                        
+                    </a>
+                    <div class="post-info-text">
+                        <a href="/c/lugares" class="category-link">Lugares</a>
+                        <a href="/post/trilha-das-sete-praias" class="post-title w-inline-block">
+                            <h2 class="h3">Trilha das 7 praias</h2>
                         </a>
                     </div>
                 </div>
@@ -258,29 +258,15 @@
                 </div>
             
                 <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                    <a href="/post/a-historia-e-cultura-de-ubatuba-pontos-turisticos-para-visitar" class="posts-image w-inline-block">
+                    <a href="/post/guia-completo-para-caminhadas-e-trilhas-em-ubatuba" class="posts-image w-inline-block">
                         
-                            <img alt="A história e cultura de Ubatuba: pontos turísticos para visitar" src="https://img.mediakitlabs.com/ubatuba/posts/Bandeira_Ubatuba.png" width="400" height="400" style="object-fit: cover;"/>
-                        
-                    </a>
-                    <div class="post-info-text">
-                        <a href="/c/lugares" class="category-link">Lugares</a>
-                        <a href="/post/a-historia-e-cultura-de-ubatuba-pontos-turisticos-para-visitar" class="post-title w-inline-block">
-                            <h2 class="h3">A história e cultura de Ubatuba: pontos turísticos para visitar</h2>
-                        </a>
-                    </div>
-                </div>
-            
-                <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                    <a href="/post/dicas-para-viajar-para-ubatuba-com-criancas" class="posts-image w-inline-block">
-                        
-                            <img alt="Dicas para viajar para Ubatuba com crianças" src="https://img.mediakitlabs.com/ubatuba/posts/kids_in_park_1.jpg" width="400" height="400" style="object-fit: cover;"/>
+                            <img alt="Guia completo para caminhadas e trilhas em Ubatuba" src="https://img.mediakitlabs.com/ubatuba/posts/hikking_tropical.jpg" width="400" height="400" style="object-fit: cover;"/>
                         
                     </a>
                     <div class="post-info-text">
                         <a href="/c/lugares" class="category-link">Lugares</a>
-                        <a href="/post/dicas-para-viajar-para-ubatuba-com-criancas" class="post-title w-inline-block">
-                            <h2 class="h3">Dicas para viajar para Ubatuba com crianças</h2>
+                        <a href="/post/guia-completo-para-caminhadas-e-trilhas-em-ubatuba" class="post-title w-inline-block">
+                            <h2 class="h3">Guia completo para caminhadas e trilhas em Ubatuba</h2>
                         </a>
                     </div>
                 </div>
@@ -300,15 +286,29 @@
                 </div>
             
                 <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                    <a href="/post/guia-completo-para-caminhadas-e-trilhas-em-ubatuba" class="posts-image w-inline-block">
+                    <a href="/post/dicas-para-viajar-para-ubatuba-com-criancas" class="posts-image w-inline-block">
                         
-                            <img alt="Guia completo para caminhadas e trilhas em Ubatuba" src="https://img.mediakitlabs.com/ubatuba/posts/hikking_tropical.jpg" width="400" height="400" style="object-fit: cover;"/>
+                            <img alt="Dicas para viajar para Ubatuba com crianças" src="https://img.mediakitlabs.com/ubatuba/posts/kids_in_park_1.jpg" width="400" height="400" style="object-fit: cover;"/>
                         
                     </a>
                     <div class="post-info-text">
                         <a href="/c/lugares" class="category-link">Lugares</a>
-                        <a href="/post/guia-completo-para-caminhadas-e-trilhas-em-ubatuba" class="post-title w-inline-block">
-                            <h2 class="h3">Guia completo para caminhadas e trilhas em Ubatuba</h2>
+                        <a href="/post/dicas-para-viajar-para-ubatuba-com-criancas" class="post-title w-inline-block">
+                            <h2 class="h3">Dicas para viajar para Ubatuba com crianças</h2>
+                        </a>
+                    </div>
+                </div>
+            
+                <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
+                    <a href="/post/a-historia-e-cultura-de-ubatuba-pontos-turisticos-para-visitar" class="posts-image w-inline-block">
+                        
+                            <img alt="A história e cultura de Ubatuba: pontos turísticos para visitar" src="https://img.mediakitlabs.com/ubatuba/posts/Bandeira_Ubatuba.png" width="400" height="400" style="object-fit: cover;"/>
+                        
+                    </a>
+                    <div class="post-info-text">
+                        <a href="/c/lugares" class="category-link">Lugares</a>
+                        <a href="/post/a-historia-e-cultura-de-ubatuba-pontos-turisticos-para-visitar" class="post-title w-inline-block">
+                            <h2 class="h3">A história e cultura de Ubatuba: pontos turísticos para visitar</h2>
                         </a>
                     </div>
                 </div>

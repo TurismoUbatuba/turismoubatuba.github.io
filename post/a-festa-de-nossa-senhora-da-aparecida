@@ -93,14 +93,14 @@
                     <div>
                         
                         <div class="blog-post-side-banner">
-                            <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" class="sidebar-logo" />
+                            <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" class="sidebar-logo" />
                             <div class="section-subtitle">
-                                Ubatuba Praia Hotel
+                                Ubatuba Praia Grande Hotel
                             </div>
                             <p>
-                                O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.
+                                De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.
                             </p>
-                            <div class="button-wrap"><a href="https://ubatubapraiahotel.com/" class="button w-button">Conheça</a></div>
+                            <div class="button-wrap"><a href="https://www.upghotel.com.br/" class="button w-button">Conheça</a></div>
                         </div>
                         
 
@@ -131,50 +131,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/paraty" class="blog-item-wrap w-inline-block">
+                            <a href="/post/ilha-anchieta" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/3D_Animation_Style_A_bustling_colonialstyle_cityscape_of_Parat_4.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/profundezas.jpg"
                                         loading="lazy"
-                                        alt="Cidades próximas: Paraty"
+                                        alt="Ilha Anchieta"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Cidades próximas: Paraty</div>
-                                <p class="blog-item-summary">Paraty é uma cidade histórica localizada no estado do Rio de Janeiro, no Brasil. É conhecida por sua arquitetura colonial preservada.</p>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Ilha Anchieta</div>
+                                <p class="blog-item-summary">A Ilha Anchieta é um tesouro em Ubatuba, oferecendo uma combinação única de história, natureza exuberante e atividades ao ar livre. Seja você um entusiasta da história, um amante da natureza ou um mergulhador em busca de aventuras subaquáticas.</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/pico-do-piuva" class="blog-item-wrap w-inline-block">
+                            <a href="/post/a-festa-de-iemanja-heranca-afro-brasileira" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.mediakitlabs.com/ubatuba/posts/pico-piuva.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/_9217744c-3289-4864-8822-328e0472ee66.jfif"
                                         loading="lazy"
-                                        alt="Pico do Piuva"
+                                        alt="A Festa de Iemanjá: Herança Afro-Brasileira"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Pico do Piuva</div>
-                                <p class="blog-item-summary">Pico do Piuva em Ubatuba é uma montanha que faz parte da Serra do Mar e oferece vistas incríveis do litoral e da Mata Atlântica.</p>
+                                <div class="blog-item-category">praia</div>
+                                <div class="blog-item-name">A Festa de Iemanjá: Herança Afro-Brasileira</div>
+                                <p class="blog-item-summary">Descubra a rica cultura e história por trás da Festa de Iemanjá, uma celebração Afro-Brasileira</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/a-historia-e-cultura-de-ubatuba-pontos-turisticos-para-visitar" class="blog-item-wrap w-inline-block">
+                            <a href="/post/a-gestao-de-residuos-solidos-em-ubatuba-politicas-publicas-e-praticas-sustentaveis" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.mediakitlabs.com/ubatuba/posts/Bandeira_Ubatuba.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/312.png"
                                         loading="lazy"
-                                        alt="A história e cultura de Ubatuba: pontos turísticos para visitar"
+                                        alt="A gestão de resíduos sólidos em Ubatuba: políticas públicas e práticas sustentáveis"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">A história e cultura de Ubatuba: pontos turísticos para visitar</div>
-                                <p class="blog-item-summary">Descubra a história, cultura e encantos naturais de Ubatuba, uma cidade litorânea no Brasil. Conheça seus pontos turísticos, como praias, ilhas e cachoeiras, e mergulhe na atmosfera relaxante deste paraíso costeiro.</p>
+                                <div class="blog-item-category">Ubatuba</div>
+                                <div class="blog-item-name">A gestão de resíduos sólidos em Ubatuba: políticas públicas e práticas sustentáveis</div>
+                                <p class="blog-item-summary">Conheça as políticas públicas e práticas sustentáveis de gestão de resíduos sólidos em Ubatuba.</p>
                             </a>
                         </div>
                 

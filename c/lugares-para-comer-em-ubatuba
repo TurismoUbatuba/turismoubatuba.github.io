@@ -122,10 +122,10 @@
             
                 <div class="collection-item-advertising">
                     <div class="div-block-3">
-                        <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" loading="lazy" width="233" class="image-2">
-                        <div class="advertiser_title">Ubatuba Praia Grande Hotel</div>
-                        <div class="advertiser_subtitle">De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.</div>
-                        <a href="https://www.upghotel.com.br/" target="_blank" class="button-2 w-button">Conheça</a>
+                        <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" loading="lazy" width="233" class="image-2">
+                        <div class="advertiser_title">Ubatuba Praia Hotel</div>
+                        <div class="advertiser_subtitle">O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.</div>
+                        <a href="https://ubatubapraiahotel.com/" target="_blank" class="button-2 w-button">Conheça</a>
                     </div>
                 </div>
             

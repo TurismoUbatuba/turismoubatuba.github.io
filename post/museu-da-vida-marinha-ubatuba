@@ -192,22 +192,6 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/reveillon-2024-litoral-norte-deve-receber-3-milhoes-de-pessoas" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/_9a051945-229f-4d12-be0f-16afd9ecd168.jpg"
-                                        loading="lazy"
-                                        alt="Réveillon 2024: Litoral Norte deve receber 3 milhões de pessoas"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">reveillon</div>
-                                <div class="blog-item-name">Réveillon 2024: Litoral Norte deve receber 3 milhões de pessoas</div>
-                                <p class="blog-item-summary">O Litoral Norte de São Paulo é um destino altamente procurado para as festividades de Réveillon. </p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
                             <a href="/post/praia-do-pulso-em-ubatuba---um-paraiso-escondido-na-costa-paulista" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
@@ -224,18 +208,34 @@
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/passeio-de-barco-em-ubatuba-descubra-as-belezas-marinhas-e-os-pontos-de-mergulho-mais-incriveis" class="blog-item-wrap w-inline-block">
+                            <a href="/post/ubatuba-a-cidade-dos-surfistas-e-amantes-do-mar" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/barco.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/287.png"
                                         loading="lazy"
-                                        alt="Passeio de Barco em Ubatuba: Descubra as belezas marinhas e os pontos de mergulho mais incríveis."
+                                        alt="Ubatuba: A Cidade dos Surfistas e Amantes do Mar"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Passeio de Barco em Ubatuba: Descubra as belezas marinhas e os pontos de mergulho mais incríveis.</div>
-                                <p class="blog-item-summary">Mergulho em Ubatuba: Explore a vida marinha e os melhores pontos de mergulho.</p>
+                                <div class="blog-item-category">Ubatuba</div>
+                                <div class="blog-item-name">Ubatuba: A Cidade dos Surfistas e Amantes do Mar</div>
+                                <p class="blog-item-summary">Conheça a cidade de Ubatuba, localizada no estado de São Paulo, Brasil, conhecida como a &#39;Cidade dos Surfistas e Amantes do Mar&#39;.</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/a-festa-de-nossa-senhora-da-aparecida" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/_6d62035b-f2eb-4449-9ea3-13fe620c1093.jfif"
+                                        loading="lazy"
+                                        alt="A Festa de Nossa Senhora da Aparecida"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Nossa Senhora da Aparecida</div>
+                                <div class="blog-item-name">A Festa de Nossa Senhora da Aparecida</div>
+                                <p class="blog-item-summary">Descubra sobre a festa de Nossa Senhora da Aparecida, a maior festa religiosa do Brasil</p>
                             </a>
                         </div>
                 

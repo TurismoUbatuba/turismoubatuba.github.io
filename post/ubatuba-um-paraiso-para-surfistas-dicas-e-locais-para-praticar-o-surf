@@ -156,50 +156,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/descubra-as-maravilhas-das-melhores-praias-de-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/praia-da-palmira" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/DSC_0033.JPG"
+                                        src="https://img.sociap.com.br/ubatuba/posts/praia-da-palmira.png"
                                         loading="lazy"
-                                        alt="Descubra as Maravilhas das Melhores Praias de Ubatuba"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Descubra as Maravilhas das Melhores Praias de Ubatuba</div>
-                                <p class="blog-item-summary">Descubra as melhores praias de Ubatuba, no litoral norte de São Paulo. Surfe, natureza exuberante e cenários paradisíacos esperam por você neste paraíso costeiro brasileiro.</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/todas-as-praias-de-ubatuba" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/vermelha-do-sul.jpg"
-                                        loading="lazy"
-                                        alt="Todas as Praias de Ubatuba"
+                                        alt="Praia da Palmira"
                                         class="blog-thumbnail"
                                     />
                                 </div>
                                 <div class="blog-item-category">Praias</div>
-                                <div class="blog-item-name">Todas as Praias de Ubatuba</div>
-                                <p class="blog-item-summary">Listamos todas as praias de Ubatuba.</p>
+                                <div class="blog-item-name">Praia da Palmira</div>
+                                <p class="blog-item-summary">A Praia Isolada da Palmira está situada numa parte menos explorada de Ubatuba, o que contribui para o seu aspecto selvagem e preservado. </p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/guia-de-hospedagem-em-ubatuba-hoteis-pousadas-e-aluguel-de-casas" class="blog-item-wrap w-inline-block">
+                            <a href="/post/reveillon-2024-litoral-norte-deve-receber-3-milhoes-de-pessoas" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.mediakitlabs.com/ubatuba/posts/hospitability_beach_1.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/_9a051945-229f-4d12-be0f-16afd9ecd168.jpg"
                                         loading="lazy"
-                                        alt="Guia de Hospedagem em Ubatuba: Hotéis, Pousadas e Aluguel de Casas"
+                                        alt="Réveillon 2024: Litoral Norte deve receber 3 milhões de pessoas"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">natureza</div>
-                                <div class="blog-item-name">Guia de Hospedagem em Ubatuba: Hotéis, Pousadas e Aluguel de Casas</div>
-                                <p class="blog-item-summary">Planejando sua viagem para Ubatuba? Confira nosso guia de hospedagem com opções de hotéis, pousadas e aluguel de casas. Encontre o lugar perfeito para desfrutar das belezas naturais dessa encantadora cidade litorânea.</p>
+                                <div class="blog-item-category">reveillon</div>
+                                <div class="blog-item-name">Réveillon 2024: Litoral Norte deve receber 3 milhões de pessoas</div>
+                                <p class="blog-item-summary">O Litoral Norte de São Paulo é um destino altamente procurado para as festividades de Réveillon. </p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/praia-da-lagoinha" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/lagoinha.jpg"
+                                        loading="lazy"
+                                        alt="Praia da Lagoinha"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Praia da Lagoinha</div>
+                                <p class="blog-item-summary">A Praia da Lagoinha é uma bela praia localizada em Ubatuba, um município no litoral norte do estado de São Paulo, no Brasil.</p>
                             </a>
                         </div>
                 

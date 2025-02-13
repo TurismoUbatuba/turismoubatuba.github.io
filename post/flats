@@ -156,50 +156,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/a-festa-de-iemanja-heranca-afro-brasileira" class="blog-item-wrap w-inline-block">
+                            <a href="/post/praia-do-sape" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/_9217744c-3289-4864-8822-328e0472ee66.jfif"
+                                        src="https://img.sociap.com.br/ubatuba/posts/20230902_104332.jpg"
                                         loading="lazy"
-                                        alt="A Festa de Iemanjá: Herança Afro-Brasileira"
+                                        alt="Praia do Sape"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">praia</div>
-                                <div class="blog-item-name">A Festa de Iemanjá: Herança Afro-Brasileira</div>
-                                <p class="blog-item-summary">Descubra a rica cultura e história por trás da Festa de Iemanjá, uma celebração Afro-Brasileira</p>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Praia do Sape</div>
+                                <p class="blog-item-summary">A Praia do Sape é uma praia localizada em Ubatuba, um município litorâneo no estado de São Paulo, Brasil</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/descubra-as-maravilhas-das-melhores-praias-de-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/ubatuba-a-cidade-dos-artistas-e-a-arte-em-todas-as-formas" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/DSC_0033.JPG"
+                                        src="https://img.sociap.com.br/ubatuba/posts/500.png"
                                         loading="lazy"
-                                        alt="Descubra as Maravilhas das Melhores Praias de Ubatuba"
+                                        alt="Ubatuba: A Cidade dos Artistas e a Arte em Todas as Formas"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Descubra as Maravilhas das Melhores Praias de Ubatuba</div>
-                                <p class="blog-item-summary">Descubra as melhores praias de Ubatuba, no litoral norte de São Paulo. Surfe, natureza exuberante e cenários paradisíacos esperam por você neste paraíso costeiro brasileiro.</p>
+                                <div class="blog-item-category">Ubatuba</div>
+                                <div class="blog-item-name">Ubatuba: A Cidade dos Artistas e a Arte em Todas as Formas</div>
+                                <p class="blog-item-summary">Descubra a cidade de Ubatuba, a capital do esquí nas praias do litoral norte de São Paulo, conhecida por seus artistas e suas manifestações artísticas em diversas formas.</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/pico-do-piuva" class="blog-item-wrap w-inline-block">
+                            <a href="/post/praia-da-lagoinha" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.mediakitlabs.com/ubatuba/posts/pico-piuva.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/lagoinha.jpg"
                                         loading="lazy"
-                                        alt="Pico do Piuva"
+                                        alt="Praia da Lagoinha"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Pico do Piuva</div>
-                                <p class="blog-item-summary">Pico do Piuva em Ubatuba é uma montanha que faz parte da Serra do Mar e oferece vistas incríveis do litoral e da Mata Atlântica.</p>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Praia da Lagoinha</div>
+                                <p class="blog-item-summary">A Praia da Lagoinha é uma bela praia localizada em Ubatuba, um município no litoral norte do estado de São Paulo, no Brasil.</p>
                             </a>
                         </div>
                 

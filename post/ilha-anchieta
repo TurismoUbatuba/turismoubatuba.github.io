@@ -115,14 +115,14 @@
                     <div>
                         
                         <div class="blog-post-side-banner">
-                            <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" class="sidebar-logo" />
+                            <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" class="sidebar-logo" />
                             <div class="section-subtitle">
-                                Ubatuba Praia Grande Hotel
+                                Ubatuba Praia Hotel
                             </div>
                             <p>
-                                De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.
+                                O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.
                             </p>
-                            <div class="button-wrap"><a href="https://www.upghotel.com.br/" class="button w-button">Conheça</a></div>
+                            <div class="button-wrap"><a href="https://ubatubapraiahotel.com/" class="button w-button">Conheça</a></div>
                         </div>
                         
 
@@ -153,50 +153,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/praia-do-sape" class="blog-item-wrap w-inline-block">
+                            <a href="/post/surf-em-ubatuba-conheca-as-melhores-praias-para-pegar-ondas" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/20230902_104332.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/surfe.jpg"
                                         loading="lazy"
-                                        alt="Praia do Sape"
+                                        alt="Surf em Ubatuba: Conheça as melhores praias para pegar ondas."
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Praias</div>
-                                <div class="blog-item-name">Praia do Sape</div>
-                                <p class="blog-item-summary">A Praia do Sape é uma praia localizada em Ubatuba, um município litorâneo no estado de São Paulo, Brasil</p>
+                                <div class="blog-item-category">Lugares</div>
+                                <div class="blog-item-name">Surf em Ubatuba: Conheça as melhores praias para pegar ondas.</div>
+                                <p class="blog-item-summary">Ubatuba, localizada no litoral norte de São Paulo, é um verdadeiro paraíso para os amantes do surf. </p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/culinaria-de-ubatuba-receitas-e-tradicionais-gastronomicas" class="blog-item-wrap w-inline-block">
+                            <a href="/post/explorando-as-maravilhas-aquaticas-o-fascinante-aquario-de-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/188.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/aquario-ubatuba.jpg"
                                         loading="lazy"
-                                        alt="Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas"
+                                        alt="Explorando as Maravilhas Aquáticas: O Fascinante Aquário de Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Culinária de Ubatuba</div>
-                                <div class="blog-item-name">Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas</div>
-                                <p class="blog-item-summary">Desvende as tradições gastronômicas da cidade de Ubatuba, na costa sudeste do Brasil, e aprenda a preparar receitas incríveis com essa culinária.</p>
+                                <div class="blog-item-category">Lugares</div>
+                                <div class="blog-item-name">Explorando as Maravilhas Aquáticas: O Fascinante Aquário de Ubatuba</div>
+                                <p class="blog-item-summary">O Aquário de Ubatuba é mais do que uma simples atração turística; é um farol de conhecimento, conservação e inspiração para as gerações presentes e futuras. Ao explorar as maravilhas aquáticas neste notável local, os visitantes não apenas se maravilham com a beleza do oceano, mas também adquirem um entendimento mais profundo de sua fragilidade e da necessidade urgente de protegê-lo. Portanto, ao planejar sua próxima visita ao litoral norte de São Paulo, não deixe de incluir o Aquário de Ubatuba em seu itinerário para uma experiência educativa e emocionante.</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/ubatuba-a-cidade-dos-surfistas-e-amantes-do-mar" class="blog-item-wrap w-inline-block">
+                            <a href="/post/ubatuba-um-paraiso-para-surfistas-dicas-e-locais-para-praticar-o-surf" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/287.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/161.png"
                                         loading="lazy"
-                                        alt="Ubatuba: A Cidade dos Surfistas e Amantes do Mar"
+                                        alt="Ubatuba, um Paraíso para Surfistas: Dicas e Locais para Praticar o Surf"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Ubatuba</div>
-                                <div class="blog-item-name">Ubatuba: A Cidade dos Surfistas e Amantes do Mar</div>
-                                <p class="blog-item-summary">Conheça a cidade de Ubatuba, localizada no estado de São Paulo, Brasil, conhecida como a &#39;Cidade dos Surfistas e Amantes do Mar&#39;.</p>
+                                <div class="blog-item-category">surfistas</div>
+                                <div class="blog-item-name">Ubatuba, um Paraíso para Surfistas: Dicas e Locais para Praticar o Surf</div>
+                                <p class="blog-item-summary">Descubra os melhores locais para surfar em Ubatuba, um paraíso para surfeiros</p>
                             </a>
                         </div>
                 

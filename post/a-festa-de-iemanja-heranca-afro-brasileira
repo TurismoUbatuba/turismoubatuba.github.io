@@ -105,14 +105,14 @@
                     <div>
                         
                         <div class="blog-post-side-banner">
-                            <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" class="sidebar-logo" />
+                            <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" class="sidebar-logo" />
                             <div class="section-subtitle">
-                                Ubatuba Praia Hotel
+                                Ubatuba Praia Grande Hotel
                             </div>
                             <p>
-                                O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.
+                                De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.
                             </p>
-                            <div class="button-wrap"><a href="https://ubatubapraiahotel.com/" class="button w-button">Conheça</a></div>
+                            <div class="button-wrap"><a href="https://www.upghotel.com.br/" class="button w-button">Conheça</a></div>
                         </div>
                         
 
@@ -143,50 +143,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/praias-e-pontos-de-interesse-turistico-em-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/baleia-jubarte-encontrada-morta-no-sul-de-ubatuba-sp" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/495.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/313.png"
                                         loading="lazy"
-                                        alt="Praias e Pontos de Interesse Turístico em Ubatuba"
+                                        alt="Baleia jubarte encontrada morta no sul de Ubatuba (SP)"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Ubatuba</div>
-                                <div class="blog-item-name">Praias e Pontos de Interesse Turístico em Ubatuba</div>
-                                <p class="blog-item-summary">Descubra as praias e pontos de interesse turístico em Ubatuba, uma cidade conhecida pelas suas belas praias e paisagens naturais.</p>
+                                <div class="blog-item-category">baleia</div>
+                                <div class="blog-item-name">Baleia jubarte encontrada morta no sul de Ubatuba (SP)</div>
+                                <p class="blog-item-summary">Um jovem baleia jubarte macho foi encontrado morto em avançado estado de decomposição na região sul de Ubatuba</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/a-historia-do-turismo-em-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/taxa-de-preservacao-ambiental-contribuindo-para-o-desenvolvimento-sustentavel-de-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/207.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/estrada-litoranea.jpg"
                                         loading="lazy"
-                                        alt="A História do Turismo em Ubatuba"
+                                        alt="Taxa de Preservação Ambiental ( TPA ): Contribuindo para o Desenvolvimento Sustentável de Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">turismo</div>
-                                <div class="blog-item-name">A História do Turismo em Ubatuba</div>
-                                <p class="blog-item-summary">Descubra a evolução do turismo em Ubatuba e suas raízes históricas</p>
+                                <div class="blog-item-category">taxa</div>
+                                <div class="blog-item-name">Taxa de Preservação Ambiental ( TPA ): Contribuindo para o Desenvolvimento Sustentável de Ubatuba</div>
+                                <p class="blog-item-summary">Ubatuba, um município que encontra sua identidade na exuberância de sua natureza, busca estratégias inovadoras para preservar e promover o desenvolvimento sustentável. </p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/discover-the-wonders-of-the-best-beaches-of-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/praia-da-palmira" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/DSC_0033.JPG"
+                                        src="https://img.sociap.com.br/ubatuba/posts/praia-da-palmira.png"
                                         loading="lazy"
-                                        alt="Discover the Wonders of the Best Beaches in Ubatuba"
+                                        alt="Praia da Palmira"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">surf</div>
-                                <div class="blog-item-name">Discover the Wonders of the Best Beaches in Ubatuba</div>
-                                <p class="blog-item-summary">Discover the best beaches in Ubatuba, on the north coast of São Paulo. Surf, exuberant nature and paradisiacal scenery await you in this Brazilian coastal paradise.</p>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Praia da Palmira</div>
+                                <p class="blog-item-summary">A Praia Isolada da Palmira está situada numa parte menos explorada de Ubatuba, o que contribui para o seu aspecto selvagem e preservado. </p>
                             </a>
                         </div>
                 

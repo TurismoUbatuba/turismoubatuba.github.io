@@ -99,14 +99,14 @@
                     <div>
                         
                         <div class="blog-post-side-banner">
-                            <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" class="sidebar-logo" />
+                            <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" class="sidebar-logo" />
                             <div class="section-subtitle">
-                                Ubatuba Praia Grande Hotel
+                                Ubatuba Praia Hotel
                             </div>
                             <p>
-                                De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.
+                                O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.
                             </p>
-                            <div class="button-wrap"><a href="https://www.upghotel.com.br/" class="button w-button">Conheça</a></div>
+                            <div class="button-wrap"><a href="https://ubatubapraiahotel.com/" class="button w-button">Conheça</a></div>
                         </div>
                         
 
@@ -153,34 +153,34 @@
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/paraty" class="blog-item-wrap w-inline-block">
+                            <a href="/post/as-regras-da-festa-de-nossa-senhora-da-conceicao" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/3D_Animation_Style_A_bustling_colonialstyle_cityscape_of_Parat_4.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/_6163270c-46bf-433f-bf2e-76eb2e025dd1.jfif"
                                         loading="lazy"
-                                        alt="Cidades próximas: Paraty"
+                                        alt="As Regras da Festa de Nossa Senhora da Conceição"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Cidades próximas: Paraty</div>
-                                <p class="blog-item-summary">Paraty é uma cidade histórica localizada no estado do Rio de Janeiro, no Brasil. É conhecida por sua arquitetura colonial preservada.</p>
+                                <div class="blog-item-category">Festa de Nossa Senhora da Conceição</div>
+                                <div class="blog-item-name">As Regras da Festa de Nossa Senhora da Conceição</div>
+                                <p class="blog-item-summary">Entenda melhor o significado e as tradições da Festa de Nossa Senhora da Conceição</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/explorando-as-maravilhas-aquaticas-o-fascinante-aquario-de-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/ubatuba-a-cidade-dos-artistas-e-a-arte-em-todas-as-formas" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/aquario-ubatuba.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/500.png"
                                         loading="lazy"
-                                        alt="Explorando as Maravilhas Aquáticas: O Fascinante Aquário de Ubatuba"
+                                        alt="Ubatuba: A Cidade dos Artistas e a Arte em Todas as Formas"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Explorando as Maravilhas Aquáticas: O Fascinante Aquário de Ubatuba</div>
-                                <p class="blog-item-summary">O Aquário de Ubatuba é mais do que uma simples atração turística; é um farol de conhecimento, conservação e inspiração para as gerações presentes e futuras. Ao explorar as maravilhas aquáticas neste notável local, os visitantes não apenas se maravilham com a beleza do oceano, mas também adquirem um entendimento mais profundo de sua fragilidade e da necessidade urgente de protegê-lo. Portanto, ao planejar sua próxima visita ao litoral norte de São Paulo, não deixe de incluir o Aquário de Ubatuba em seu itinerário para uma experiência educativa e emocionante.</p>
+                                <div class="blog-item-category">Ubatuba</div>
+                                <div class="blog-item-name">Ubatuba: A Cidade dos Artistas e a Arte em Todas as Formas</div>
+                                <p class="blog-item-summary">Descubra a cidade de Ubatuba, a capital do esquí nas praias do litoral norte de São Paulo, conhecida por seus artistas e suas manifestações artísticas em diversas formas.</p>
                             </a>
                         </div>
                 

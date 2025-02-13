@@ -131,50 +131,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/praia-da-palmira" class="blog-item-wrap w-inline-block">
+                            <a href="/post/o-que-fazer-em-ubatuba-com-chuva" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/praia-da-palmira.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/chuvoso.jpg"
                                         loading="lazy"
-                                        alt="Praia da Palmira"
+                                        alt="O que fazer em ubatuba com chuva"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Praias</div>
-                                <div class="blog-item-name">Praia da Palmira</div>
-                                <p class="blog-item-summary">A Praia Isolada da Palmira está situada numa parte menos explorada de Ubatuba, o que contribui para o seu aspecto selvagem e preservado. </p>
+                                <div class="blog-item-category">ubatuba chuvoso</div>
+                                <div class="blog-item-name">O que fazer em ubatuba com chuva</div>
+                                <p class="blog-item-summary">Em Ubatuba, mesmo em dias de chuva, há várias opções de atividades para aproveitar a região.</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/ubatuba-um-paraiso-para-surfistas-dicas-e-locais-para-praticar-o-surf" class="blog-item-wrap w-inline-block">
+                            <a href="/post/ubatuba-um-paraiso-para-ciclistas-roteiros-e-dicas-para-uma-viagem-de-bicicleta" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/161.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/491.png"
                                         loading="lazy"
-                                        alt="Ubatuba, um Paraíso para Surfistas: Dicas e Locais para Praticar o Surf"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">surfistas</div>
-                                <div class="blog-item-name">Ubatuba, um Paraíso para Surfistas: Dicas e Locais para Praticar o Surf</div>
-                                <p class="blog-item-summary">Descubra os melhores locais para surfar em Ubatuba, um paraíso para surfeiros</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/a-gestao-de-residuos-solidos-em-ubatuba-politicas-publicas-e-praticas-sustentaveis" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/312.png"
-                                        loading="lazy"
-                                        alt="A gestão de resíduos sólidos em Ubatuba: políticas públicas e práticas sustentáveis"
+                                        alt="Ubatuba, um Paraíso para Ciclistas: Roteiros e Dicas para uma Viagem de Bicicleta"
                                         class="blog-thumbnail"
                                     />
                                 </div>
                                 <div class="blog-item-category">Ubatuba</div>
-                                <div class="blog-item-name">A gestão de resíduos sólidos em Ubatuba: políticas públicas e práticas sustentáveis</div>
-                                <p class="blog-item-summary">Conheça as políticas públicas e práticas sustentáveis de gestão de resíduos sólidos em Ubatuba.</p>
+                                <div class="blog-item-name">Ubatuba, um Paraíso para Ciclistas: Roteiros e Dicas para uma Viagem de Bicicleta</div>
+                                <p class="blog-item-summary">Descubra as rotas e dicas para uma viagem de bicicleta na cidade de Ubatuba, um paraíso para ciclistas no litoral Norte do Estado de São Paulo.</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/roteiro-de-fim-de-semana-em-ubatuba-o-que-fazer-e-onde-ir-em-dois-dias" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/beaches1.jpg"
+                                        loading="lazy"
+                                        alt="Roteiro de fim de semana em Ubatuba: O que fazer e onde ir em dois dias."
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Lugares</div>
+                                <div class="blog-item-name">Roteiro de fim de semana em Ubatuba: O que fazer e onde ir em dois dias.</div>
+                                <p class="blog-item-summary">Ubatuba, litoral norte de SP, famosa por praias paradisíacas, cachoeiras e biodiversidade. Roteiro de 2 dias para aproveitar o máximo.</p>
                             </a>
                         </div>
                 

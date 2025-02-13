@@ -155,50 +155,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/mergulho-esportivo-em-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/praias-e-pontos-de-interesse-turistico-em-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/5f1ba326-5ac8-4d69-955d-ea15dd3506d5.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/495.png"
                                         loading="lazy"
-                                        alt="Mergulho esportivo em ubatuba"
+                                        alt="Praias e Pontos de Interesse Turístico em Ubatuba"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Ubatuba</div>
+                                <div class="blog-item-name">Praias e Pontos de Interesse Turístico em Ubatuba</div>
+                                <p class="blog-item-summary">Descubra as praias e pontos de interesse turístico em Ubatuba, uma cidade conhecida pelas suas belas praias e paisagens naturais.</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/culinaria-de-ubatuba-receitas-e-tradicionais-gastronomicas" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/188.png"
+                                        loading="lazy"
+                                        alt="Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Culinária de Ubatuba</div>
+                                <div class="blog-item-name">Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas</div>
+                                <p class="blog-item-summary">Desvende as tradições gastronômicas da cidade de Ubatuba, na costa sudeste do Brasil, e aprenda a preparar receitas incríveis com essa culinária.</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/passeio-de-barco-em-ubatuba-descubra-as-belezas-marinhas-e-os-pontos-de-mergulho-mais-incriveis" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/barco.jpg"
+                                        loading="lazy"
+                                        alt="Passeio de Barco em Ubatuba: Descubra as belezas marinhas e os pontos de mergulho mais incríveis."
                                         class="blog-thumbnail"
                                     />
                                 </div>
                                 <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Mergulho esportivo em ubatuba</div>
-                                <p class="blog-item-summary">Ubatuba oferece ótimas opções para o mergulho esportivo, com uma diversidade impressionante de vida marinha e belos cenários subaquáticos. Certifique-se de estar devidamente preparado e aproveite essa emocionante atividade na cidade!</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/reveillon-2024-litoral-norte-deve-receber-3-milhoes-de-pessoas" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/_9a051945-229f-4d12-be0f-16afd9ecd168.jpg"
-                                        loading="lazy"
-                                        alt="Réveillon 2024: Litoral Norte deve receber 3 milhões de pessoas"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">reveillon</div>
-                                <div class="blog-item-name">Réveillon 2024: Litoral Norte deve receber 3 milhões de pessoas</div>
-                                <p class="blog-item-summary">O Litoral Norte de São Paulo é um destino altamente procurado para as festividades de Réveillon. </p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/ubatuba-um-paraiso-para-surfistas-dicas-e-locais-para-praticar-o-surf" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/161.png"
-                                        loading="lazy"
-                                        alt="Ubatuba, um Paraíso para Surfistas: Dicas e Locais para Praticar o Surf"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">surfistas</div>
-                                <div class="blog-item-name">Ubatuba, um Paraíso para Surfistas: Dicas e Locais para Praticar o Surf</div>
-                                <p class="blog-item-summary">Descubra os melhores locais para surfar em Ubatuba, um paraíso para surfeiros</p>
+                                <div class="blog-item-name">Passeio de Barco em Ubatuba: Descubra as belezas marinhas e os pontos de mergulho mais incríveis.</div>
+                                <p class="blog-item-summary">Mergulho em Ubatuba: Explore a vida marinha e os melhores pontos de mergulho.</p>
                             </a>
                         </div>
                 

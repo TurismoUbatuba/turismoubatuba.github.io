@@ -151,50 +151,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/a-gestao-de-residuos-solidos-em-ubatuba-politicas-publicas-e-praticas-sustentaveis" class="blog-item-wrap w-inline-block">
+                            <a href="/post/ubatuba-a-cidade-que-vive-em-harmonia-com-a-natureza" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/312.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/506.png"
                                         loading="lazy"
-                                        alt="A gestão de resíduos sólidos em Ubatuba: políticas públicas e práticas sustentáveis"
+                                        alt="Ubatuba: A Cidade que Vive em Harmonia com a Natureza"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Ubatuba: A Cidade que Vive em Harmonia com a Natureza</div>
+                                <p class="blog-item-summary">Descubra a cidade mais bonita do Brasil, Ubatuba, conhecida por suas praias de areia branca e sua rica biodiversidade.</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/eco-turismo-em-ubatuba-preservacao-e-desenvolvimento-sustentavel" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/501.png"
+                                        loading="lazy"
+                                        alt="Eco-Turismo em Ubatuba: Preservação e Desenvolvimento Sustentável"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">ecoturismo</div>
+                                <div class="blog-item-name">Eco-Turismo em Ubatuba: Preservação e Desenvolvimento Sustentável</div>
+                                <p class="blog-item-summary">Descubra o eco-turismo em Ubatuba, uma cidade brasileira que combina preservação da natureza com desenvolvimento sustentável.</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/flats" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/4351f409-2a57-4173-b363-c06a08199dc0.jpg"
+                                        loading="lazy"
+                                        alt="Flats em Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
                                 <div class="blog-item-category">Ubatuba</div>
-                                <div class="blog-item-name">A gestão de resíduos sólidos em Ubatuba: políticas públicas e práticas sustentáveis</div>
-                                <p class="blog-item-summary">Conheça as políticas públicas e práticas sustentáveis de gestão de resíduos sólidos em Ubatuba.</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/culinaria-de-ubatuba-receitas-e-tradicionais-gastronomicas" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/188.png"
-                                        loading="lazy"
-                                        alt="Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">Culinária de Ubatuba</div>
-                                <div class="blog-item-name">Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas</div>
-                                <p class="blog-item-summary">Desvende as tradições gastronômicas da cidade de Ubatuba, na costa sudeste do Brasil, e aprenda a preparar receitas incríveis com essa culinária.</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/ubatuba-onde-a-natureza-encontra-a-diversidade" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/sunset.jpg"
-                                        loading="lazy"
-                                        alt="Ubatuba: onde a natureza encontra a diversidade"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Ubatuba: onde a natureza encontra a diversidade</div>
-                                <p class="blog-item-summary">Descubra as belezas de Ubatuba, no litoral norte de SP. Praias, trilhas, cultura caiçara, mergulho e turismo completo. Paraíso natural!</p>
+                                <div class="blog-item-name">Flats em Ubatuba</div>
+                                <p class="blog-item-summary">Escolhemos alguns flats e hospedagem por temporada que costumam ter boas avaliações e reputação</p>
                             </a>
                         </div>
                 

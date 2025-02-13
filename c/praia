@@ -103,15 +103,15 @@
 
             
                             <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                                <a href="/post/praias-e-pontos-de-interesse-turistico-em-ubatuba" class="posts-image w-inline-block">
+                                <a href="/post/ubatuba-a-cidade-dos-artistas-e-a-arte-em-todas-as-formas" class="posts-image w-inline-block">
                                     
-                                            <img alt="Praias e Pontos de Interesse Turístico em Ubatuba" src="https://img.sociap.com.br/ubatuba/posts/495.png" width="400" height="400" style="object-fit: cover;"/>
+                                            <img alt="Ubatuba: A Cidade dos Artistas e a Arte em Todas as Formas" src="https://img.sociap.com.br/ubatuba/posts/500.png" width="400" height="400" style="object-fit: cover;"/>
                                     
                                 </a>
                                 <div class="post-info-text">
                                     <a href="/c/ubatuba" class="category-link">Ubatuba</a>
-                                    <a href="/post/praias-e-pontos-de-interesse-turistico-em-ubatuba" class="post-title w-inline-block">
-                                        <h2 class="h3">Praias e Pontos de Interesse Turístico em Ubatuba</h2>
+                                    <a href="/post/ubatuba-a-cidade-dos-artistas-e-a-arte-em-todas-as-formas" class="post-title w-inline-block">
+                                        <h2 class="h3">Ubatuba: A Cidade dos Artistas e a Arte em Todas as Formas</h2>
                                     </a>
                                 </div>
                             </div>
@@ -119,15 +119,15 @@
 
             
                         <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                            <a href="/post/ubatuba-a-cidade-dos-surfistas-e-amantes-do-mar" class="posts-image w-inline-block">
+                            <a href="/post/praias-e-pontos-de-interesse-turistico-em-ubatuba" class="posts-image w-inline-block">
                                 
-                                    <img alt="Ubatuba: A Cidade dos Surfistas e Amantes do Mar" src="https://img.sociap.com.br/ubatuba/posts/287.png" width="400" height="400" style="object-fit: cover;"/>
+                                    <img alt="Praias e Pontos de Interesse Turístico em Ubatuba" src="https://img.sociap.com.br/ubatuba/posts/495.png" width="400" height="400" style="object-fit: cover;"/>
                                 
                             </a>
                             <div class="post-info-text">
                                 <a href="/c/ubatuba" class="category-link">Ubatuba</a>
-                                <a href="/post/ubatuba-a-cidade-dos-surfistas-e-amantes-do-mar" class="post-title w-inline-block">
-                                    <h2 class="h3">Ubatuba: A Cidade dos Surfistas e Amantes do Mar</h2>
+                                <a href="/post/praias-e-pontos-de-interesse-turistico-em-ubatuba" class="post-title w-inline-block">
+                                    <h2 class="h3">Praias e Pontos de Interesse Turístico em Ubatuba</h2>
                                 </a>
                             </div>
                         </div>
@@ -136,14 +136,28 @@
             
                 <div class="collection-item-advertising">
                     <div class="div-block-3">
-                        <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" loading="lazy" width="233" class="image-2">
-                        <div class="advertiser_title">Ubatuba Praia Grande Hotel</div>
-                        <div class="advertiser_subtitle">De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.</div>
-                        <a href="https://www.upghotel.com.br/" target="_blank" class="button-2 w-button">Conheça</a>
+                        <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" loading="lazy" width="233" class="image-2">
+                        <div class="advertiser_title">Ubatuba Praia Hotel</div>
+                        <div class="advertiser_subtitle">O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.</div>
+                        <a href="https://ubatubapraiahotel.com/" target="_blank" class="button-2 w-button">Conheça</a>
                     </div>
                 </div>
             
 
+            
+                <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
+                    <a href="/post/ubatuba-a-cidade-dos-surfistas-e-amantes-do-mar" class="posts-image w-inline-block">
+                        
+                            <img alt="Ubatuba: A Cidade dos Surfistas e Amantes do Mar" src="https://img.sociap.com.br/ubatuba/posts/287.png" width="400" height="400" style="object-fit: cover;"/>
+                        
+                    </a>
+                    <div class="post-info-text">
+                        <a href="/c/ubatuba" class="category-link">Ubatuba</a>
+                        <a href="/post/ubatuba-a-cidade-dos-surfistas-e-amantes-do-mar" class="post-title w-inline-block">
+                            <h2 class="h3">Ubatuba: A Cidade dos Surfistas e Amantes do Mar</h2>
+                        </a>
+                    </div>
+                </div>
             
                 <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
                     <a href="/post/a-festa-de-iemanja-heranca-afro-brasileira" class="posts-image w-inline-block">
