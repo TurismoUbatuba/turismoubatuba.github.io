@@ -104,14 +104,14 @@
                     <div>
                         
                         <div class="blog-post-side-banner">
-                            <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" class="sidebar-logo" />
+                            <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" class="sidebar-logo" />
                             <div class="section-subtitle">
-                                Ubatuba Praia Grande Hotel
+                                Ubatuba Praia Hotel
                             </div>
                             <p>
-                                De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.
+                                O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.
                             </p>
-                            <div class="button-wrap"><a href="https://www.upghotel.com.br/" class="button w-button">Conheça</a></div>
+                            <div class="button-wrap"><a href="https://ubatubapraiahotel.com/" class="button w-button">Conheça</a></div>
                         </div>
                         
 
@@ -142,50 +142,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/sugestao-de-lugares-para-comer-em-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/ubatuba-a-cidade-dos-artistas---a-arte-e-a-cultura-em-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.mediakitlabs.com/ubatuba/posts/beach_view.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/490.png"
                                         loading="lazy"
-                                        alt="Sugestão de lugares para comer em Ubatuba"
+                                        alt="Ubatuba: A Cidade dos Artistas - A arte e a cultura em Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">lugares para comer em Ubatuba</div>
-                                <div class="blog-item-name">Sugestão de lugares para comer em Ubatuba</div>
-                                <p class="blog-item-summary">Descubra os melhores lugares para comer em Ubatuba, no litoral norte de São Paulo. Explore uma variedade de opções gastronômicas, desde frutos do mar frescos até deliciosas pizzas, e desfrute de uma experiência culinária única.</p>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Ubatuba: A Cidade dos Artistas - A arte e a cultura em Ubatuba</div>
+                                <p class="blog-item-summary">Descubra a cidade de Ubatuba, considerada a &#39;cidade dos artistas&#39; por suas numerous praias e arteiros</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/a-festa-de-iemanja-heranca-afro-brasileira" class="blog-item-wrap w-inline-block">
+                            <a href="/post/trilha-das-sete-praias" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/_9217744c-3289-4864-8822-328e0472ee66.jfif"
+                                        src="https://img.sociap.com.br/ubatuba/posts/7-praias.jpeg"
                                         loading="lazy"
-                                        alt="A Festa de Iemanjá: Herança Afro-Brasileira"
+                                        alt="Trilha das 7 praias"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">praia</div>
-                                <div class="blog-item-name">A Festa de Iemanjá: Herança Afro-Brasileira</div>
-                                <p class="blog-item-summary">Descubra a rica cultura e história por trás da Festa de Iemanjá, uma celebração Afro-Brasileira</p>
+                                <div class="blog-item-category">Lugares</div>
+                                <div class="blog-item-name">Trilha das 7 praias</div>
+                                <p class="blog-item-summary">A trilha das 7 praias em Ubatuba é uma caminhada que percorre cerca de 11 km ao longo da costa</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/a-historia-do-turismo-em-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/explorando-as-maravilhas-aquaticas-o-fascinante-aquario-de-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/207.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/aquario-ubatuba.jpg"
                                         loading="lazy"
-                                        alt="A História do Turismo em Ubatuba"
+                                        alt="Explorando as Maravilhas Aquáticas: O Fascinante Aquário de Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">turismo</div>
-                                <div class="blog-item-name">A História do Turismo em Ubatuba</div>
-                                <p class="blog-item-summary">Descubra a evolução do turismo em Ubatuba e suas raízes históricas</p>
+                                <div class="blog-item-category">Lugares</div>
+                                <div class="blog-item-name">Explorando as Maravilhas Aquáticas: O Fascinante Aquário de Ubatuba</div>
+                                <p class="blog-item-summary">O Aquário de Ubatuba é mais do que uma simples atração turística; é um farol de conhecimento, conservação e inspiração para as gerações presentes e futuras. Ao explorar as maravilhas aquáticas neste notável local, os visitantes não apenas se maravilham com a beleza do oceano, mas também adquirem um entendimento mais profundo de sua fragilidade e da necessidade urgente de protegê-lo. Portanto, ao planejar sua próxima visita ao litoral norte de São Paulo, não deixe de incluir o Aquário de Ubatuba em seu itinerário para uma experiência educativa e emocionante.</p>
                             </a>
                         </div>
                 

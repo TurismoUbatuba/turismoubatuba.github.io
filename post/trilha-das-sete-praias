@@ -144,14 +144,14 @@
                     <div>
                         
                         <div class="blog-post-side-banner">
-                            <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" class="sidebar-logo" />
+                            <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" class="sidebar-logo" />
                             <div class="section-subtitle">
-                                Ubatuba Praia Grande Hotel
+                                Ubatuba Praia Hotel
                             </div>
                             <p>
-                                De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.
+                                O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.
                             </p>
-                            <div class="button-wrap"><a href="https://www.upghotel.com.br/" class="button w-button">Conheça</a></div>
+                            <div class="button-wrap"><a href="https://ubatubapraiahotel.com/" class="button w-button">Conheça</a></div>
                         </div>
                         
 
@@ -182,50 +182,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/ubatuba-a-cidade-que-vive-em-harmonia-com-a-natureza" class="blog-item-wrap w-inline-block">
+                            <a href="/post/reveillon-2024-litoral-norte-deve-receber-3-milhoes-de-pessoas" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/506.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/_9a051945-229f-4d12-be0f-16afd9ecd168.jpg"
                                         loading="lazy"
-                                        alt="Ubatuba: A Cidade que Vive em Harmonia com a Natureza"
+                                        alt="Réveillon 2024: Litoral Norte deve receber 3 milhões de pessoas"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">reveillon</div>
+                                <div class="blog-item-name">Réveillon 2024: Litoral Norte deve receber 3 milhões de pessoas</div>
+                                <p class="blog-item-summary">O Litoral Norte de São Paulo é um destino altamente procurado para as festividades de Réveillon. </p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/ubatuba-um-paraiso-para-ciclistas-roteiros-e-dicas-para-uma-viagem-de-bicicleta" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/491.png"
+                                        loading="lazy"
+                                        alt="Ubatuba, um Paraíso para Ciclistas: Roteiros e Dicas para uma Viagem de Bicicleta"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Ubatuba</div>
+                                <div class="blog-item-name">Ubatuba, um Paraíso para Ciclistas: Roteiros e Dicas para uma Viagem de Bicicleta</div>
+                                <p class="blog-item-summary">Descubra as rotas e dicas para uma viagem de bicicleta na cidade de Ubatuba, um paraíso para ciclistas no litoral Norte do Estado de São Paulo.</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/praia-da-vermelha-do-sul-a-praia-mais-bonita-de-ubatuba" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/vermelha-do-sul.jpg"
+                                        loading="lazy"
+                                        alt="Praia da Vermelha do Sul: a praia mais bonita de Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
                                 <div class="blog-item-category">Praias</div>
-                                <div class="blog-item-name">Ubatuba: A Cidade que Vive em Harmonia com a Natureza</div>
-                                <p class="blog-item-summary">Descubra a cidade mais bonita do Brasil, Ubatuba, conhecida por suas praias de areia branca e sua rica biodiversidade.</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/mergulho-esportivo-em-ubatuba" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/5f1ba326-5ac8-4d69-955d-ea15dd3506d5.png"
-                                        loading="lazy"
-                                        alt="Mergulho esportivo em ubatuba"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Mergulho esportivo em ubatuba</div>
-                                <p class="blog-item-summary">Ubatuba oferece ótimas opções para o mergulho esportivo, com uma diversidade impressionante de vida marinha e belos cenários subaquáticos. Certifique-se de estar devidamente preparado e aproveite essa emocionante atividade na cidade!</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/guia-de-hospedagem-em-ubatuba-hoteis-pousadas-e-aluguel-de-casas" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.mediakitlabs.com/ubatuba/posts/hospitability_beach_1.jpg"
-                                        loading="lazy"
-                                        alt="Guia de Hospedagem em Ubatuba: Hotéis, Pousadas e Aluguel de Casas"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">natureza</div>
-                                <div class="blog-item-name">Guia de Hospedagem em Ubatuba: Hotéis, Pousadas e Aluguel de Casas</div>
-                                <p class="blog-item-summary">Planejando sua viagem para Ubatuba? Confira nosso guia de hospedagem com opções de hotéis, pousadas e aluguel de casas. Encontre o lugar perfeito para desfrutar das belezas naturais dessa encantadora cidade litorânea.</p>
+                                <div class="blog-item-name">Praia da Vermelha do Sul: a praia mais bonita de Ubatuba</div>
+                                <p class="blog-item-summary">Ubatuba é um paraíso de praias no litoral norte de São Paulo.</p>
                             </a>
                         </div>
                 

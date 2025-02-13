@@ -131,6 +131,38 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/praia-de-maranduba" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.mediakitlabs.com/ubatuba/posts/into_the_beach.jpg"
+                                        loading="lazy"
+                                        alt="Praia de Maranduba"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Praia de Maranduba</div>
+                                <p class="blog-item-summary">Maranduba é uma bela praia localizada em Ubatuba, São Paulo. Descubra como chegar, atividades para fazer, esportes aquáticos, trilhas, cachoeiras e muito mais nesta deslumbrante região litorânea. Aproveite o sol, o mar cristalino e a tranquilidade de Maranduba para relaxar e aproveitar suas férias.</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/as-cachoeiras-mais-bonitas-para-visitar-em-ubatuba" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.mediakitlabs.com/ubatuba/posts/whaterfalls_1.jpg"
+                                        loading="lazy"
+                                        alt="As cachoeiras mais bonitas para visitar em Ubatuba"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Lugares</div>
+                                <div class="blog-item-name">As cachoeiras mais bonitas para visitar em Ubatuba</div>
+                                <p class="blog-item-summary">Descubra as cachoeiras mais bonitas para visitar em Ubatuba, no litoral norte de São Paulo. Conheça esses paraísos naturais, cercados pela exuberante vegetação da Mata Atlântica, e desfrute de momentos de relaxamento e contato com a natureza.</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
                             <a href="/post/ubatuba-onde-a-natureza-encontra-a-diversidade" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
@@ -143,38 +175,6 @@
                                 <div class="blog-item-category">Lugares</div>
                                 <div class="blog-item-name">Ubatuba: onde a natureza encontra a diversidade</div>
                                 <p class="blog-item-summary">Descubra as belezas de Ubatuba, no litoral norte de SP. Praias, trilhas, cultura caiçara, mergulho e turismo completo. Paraíso natural!</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/ilha-anchieta" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/profundezas.jpg"
-                                        loading="lazy"
-                                        alt="Ilha Anchieta"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">Praias</div>
-                                <div class="blog-item-name">Ilha Anchieta</div>
-                                <p class="blog-item-summary">A Ilha Anchieta é um tesouro em Ubatuba, oferecendo uma combinação única de história, natureza exuberante e atividades ao ar livre. Seja você um entusiasta da história, um amante da natureza ou um mergulhador em busca de aventuras subaquáticas.</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/praias-e-pontos-de-interesse-turistico-em-ubatuba" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/495.png"
-                                        loading="lazy"
-                                        alt="Praias e Pontos de Interesse Turístico em Ubatuba"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">Ubatuba</div>
-                                <div class="blog-item-name">Praias e Pontos de Interesse Turístico em Ubatuba</div>
-                                <p class="blog-item-summary">Descubra as praias e pontos de interesse turístico em Ubatuba, uma cidade conhecida pelas suas belas praias e paisagens naturais.</p>
                             </a>
                         </div>
                 

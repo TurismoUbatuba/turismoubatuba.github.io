@@ -104,14 +104,14 @@
                     <div>
                         
                         <div class="blog-post-side-banner">
-                            <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" class="sidebar-logo" />
+                            <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" class="sidebar-logo" />
                             <div class="section-subtitle">
-                                Ubatuba Praia Grande Hotel
+                                Ubatuba Praia Hotel
                             </div>
                             <p>
-                                De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.
+                                O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.
                             </p>
-                            <div class="button-wrap"><a href="https://www.upghotel.com.br/" class="button w-button">Conheça</a></div>
+                            <div class="button-wrap"><a href="https://ubatubapraiahotel.com/" class="button w-button">Conheça</a></div>
                         </div>
                         
 
@@ -142,50 +142,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/a-festa-de-iemanja-heranca-afro-brasileira" class="blog-item-wrap w-inline-block">
+                            <a href="/post/as-cachoeiras-mais-bonitas-para-visitar-em-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/_9217744c-3289-4864-8822-328e0472ee66.jfif"
+                                        src="https://img.mediakitlabs.com/ubatuba/posts/whaterfalls_1.jpg"
                                         loading="lazy"
-                                        alt="A Festa de Iemanjá: Herança Afro-Brasileira"
+                                        alt="As cachoeiras mais bonitas para visitar em Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">praia</div>
-                                <div class="blog-item-name">A Festa de Iemanjá: Herança Afro-Brasileira</div>
-                                <p class="blog-item-summary">Descubra a rica cultura e história por trás da Festa de Iemanjá, uma celebração Afro-Brasileira</p>
+                                <div class="blog-item-category">Lugares</div>
+                                <div class="blog-item-name">As cachoeiras mais bonitas para visitar em Ubatuba</div>
+                                <p class="blog-item-summary">Descubra as cachoeiras mais bonitas para visitar em Ubatuba, no litoral norte de São Paulo. Conheça esses paraísos naturais, cercados pela exuberante vegetação da Mata Atlântica, e desfrute de momentos de relaxamento e contato com a natureza.</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/praia-do-sape" class="blog-item-wrap w-inline-block">
+                            <a href="/post/as-regras-da-festa-de-nossa-senhora-da-conceicao" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/20230902_104332.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/_6163270c-46bf-433f-bf2e-76eb2e025dd1.jfif"
                                         loading="lazy"
-                                        alt="Praia do Sape"
+                                        alt="As Regras da Festa de Nossa Senhora da Conceição"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Festa de Nossa Senhora da Conceição</div>
+                                <div class="blog-item-name">As Regras da Festa de Nossa Senhora da Conceição</div>
+                                <p class="blog-item-summary">Entenda melhor o significado e as tradições da Festa de Nossa Senhora da Conceição</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/ubatuba-a-cidade-dos-artistas---a-arte-e-a-cultura-em-ubatuba" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/490.png"
+                                        loading="lazy"
+                                        alt="Ubatuba: A Cidade dos Artistas - A arte e a cultura em Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
                                 <div class="blog-item-category">Praias</div>
-                                <div class="blog-item-name">Praia do Sape</div>
-                                <p class="blog-item-summary">A Praia do Sape é uma praia localizada em Ubatuba, um município litorâneo no estado de São Paulo, Brasil</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/a-historia-e-a-cultura-dos-pescadores-de-ubatuba" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/_2e216511-e9f0-4371-af5a-996ba50082be.jfif"
-                                        loading="lazy"
-                                        alt="A História e a Cultura dos Pescadores de Ubatuba"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">peixe</div>
-                                <div class="blog-item-name">A História e a Cultura dos Pescadores de Ubatuba</div>
-                                <p class="blog-item-summary">Descubra a rica história e cultura dos pescadores de Ubatuba, cidade brasileira conhecida por suas praias e pesca</p>
+                                <div class="blog-item-name">Ubatuba: A Cidade dos Artistas - A arte e a cultura em Ubatuba</div>
+                                <p class="blog-item-summary">Descubra a cidade de Ubatuba, considerada a &#39;cidade dos artistas&#39; por suas numerous praias e arteiros</p>
                             </a>
                         </div>
                 

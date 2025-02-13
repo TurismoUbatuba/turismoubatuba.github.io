@@ -166,34 +166,34 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/o-que-fazer-em-ubatuba-com-chuva" class="blog-item-wrap w-inline-block">
+                            <a href="/post/explorando-as-maravilhas-aquaticas-o-fascinante-aquario-de-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/chuvoso.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/aquario-ubatuba.jpg"
                                         loading="lazy"
-                                        alt="O que fazer em ubatuba com chuva"
+                                        alt="Explorando as Maravilhas Aquáticas: O Fascinante Aquário de Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">ubatuba chuvoso</div>
-                                <div class="blog-item-name">O que fazer em ubatuba com chuva</div>
-                                <p class="blog-item-summary">Em Ubatuba, mesmo em dias de chuva, há várias opções de atividades para aproveitar a região.</p>
+                                <div class="blog-item-category">Lugares</div>
+                                <div class="blog-item-name">Explorando as Maravilhas Aquáticas: O Fascinante Aquário de Ubatuba</div>
+                                <p class="blog-item-summary">O Aquário de Ubatuba é mais do que uma simples atração turística; é um farol de conhecimento, conservação e inspiração para as gerações presentes e futuras. Ao explorar as maravilhas aquáticas neste notável local, os visitantes não apenas se maravilham com a beleza do oceano, mas também adquirem um entendimento mais profundo de sua fragilidade e da necessidade urgente de protegê-lo. Portanto, ao planejar sua próxima visita ao litoral norte de São Paulo, não deixe de incluir o Aquário de Ubatuba em seu itinerário para uma experiência educativa e emocionante.</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/discover-the-wonders-of-the-best-beaches-of-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/praia-da-lagoinha" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/DSC_0033.JPG"
+                                        src="https://img.sociap.com.br/ubatuba/posts/lagoinha.jpg"
                                         loading="lazy"
-                                        alt="Discover the Wonders of the Best Beaches in Ubatuba"
+                                        alt="Praia da Lagoinha"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">surf</div>
-                                <div class="blog-item-name">Discover the Wonders of the Best Beaches in Ubatuba</div>
-                                <p class="blog-item-summary">Discover the best beaches in Ubatuba, on the north coast of São Paulo. Surf, exuberant nature and paradisiacal scenery await you in this Brazilian coastal paradise.</p>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Praia da Lagoinha</div>
+                                <p class="blog-item-summary">A Praia da Lagoinha é uma bela praia localizada em Ubatuba, um município no litoral norte do estado de São Paulo, no Brasil.</p>
                             </a>
                         </div>
                 

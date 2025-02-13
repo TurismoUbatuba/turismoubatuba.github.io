@@ -119,14 +119,14 @@
                     <div>
                         
                         <div class="blog-post-side-banner">
-                            <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" class="sidebar-logo" />
+                            <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" class="sidebar-logo" />
                             <div class="section-subtitle">
-                                Ubatuba Praia Grande Hotel
+                                Ubatuba Praia Hotel
                             </div>
                             <p>
-                                De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.
+                                O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.
                             </p>
-                            <div class="button-wrap"><a href="https://www.upghotel.com.br/" class="button w-button">Conheça</a></div>
+                            <div class="button-wrap"><a href="https://ubatubapraiahotel.com/" class="button w-button">Conheça</a></div>
                         </div>
                         
 
@@ -157,50 +157,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/eco-turismo-em-ubatuba-preservacao-e-desenvolvimento-sustentavel" class="blog-item-wrap w-inline-block">
+                            <a href="/post/taxa-de-preservacao-ambiental-contribuindo-para-o-desenvolvimento-sustentavel-de-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/501.png"
+                                        src="https://img.sociap.com.br/ubatuba/posts/estrada-litoranea.jpg"
                                         loading="lazy"
-                                        alt="Eco-Turismo em Ubatuba: Preservação e Desenvolvimento Sustentável"
+                                        alt="Taxa de Preservação Ambiental ( TPA ): Contribuindo para o Desenvolvimento Sustentável de Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">ecoturismo</div>
-                                <div class="blog-item-name">Eco-Turismo em Ubatuba: Preservação e Desenvolvimento Sustentável</div>
-                                <p class="blog-item-summary">Descubra o eco-turismo em Ubatuba, uma cidade brasileira que combina preservação da natureza com desenvolvimento sustentável.</p>
+                                <div class="blog-item-category">taxa</div>
+                                <div class="blog-item-name">Taxa de Preservação Ambiental ( TPA ): Contribuindo para o Desenvolvimento Sustentável de Ubatuba</div>
+                                <p class="blog-item-summary">Ubatuba, um município que encontra sua identidade na exuberância de sua natureza, busca estratégias inovadoras para preservar e promover o desenvolvimento sustentável. </p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/o-que-fazer-em-ubatuba-com-chuva" class="blog-item-wrap w-inline-block">
+                            <a href="/post/praia-da-vermelha-do-sul-a-praia-mais-bonita-de-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/chuvoso.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/vermelha-do-sul.jpg"
                                         loading="lazy"
-                                        alt="O que fazer em ubatuba com chuva"
+                                        alt="Praia da Vermelha do Sul: a praia mais bonita de Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">ubatuba chuvoso</div>
-                                <div class="blog-item-name">O que fazer em ubatuba com chuva</div>
-                                <p class="blog-item-summary">Em Ubatuba, mesmo em dias de chuva, há várias opções de atividades para aproveitar a região.</p>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Praia da Vermelha do Sul: a praia mais bonita de Ubatuba</div>
+                                <p class="blog-item-summary">Ubatuba é um paraíso de praias no litoral norte de São Paulo.</p>
                             </a>
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/desenvolvimento-sustentavel-no-parque-estadual-da-serra-do-mar-estrategias-e-acoes" class="blog-item-wrap w-inline-block">
+                            <a href="/post/sugestao-de-lugares-para-comer-em-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/346.png"
+                                        src="https://img.mediakitlabs.com/ubatuba/posts/beach_view.jpg"
                                         loading="lazy"
-                                        alt="Desenvolvimento Sustentável no Parque Estadual da Serra do Mar: Estratégias e Ações"
+                                        alt="Sugestão de lugares para comer em Ubatuba"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Parque Estadual da Serra do Mar</div>
-                                <div class="blog-item-name">Desenvolvimento Sustentável no Parque Estadual da Serra do Mar: Estratégias e Ações</div>
-                                <p class="blog-item-summary">Aprenda sobre as estratégias e ações implementadas no Parque Estadual da Serra do Mar para promover o desenvolvimento sustentável e preservar o ambiente</p>
+                                <div class="blog-item-category">lugares para comer em Ubatuba</div>
+                                <div class="blog-item-name">Sugestão de lugares para comer em Ubatuba</div>
+                                <p class="blog-item-summary">Descubra os melhores lugares para comer em Ubatuba, no litoral norte de São Paulo. Explore uma variedade de opções gastronômicas, desde frutos do mar frescos até deliciosas pizzas, e desfrute de uma experiência culinária única.</p>
                             </a>
                         </div>
                 

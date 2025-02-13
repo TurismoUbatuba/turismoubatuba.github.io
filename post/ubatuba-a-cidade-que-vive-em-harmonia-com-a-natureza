@@ -93,14 +93,14 @@
                     <div>
                         
                         <div class="blog-post-side-banner">
-                            <img src='/img/anunciantes/upg.png' loading="lazy" alt="Ubatuba Praia Grande Hotel" class="sidebar-logo" />
+                            <img src='/img/anunciantes/uph.png' loading="lazy" alt="Ubatuba Praia Hotel" class="sidebar-logo" />
                             <div class="section-subtitle">
-                                Ubatuba Praia Grande Hotel
+                                Ubatuba Praia Hotel
                             </div>
                             <p>
-                                De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.
+                                O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.
                             </p>
-                            <div class="button-wrap"><a href="https://www.upghotel.com.br/" class="button w-button">Conheça</a></div>
+                            <div class="button-wrap"><a href="https://ubatubapraiahotel.com/" class="button w-button">Conheça</a></div>
                         </div>
                         
 
@@ -131,6 +131,22 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/praia-da-palmira" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/praia-da-palmira.png"
+                                        loading="lazy"
+                                        alt="Praia da Palmira"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Praia da Palmira</div>
+                                <p class="blog-item-summary">A Praia Isolada da Palmira está situada numa parte menos explorada de Ubatuba, o que contribui para o seu aspecto selvagem e preservado. </p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
                             <a href="/post/ubatuba-um-paraiso-para-surfistas-dicas-e-locais-para-praticar-o-surf" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
@@ -147,34 +163,18 @@
                         </div>
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/todas-as-praias-de-ubatuba" class="blog-item-wrap w-inline-block">
+                            <a href="/post/a-gestao-de-residuos-solidos-em-ubatuba-politicas-publicas-e-praticas-sustentaveis" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/vermelha-do-sul.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/312.png"
                                         loading="lazy"
-                                        alt="Todas as Praias de Ubatuba"
+                                        alt="A gestão de resíduos sólidos em Ubatuba: políticas públicas e práticas sustentáveis"
                                         class="blog-thumbnail"
                                     />
                                 </div>
-                                <div class="blog-item-category">Praias</div>
-                                <div class="blog-item-name">Todas as Praias de Ubatuba</div>
-                                <p class="blog-item-summary">Listamos todas as praias de Ubatuba.</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/baleia-jubarte-encontrada-morta-no-sul-de-ubatuba-sp" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/313.png"
-                                        loading="lazy"
-                                        alt="Baleia jubarte encontrada morta no sul de Ubatuba (SP)"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">baleia</div>
-                                <div class="blog-item-name">Baleia jubarte encontrada morta no sul de Ubatuba (SP)</div>
-                                <p class="blog-item-summary">Um jovem baleia jubarte macho foi encontrado morto em avançado estado de decomposição na região sul de Ubatuba</p>
+                                <div class="blog-item-category">Ubatuba</div>
+                                <div class="blog-item-name">A gestão de resíduos sólidos em Ubatuba: políticas públicas e práticas sustentáveis</div>
+                                <p class="blog-item-summary">Conheça as políticas públicas e práticas sustentáveis de gestão de resíduos sólidos em Ubatuba.</p>
                             </a>
                         </div>
                 

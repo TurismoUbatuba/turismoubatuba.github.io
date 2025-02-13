@@ -137,50 +137,50 @@
                 
                 
                         <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/ubatuba-onde-a-natureza-encontra-a-diversidade" class="blog-item-wrap w-inline-block">
+                            <a href="/post/todas-as-praias-de-ubatuba" class="blog-item-wrap w-inline-block">
                                 <div class="blog-thumbnail-wrap">
                                     <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/sunset.jpg"
+                                        src="https://img.sociap.com.br/ubatuba/posts/vermelha-do-sul.jpg"
                                         loading="lazy"
-                                        alt="Ubatuba: onde a natureza encontra a diversidade"
+                                        alt="Todas as Praias de Ubatuba"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">Praias</div>
+                                <div class="blog-item-name">Todas as Praias de Ubatuba</div>
+                                <p class="blog-item-summary">Listamos todas as praias de Ubatuba.</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/baleia-jubarte-encontrada-morta-no-sul-de-ubatuba-sp" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.sociap.com.br/ubatuba/posts/313.png"
+                                        loading="lazy"
+                                        alt="Baleia jubarte encontrada morta no sul de Ubatuba (SP)"
+                                        class="blog-thumbnail"
+                                    />
+                                </div>
+                                <div class="blog-item-category">baleia</div>
+                                <div class="blog-item-name">Baleia jubarte encontrada morta no sul de Ubatuba (SP)</div>
+                                <p class="blog-item-summary">Um jovem baleia jubarte macho foi encontrado morto em avançado estado de decomposição na região sul de Ubatuba</p>
+                            </a>
+                        </div>
+                
+                        <div role="listitem" class="blog-cms-item w-dyn-item">
+                            <a href="/post/pico-do-piuva" class="blog-item-wrap w-inline-block">
+                                <div class="blog-thumbnail-wrap">
+                                    <img
+                                        src="https://img.mediakitlabs.com/ubatuba/posts/pico-piuva.jpg"
+                                        loading="lazy"
+                                        alt="Pico do Piuva"
                                         class="blog-thumbnail"
                                     />
                                 </div>
                                 <div class="blog-item-category">Lugares</div>
-                                <div class="blog-item-name">Ubatuba: onde a natureza encontra a diversidade</div>
-                                <p class="blog-item-summary">Descubra as belezas de Ubatuba, no litoral norte de SP. Praias, trilhas, cultura caiçara, mergulho e turismo completo. Paraíso natural!</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/culinaria-de-ubatuba-receitas-e-tradicionais-gastronomicas" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/188.png"
-                                        loading="lazy"
-                                        alt="Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">Culinária de Ubatuba</div>
-                                <div class="blog-item-name">Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas</div>
-                                <p class="blog-item-summary">Desvende as tradições gastronômicas da cidade de Ubatuba, na costa sudeste do Brasil, e aprenda a preparar receitas incríveis com essa culinária.</p>
-                            </a>
-                        </div>
-                
-                        <div role="listitem" class="blog-cms-item w-dyn-item">
-                            <a href="/post/ubatuba-um-paraiso-para-ciclistas-roteiros-e-dicas-para-uma-viagem-de-bicicleta" class="blog-item-wrap w-inline-block">
-                                <div class="blog-thumbnail-wrap">
-                                    <img
-                                        src="https://img.sociap.com.br/ubatuba/posts/491.png"
-                                        loading="lazy"
-                                        alt="Ubatuba, um Paraíso para Ciclistas: Roteiros e Dicas para uma Viagem de Bicicleta"
-                                        class="blog-thumbnail"
-                                    />
-                                </div>
-                                <div class="blog-item-category">Ubatuba</div>
-                                <div class="blog-item-name">Ubatuba, um Paraíso para Ciclistas: Roteiros e Dicas para uma Viagem de Bicicleta</div>
-                                <p class="blog-item-summary">Descubra as rotas e dicas para uma viagem de bicicleta na cidade de Ubatuba, um paraíso para ciclistas no litoral Norte do Estado de São Paulo.</p>
+                                <div class="blog-item-name">Pico do Piuva</div>
+                                <p class="blog-item-summary">Pico do Piuva em Ubatuba é uma montanha que faz parte da Serra do Mar e oferece vistas incríveis do litoral e da Mata Atlântica.</p>
                             </a>
                         </div>
                 
