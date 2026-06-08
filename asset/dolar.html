@@ -274,18 +274,18 @@
     </div>
 
     <!-- Sponsorship Area -->
-    <div class="sponsorship" id="sponsorship-container" style="display: none;">
+    <div class="sponsorship" id="sponsorship-container">
         <span class="sponsorship-text">Oferecimento:</span>
 
-        <script async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4829490089497715"
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4829490089497715"
             crossorigin="anonymous"></script>
         <!-- dooh -->
-        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:300px"
-            data-ad-client="ca-pub-4829490089497715" data-ad-slot="8324708576"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4829490089497715"
+            data-ad-slot="8324708576"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
 
     </div>
 
@@ -329,10 +329,10 @@
             if (config.cardBackground) document.documentElement.style.setProperty('--card-bg', config.cardBackground);
 
             //  if (config.oferecimento) {
-            const sContainer = document.getElementById('sponsorship-container');
+            //const sContainer = document.getElementById('sponsorship-container');
             //const sImg = document.getElementById('sponsorship-img');
             //      if (sImg) sImg.src = config.oferecimento;
-            if (sContainer) sContainer.style.display = 'flex';
+            //if (sContainer) sContainer.style.display = 'flex';
             //  }
         };
 
@@ -343,6 +343,8 @@
             // Update prices every 30 seconds
             setInterval(fetchPrices, 30000);
         };
+
+        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 </body>
 
