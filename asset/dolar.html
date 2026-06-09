@@ -4,7 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy"
+        content="
+        default-src     'self' https://turismoubatuba.com.br;
+        script-src      'self' https://turismoubatuba.com.br;
+        style-src       'self' https://turismoubatuba.com.br;
+        img-src         'self' https://turismoubatuba.com.br;
+        font-src        'self' https://turismoubatuba.com.br;
+        connect-src     'self' https://turismoubatuba.com.br;
+        media-src       'self' https://turismoubatuba.com.br;
+        object-src      'self' https://turismoubatuba.com.br;
+        child-src       'self' https://turismoubatuba.com.br;
+        frame-ancestors 'self' https://turismoubatuba.com.br;
+        frame-src       'self' https://turismoubatuba.com.br;
+        worker-src      'self' https://turismoubatuba.com.br;
+        form-action     'self' https://turismoubatuba.com.br;
+        block-all-mixed-content;
+        ">
     <title>Cotação Dólar e Euro</title>
     <style>
         :root {
