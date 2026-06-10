@@ -228,9 +228,7 @@ function loadDollar() {
         "https://price.beerhouse.io/DOLAR.json",
 
         function(data) {
-
             var el = document.querySelector("#usd .price");
-
             if (el && data.price) {
                 el.innerHTML = formatCurrency(data.price);
             }
@@ -242,11 +240,8 @@ function loadEuro() {
 
     requestJSON(
         "https://price.beerhouse.io/EURO.json",
-
         function(data) {
-
             var el = document.querySelector("#eur .price");
-
             if (el && data.price) {
                 el.innerHTML = formatCurrency(data.price);
             }
