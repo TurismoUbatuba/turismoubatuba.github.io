@@ -140,7 +140,19 @@ body {
 </div>
 
 <div class="footer">
-    Atualização automática a cada 30 segundos
+    <div class="sponsorship" id="sponsorship-container">
+        <span class="sponsorship-text">Oferecimento:</span>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4829490089497715"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:inline-block;width:728px;height:90px"
+            data-ad-client="ca-pub-4829490089497715"
+            data-ad-slot="8324708576"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 </div>
 
 <script>
@@ -233,12 +245,7 @@ function updatePrices() {
 }
 
 window.onload = function() {
-
     updatePrices();
-
-    setInterval(function() {
-        updatePrices();
-    }, 30000);
 };
 
 </script>
