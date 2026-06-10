@@ -6,18 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotação Dólar e Euro</title>
     <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --card-border: rgba(255, 255, 255, 0.1);
-            --text-color: #ffffff;
-            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --primary-color: #00d2ff;
-            --secondary-color: #3a7bd5;
-            --accent-green: #00e676;
-            --accent-blue: #2979ff;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -25,9 +13,9 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            font-family: var(--font-family);
-            color: var(--text-color);
+            background-color: var("#0b0f19");
+            font-family: var('Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+            color: var("#ffffff");
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -76,10 +64,10 @@
 
         /* Currency Cards with Glassmorphism */
         .card {
-            background: var(--card-bg);
+            background: var(rgba(255, 255, 255, 0.05));
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--card-border);
+            border: 1px solid var(rgba(255, 255, 255, 0.1));
             border-radius: 30px;
             padding: 60px 40px;
             width: 45%;
@@ -239,61 +227,20 @@
     <div class="container">
         <!-- Dólar Card -->
         <div class="card">
-            <div class="currency-icon" style="color: var(--accent-green);">💵</div>
+            <div class="currency-icon" style="color: var('#00e676');">💵</div>
             <div class="currency-title">Dólar Comercial</div>
             <p class="currency-value" id="val-usd"><span class="currency-symbol">R$</span><span
-                    class="value-text">0,000</span></p>
+                    class="value-text">5,175</span></p>
         </div>
 
         <!-- Euro Card -->
         <div class="card">
-            <div class="currency-icon" style="color: var(--accent-blue);">💶</div>
+            <div class="currency-icon" style="color: var('#2979ff');">💶</div>
             <div class="currency-title">Euro Comercial</div>
             <p class="currency-value" id="val-eur"><span class="currency-symbol">R$</span><span
-                    class="value-text">0,000</span></p>
+                    class="value-text">5,978</span></p>
         </div>
     </div>
-
-    <script>
-        // Fetch prices from AwesomeAPI
-        const fetchPrices = async () => {
-            fetchPricesDolar();
-            fetchPricesEuro();
-        }
-
-        const fetchPricesDolar = async () => {
-            const elUsd = document.querySelector('#val-usd .value-text');
-            if (elUsd) elUsd.textContent = "5.175";
-        }
-
-        const fetchPricesEuro = async () => {
-            const elEur = document.querySelector('#val-eur .value-text');
-            if (elEur) elEur.textContent = "5.978";
-        };
-
-        // Load configuration from content.json
-        const loadConfig = () => {
-            if (config.backgroundColor) document.documentElement.style.setProperty('--bg-color', "#0b0f19");
-            if (config.fontColor) document.documentElement.style.setProperty('--text-color', "#ffffff");
-            if (config.cardBackground) document.documentElement.style.setProperty('--card-bg', "rgba(255, 255, 255, 0.05)");
-
-            //  if (config.oferecimento) {
-            const sContainer = document.getElementById('sponsorship-container');
-            //const sImg = document.getElementById('sponsorship-img');
-            //      if (sImg) sImg.src = config.oferecimento;
-            if (sContainer) sContainer.style.display = 'flex';
-            //  }
-        };
-
-        // Initialize
-//        window.onload = () => {
-            loadConfig();
-            fetchPrices();
-//            (adsbygoogle = window.adsbygoogle || []).push({});
-            // Update prices every 30 seconds
-            // setInterval(fetchPrices, 30000);
-//        };
-    </script>
 </body>
 
 </html>
