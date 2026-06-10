@@ -1,246 +1,247 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotação Dólar e Euro</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background-color: var("#0b0f19");
-            font-family: var('Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
-            color: var("#ffffff");
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
+<title>Cotação Dólar e Euro</title>
 
-        /* Dynamic Background Animation */
-        .ambient-light {
-            position: absolute;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(58, 123, 213, 0.3) 0%, rgba(11, 15, 25, 0) 70%);
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            animation: pulse-light 8s infinite alternate ease-in-out;
-        }
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
 
-        @keyframes pulse-light {
-            0% {
-                transform: translate(-50%, -50%) scale(0.8);
-                opacity: 0.5;
-            }
+body {
+    background: #0b0f19;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
 
-            100% {
-                transform: translate(-50%, -50%) scale(1.2);
-                opacity: 1;
-            }
-        }
+.container {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
 
-        /* Main Container layout */
-        .container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            width: 90%;
-            max-width: 1400px;
-            gap: 40px;
-            z-index: 10;
-        }
+.content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
 
-        /* Currency Cards with Glassmorphism */
-        .card {
-            background: var(rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(rgba(255, 255, 255, 0.1));
-            border-radius: 30px;
-            padding: 60px 40px;
-            width: 45%;
-            text-align: center;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-            animation: slide-up 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-            opacity: 0;
-            transform: translateY(100px);
-            position: relative;
-            overflow: hidden;
-        }
+.cards {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
-            transform: skewX(-25deg);
-            animation: shine 6s infinite;
-        }
+.card {
+    width: 42%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 2%;
+    padding: 40px 20px;
 
-        @keyframes shine {
-            0% {
-                left: -100%;
-            }
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
 
-            20% {
-                left: 200%;
-            }
+    border-radius: 20px;
+}
 
-            100% {
-                left: 200%;
-            }
-        }
+.icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
 
-        .card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
+.title {
+    font-size: 30px;
+    color: #cccccc;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
 
-        .card:nth-child(2) {
-            animation-delay: 0.3s;
-        }
+.value {
+    font-size: 72px;
+    font-weight: bold;
+}
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.3);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
+.symbol {
+    font-size: 40px;
+    vertical-align: top;
+}
 
-        @keyframes slide-up {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.footer {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #888;
+    font-size: 20px;
+}
 
-        .currency-icon {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            animation: float 4s ease-in-out infinite;
-        }
+.error {
+    color: #ff6666;
+}
 
-        .card:nth-child(2) .currency-icon {
-            animation-delay: -2s;
-        }
+@media screen and (max-width: 900px) {
 
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+        display: block;
+    }
 
-            50% {
-                transform: translateY(-15px);
-            }
+    .value {
+        font-size: 48px;
+    }
 
-            100% {
-                transform: translateY(0px);
-            }
-        }
+    .title {
+        font-size: 24px;
+    }
+}
+</style>
 
-        .currency-title {
-            font-size: 2rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .currency-value {
-            font-size: 5rem;
-            font-weight: 800;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-            margin: 0;
-        }
-
-        .currency-symbol {
-            font-size: 2.5rem;
-            vertical-align: super;
-            margin-right: 5px;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        @keyframes fade-in-up {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .sponsorship-text {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.6);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .sponsorship-image {
-            height: 40px;
-            object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-            transition: transform 0.3s ease;
-        }
-
-        .sponsorship:hover .sponsorship-image {
-            transform: scale(1.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .card {
-                width: 90%;
-                padding: 40px 20px;
-            }
-
-            .currency-value {
-                font-size: 4rem;
-            }
-        }
-    </style>
 </head>
-
 <body>
 
-    <div class="ambient-light"></div>
+<div class="container">
+    <div class="content">
 
-    <div class="container">
-        <!-- Dólar Card -->
-        <div class="card">
-            <div class="currency-icon" style="color: var(#00e676);">💵</div>
-            <div class="currency-title">Dólar Comercial</div>
-            <p class="currency-value" id="val-usd"><span class="currency-symbol">R$</span><span
-                    class="value-text">5,175</span></p>
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">💵</div>
+                <div class="title">Dólar Comercial</div>
+
+                <div class="value" id="usd">
+                    <span class="symbol">R$</span>
+                    <span class="price">0,000</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">💶</div>
+                <div class="title">Euro Comercial</div>
+
+                <div class="value" id="eur">
+                    <span class="symbol">R$</span>
+                    <span class="price">0,000</span>
+                </div>
+            </div>
+
         </div>
 
-        <!-- Euro Card -->
-        <div class="card">
-            <div class="currency-icon" style="color: var(#2979ff);">💶</div>
-            <div class="currency-title">Euro Comercial</div>
-            <p class="currency-value" id="val-eur"><span class="currency-symbol">R$</span><span
-                    class="value-text">5,978</span></p>
-        </div>
     </div>
-</body>
+</div>
 
+<div class="footer">
+    Atualização automática a cada 30 segundos
+</div>
+
+<script>
+
+function formatCurrency(value) {
+
+    value = parseFloat(value);
+
+    if (isNaN(value)) {
+        return "0,000";
+    }
+
+    return value.toLocaleString(
+        "pt-BR",
+        {
+            minimumFractionDigits: 3,
+            maximumFractionDigits: 3
+        }
+    );
+}
+
+function requestJSON(url, success, error) {
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+
+        if (xhr.readyState !== 4) {
+            return;
+        }
+
+        if (xhr.status === 200) {
+
+            try {
+                var data = JSON.parse(xhr.responseText);
+                success(data);
+            }
+            catch(e) {
+                if (error) error(e);
+            }
+
+        } else {
+
+            if (error) {
+                error(xhr.status);
+            }
+
+        }
+    };
+
+    xhr.open("GET", url, true);
+    xhr.send();
+}
+
+function loadDollar() {
+
+    requestJSON(
+        "https://price.beerhouse.io/DOLAR.json",
+
+        function(data) {
+
+            var el = document.querySelector("#usd .price");
+
+            if (el && data.price) {
+                el.innerHTML = formatCurrency(data.price);
+            }
+        }
+    );
+}
+
+function loadEuro() {
+
+    requestJSON(
+        "https://price.beerhouse.io/EURO.json",
+
+        function(data) {
+
+            var el = document.querySelector("#eur .price");
+
+            if (el && data.price) {
+                el.innerHTML = formatCurrency(data.price);
+            }
+        }
+    );
+}
+
+function updatePrices() {
+    loadDollar();
+    loadEuro();
+}
+
+window.onload = function() {
+
+    updatePrices();
+
+    setInterval(function() {
+        updatePrices();
+    }, 30000);
+};
+
+</script>
+
+</body>
 </html>
