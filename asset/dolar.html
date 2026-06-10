@@ -331,15 +331,9 @@
 
         // Load configuration from content.json
         const loadConfig = () => {
-            const config = {
-                "backgroundColor": "#0b0f19",
-                "fontColor": "#ffffff",
-                "cardBackground": "rgba(255, 255, 255, 0.05)",
-            };
-
-            if (config.backgroundColor) document.documentElement.style.setProperty('--bg-color', config.backgroundColor);
-            if (config.fontColor) document.documentElement.style.setProperty('--text-color', config.fontColor);
-            if (config.cardBackground) document.documentElement.style.setProperty('--card-bg', config.cardBackground);
+            if (config.backgroundColor) document.documentElement.style.setProperty('--bg-color', "#0b0f19");
+            if (config.fontColor) document.documentElement.style.setProperty('--text-color', "#ffffff");
+            if (config.cardBackground) document.documentElement.style.setProperty('--card-bg', "rgba(255, 255, 255, 0.05)");
 
             //  if (config.oferecimento) {
             const sContainer = document.getElementById('sponsorship-container');
@@ -351,7 +345,7 @@
 
         // Initialize
 //        window.onload = () => {
-//            loadConfig();
+            loadConfig();
             fetchPrices();
 //            (adsbygoogle = window.adsbygoogle || []).push({});
             // Update prices every 30 seconds
