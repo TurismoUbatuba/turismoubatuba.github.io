@@ -255,11 +255,6 @@
     </div>
 
     <script>
-        // Formatter for currency
-        const formatCurrency = (value) => {
-            return parseFloat(value).toLocaleString('pt-BR', { minimumFractionDigits: 3, maximumFractionDigits: 3 });
-        };
-
         // Fetch prices from AwesomeAPI
         const fetchPrices = async () => {
             fetchPricesDolar();
@@ -268,12 +263,12 @@
 
         const fetchPricesDolar = async () => {
             const elUsd = document.querySelector('#val-usd .value-text');
-            if (elUsd) elUsd.textContent = formatCurrency(5.1755);
+            if (elUsd) elUsd.textContent = "5.175";
         }
 
         const fetchPricesEuro = async () => {
             const elEur = document.querySelector('#val-eur .value-text');
-            if (elEur) elEur.textContent = formatCurrency(5.9782);
+            if (elEur) elEur.textContent = "5.978";
         };
 
         // Load configuration from content.json
