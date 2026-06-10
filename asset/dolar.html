@@ -106,43 +106,108 @@ body {
     }
 }
 </style>
-
 </head>
 <body>
 
 <div class="container">
     <div class="content">
-
         <div class="cards">
-
             <div class="card">
                 <div class="icon">💵</div>
                 <div class="title">Dólar Comercial</div>
-
                 <div class="value" id="usd">
                     <span class="symbol">R$</span>
                     <span class="price">0,000</span>
                 </div>
             </div>
-
             <div class="card">
                 <div class="icon">💶</div>
                 <div class="title">Euro Comercial</div>
-
                 <div class="value" id="eur">
                     <span class="symbol">R$</span>
                     <span class="price">0,000</span>
                 </div>
             </div>
-
         </div>
 
     </div>
 </div>
 
+<script>
+function formatCurrency(value) {
+    value = parseFloat(value);
+    if (isNaN(value)) {
+        return "0,000";
+    }
+    return value.toLocaleString(
+        "pt-BR",
+        {
+            minimumFractionDigits: 3,
+            maximumFractionDigits: 3
+        }
+    );
+}
+
+function requestJSON(url, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState !== 4) {
+            return;
+        }
+        if (xhr.status === 200) {
+            try {
+                var data = JSON.parse(xhr.responseText);
+                success(data);
+            }
+            catch(e) {
+                if (error) error(e);
+            }
+        } else {
+            if (error) {
+                error(xhr.status);
+            }
+        }
+    };
+    xhr.open("GET", url, true);
+    xhr.send();
+}
+
+function loadDollar() {
+    requestJSON(
+        "https://price.beerhouse.io/DOLAR.json",
+
+        function(data) {
+            var el = document.querySelector("#usd .price");
+            if (el && data.price) {
+                el.innerHTML = formatCurrency(data.price);
+            }
+        }
+    );
+}
+
+function loadEuro() {
+    requestJSON(
+        "https://price.beerhouse.io/EURO.json",
+        function(data) {
+            var el = document.querySelector("#eur .price");
+            if (el && data.price) {
+                el.innerHTML = formatCurrency(data.price);
+            }
+        }
+    );
+}
+
+function updatePrices() {
+    loadDollar();
+    loadEuro();
+}
+
+updatePrices();
+</script>
+
 <div class="footer">
     <div class="sponsorship" id="sponsorship-container">
-        <span class="sponsorship-text">Oferecimento:</span>
+        <span class="sponsorship-text">Oferecimento</span>
 
         <!-- hilltopads.com>
         <script>
@@ -181,94 +246,8 @@ body {
             }
         }, 2000);
         </script>
-
     </div>
 </div>
-
-<script>
-
-function formatCurrency(value) {
-
-    value = parseFloat(value);
-
-    if (isNaN(value)) {
-        return "0,000";
-    }
-
-    return value.toLocaleString(
-        "pt-BR",
-        {
-            minimumFractionDigits: 3,
-            maximumFractionDigits: 3
-        }
-    );
-}
-
-function requestJSON(url, success, error) {
-
-    var xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function() {
-
-        if (xhr.readyState !== 4) {
-            return;
-        }
-        if (xhr.status === 200) {
-            try {
-                var data = JSON.parse(xhr.responseText);
-                success(data);
-            }
-            catch(e) {
-                if (error) error(e);
-            }
-        } else {
-            if (error) {
-                error(xhr.status);
-            }
-        }
-    };
-
-    xhr.open("GET", url, true);
-    xhr.send();
-}
-
-function loadDollar() {
-
-    requestJSON(
-        "https://price.beerhouse.io/DOLAR.json",
-
-        function(data) {
-            var el = document.querySelector("#usd .price");
-            if (el && data.price) {
-                el.innerHTML = formatCurrency(data.price);
-            }
-        }
-    );
-}
-
-function loadEuro() {
-
-    requestJSON(
-        "https://price.beerhouse.io/EURO.json",
-        function(data) {
-            var el = document.querySelector("#eur .price");
-            if (el && data.price) {
-                el.innerHTML = formatCurrency(data.price);
-            }
-        }
-    );
-}
-
-function updatePrices() {
-    loadDollar();
-    loadEuro();
-}
-
-window.onload = function() {
-    updatePrices();
-};
-
-</script>
 
 </body>
 </html>
