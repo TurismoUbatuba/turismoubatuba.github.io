@@ -21,6 +21,7 @@
         <a class="nav-link" href="dashboard.html"><span class="nav-icon"></span>Dashboard</a>
         <a class="nav-link" href="campaigns.html"><span class="nav-icon"></span>Campanhas</a>
         <a class="nav-link active" href="campaign-detail-v2.html"><span class="nav-icon"></span>Detalhe da campanha</a>
+        <a class="nav-link" href="campaign-settings.html"><span class="nav-icon"></span>Configurações</a>
       </nav>
       <div class="nav-group">
         <p class="nav-title">Publisher</p>
@@ -71,7 +72,7 @@
             <button class="btn" data-copy-report>Copiar resumo</button>
             <div class="btn-group">
               <button class="btn btn-primary" data-export-pdf>Exportar PDF</button>
-              <button class="btn" data-settings-open>Configurações</button>
+              <a class="btn" href="campaign-settings.html">Configurações</a>
             </div>
           </div>
         </section>
@@ -112,9 +113,9 @@
           <div class="tabs" data-tab-group="campaign">
             <button class="tab active" data-tab-target="overview">Resumo</button>
             <button class="tab" data-tab-target="locations">Locais e telas <span class="tab-count">5</span></button>
+            <button class="tab" data-tab-target="impactos">Impactos</button>
             <button class="tab" data-tab-target="checking">Fotos de checking <span class="tab-count">6</span></button>
             <button class="tab" data-tab-target="timeline">Timeline</button>
-            <button class="tab" data-tab-target="impactos">Impactos</button>
           </div>
 
           <div class="tab-panel" data-tab-panel="campaign" data-panel-id="overview">
@@ -215,6 +216,55 @@
             </div>
           </div>
 
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="impactos" hidden>
+            <div class="grid-impactos">
+              <article class="card impacto-kpi">
+                <span class="kpi-label">Alcance estimado</span>
+                <strong class="kpi-value">892.400</strong>
+                <span class="kpi-note">pessoas únicas na área de cobertura</span>
+              </article>
+              <article class="card impacto-kpi">
+                <span class="kpi-label">Frequência média</span>
+                <strong class="kpi-value">3,9×</strong>
+                <span class="kpi-note">vezes por pessoa</span>
+              </article>
+              <article class="card impacto-kpi">
+                <span class="kpi-label">GRP</span>
+                <strong class="kpi-value">22,4%</strong>
+                <span class="kpi-note">da população-alvo impactada</span>
+              </article>
+            </div>
+            <div class="grid-impactos-two">
+              <article class="card">
+                <div class="card-title"><h2>Faixa etária</h2></div>
+                <div class="demo-row"><span>18-24</span><div class="demo-bar"><span style="width: 22%;"></span></div><span class="num">22%</span></div>
+                <div class="demo-row"><span>25-34</span><div class="demo-bar"><span style="width: 38%;"></span></div><span class="num">38%</span></div>
+                <div class="demo-row"><span>35-44</span><div class="demo-bar"><span style="width: 24%;"></span></div><span class="num">24%</span></div>
+                <div class="demo-row"><span>45-54</span><div class="demo-bar"><span style="width: 12%;"></span></div><span class="num">12%</span></div>
+                <div class="demo-row"><span>55+</span><div class="demo-bar"><span style="width: 4%;"></span></div><span class="num">4%</span></div>
+              </article>
+              <article class="card">
+                <div class="card-title"><h2>Gênero</h2></div>
+                <div class="demo-row"><span>Feminino</span><div class="demo-bar"><span style="width: 52%;"></span></div><span class="num">52%</span></div>
+                <div class="demo-row"><span>Masculino</span><div class="demo-bar"><span style="width: 48%;"></span></div><span class="num">48%</span></div>
+                <div class="card-title" style="margin-top: 20px;"><h2>Renda</h2></div>
+                <div class="demo-row"><span>A</span><div class="demo-bar"><span style="width: 15%;"></span></div><span class="num">15%</span></div>
+                <div class="demo-row"><span>B</span><div class="demo-bar"><span style="width: 42%;"></span></div><span class="num">42%</span></div>
+                <div class="demo-row"><span>C</span><div class="demo-bar"><span style="width: 33%;"></span></div><span class="num">33%</span></div>
+                <div class="demo-row"><span>D/E</span><div class="demo-bar"><span style="width: 10%;"></span></div><span class="num">10%</span></div>
+              </article>
+            </div>
+            <article class="card">
+              <div class="card-title"><h2>Performance por período</h2><span class="pill info">Impressões</span></div>
+              <div class="daypart-grid">
+                <div class="daypart-item"><div class="daypart-bar" style="height: 32%;"></div><strong>Manhã</strong><span class="muted">06-12h</span><span class="num">32%</span></div>
+                <div class="daypart-item"><div class="daypart-bar" style="height: 41%; background: var(--accent);"></div><strong>Tarde</strong><span class="muted">12-18h</span><span class="num">41%</span></div>
+                <div class="daypart-item"><div class="daypart-bar" style="height: 22%;"></div><strong>Noite</strong><span class="muted">18-00h</span><span class="num">22%</span></div>
+                <div class="daypart-item"><div class="daypart-bar" style="height: 5%;"></div><strong>Madrugada</strong><span class="muted">00-06h</span><span class="num">5%</span></div>
+              </div>
+            </article>
+          </div>
+
           <div class="tab-panel" data-tab-panel="campaign" data-panel-id="checking" hidden>
             <div class="checking-toolbar">
               <div class="field" style="max-width: 320px;">
@@ -311,55 +361,6 @@
               </div>
             </div>
           </div>
-
-          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="impactos" hidden>
-            <div class="grid-impactos">
-              <article class="card impacto-kpi">
-                <span class="kpi-label">Alcance estimado</span>
-                <strong class="kpi-value">892.400</strong>
-                <span class="kpi-note">pessoas únicas na área de cobertura</span>
-              </article>
-              <article class="card impacto-kpi">
-                <span class="kpi-label">Frequência média</span>
-                <strong class="kpi-value">3,9×</strong>
-                <span class="kpi-note">vezes por pessoa</span>
-              </article>
-              <article class="card impacto-kpi">
-                <span class="kpi-label">GRP</span>
-                <strong class="kpi-value">22,4%</strong>
-                <span class="kpi-note">da população-alvo impactada</span>
-              </article>
-            </div>
-            <div class="grid-impactos-two">
-              <article class="card">
-                <div class="card-title"><h2>Faixa etária</h2></div>
-                <div class="demo-row"><span>18-24</span><div class="demo-bar"><span style="width: 22%;"></span></div><span class="num">22%</span></div>
-                <div class="demo-row"><span>25-34</span><div class="demo-bar"><span style="width: 38%;"></span></div><span class="num">38%</span></div>
-                <div class="demo-row"><span>35-44</span><div class="demo-bar"><span style="width: 24%;"></span></div><span class="num">24%</span></div>
-                <div class="demo-row"><span>45-54</span><div class="demo-bar"><span style="width: 12%;"></span></div><span class="num">12%</span></div>
-                <div class="demo-row"><span>55+</span><div class="demo-bar"><span style="width: 4%;"></span></div><span class="num">4%</span></div>
-              </article>
-              <article class="card">
-                <div class="card-title"><h2>Gênero</h2></div>
-                <div class="demo-row"><span>Feminino</span><div class="demo-bar"><span style="width: 52%;"></span></div><span class="num">52%</span></div>
-                <div class="demo-row"><span>Masculino</span><div class="demo-bar"><span style="width: 48%;"></span></div><span class="num">48%</span></div>
-                <div class="card-title" style="margin-top: 20px;"><h2>Renda</h2></div>
-                <div class="demo-row"><span>A</span><div class="demo-bar"><span style="width: 15%;"></span></div><span class="num">15%</span></div>
-                <div class="demo-row"><span>B</span><div class="demo-bar"><span style="width: 42%;"></span></div><span class="num">42%</span></div>
-                <div class="demo-row"><span>C</span><div class="demo-bar"><span style="width: 33%;"></span></div><span class="num">33%</span></div>
-                <div class="demo-row"><span>D/E</span><div class="demo-bar"><span style="width: 10%;"></span></div><span class="num">10%</span></div>
-              </article>
-            </div>
-            <article class="card">
-              <div class="card-title"><h2>Performance por período</h2><span class="pill info">Impressões</span></div>
-              <div class="daypart-grid">
-                <div class="daypart-item"><div class="daypart-bar" style="height: 32%;"></div><strong>Manhã</strong><span class="muted">06-12h</span><span class="num">32%</span></div>
-                <div class="daypart-item"><div class="daypart-bar" style="height: 41%; background: var(--accent);"></div><strong>Tarde</strong><span class="muted">12-18h</span><span class="num">41%</span></div>
-                <div class="daypart-item"><div class="daypart-bar" style="height: 22%;"></div><strong>Noite</strong><span class="muted">18-00h</span><span class="num">22%</span></div>
-                <div class="daypart-item"><div class="daypart-bar" style="height: 5%;"></div><strong>Madrugada</strong><span class="muted">00-06h</span><span class="num">5%</span></div>
-              </div>
-            </article>
-          </div>
         </section>
       </main>
 
@@ -378,63 +379,7 @@
       </div>
     </div>
   </div>
-  <div class="settings-modal" data-settings-modal hidden>
-    <div class="settings-modal-backdrop" data-settings-close></div>
-    <div class="settings-modal-content">
-      <div class="settings-modal-head">
-        <h2>Configurações da campanha</h2>
-        <button class="settings-modal-close" data-settings-close aria-label="Fechar">✕</button>
-      </div>
-      <form class="settings-form" data-settings-form>
-        <div class="settings-fields">
-          <div class="field">
-            <label for="cfg-name">Nome da campanha</label>
-            <input class="input" id="cfg-name" name="name" value="Verão nas Capitais 2026" />
-          </div>
-          <div class="field">
-            <label for="cfg-client">Cliente / Anunciante</label>
-            <input class="input" id="cfg-client" name="client" value="Bebidas Aurora" />
-          </div>
-          <div class="settings-row">
-            <div class="field">
-              <label for="cfg-budget">Verba total (R$)</label>
-              <input class="input" id="cfg-budget" name="budget" type="number" value="240000" />
-            </div>
-            <div class="field">
-              <label for="cfg-status">Status</label>
-              <select class="select" id="cfg-status" name="status">
-                <option value="Ativa" selected>Ativa</option>
-                <option value="Pausada">Pausada</option>
-                <option value="Encerrada">Encerrada</option>
-              </select>
-            </div>
-          </div>
-          <div class="settings-row">
-            <div class="field">
-              <label for="cfg-start">Data início</label>
-              <input class="input" id="cfg-start" name="start" type="date" value="2026-01-12" />
-            </div>
-            <div class="field">
-              <label for="cfg-end">Data fim</label>
-              <input class="input" id="cfg-end" name="end" type="date" value="2026-02-28" />
-            </div>
-          </div>
-          <div class="field">
-            <label for="cfg-target">Público-alvo / Segmentação</label>
-            <input class="input" id="cfg-target" name="target" value="Consumidores de bebidas, 18-54, classes A/B/C, SP/RJ/PE/BA" />
-          </div>
-          <div class="field">
-            <label for="cfg-notes">Notas internas</label>
-            <textarea class="input" id="cfg-notes" name="notes" rows="3">Campanha sazonal de verão. 45 locais contratados em 4 capitais.</textarea>
-          </div>
-        </div>
-        <div class="settings-actions">
-          <button class="btn" type="button" data-settings-close>Cancelar</button>
-          <button class="btn btn-primary" type="submit">Salvar configurações</button>
-        </div>
-      </form>
-    </div>
-  </div>
+
   <script src="app.js"></script>
   <script src="app-v2.js"></script>
 </body>

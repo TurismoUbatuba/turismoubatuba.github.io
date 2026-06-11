@@ -595,84 +595,7 @@ th[data-sort].sort-desc .sort-arrow {
   min-height: 8px;
 }
 
-/* ── Settings modal ── */
-.settings-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 95;
-  display: grid;
-  place-items: center;
-}
 
-.settings-modal[hidden] {
-  display: none;
-}
-
-.settings-modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: color-mix(in oklch, var(--fg) 50%, transparent);
-  backdrop-filter: blur(4px);
-}
-
-.settings-modal-content {
-  position: relative;
-  background: var(--surface);
-  border-radius: var(--radius);
-  width: min(600px, 94vw);
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 12px 48px color-mix(in oklch, var(--fg) 30%, transparent);
-}
-
-.settings-modal-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--border);
-}
-
-.settings-modal-head h2 {
-  font-size: 20px;
-}
-
-.settings-modal-close {
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
-  color: var(--muted);
-  font-size: 16px;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-}
-
-.settings-form {
-  padding: 24px;
-}
-
-.settings-fields {
-  display: grid;
-  gap: 18px;
-}
-
-.settings-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.settings-actions {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-}
 
 /* ── Responsive: medium ── */
 @media (max-width: 1180px) {
@@ -704,6 +627,7 @@ th[data-sort].sort-desc .sort-arrow {
   }
 
   .sidebar {
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;

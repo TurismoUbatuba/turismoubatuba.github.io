@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Campanhas | NIROOH</title>
   <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="app-v2.css" />
   <style>
     .kpi-row {
       display: grid;
@@ -143,6 +144,10 @@
       letter-spacing: 1px;
     }
 
+    .row-btn.copied svg { display: none; }
+    .row-btn.copied::after { content: "✓"; font-weight: 800; color: var(--success); }
+    .row-btn.copied.failed::after { content: "✗"; color: var(--danger); }
+
     .table-wrap-footer {
       display: flex;
       align-items: center;
@@ -200,25 +205,18 @@
       gap: 8px;
     }
 
-    tr[data-status="attention"] {
-      border-left: 3px solid var(--warning);
+    .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 8px;
+      flex-shrink: 0;
     }
-
-    tr[data-status="pending"] {
-      border-left: 3px solid var(--danger);
-    }
-
-    tr[data-status="active"] {
-      border-left: 3px solid var(--info);
-    }
-
-    tr[data-status="done"] {
-      border-left: 3px solid var(--success);
-    }
-
-    tr[data-status] td:first-child {
-      padding-left: 13px;
-    }
+    .status-dot[data-dot="active"] { background: var(--info); }
+    .status-dot[data-dot="attention"] { background: var(--warning); }
+    .status-dot[data-dot="done"] { background: var(--success); }
+    .status-dot[data-dot="pending"] { background: var(--danger); }
 
     .tag {
       display: inline-block;
@@ -274,15 +272,18 @@
 </head>
 <body>
   <div class="shell">
-    <aside class="sidebar" aria-label="Navegação principal">
-      <div class="brand">
-        <div><div class="brand-word">NIRO<span>OH</span></div><p class="muted" style="font-size: 11px;">Unbox the Programmatic DOOH</p></div>
-        <span class="brand-mark" aria-hidden="true"></span>
+    <aside class="sidebar" data-sidebar aria-label="Navegação principal">
+      <div class="sidebar-head">
+        <div class="brand">
+          <div><div class="brand-word">NIRO<span>OH</span></div><p class="muted" style="font-size: 11px;">Unbox the Programmatic DOOH</p></div>
+          <span class="brand-mark" aria-hidden="true"></span>
+        </div>
+        <button class="sidebar-close" data-sidebar-close aria-label="Fechar menu">✕</button>
       </div>
       <nav class="nav-group">
         <a class="nav-link" href="dashboard.html"><span class="nav-icon"></span>Dashboard</a>
         <a class="nav-link active" href="campaigns.html"><span class="nav-icon"></span>Campanhas</a>
-        <a class="nav-link" href="campaign-detail.html"><span class="nav-icon"></span>Detalhe da campanha</a>
+        <a class="nav-link" href="campaign-detail-v2.html"><span class="nav-icon"></span>Detalhe da campanha</a>
       </nav>
       <div class="nav-group">
         <p class="nav-title">Publisher</p>
@@ -293,12 +294,28 @@
         <p class="nav-title">Reports</p>
         <a class="nav-link" href="#"><span class="nav-icon"></span>Checking</a>
       </div>
+      <div class="sidebar-foot">
+        <span class="pill info">v2.0</span>
+      </div>
     </aside>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
 
     <div class="workspace">
       <header class="topbar">
-        <div style="display: flex; align-items: center; gap: 12px;"><button class="hamburger" aria-label="Abrir menu">☰</button><span class="mobile-brand">NIROOH</span></div>
-        <div class="user-card"><div class="avatar">MS</div><div><strong>Aky Mídia | Admin</strong><p class="muted">Marco Santos</p></div></div>
+        <div class="topbar-start">
+          <button class="hamburger" data-sidebar-toggle aria-label="Abrir menu">☰</button>
+          <span class="mobile-brand">NIROOH</span>
+        </div>
+        <div class="topbar-center" data-breadcrumb>
+          <span class="breadcrumb-item current">Campanhas</span>
+        </div>
+        <div class="user-card">
+          <div class="avatar">MS</div>
+          <div>
+            <strong>Aky Mídia | Admin</strong>
+            <p class="muted">Marco Santos</p>
+          </div>
+        </div>
       </header>
 
       <main class="page">
@@ -310,7 +327,7 @@
           <div class="actions">
             <a class="btn" href="dashboard.html">Dashboard</a>
             <button class="btn btn-quiet" data-export-csv>Exportar CSV</button>
-            <a class="btn btn-primary" href="campaign-detail.html">Nova campanha</a>
+            <a class="btn btn-primary" href="campaign-detail-v2.html">Nova campanha</a>
           </div>
         </section>
 
@@ -378,7 +395,7 @@
               </thead>
               <tbody>
                 <tr data-filter-row="campaigns" data-status="active" data-val-investimento="240000" data-val-impressoes="3482910" data-val-periodo="20260112">
-                  <td><a class="table-link" href="campaign-detail.html">Verão nas Capitais 2026</a><p class="muted" style="margin-top: 2px;"><span class="tag aurora">Bebidas</span> Bebidas Aurora</p></td>
+                  <td><span class="status-dot" data-dot="active"></span><a class="table-link" href="campaign-detail-v2.html">Verão nas Capitais 2026</a><p class="muted" style="margin-top: 2px;"><span class="tag aurora">Bebidas</span> Bebidas Aurora</p></td>
                   <td><span class="date-range">12 jan – 28 fev</span><br><span class="muted" style="font-size: 11px;">47 dias · 74% decorrido</span></td>
                   <td>SP, RJ, Recife, Salvador</td>
                   <td class="num">R$ 240.000</td>
@@ -386,10 +403,10 @@
                   <td class="num muted">R$ 68,91</td>
                   <td><div class="td-progress"><div class="mini-bar"><span class="ok" style="width: 87%;"></span></div><span class="pill success">87%</span></div></td>
                   <td><span class="pill info">Ativa</span></td>
-                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Verão nas Capitais 2026|R$ 240.000|3.482.910|87%">📋</button><button class="row-btn more" title="Mais ações">•••</button></div></td>
+                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Verão nas Capitais 2026|R$ 240.000|3.482.910|87%"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><button class="row-btn more" title="Mais ações">•••</button></div></td>
                 </tr>
                 <tr data-filter-row="campaigns" data-status="attention" data-val-investimento="176500" data-val-impressoes="2104330" data-val-periodo="20260203">
-                  <td><a class="table-link" href="campaign-detail.html">Lançamento App Banco Norte</a><p class="muted" style="margin-top: 2px;"><span class="tag fintech">Fintech</span> Banco Norte</p></td>
+                  <td><span class="status-dot" data-dot="attention"></span><a class="table-link" href="campaign-detail-v2.html">Lançamento App Banco Norte</a><p class="muted" style="margin-top: 2px;"><span class="tag fintech">Fintech</span> Banco Norte</p></td>
                   <td><span class="date-range">03 fev – 14 mar</span><br><span class="muted" style="font-size: 11px;">39 dias · 49% decorrido</span></td>
                   <td>SP, Campinas, Curitiba</td>
                   <td class="num">R$ 176.500</td>
@@ -397,10 +414,10 @@
                   <td class="num muted">R$ 83,86</td>
                   <td><div class="td-progress"><div class="mini-bar"><span class="warn" style="width: 64%;"></span></div><span class="pill warn">64%</span></div></td>
                   <td><span class="pill warn">Atenção</span></td>
-                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Lançamento App Banco Norte|R$ 176.500|2.104.330|64%">📋</button><button class="row-btn more" title="Mais ações">•••</button></div></td>
+                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Lançamento App Banco Norte|R$ 176.500|2.104.330|64%"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><button class="row-btn more" title="Mais ações">•••</button></div></td>
                 </tr>
                 <tr data-filter-row="campaigns" data-status="done" data-val-investimento="98400" data-val-impressoes="1288700" data-val-periodo="20260118">
-                  <td><a class="table-link" href="campaign-detail.html">Pré-venda Festival Litoral</a><p class="muted" style="margin-top: 2px;"><span class="tag entretenimento">Entretenimento</span> Festival Litoral</p></td>
+                  <td><span class="status-dot" data-dot="done"></span><a class="table-link" href="campaign-detail-v2.html">Pré-venda Festival Litoral</a><p class="muted" style="margin-top: 2px;"><span class="tag entretenimento">Entretenimento</span> Festival Litoral</p></td>
                   <td><span class="date-range">18 jan – 05 fev</span><br><span class="muted" style="font-size: 11px;">18 dias · 100% decorrido</span></td>
                   <td>RJ, Niterói, Santos</td>
                   <td class="num">R$ 98.400</td>
@@ -408,10 +425,10 @@
                   <td class="num muted">R$ 76,35</td>
                   <td><div class="td-progress"><div class="mini-bar"><span class="ok" style="width: 100%;"></span></div><span class="pill success">100%</span></div></td>
                   <td><span class="pill success">Concluída</span></td>
-                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Pré-venda Festival Litoral|R$ 98.400|1.288.700|100%">📋</button><button class="row-btn more" title="Mais ações">•••</button></div></td>
+                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Pré-venda Festival Litoral|R$ 98.400|1.288.700|100%"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><button class="row-btn more" title="Mais ações">•••</button></div></td>
                 </tr>
                 <tr data-filter-row="campaigns" data-status="pending" data-val-investimento="112900" data-val-impressoes="874220" data-val-periodo="20260222">
-                  <td><a class="table-link" href="campaign-detail.html">Semana do Varejo Local</a><p class="muted" style="margin-top: 2px;"><span class="tag varejo">Varejo</span> Rede SuperMax</p></td>
+                  <td><span class="status-dot" data-dot="pending"></span><a class="table-link" href="campaign-detail-v2.html">Semana do Varejo Local</a><p class="muted" style="margin-top: 2px;"><span class="tag varejo">Varejo</span> Rede SuperMax</p></td>
                   <td><span class="date-range">22 fev – 08 mar</span><br><span class="muted" style="font-size: 11px;">14 dias · 50% decorrido</span></td>
                   <td>BH, Contagem, Betim</td>
                   <td class="num">R$ 112.900</td>
@@ -419,10 +436,10 @@
                   <td class="num muted">R$ 129,14</td>
                   <td><div class="td-progress"><div class="mini-bar"><span class="bad" style="width: 38%;"></span></div><span class="pill danger">38%</span></div></td>
                   <td><span class="pill danger">Pendência</span></td>
-                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Semana do Varejo Local|R$ 112.900|874.220|38%">📋</button><button class="row-btn more" title="Mais ações">•••</button></div></td>
+                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Semana do Varejo Local|R$ 112.900|874.220|38%"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><button class="row-btn more" title="Mais ações">•••</button></div></td>
                 </tr>
                 <tr data-filter-row="campaigns" data-status="active" data-val-investimento="312000" data-val-impressoes="4218900" data-val-periodo="20260210">
-                  <td><a class="table-link" href="campaign-detail.html">EduTech nas Escolas</a><p class="muted" style="margin-top: 2px;"><span class="tag educacao">Educação</span> Plataforma Aprende+</p></td>
+                  <td><span class="status-dot" data-dot="active"></span><a class="table-link" href="campaign-detail-v2.html">EduTech nas Escolas</a><p class="muted" style="margin-top: 2px;"><span class="tag educacao">Educação</span> Plataforma Aprende+</p></td>
                   <td><span class="date-range">10 fev – 30 mar</span><br><span class="muted" style="font-size: 11px;">48 dias · 23% decorrido</span></td>
                   <td>SP, RJ, BH, Curitiba, POA</td>
                   <td class="num">R$ 312.000</td>
@@ -430,10 +447,10 @@
                   <td class="num muted">R$ 73,95</td>
                   <td><div class="td-progress"><div class="mini-bar"><span class="ok" style="width: 95%;"></span></div><span class="pill success">95%</span></div></td>
                   <td><span class="pill info">Ativa</span></td>
-                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="EduTech nas Escolas|R$ 312.000|4.218.900|95%">📋</button><button class="row-btn more" title="Mais ações">•••</button></div></td>
+                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="EduTech nas Escolas|R$ 312.000|4.218.900|95%"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><button class="row-btn more" title="Mais ações">•••</button></div></td>
                 </tr>
                 <tr data-filter-row="campaigns" data-status="attention" data-val-investimento="88000" data-val-impressoes="678400" data-val-periodo="20260301">
-                  <td><a class="table-link" href="campaign-detail.html">Saúde em Movimento</a><p class="muted" style="margin-top: 2px;"><span class="tag saude">Saúde</span> Plano VitalCare</p></td>
+                  <td><span class="status-dot" data-dot="attention"></span><a class="table-link" href="campaign-detail-v2.html">Saúde em Movimento</a><p class="muted" style="margin-top: 2px;"><span class="tag saude">Saúde</span> Plano VitalCare</p></td>
                   <td><span class="date-range">01 mar – 15 abr</span><br><span class="muted" style="font-size: 11px;">45 dias · 9% decorrido</span></td>
                   <td>SP, Campinas, Ribeirão</td>
                   <td class="num">R$ 88.000</td>
@@ -441,10 +458,10 @@
                   <td class="num muted">R$ 129,72</td>
                   <td><div class="td-progress"><div class="mini-bar"><span class="warn" style="width: 52%;"></span></div><span class="pill warn">52%</span></div></td>
                   <td><span class="pill warn">Atenção</span></td>
-                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Saúde em Movimento|R$ 88.000|678.400|52%">📋</button><button class="row-btn more" title="Mais ações">•••</button></div></td>
+                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Saúde em Movimento|R$ 88.000|678.400|52%"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><button class="row-btn more" title="Mais ações">•••</button></div></td>
                 </tr>
                 <tr data-filter-row="campaigns" data-status="active" data-val-investimento="205000" data-val-impressoes="2183940" data-val-periodo="20260125">
-                  <td><a class="table-link" href="campaign-detail.html">Sabor & Arte</a><p class="muted" style="margin-top: 2px;"><span class="tag alimentos">Alimentos</span> Gourmet Brasil</p></td>
+                  <td><span class="status-dot" data-dot="active"></span><a class="table-link" href="campaign-detail-v2.html">Sabor & Arte</a><p class="muted" style="margin-top: 2px;"><span class="tag alimentos">Alimentos</span> Gourmet Brasil</p></td>
                   <td><span class="date-range">25 jan – 12 mar</span><br><span class="muted" style="font-size: 11px;">46 dias · 52% decorrido</span></td>
                   <td>SP, RJ, Brasília</td>
                   <td class="num">R$ 205.000</td>
@@ -452,10 +469,10 @@
                   <td class="num muted">R$ 93,87</td>
                   <td><div class="td-progress"><div class="mini-bar"><span class="ok" style="width: 78%;"></span></div><span class="pill success">78%</span></div></td>
                   <td><span class="pill info">Ativa</span></td>
-                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Sabor & Arte|R$ 205.000|2.183.940|78%">📋</button><button class="row-btn more" title="Mais ações">•••</button></div></td>
+                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Sabor & Arte|R$ 205.000|2.183.940|78%"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><button class="row-btn more" title="Mais ações">•••</button></div></td>
                 </tr>
                 <tr data-filter-row="campaigns" data-status="done" data-val-investimento="42000" data-val-impressoes="329000" data-val-periodo="20260201">
-                  <td><a class="table-link" href="campaign-detail.html">Auto Show Regional</a><p class="muted" style="margin-top: 2px;"><span class="tag auto">Automotivo</span> Motors Ltda</p></td>
+                  <td><span class="status-dot" data-dot="done"></span><a class="table-link" href="campaign-detail-v2.html">Auto Show Regional</a><p class="muted" style="margin-top: 2px;"><span class="tag auto">Automotivo</span> Motors Ltda</p></td>
                   <td><span class="date-range">01 fev – 14 fev</span><br><span class="muted" style="font-size: 11px;">13 dias · 100% decorrido</span></td>
                   <td>Curitiba, São José dos Pinhais</td>
                   <td class="num">R$ 42.000</td>
@@ -463,7 +480,7 @@
                   <td class="num muted">R$ 127,66</td>
                   <td><div class="td-progress"><div class="mini-bar"><span class="ok" style="width: 98%;"></span></div><span class="pill success">98%</span></div></td>
                   <td><span class="pill success">Concluída</span></td>
-                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Auto Show Regional|R$ 42.000|329.000|98%">📋</button><button class="row-btn more" title="Mais ações">•••</button></div></td>
+                  <td><div class="row-actions"><button class="row-btn" title="Copiar resumo" data-copy-report data-row="Auto Show Regional|R$ 42.000|329.000|98%"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><button class="row-btn more" title="Mais ações">•••</button></div></td>
                 </tr>
               </tbody>
             </table>
@@ -498,10 +515,12 @@
         ].join("\n");
         try {
           await navigator.clipboard.writeText(text);
-          button.textContent = "✓";
-          window.setTimeout(() => { button.textContent = "📋"; }, 1800);
+          button.classList.add("copied");
+          window.setTimeout(() => { button.classList.remove("copied"); }, 1800);
         } catch {
-          button.textContent = "✗";
+          button.classList.add("copied");
+          button.classList.add("failed");
+          window.setTimeout(() => { button.classList.remove("copied", "failed"); }, 1800);
         }
       });
     });

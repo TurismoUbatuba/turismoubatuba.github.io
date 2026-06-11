@@ -240,46 +240,5 @@
     i.addEventListener("input", updateTabCounts);
   });
 
-  /* ── Settings modal ── */
-  var settingsModal = document.querySelector("[data-settings-modal]");
 
-  document.querySelectorAll("[data-settings-open]").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      if (settingsModal) settingsModal.hidden = false;
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  document.querySelectorAll("[data-settings-close]").forEach(function (el) {
-    el.addEventListener("click", function () {
-      if (settingsModal) settingsModal.hidden = true;
-      document.body.style.overflow = "";
-    });
-  });
-
-  if (settingsModal) {
-    settingsModal.addEventListener("click", function (e) {
-      if (e.target === settingsModal) {
-        settingsModal.hidden = true;
-        document.body.style.overflow = "";
-      }
-    });
-  }
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && settingsModal && !settingsModal.hidden) {
-      settingsModal.hidden = true;
-      document.body.style.overflow = "";
-    }
-  });
-
-  var settingsForm = document.querySelector("[data-settings-form]");
-  if (settingsForm) {
-    settingsForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (settingsModal) settingsModal.hidden = true;
-      document.body.style.overflow = "";
-      showToast("Configurações salvas com sucesso");
-    });
-  }
 })();
