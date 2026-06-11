@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detalhe da campanha | NIROOH</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="brand">
+        <div><div class="brand-word">NIRO<span>OH</span></div><p class="muted" style="font-size: 11px;">Unbox the Programmatic DOOH</p></div>
+        <span class="brand-mark" aria-hidden="true"></span>
+      </div>
+      <nav class="nav-group">
+        <a class="nav-link" href="dashboard.html"><span class="nav-icon"></span>Dashboard</a>
+        <a class="nav-link" href="campaigns.html"><span class="nav-icon"></span>Campanhas</a>
+        <a class="nav-link active" href="campaign-detail.html"><span class="nav-icon"></span>Detalhe da campanha</a>
+      </nav>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div style="display: flex; align-items: center; gap: 12px;"><button class="hamburger" aria-label="Abrir menu">☰</button><span class="mobile-brand">NIROOH</span></div>
+        <div class="user-card"><div class="avatar">MS</div><div><strong>Aky| Admin</strong><p class="muted">Marco Santos</p></div></div>
+      </header>
+
+      <main class="page">
+        <section class="page-head" data-od-id="detail-head">
+          <div>
+            <h1 class="page-title">Verão nas Capitais 2026</h1>
+            <p class="page-subtitle">Bebidas Aurora · 12 jan a 28 fev · 45 locais contratados · 126 telas programáticas.</p>
+          </div>
+          <div class="actions">
+            <button class="btn" data-copy-report="">Copiar resumo</button>
+            <a class="btn btn-primary" href="dashboard.html">Voltar ao dashboard</a>
+          </div>
+        </section>
+
+        <section class="grid-kpi" data-od-id="detail-kpis">
+          <article class="card kpi"><span class="kpi-label">Verba gasta</span><strong class="kpi-value">R$ 184.200</strong><span class="trend">R$ 55.800 faltante</span></article>
+          <article class="card kpi"><span class="kpi-label">Impressões</span><strong class="kpi-value">3.482.910</strong><span class="trend warn">92% da meta</span></article>
+          <article class="card kpi"><span class="kpi-label">Locais ativos</span><strong class="kpi-value">42 / 45</strong><span class="kpi-note">3 aguardando checking</span></article>
+          <article class="card kpi"><span class="kpi-label">Fotos aprovadas</span><strong class="kpi-value">87%</strong><span class="kpi-note">112 de 129 evidências</span></article>
+        </section>
+
+        <section class="card" data-od-id="detail-tabs" style="margin-top: 16px;">
+          <div class="tabs" data-tab-group="campaign">
+            <button class="tab active" data-tab-target="overview">Resumo</button>
+            <button class="tab" data-tab-target="locations">Locais e telas</button>
+            <button class="tab" data-tab-target="checking">Fotos de checking</button>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="overview">
+            <div class="grid-two">
+              <article>
+                <div class="card-title"><h2>Entrega por tela</h2><span class="pill info">Top 4</span></div>
+                <div class="screen-row"><div><strong>Tela SP-PAUL-014</strong><p class="muted">Av. Paulista · 12m x 4m</p></div><span class="num">168.420</span></div>
+                <div class="screen-row"><div><strong>Tela RJ-COPA-022</strong><p class="muted">Copacabana · relógio urbano</p></div><span class="num">151.880</span></div>
+                <div class="screen-row"><div><strong>Tela REC-SHOP-006</strong><p class="muted">Shopping Recife · indoor</p></div><span class="num">129.540</span></div>
+                <div class="screen-row"><div><strong>Tela SSA-TANC-011</strong><p class="muted">Av. Tancredo Neves · painel urbano</p></div><span class="num">118.330</span></div>
+              </article>
+              <article>
+                <div class="card-title"><h2>Distribuição de verba</h2><span class="pill">CPM médio R$ 52,88</span></div>
+                <div class="format-row"><div><strong>São Paulo</strong><div class="format-meter"><span style="width: 44%;"></span></div></div><span class="num">R$ 81.048</span></div>
+                <div class="format-row"><div><strong>Rio de Janeiro</strong><div class="format-meter"><span style="width: 31%;"></span></div></div><span class="num">R$ 57.102</span></div>
+                <div class="format-row"><div><strong>Recife</strong><div class="format-meter"><span style="width: 14%;"></span></div></div><span class="num">R$ 25.788</span></div>
+                <div class="format-row"><div><strong>Salvador</strong><div class="format-meter"><span style="width: 11%;"></span></div></div><span class="num">R$ 20.262</span></div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="locations" hidden="">
+            <div class="field" style="margin-bottom: 14px; max-width: 420px;">
+              <label for="location-search">Buscar local ou tela</label>
+              <input class="input" id="location-search" data-filter-input="locations" placeholder="Ex: Paulista, SP-PAUL, Copacabana">
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Local</th><th>Tela</th><th>Formato</th><th class="num">Impressões</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr data-filter-row="locations"><td>Av. Paulista, 1578</td><td>SP-PAUL-014</td><td>Outdoor digital</td><td class="num">428.900</td><td><span class="pill success">Ativo</span></td></tr>
+                  <tr data-filter-row="locations"><td>Orla de Copacabana</td><td>RJ-COPA-022</td><td>Relógio urbano</td><td class="num">376.240</td><td><span class="pill success">Ativo</span></td></tr>
+                  <tr data-filter-row="locations"><td>Shopping Recife</td><td>REC-SHOP-006</td><td>Indoor</td><td class="num">312.870</td><td><span class="pill success">Ativo</span></td></tr>
+                  <tr data-filter-row="locations"><td>Av. Tancredo Neves</td><td>SSA-TANC-011</td><td>Painel urbano</td><td class="num">294.120</td><td><span class="pill warn">Checking</span></td></tr>
+                  <tr data-filter-row="locations"><td>Praça da Sé</td><td>SP-SE-004</td><td>Mobiliário urbano</td><td class="num">188.430</td><td><span class="pill danger">Pausado</span></td></tr>
+                </tbody>
+              </table>
+              <div class="empty-state" data-empty-state="locations" hidden="">Nenhum local encontrado.</div>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="checking" hidden="">
+            <div class="checking-grid">
+              <article class="photo-card">
+                <div class="photo">Foto checking</div>
+                <div class="photo-meta"><strong>Av. Paulista, 1578</strong><span class="muted">25 fev · 18:42 · Criativo V3</span><button class="btn btn-primary" data-status-toggle="" aria-pressed="true">Aprovado</button></div>
+              </article>
+              <article class="photo-card">
+                <div class="photo">Foto checking</div>
+                <div class="photo-meta"><strong>Orla de Copacabana</strong><span class="muted">25 fev · 19:10 · Criativo V2</span><button class="btn btn-primary" data-status-toggle="" aria-pressed="true">Aprovado</button></div>
+              </article>
+              <article class="photo-card">
+                <div class="photo">Foto checking</div>
+                <div class="photo-meta"><strong>Shopping Recife</strong><span class="muted">26 fev · 12:06 · Criativo V1</span><button class="btn btn-primary" data-status-toggle="" aria-pressed="true">Aprovado</button></div>
+              </article>
+              <article class="photo-card">
+                <div class="photo">Foto checking</div>
+                <div class="photo-meta"><strong>Av. Tancredo Neves</strong><span class="muted">Pendente · aguardando operador</span><button class="btn" data-status-toggle="" aria-pressed="false">Marcar aprovado</button></div>
+              </article>
+              <article class="photo-card">
+                <div class="photo">Foto checking</div>
+                <div class="photo-meta"><strong>Praça da Sé</strong><span class="muted">Pendente · tela pausada</span><button class="btn" data-status-toggle="" aria-pressed="false">Marcar aprovado</button></div>
+              </article>
+              <article class="photo-card">
+                <div class="photo">Foto checking</div>
+                <div class="photo-meta"><strong>Barra Shopping</strong><span class="muted">27 fev · 16:21 · Criativo V3</span><button class="btn btn-primary" data-status-toggle="" aria-pressed="true">Aprovado</button></div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+
+
+</body></html>

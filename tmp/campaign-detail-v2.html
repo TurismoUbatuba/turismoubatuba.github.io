@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalhe da campanha | NIROOH</title>
+  <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="app-v2.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" data-sidebar aria-label="Navegação principal">
+      <div class="sidebar-head">
+        <div class="brand">
+          <div><div class="brand-word">NIRO<span>OH</span></div><p class="muted" style="font-size: 11px;">Unbox the Programmatic DOOH</p></div>
+          <span class="brand-mark" aria-hidden="true"></span>
+        </div>
+        <button class="sidebar-close" data-sidebar-close aria-label="Fechar menu">✕</button>
+      </div>
+      <nav class="nav-group">
+        <a class="nav-link" href="dashboard.html"><span class="nav-icon"></span>Dashboard</a>
+        <a class="nav-link" href="campaigns.html"><span class="nav-icon"></span>Campanhas</a>
+        <a class="nav-link active" href="campaign-detail-v2.html"><span class="nav-icon"></span>Detalhe da campanha</a>
+      </nav>
+      <div class="nav-group">
+        <p class="nav-title">Publisher</p>
+        <a class="nav-link" href="#"><span class="nav-icon"></span>AdPlaces</a>
+        <a class="nav-link" href="#"><span class="nav-icon"></span>Mídias</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-title">Reports</p>
+        <a class="nav-link" href="#"><span class="nav-icon"></span>Checking</a>
+      </div>
+      <div class="sidebar-foot">
+        <span class="pill info">v2.0</span>
+      </div>
+    </aside>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-start">
+          <button class="hamburger" data-sidebar-toggle aria-label="Abrir menu">☰</button>
+          <span class="mobile-brand">NIROOH</span>
+        </div>
+        <div class="topbar-center" data-breadcrumb>
+          <span class="breadcrumb-item"><a href="campaigns.html">Campanhas</a></span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-item current">Verão nas Capitais 2026</span>
+        </div>
+        <div class="user-card">
+          <div class="avatar">MS</div>
+          <div>
+            <strong>Aky Mídia | Admin</strong>
+            <p class="muted">Marco Santos</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="page-head" data-od-id="detail-head">
+          <div>
+            <div class="page-badges">
+              <span class="pill info">Ativa</span>
+              <span class="pill">ID #2026-001</span>
+            </div>
+            <h1 class="page-title">Verão nas Capitais 2026</h1>
+            <p class="page-subtitle">Bebidas Aurora · 12 jan a 28 fev · 45 locais contratados · 126 telas programáticas.</p>
+          </div>
+          <div class="actions">
+            <button class="btn" data-copy-report>Copiar resumo</button>
+            <div class="btn-group">
+              <button class="btn btn-primary" data-export-pdf>Exportar PDF</button>
+              <button class="btn" data-settings-open>Configurações</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid-kpi" data-od-id="detail-kpis">
+          <article class="card kpi">
+            <span class="kpi-label">Verba gasta</span>
+            <strong class="kpi-value">R$ 184.200</strong>
+            <div class="progress" aria-label="76,8% da verba"><span style="width: 76.8%;"></span></div>
+            <span class="trend">R$ 55.800 faltante</span>
+          </article>
+          <article class="card kpi">
+            <span class="kpi-label">Impressões</span>
+            <strong class="kpi-value" data-tooltip="Meta: 3.785.000">3.482.910</strong>
+            <div class="progress warn" aria-label="92% da meta"><span style="width: 92%;"></span></div>
+            <span class="trend warn">92% da meta</span>
+          </article>
+          <article class="card kpi">
+            <span class="kpi-label">Locais ativos</span>
+            <strong class="kpi-value">42 / 45</strong>
+            <div class="progress" aria-label="93,3% ativos"><span style="width: 93.3%;"></span></div>
+            <span class="kpi-note">3 aguardando checking</span>
+          </article>
+          <article class="card kpi">
+            <span class="kpi-label">Fotos aprovadas</span>
+            <strong class="kpi-value">87%</strong>
+            <div class="ring-progress" role="img" aria-label="87% aprovado" style="--pct: 87;">
+              <svg viewBox="0 0 40 40" class="ring-svg">
+                <circle class="ring-bg" cx="20" cy="20" r="17" />
+                <circle class="ring-fg" cx="20" cy="20" r="17" style="stroke-dashoffset: calc(106.9 - (106.9 * var(--pct)) / 100);" />
+              </svg>
+            </div>
+            <span class="kpi-note">112 de 129 evidências</span>
+          </article>
+        </section>
+
+        <section class="card" data-od-id="detail-tabs" style="margin-top: 16px;">
+          <div class="tabs" data-tab-group="campaign">
+            <button class="tab active" data-tab-target="overview">Resumo</button>
+            <button class="tab" data-tab-target="locations">Locais e telas <span class="tab-count">5</span></button>
+            <button class="tab" data-tab-target="checking">Fotos de checking <span class="tab-count">6</span></button>
+            <button class="tab" data-tab-target="timeline">Timeline</button>
+            <button class="tab" data-tab-target="impactos">Impactos</button>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="overview">
+            <div class="grid-overview">
+              <div class="grid-overview-main">
+                <article>
+                  <div class="card-title"><h2>Entrega por tela</h2><span class="pill info">Top 4</span></div>
+                  <div class="screen-row" data-hover-card>
+                    <div><strong>Tela SP-PAUL-014</strong><p class="muted">Av. Paulista · 12m x 4m</p></div>
+                    <span class="num">168.420</span>
+                    <div class="hover-card">Outdoor digital · CPM R$ 48,20</div>
+                  </div>
+                  <div class="screen-row" data-hover-card>
+                    <div><strong>Tela RJ-COPA-022</strong><p class="muted">Copacabana · relógio urbano</p></div>
+                    <span class="num">151.880</span>
+                    <div class="hover-card">Relógio urbano · CPM R$ 52,10</div>
+                  </div>
+                  <div class="screen-row" data-hover-card>
+                    <div><strong>Tela REC-SHOP-006</strong><p class="muted">Shopping Recife · indoor</p></div>
+                    <span class="num">129.540</span>
+                    <div class="hover-card">Indoor · CPM R$ 44,80</div>
+                  </div>
+                  <div class="screen-row" data-hover-card>
+                    <div><strong>Tela SSA-TANC-011</strong><p class="muted">Av. Tancredo Neves · painel urbano</p></div>
+                    <span class="num">118.330</span>
+                    <div class="hover-card">Painel urbano · CPM R$ 39,90</div>
+                  </div>
+                </article>
+
+                <article>
+                  <div class="card-title"><h2>Impressões por dia</h2><span class="pill info">Últimos 10 dias</span></div>
+                  <div class="chart-bars" role="img" aria-label="Barras de impressões diárias">
+                    <span class="bar" style="height: 48%;" data-label="19/02"><span class="bar-tooltip">168.420</span></span>
+                    <span class="bar" style="height: 62%;" data-label="20/02"><span class="bar-tooltip">215.880</span></span>
+                    <span class="bar" style="height: 58%;" data-label="21/02"><span class="bar-tooltip">201.450</span></span>
+                    <span class="bar" style="height: 76%;" data-label="22/02"><span class="bar-tooltip">264.200</span></span>
+                    <span class="bar" style="height: 84%;" data-label="23/02"><span class="bar-tooltip">292.310</span></span>
+                    <span class="bar" style="height: 79%;" data-label="24/02"><span class="bar-tooltip">275.100</span></span>
+                    <span class="bar" style="height: 92%;" data-label="25/02"><span class="bar-tooltip">320.500</span></span>
+                    <span class="bar" style="height: 88%;" data-label="26/02"><span class="bar-tooltip">306.780</span></span>
+                    <span class="bar" style="height: 67%;" data-label="27/02"><span class="bar-tooltip">233.600</span></span>
+                    <span class="bar" style="height: 71%;" data-label="28/02"><span class="bar-tooltip">248.400</span></span>
+                  </div>
+                </article>
+              </div>
+
+              <article class="card budget-card">
+                <div class="card-title"><h2>Distribuição de verba</h2><span class="pill">CPM médio R$ 52,88</span></div>
+                <div class="format-row"><div><strong>São Paulo</strong><div class="format-meter"><span style="width: 44%;"></span></div></div><span class="num">R$ 81.048</span></div>
+                <div class="format-row"><div><strong>Rio de Janeiro</strong><div class="format-meter"><span style="width: 31%;"></span></div></div><span class="num">R$ 57.102</span></div>
+                <div class="format-row"><div><strong>Recife</strong><div class="format-meter"><span style="width: 14%;"></span></div></div><span class="num">R$ 25.788</span></div>
+                <div class="format-row"><div><strong>Salvador</strong><div class="format-meter"><span style="width: 11%;"></span></div></div><span class="num">R$ 20.262</span></div>
+                <div class="budget-summary">
+                  <div class="budget-summary-item"><span>Total</span><strong>R$ 184.200</strong></div>
+                  <div class="budget-summary-item"><span>Saldo</span><strong class="trend">R$ 55.800</strong></div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="locations" hidden>
+            <div class="locations-toolbar">
+              <div class="field" style="max-width: 360px;">
+                <label for="location-search">Buscar local ou tela</label>
+                <input class="input" id="location-search" data-filter-input="locations" placeholder="Ex: Paulista, SP-PAUL, Copacabana" />
+              </div>
+              <div class="field" style="max-width: 200px;">
+                <label for="location-status">Status</label>
+                <select class="select" id="location-status" data-filter-select="locations">
+                  <option value="">Todos</option>
+                  <option value="Ativo">Ativo</option>
+                  <option value="Checking">Checking</option>
+                  <option value="Pausado">Pausado</option>
+                </select>
+              </div>
+              <span class="table-meta" data-table-count>5 locais</span>
+            </div>
+            <div class="table-wrap">
+              <table data-sortable>
+                <thead>
+                  <tr>
+                    <th data-sort="text">Local <span class="sort-arrow"></span></th>
+                    <th data-sort="text">Tela <span class="sort-arrow"></span></th>
+                    <th data-sort="text">Formato <span class="sort-arrow"></span></th>
+                    <th class="num" data-sort="number">Impressões <span class="sort-arrow"></span></th>
+                    <th data-sort="text">Status <span class="sort-arrow"></span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-filter-row="locations"><td>Av. Paulista, 1578</td><td>SP-PAUL-014</td><td>Outdoor digital</td><td class="num">428.900</td><td><span class="pill success">Ativo</span></td></tr>
+                  <tr data-filter-row="locations"><td>Orla de Copacabana</td><td>RJ-COPA-022</td><td>Relógio urbano</td><td class="num">376.240</td><td><span class="pill success">Ativo</span></td></tr>
+                  <tr data-filter-row="locations"><td>Shopping Recife</td><td>REC-SHOP-006</td><td>Indoor</td><td class="num">312.870</td><td><span class="pill success">Ativo</span></td></tr>
+                  <tr data-filter-row="locations"><td>Av. Tancredo Neves</td><td>SSA-TANC-011</td><td>Painel urbano</td><td class="num">294.120</td><td><span class="pill warn">Checking</span></td></tr>
+                  <tr data-filter-row="locations"><td>Praça da Sé</td><td>SP-SE-004</td><td>Mobiliário urbano</td><td class="num">188.430</td><td><span class="pill danger">Pausado</span></td></tr>
+                </tbody>
+              </table>
+              <div class="empty-state" data-empty-state="locations" hidden>Nenhum local encontrado.</div>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="checking" hidden>
+            <div class="checking-toolbar">
+              <div class="field" style="max-width: 320px;">
+                <label for="checking-filter">Filtrar fotos</label>
+                <input class="input" id="checking-filter" data-filter-input="checking" placeholder="Local ou criativo" />
+              </div>
+              <div class="field" style="max-width: 180px;">
+                <label for="checking-status">Aprovação</label>
+                <select class="select" id="checking-status" data-filter-select="checking">
+                  <option value="">Todas</option>
+                  <option value="Aprovado">Aprovado</option>
+                  <option value="Pendente">Pendente</option>
+                </select>
+              </div>
+            </div>
+            <div class="checking-grid" data-checking-grid>
+              <article class="photo-card" data-filter-row="checking">
+                <div class="photo" tabindex="0" role="button" data-photo-viewer>Foto checking</div>
+                <div class="photo-meta"><strong>Av. Paulista, 1578</strong><span class="muted">25 fev · 18:42 · Criativo V3</span><button class="btn btn-primary btn-sm" data-status-toggle aria-pressed="true">Aprovado</button></div>
+              </article>
+              <article class="photo-card" data-filter-row="checking">
+                <div class="photo" tabindex="0" role="button" data-photo-viewer>Foto checking</div>
+                <div class="photo-meta"><strong>Orla de Copacabana</strong><span class="muted">25 fev · 19:10 · Criativo V2</span><button class="btn btn-primary btn-sm" data-status-toggle aria-pressed="true">Aprovado</button></div>
+              </article>
+              <article class="photo-card" data-filter-row="checking">
+                <div class="photo" tabindex="0" role="button" data-photo-viewer>Foto checking</div>
+                <div class="photo-meta"><strong>Shopping Recife</strong><span class="muted">26 fev · 12:06 · Criativo V1</span><button class="btn btn-primary btn-sm" data-status-toggle aria-pressed="true">Aprovado</button></div>
+              </article>
+              <article class="photo-card" data-filter-row="checking">
+                <div class="photo pending" tabindex="0" role="button" data-photo-viewer>Foto checking</div>
+                <div class="photo-meta"><strong>Av. Tancredo Neves</strong><span class="muted">Pendente · aguardando operador</span><button class="btn btn-sm" data-status-toggle aria-pressed="false">Marcar aprovado</button></div>
+              </article>
+              <article class="photo-card" data-filter-row="checking">
+                <div class="photo pending" tabindex="0" role="button" data-photo-viewer>Foto checking</div>
+                <div class="photo-meta"><strong>Praça da Sé</strong><span class="muted">Pendente · tela pausada</span><button class="btn btn-sm" data-status-toggle aria-pressed="false">Marcar aprovado</button></div>
+              </article>
+              <article class="photo-card" data-filter-row="checking">
+                <div class="photo" tabindex="0" role="button" data-photo-viewer>Foto checking</div>
+                <div class="photo-meta"><strong>Barra Shopping</strong><span class="muted">27 fev · 16:21 · Criativo V3</span><button class="btn btn-primary btn-sm" data-status-toggle aria-pressed="true">Aprovado</button></div>
+              </article>
+            </div>
+            <div class="empty-state" data-empty-state="checking" hidden>Nenhuma foto encontrada.</div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="timeline" hidden>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot success"></div>
+                <div class="timeline-body">
+                  <strong>Campanha iniciada</strong>
+                  <p class="muted">12 jan 2026 · Primeira veiculação em SP, RJ, Recife e Salvador</p>
+                </div>
+                <span class="timeline-date">12 jan</span>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-body">
+                  <strong>Criativo V3 aprovado</strong>
+                  <p class="muted">18 jan 2026 · Substituiu V2 em todas as telas</p>
+                </div>
+                <span class="timeline-date">18 jan</span>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot success"></div>
+                <div class="timeline-body">
+                  <strong>50% da meta atingida</strong>
+                  <p class="muted">02 fev 2026 · 1.892.500 impressões entregues</p>
+                </div>
+                <span class="timeline-date">02 fev</span>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot warn"></div>
+                <div class="timeline-body">
+                  <strong>Tela SP-SE-004 pausada</strong>
+                  <p class="muted">15 fev 2026 · Problema técnico no mobiliário urbano</p>
+                </div>
+                <span class="timeline-date">15 fev</span>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-body">
+                  <strong>Checking Tancredo Neves pendente</strong>
+                  <p class="muted">22 fev 2026 · Aguardando envio do operador local</p>
+                </div>
+                <span class="timeline-date">22 fev</span>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-body">
+                  <strong>Previsão de encerramento</strong>
+                  <p class="muted">28 fev 2026 · Último dia da campanha</p>
+                </div>
+                <span class="timeline-date">28 fev</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="impactos" hidden>
+            <div class="grid-impactos">
+              <article class="card impacto-kpi">
+                <span class="kpi-label">Alcance estimado</span>
+                <strong class="kpi-value">892.400</strong>
+                <span class="kpi-note">pessoas únicas na área de cobertura</span>
+              </article>
+              <article class="card impacto-kpi">
+                <span class="kpi-label">Frequência média</span>
+                <strong class="kpi-value">3,9×</strong>
+                <span class="kpi-note">vezes por pessoa</span>
+              </article>
+              <article class="card impacto-kpi">
+                <span class="kpi-label">GRP</span>
+                <strong class="kpi-value">22,4%</strong>
+                <span class="kpi-note">da população-alvo impactada</span>
+              </article>
+            </div>
+            <div class="grid-impactos-two">
+              <article class="card">
+                <div class="card-title"><h2>Faixa etária</h2></div>
+                <div class="demo-row"><span>18-24</span><div class="demo-bar"><span style="width: 22%;"></span></div><span class="num">22%</span></div>
+                <div class="demo-row"><span>25-34</span><div class="demo-bar"><span style="width: 38%;"></span></div><span class="num">38%</span></div>
+                <div class="demo-row"><span>35-44</span><div class="demo-bar"><span style="width: 24%;"></span></div><span class="num">24%</span></div>
+                <div class="demo-row"><span>45-54</span><div class="demo-bar"><span style="width: 12%;"></span></div><span class="num">12%</span></div>
+                <div class="demo-row"><span>55+</span><div class="demo-bar"><span style="width: 4%;"></span></div><span class="num">4%</span></div>
+              </article>
+              <article class="card">
+                <div class="card-title"><h2>Gênero</h2></div>
+                <div class="demo-row"><span>Feminino</span><div class="demo-bar"><span style="width: 52%;"></span></div><span class="num">52%</span></div>
+                <div class="demo-row"><span>Masculino</span><div class="demo-bar"><span style="width: 48%;"></span></div><span class="num">48%</span></div>
+                <div class="card-title" style="margin-top: 20px;"><h2>Renda</h2></div>
+                <div class="demo-row"><span>A</span><div class="demo-bar"><span style="width: 15%;"></span></div><span class="num">15%</span></div>
+                <div class="demo-row"><span>B</span><div class="demo-bar"><span style="width: 42%;"></span></div><span class="num">42%</span></div>
+                <div class="demo-row"><span>C</span><div class="demo-bar"><span style="width: 33%;"></span></div><span class="num">33%</span></div>
+                <div class="demo-row"><span>D/E</span><div class="demo-bar"><span style="width: 10%;"></span></div><span class="num">10%</span></div>
+              </article>
+            </div>
+            <article class="card">
+              <div class="card-title"><h2>Performance por período</h2><span class="pill info">Impressões</span></div>
+              <div class="daypart-grid">
+                <div class="daypart-item"><div class="daypart-bar" style="height: 32%;"></div><strong>Manhã</strong><span class="muted">06-12h</span><span class="num">32%</span></div>
+                <div class="daypart-item"><div class="daypart-bar" style="height: 41%; background: var(--accent);"></div><strong>Tarde</strong><span class="muted">12-18h</span><span class="num">41%</span></div>
+                <div class="daypart-item"><div class="daypart-bar" style="height: 22%;"></div><strong>Noite</strong><span class="muted">18-00h</span><span class="num">22%</span></div>
+                <div class="daypart-item"><div class="daypart-bar" style="height: 5%;"></div><strong>Madrugada</strong><span class="muted">00-06h</span><span class="num">5%</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div class="toast-container" data-toast aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="photo-modal" data-photo-modal hidden>
+    <div class="photo-modal-backdrop" data-photo-close></div>
+    <div class="photo-modal-content">
+      <button class="photo-modal-close" data-photo-close aria-label="Fechar">✕</button>
+      <div class="photo-modal-image">Foto checking</div>
+      <div class="photo-modal-meta">
+        <strong data-photo-modal-title>Av. Paulista, 1578</strong>
+        <span class="muted" data-photo-modal-sub>25 fev · 18:42 · Criativo V3</span>
+        <button class="btn btn-primary btn-sm" data-modal-status-toggle aria-pressed="true">Aprovado</button>
+      </div>
+    </div>
+  </div>
+  <div class="settings-modal" data-settings-modal hidden>
+    <div class="settings-modal-backdrop" data-settings-close></div>
+    <div class="settings-modal-content">
+      <div class="settings-modal-head">
+        <h2>Configurações da campanha</h2>
+        <button class="settings-modal-close" data-settings-close aria-label="Fechar">✕</button>
+      </div>
+      <form class="settings-form" data-settings-form>
+        <div class="settings-fields">
+          <div class="field">
+            <label for="cfg-name">Nome da campanha</label>
+            <input class="input" id="cfg-name" name="name" value="Verão nas Capitais 2026" />
+          </div>
+          <div class="field">
+            <label for="cfg-client">Cliente / Anunciante</label>
+            <input class="input" id="cfg-client" name="client" value="Bebidas Aurora" />
+          </div>
+          <div class="settings-row">
+            <div class="field">
+              <label for="cfg-budget">Verba total (R$)</label>
+              <input class="input" id="cfg-budget" name="budget" type="number" value="240000" />
+            </div>
+            <div class="field">
+              <label for="cfg-status">Status</label>
+              <select class="select" id="cfg-status" name="status">
+                <option value="Ativa" selected>Ativa</option>
+                <option value="Pausada">Pausada</option>
+                <option value="Encerrada">Encerrada</option>
+              </select>
+            </div>
+          </div>
+          <div class="settings-row">
+            <div class="field">
+              <label for="cfg-start">Data início</label>
+              <input class="input" id="cfg-start" name="start" type="date" value="2026-01-12" />
+            </div>
+            <div class="field">
+              <label for="cfg-end">Data fim</label>
+              <input class="input" id="cfg-end" name="end" type="date" value="2026-02-28" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="cfg-target">Público-alvo / Segmentação</label>
+            <input class="input" id="cfg-target" name="target" value="Consumidores de bebidas, 18-54, classes A/B/C, SP/RJ/PE/BA" />
+          </div>
+          <div class="field">
+            <label for="cfg-notes">Notas internas</label>
+            <textarea class="input" id="cfg-notes" name="notes" rows="3">Campanha sazonal de verão. 45 locais contratados em 4 capitais.</textarea>
+          </div>
+        </div>
+        <div class="settings-actions">
+          <button class="btn" type="button" data-settings-close>Cancelar</button>
+          <button class="btn btn-primary" type="submit">Salvar configurações</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <script src="app-v2.js"></script>
+</body>
+</html>

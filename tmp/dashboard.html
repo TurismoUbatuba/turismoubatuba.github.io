@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard | NIROOH Campanhas</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="brand">
+        <div>
+          <div class="brand-word">NIRO<span>OH</span></div>
+          <p class="muted" style="font-size: 11px;">Unbox the Programmatic DOOH</p>
+        </div>
+        <span class="brand-mark" aria-hidden="true"></span>
+      </div>
+      <nav class="nav-group">
+        <a class="nav-link active" href="dashboard.html"><span class="nav-icon"></span>Dashboard</a>
+        <a class="nav-link" href="campaigns.html"><span class="nav-icon"></span>Campanhas</a>
+        <a class="nav-link" href="campaign-detail.html"><span class="nav-icon"></span>Detalhe da campanha</a>
+      </nav>
+      <div class="nav-group">
+        <p class="nav-title">Publisher</p>
+        <a class="nav-link" href="campaigns.html"><span class="nav-icon"></span>AdPlaces</a>
+        <a class="nav-link" href="campaigns.html"><span class="nav-icon"></span>Medias</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-title">Reports</p>
+        <a class="nav-link" href="campaign-detail.html"><span class="nav-icon"></span>Checking</a>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button class="hamburger" aria-label="Abrir menu">☰</button>
+          <span class="mobile-brand">NIROOH</span>
+        </div>
+        <div class="user-card">
+          <div class="avatar">MS</div>
+          <div>
+            <strong>Aky Mídia | Admin</strong>
+            <p class="muted">Marco Santos</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="page-head" data-od-id="dashboard-head">
+          <div>
+            <h1 class="page-title">Dashboard</h1>
+            <p class="page-subtitle">Campanha exemplo: Verão nas Capitais 2026, veiculada em São Paulo, Rio de Janeiro, Recife e Salvador entre 12 jan e 28 fev.</p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="campaigns.html">Ver campanhas</a>
+            <a class="btn btn-primary" href="campaign-detail.html">Abrir detalhe</a>
+          </div>
+        </section>
+
+        <section class="filters" data-od-id="dashboard-filters">
+          <div class="field">
+            <label for="year">Ano</label>
+            <select class="select" id="year"><option>2026</option><option>2025</option></select>
+          </div>
+          <div class="field">
+            <label for="month">Mês</label>
+            <select class="select" id="month"><option>Janeiro + Fevereiro</option><option>Janeiro</option><option>Fevereiro</option></select>
+          </div>
+          <div class="field">
+            <label for="dsp">DSP</label>
+            <select class="select" id="dsp"><option>adMooh</option><option>Programmatic Hub</option></select>
+          </div>
+          <div class="field">
+            <label for="market">Praça</label>
+            <select class="select" id="market"><option>Todas as praças</option><option>São Paulo</option><option>Rio de Janeiro</option></select>
+          </div>
+        </section>
+
+        <section class="grid-kpi" data-od-id="dashboard-kpis">
+          <article class="card kpi">
+            <span class="kpi-label">Verba contratada</span>
+            <strong class="kpi-value">R$ 240.000</strong>
+            <span class="kpi-note">Pacing planejado para 48 dias</span>
+          </article>
+          <article class="card kpi">
+            <span class="kpi-label">Quantidade gasta</span>
+            <strong class="kpi-value">R$ 184.200</strong>
+            <div class="progress" aria-label="76,8% da verba utilizada"><span style="width: 76.8%;"></span></div>
+            <span class="trend">76,8% utilizado</span>
+          </article>
+          <article class="card kpi">
+            <span class="kpi-label">Quantidade faltante</span>
+            <strong class="kpi-value">R$ 55.800</strong>
+            <span class="kpi-note">Saldo reservado para 11 dias</span>
+          </article>
+          <article class="card kpi">
+            <span class="kpi-label">Impressões entregues</span>
+            <strong class="kpi-value">3.482.910</strong>
+            <span class="trend warn">92% da meta do período</span>
+          </article>
+        </section>
+
+        <section class="grid-main" data-od-id="dashboard-performance">
+          <article class="card">
+            <div class="card-title">
+              <h2>Impressões por dia</h2>
+              <span class="pill info">Últimos 10 dias</span>
+            </div>
+            <div class="chart-bars" role="img" aria-label="Barras de impressões diárias">
+              <span class="bar" style="height: 48%;" data-label="19/02"></span>
+              <span class="bar" style="height: 62%;" data-label="20/02"></span>
+              <span class="bar" style="height: 58%;" data-label="21/02"></span>
+              <span class="bar" style="height: 76%;" data-label="22/02"></span>
+              <span class="bar" style="height: 84%;" data-label="23/02"></span>
+              <span class="bar" style="height: 79%;" data-label="24/02"></span>
+              <span class="bar" style="height: 92%;" data-label="25/02"></span>
+              <span class="bar" style="height: 88%;" data-label="26/02"></span>
+              <span class="bar" style="height: 67%;" data-label="27/02"></span>
+              <span class="bar" style="height: 71%;" data-label="28/02"></span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-title">
+              <h2>Impressões por formato</h2>
+              <span class="pill">Share</span>
+            </div>
+            <div>
+              <div class="format-row">
+                <div><strong>Outdoor digital</strong><div class="format-meter"><span style="width: 48%;"></span></div></div>
+                <span class="num">1.672.400</span>
+              </div>
+              <div class="format-row">
+                <div><strong>Relógio urbano</strong><div class="format-meter"><span style="width: 27%;"></span></div></div>
+                <span class="num">941.820</span>
+              </div>
+              <div class="format-row">
+                <div><strong>Mobiliário urbano</strong><div class="format-meter"><span style="width: 18%;"></span></div></div>
+                <span class="num">626.910</span>
+              </div>
+              <div class="format-row">
+                <div><strong>Shopping indoor</strong><div class="format-meter"><span style="width: 7%;"></span></div></div>
+                <span class="num">241.780</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="grid-two" data-od-id="dashboard-locations">
+          <article class="card">
+            <div class="card-title">
+              <h2>Impressões por local</h2>
+              <a class="btn btn-quiet" href="campaign-detail.html">Ver locais</a>
+            </div>
+            <div class="location-row"><div><strong>Av. Paulista, 1578</strong><p class="muted">São Paulo · Outdoor digital</p></div><span class="num">428.900</span></div>
+            <div class="location-row"><div><strong>Orla de Copacabana</strong><p class="muted">Rio de Janeiro · Relógio urbano</p></div><span class="num">376.240</span></div>
+            <div class="location-row"><div><strong>Shopping Recife</strong><p class="muted">Recife · Indoor</p></div><span class="num">312.870</span></div>
+            <div class="location-row"><div><strong>Av. Tancredo Neves</strong><p class="muted">Salvador · Painel urbano</p></div><span class="num">294.120</span></div>
+          </article>
+
+          <article class="card map-panel">
+            <div class="card-title">
+              <h2>Mapa de locais</h2>
+              <span class="pill success">42 ativos</span>
+            </div>
+            <span class="pin success" style="left: 62%; top: 46%;" title="São Paulo"></span>
+            <span class="pin" style="left: 72%; top: 52%;" title="Rio de Janeiro"></span>
+            <span class="pin" style="left: 55%; top: 31%;" title="Recife"></span>
+            <span class="pin danger" style="left: 48%; top: 40%;" title="Salvador"></span>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
