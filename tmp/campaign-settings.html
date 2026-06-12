@@ -15,6 +15,7 @@
       margin-bottom: 28px;
     }
 
+    /* ── Section card ── */
     .section-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -38,12 +39,43 @@
       margin-bottom: 0;
     }
 
+    /* ── Settings area (sub-card within section) ── */
+    .settings-area {
+      background: color-mix(in oklch, var(--bg) 50%, var(--surface));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .settings-area + .settings-area {
+      margin-top: 16px;
+    }
+
+    .settings-area .field:last-child,
+    .settings-area .settings-row:last-child {
+      margin-bottom: 0;
+    }
+
     .section-card .settings-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
+      margin-bottom: 16px;
     }
 
+    .section-card .settings-row:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Field hint (footnote) ── */
+    .field-hint {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* ── Location table ── */
     .loc-table {
       width: 100%;
       border-collapse: separate;
@@ -68,8 +100,21 @@
       vertical-align: middle;
     }
 
+    .loc-table tbody tr {
+      transition: background 120ms ease;
+    }
+
+    .loc-table tbody tr:hover {
+      background: color-mix(in oklch, var(--fg) 3%, var(--surface));
+    }
+
     .loc-table tr:last-child td {
       border-bottom: 0;
+    }
+
+    .loc-table td:last-child {
+      text-align: right;
+      white-space: nowrap;
     }
 
     .loc-add-form {
@@ -86,22 +131,67 @@
       margin-bottom: 0;
     }
 
+    /* ── Buttons ── */
     .btn-danger {
       background: var(--danger);
       border-color: var(--danger);
       color: var(--surface);
       font-weight: 700;
+      transition: opacity 120ms ease;
     }
 
     .btn-danger:hover {
-      opacity: 0.9;
+      opacity: 0.88;
     }
 
+    .btn-danger:active {
+      opacity: 0.76;
+    }
+
+    .btn-sm {
+      min-height: 34px;
+      padding: 6px 12px;
+      font-size: 13px;
+    }
+
+    /* ── Empty state ── */
     .empty-loc {
       text-align: center;
       padding: 32px;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    /* ── Form actions ── */
+    .form-actions {
+      margin-top: 8px;
+    }
+
+    /* ── Submit feedback ── */
+    .btn.is-loading {
+      position: relative;
+      pointer-events: none;
+      color: transparent;
+    }
+
+    .btn.is-loading::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 2px solid currentColor;
+      border-top-color: transparent;
+      animation: spin 600ms linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 820px) {
@@ -195,8 +285,9 @@
           </section>
 
           <form data-settings-form>
+
             <section class="section-card" data-od-id="settings-general">
-              <h2>Dados gerais</h2>
+              <h2>Dados da campanha</h2>
               <div class="field">
                 <label for="cfg-name">Nome da campanha</label>
                 <input class="input" id="cfg-name" name="name" value="Verão nas Capitais 2026" />
@@ -205,38 +296,71 @@
                 <label for="cfg-client">Cliente / Anunciante</label>
                 <input class="input" id="cfg-client" name="client" value="Bebidas Aurora" />
               </div>
-              <div class="settings-row">
-                <div class="field">
-                  <label for="cfg-budget">Verba total (R$)</label>
-                  <input class="input" id="cfg-budget" name="budget" type="number" value="240000" />
-                </div>
-                <div class="field">
-                  <label for="cfg-status">Status</label>
-                  <select class="select" id="cfg-status" name="status">
-                    <option value="Ativa" selected>Ativa</option>
-                    <option value="Pausada">Pausada</option>
-                    <option value="Encerrada">Encerrada</option>
-                  </select>
-                </div>
-              </div>
-              <div class="settings-row">
-                <div class="field">
-                  <label for="cfg-start">Data início</label>
-                  <input class="input" id="cfg-start" name="start" type="date" value="2026-01-12" />
-                </div>
-                <div class="field">
-                  <label for="cfg-end">Data fim</label>
-                  <input class="input" id="cfg-end" name="end" type="date" value="2026-02-28" />
-                </div>
-              </div>
               <div class="field">
                 <label for="cfg-target">Público-alvo / Segmentação</label>
                 <input class="input" id="cfg-target" name="target" value="Consumidores de bebidas, 18-54, classes A/B/C, SP/RJ/PE/BA" />
               </div>
+                  <div class="field">
+                    <label for="cfg-delivery-type">Projeto</label>
+                    <select class="select" id="cfg-delivery-type" name="deliveryType">
+                      <option value="Exibições">Weooh</option>
+                      <option value="Audiência">Nirooh</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="cfg-delivery-type">DSP</label>
+                    <select class="select" id="cfg-delivery-type" name="deliveryType">
+                      <option value="Exibições">Adsmovil</option>
+                      <option value="Audiência">Perion</option>
+                    </select>
+                  </div>
+
               <div class="field">
                 <label for="cfg-notes">Notas internas</label>
                 <textarea class="input" id="cfg-notes" name="notes" rows="3">Campanha sazonal de verão. 45 locais contratados em 4 capitais.</textarea>
               </div>
+            </section>
+
+            <section class="section-card" data-od-id="settings-general">
+              <h2>Configuração de Acompanhamento*</h2>
+                <div class="settings-row">
+                  <div class="field">
+                    <label for="cfg-budget">Verba total (R$)</label>
+                    <input class="input" id="cfg-budget" name="budget" type="number" value="240000" />
+                  </div>
+                  <div class="field">
+                    <label for="cfg-status">Status</label>
+                    <select class="select" id="cfg-status" name="status">
+                      <option value="Ativa" selected>Ativa</option>
+                      <option value="Pausada">Pausada</option>
+                      <option value="Encerrada">Encerrada</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="settings-row">
+                  <div class="field">
+                    <label for="cfg-start">Data início</label>
+                    <input class="input" id="cfg-start" name="start" type="date" value="2026-01-12" />
+                  </div>
+                  <div class="field">
+                    <label for="cfg-end">Data fim</label>
+                    <input class="input" id="cfg-end" name="end" type="date" value="2026-02-28" />
+                  </div>
+                </div>
+                <div class="settings-row">
+                  <div class="field">
+                    <label for="cfg-delivery-type">Forma de entrega</label>
+                    <select class="select" id="cfg-delivery-type" name="deliveryType">
+                      <option value="Exibições">Exibições</option>
+                      <option value="Audiência">Audiência</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="cfg-delivery-value">Valor da entrega</label>
+                    <input class="input" id="cfg-delivery-value" name="deliveryValue" placeholder="R$ 0,00" />
+                  </div>
+                </div>
+                <p class="field-hint">* Para acompanhamento da evolução da campanha, é necessário preencher estes dados.</p>
             </section>
 
             <section class="section-card" data-od-id="settings-locations">
@@ -268,7 +392,7 @@
               </div>
             </section>
 
-            <div class="actions" style="margin-top: 8px;">
+            <div class="actions form-actions">
               <a class="btn" href="campaign-detail.html">Cancelar</a>
               <button class="btn btn-primary" type="submit">Salvar configurações</button>
             </div>
@@ -344,11 +468,13 @@
 
         locations.forEach(function (loc, i) {
           var tr = document.createElement("tr");
+          tr.style.animation = "fade-in 200ms ease both";
+          tr.style.animationDelay = (i * 30) + "ms";
           tr.innerHTML =
             "<td><strong>" + esc(loc.name) + "</strong></td>" +
             "<td><span class=\"pill\">" + esc(loc.screen) + "</span></td>" +
             "<td>" + esc(loc.format) + "</td>" +
-            "<td style=\"text-align:right;\"><button class=\"btn btn-danger btn-sm\" data-loc-remove=\"" + i + "\">Remover</button></td>";
+            "<td><button class=\"btn btn-danger btn-sm\" data-loc-remove=\"" + i + "\" aria-label=\"Remover " + esc(loc.name) + "\">Remover</button></td>";
           tbody.appendChild(tr);
         });
 
@@ -416,13 +542,20 @@
       if (form) {
         form.addEventListener("submit", function (e) {
           e.preventDefault();
+          var btn = form.querySelector("[type=\"submit\"]");
+          btn.classList.add("is-loading");
+
           var formData = {};
           Array.from(form.querySelectorAll("[name]")).forEach(function (el) {
             formData[el.name] = el.value;
           });
           localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
           saveLocations(locations);
-          showToast("Configurações salvas com sucesso");
+
+          setTimeout(function () {
+            btn.classList.remove("is-loading");
+            showToast("Configurações salvas com sucesso");
+          }, 360);
         });
       }
 
