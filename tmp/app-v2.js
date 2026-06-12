@@ -19,7 +19,7 @@
   }
 
   function loadData() {
-    fetch('campaign.json')
+    fetch('api/campaign.json')
       .then(function (r) { if (!r.ok) throw new Error('Erro ao carregar campaign.json'); return r.json(); })
       .then(renderAll)
       .catch(function (e) { console.error(e); });

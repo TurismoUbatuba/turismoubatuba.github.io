@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalhe da campanha | NIROOH</title>
+  <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="app-v2.css" />
+  </head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" data-sidebar aria-label="Navegação principal">
+      <div class="sidebar-head">
+        <div class="brand">
+          <div><div class="brand-word">NIRO<span>OH</span></div><p class="muted" style="font-size: 11px;">Unbox the Programmatic DOOH</p></div>
+          <span class="brand-mark" aria-hidden="true"></span>
+        </div>
+        <button class="sidebar-close" data-sidebar-close aria-label="Fechar menu">✕</button>
+      </div>
+      <nav class="nav-group">
+        <a class="nav-link" href="dashboard.html"><span class="nav-icon"></span>Dashboard</a>
+        <a class="nav-link" href="campaigns.html"><span class="nav-icon"></span>Campanhas</a>
+        <a class="nav-link active" href="campaign-detail.html"><span class="nav-icon"></span>Detalhe da campanha</a>
+        <a class="nav-link" href="campaign-settings.html"><span class="nav-icon"></span>Configurações</a>
+      </nav>
+      <div class="nav-group">
+        <p class="nav-title">Publisher</p>
+        <a class="nav-link" href="#"><span class="nav-icon"></span>AdPlaces</a>
+        <a class="nav-link" href="#"><span class="nav-icon"></span>Mídias</a>
+      </div>
+      <div class="nav-group">
+        <p class="nav-title">Reports</p>
+        <a class="nav-link" href="#"><span class="nav-icon"></span>Checking</a>
+      </div>
+      <div class="sidebar-foot">
+        <span class="pill info">v2.0</span>
+      </div>
+    </aside>
+    <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-start">
+          <button class="hamburger" data-sidebar-toggle aria-label="Abrir menu">☰</button>
+          <span class="mobile-brand">NIROOH</span>
+        </div>
+        <div class="topbar-center" data-breadcrumb>
+          <span class="breadcrumb-item"><a href="campaigns.html">Campanhas</a></span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-item current">Verão nas Capitais 2026</span>
+        </div>
+        <div class="user-card">
+          <div class="avatar">MS</div>
+          <div>
+            <strong>Aky Mídia | Admin</strong>
+            <p class="muted">Marco Santos</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="page-head" data-od-id="detail-head" data-render="header">
+          <div>
+            <div class="page-badges" data-header-badges></div>
+            <h1 class="page-title" data-header-title></h1>
+            <p class="page-subtitle" data-header-subtitle></p>
+          </div>
+          <div class="actions">
+            <button class="btn" data-copy-report>Copiar resumo</button>
+            <div class="btn-group">
+              <button class="btn btn-primary" data-export-pdf>Exportar PDF</button>
+              <a class="btn" href="campaign-settings.html">Configurações</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid-kpi" data-od-id="detail-kpis" data-render="kpis"></section>
+
+        <section class="card" data-od-id="detail-tabs" style="margin-top: 16px;">
+          <div class="tabs" data-tab-group="campaign">
+            <button class="tab active" data-tab-target="overview">Resumo</button>
+            <button class="tab" data-tab-target="locations">Locais e telas <span class="tab-count" data-dynamic-count></span></button>
+            <button class="tab" data-tab-target="formatos">Formatos</button>
+            <button class="tab" data-tab-target="impactos">Impactos</button>
+            <button class="tab" data-tab-target="checking">Fotos de checking <span class="tab-count" data-dynamic-count></span></button>
+            <button class="tab" data-tab-target="timeline">Timeline</button>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="overview">
+            <div data-render="overview"></div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="locations" hidden>
+            <div data-render="locations"></div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="formatos" hidden>
+            <div data-render="formatos"></div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="impactos" hidden>
+            <div data-render="impactos"></div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="checking" hidden>
+            <div data-render="checking"></div>
+          </div>
+
+          <div class="tab-panel" data-tab-panel="campaign" data-panel-id="timeline" hidden>
+            <div data-render="timeline"></div>
+          </div>
+        </section>
+      </main>
+
+      <div class="toast-container" data-toast aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="photo-modal" data-photo-modal hidden>
+    <div class="photo-modal-backdrop" data-photo-close></div>
+    <div class="photo-modal-content">
+      <button class="photo-modal-close" data-photo-close aria-label="Fechar">✕</button>
+      <div class="photo-modal-image">Foto checking</div>
+      <div class="photo-modal-meta">
+        <strong data-photo-modal-title>Av. Paulista, 1578</strong>
+        <span class="muted" data-photo-modal-sub>25 fev · 18:42 · Criativo V3</span>
+        <button class="btn btn-primary btn-sm" data-modal-status-toggle aria-pressed="true">Aprovado</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="app-v2.js"></script>
+</body>
+</html>
