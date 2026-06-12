@@ -1,0 +1,133 @@
+{
+  "header": {
+    "title": "Verão nas Capitais 2026",
+    "subtitle": "Bebidas Aurora · 12 jan a 28 fev · 45 locais contratados · 126 telas programáticas.",
+    "status": "Ativa",
+    "statusClass": "info",
+    "id": "ID #2026-001"
+  },
+  "kpis": [
+    { "type": "progress", "label": "Verba gasta", "value": "R$ 184.200", "progress": 76.8, "note": "R$ 55.800 faltante" },
+    { "type": "progress", "label": "Impressões", "value": "3.482.910", "progress": 92, "note": "92% da meta", "tooltip": "Meta: 3.785.000", "warn": true },
+    { "type": "progress", "label": "Locais ativos", "value": "42 / 45", "progress": 93.3, "note": "3 aguardando checking" },
+    { "type": "ring", "label": "Fotos aprovadas", "value": "87%", "pct": 87, "note": "112 de 129 evidências" }
+  ],
+  "overview": {
+    "topScreens": [
+      { "name": "Tela SP-PAUL-014", "desc": "Av. Paulista · 12m x 4m", "value": 168420, "formatted": "168.420", "hover": "Outdoor digital · CPM R$ 48,20" },
+      { "name": "Tela RJ-COPA-022", "desc": "Copacabana · relógio urbano", "value": 151880, "formatted": "151.880", "hover": "Relógio urbano · CPM R$ 52,10" },
+      { "name": "Tela REC-SHOP-006", "desc": "Shopping Recife · indoor", "value": 129540, "formatted": "129.540", "hover": "Indoor · CPM R$ 44,80" },
+      { "name": "Tela SSA-TANC-011", "desc": "Av. Tancredo Neves · painel urbano", "value": 118330, "formatted": "118.330", "hover": "Painel urbano · CPM R$ 39,90" }
+    ],
+    "dailyImpressions": [
+      { "date": "19/02", "value": "168.420", "pct": 48 },
+      { "date": "20/02", "value": "215.880", "pct": 62 },
+      { "date": "21/02", "value": "201.450", "pct": 58 },
+      { "date": "22/02", "value": "264.200", "pct": 76 },
+      { "date": "23/02", "value": "292.310", "pct": 84 },
+      { "date": "24/02", "value": "275.100", "pct": 79 },
+      { "date": "25/02", "value": "320.500", "pct": 92 },
+      { "date": "26/02", "value": "306.780", "pct": 88 },
+      { "date": "27/02", "value": "233.600", "pct": 67 },
+      { "date": "28/02", "value": "248.400", "pct": 71 }
+    ],
+    "budgetDistribution": [
+      { "city": "São Paulo", "pct": 44, "value": "R$ 81.048" },
+      { "city": "Rio de Janeiro", "pct": 31, "value": "R$ 57.102" },
+      { "city": "Recife", "pct": 14, "value": "R$ 25.788" },
+      { "city": "Salvador", "pct": 11, "value": "R$ 20.262" }
+    ],
+    "totalBudget": "R$ 184.200",
+    "remaining": "R$ 55.800",
+    "cpmMedio": "R$ 52,88"
+  },
+  "locations": [
+    { "local": "Av. Paulista, 1578", "tela": "SP-PAUL-014", "formato": "Outdoor digital / LED", "impressoes": "428.900", "impactos": "1,2M", "status": "Ativo", "statusClass": "success" },
+    { "local": "Orla de Copacabana", "tela": "RJ-COPA-022", "formato": "Relógio urbano / Digital", "impressoes": "376.240", "impactos": "942K", "status": "Ativo", "statusClass": "success" },
+    { "local": "Shopping Recife", "tela": "REC-SHOP-006", "formato": "Indoor / LCD", "impressoes": "312.870", "impactos": "687K", "status": "Ativo", "statusClass": "success" },
+    { "local": "Av. Tancredo Neves", "tela": "SSA-TANC-011", "formato": "Painel urbano / Backlight", "impressoes": "294.120", "impactos": "612K", "status": "Checking", "statusClass": "warn" },
+    { "local": "Praça da Sé", "tela": "SP-SE-004", "formato": "Mobiliário urbano / Digital", "impressoes": "188.430", "impactos": "420K", "status": "Pausado", "statusClass": "danger" }
+  ],
+  "formatos": [
+    {
+      "name": "Outdoor digital", "telas": 42,
+      "midias": [
+        { "thumb": "#e85d3a", "name": "LED fullcolor", "telas": 24, "impressoes": "986.200", "impactos": "2,4M", "cpm": "R$ 48,20" },
+        { "thumb": "#2a7f62", "name": "Backlight", "telas": 12, "impressoes": "412.800", "impactos": "1,1M", "cpm": "R$ 44,50" },
+        { "thumb": "#4b6a8b", "name": "LCD", "telas": 6, "impressoes": "189.400", "impactos": "512K", "cpm": "R$ 38,90" }
+      ]
+    },
+    {
+      "name": "Relógio urbano", "telas": 18,
+      "midias": [
+        { "thumb": "#c4923a", "name": "Digital", "telas": 14, "impressoes": "523.600", "impactos": "1,3M", "cpm": "R$ 52,10" },
+        { "thumb": "#8b6f47", "name": "Analógico", "telas": 4, "impressoes": "112.300", "impactos": "286K", "cpm": "R$ 41,20" }
+      ]
+    },
+    {
+      "name": "Indoor", "telas": 28,
+      "midias": [
+        { "thumb": "#3a7ca5", "name": "LCD", "telas": 20, "impressoes": "688.200", "impactos": "1,6M", "cpm": "R$ 44,80" },
+        { "thumb": "#5c4a72", "name": "TV", "telas": 8, "impressoes": "245.600", "impactos": "598K", "cpm": "R$ 36,50" }
+      ]
+    },
+    {
+      "name": "Painel urbano", "telas": 22,
+      "midias": [
+        { "thumb": "#d4732a", "name": "Backlight", "telas": 16, "impressoes": "512.800", "impactos": "1,2M", "cpm": "R$ 39,90" },
+        { "thumb": "#a63d3d", "name": "LED", "telas": 6, "impressoes": "198.400", "impactos": "486K", "cpm": "R$ 42,60" }
+      ]
+    },
+    {
+      "name": "Mobiliário urbano", "telas": 16,
+      "midias": [
+        { "thumb": "#6b8f3a", "name": "Digital", "telas": 10, "impressoes": "284.200", "impactos": "686K", "cpm": "R$ 35,20" },
+        { "thumb": "#7a6b5a", "name": "Static", "telas": 6, "impressoes": "108.600", "impactos": "264K", "cpm": "R$ 28,90" }
+      ]
+    }
+  ],
+  "impactos": {
+    "alcance": "892.400",
+    "frequencia": "3,9×",
+    "grp": "22,4%",
+    "faixaEtaria": [
+      { "label": "18-24", "pct": 22 },
+      { "label": "25-34", "pct": 38 },
+      { "label": "35-44", "pct": 24 },
+      { "label": "45-54", "pct": 12 },
+      { "label": "55+", "pct": 4 }
+    ],
+    "genero": [
+      { "label": "Feminino", "pct": 52 },
+      { "label": "Masculino", "pct": 48 }
+    ],
+    "renda": [
+      { "label": "A", "pct": 15 },
+      { "label": "B", "pct": 42 },
+      { "label": "C", "pct": 33 },
+      { "label": "D/E", "pct": 10 }
+    ],
+    "daypart": [
+      { "periodo": "Manhã", "horario": "06-12h", "pct": 32 },
+      { "periodo": "Tarde", "horario": "12-18h", "pct": 41, "accent": true },
+      { "periodo": "Noite", "horario": "18-00h", "pct": 22 },
+      { "periodo": "Madrugada", "horario": "00-06h", "pct": 5 }
+    ]
+  },
+  "checking": [
+    { "local": "Av. Paulista, 1578", "meta": "25 fev · 18:42 · Criativo V3", "aprovado": true },
+    { "local": "Orla de Copacabana", "meta": "25 fev · 19:10 · Criativo V2", "aprovado": true },
+    { "local": "Shopping Recife", "meta": "26 fev · 12:06 · Criativo V1", "aprovado": true },
+    { "local": "Av. Tancredo Neves", "meta": "Pendente · aguardando operador", "aprovado": false },
+    { "local": "Praça da Sé", "meta": "Pendente · tela pausada", "aprovado": false },
+    { "local": "Barra Shopping", "meta": "27 fev · 16:21 · Criativo V3", "aprovado": true }
+  ],
+  "timeline": [
+    { "title": "Campanha iniciada", "desc": "12 jan 2026 · Primeira veiculação em SP, RJ, Recife e Salvador", "date": "12 jan", "dot": "success" },
+    { "title": "Criativo V3 aprovado", "desc": "18 jan 2026 · Substituiu V2 em todas as telas", "date": "18 jan", "dot": "" },
+    { "title": "50% da meta atingida", "desc": "02 fev 2026 · 1.892.500 impressões entregues", "date": "02 fev", "dot": "success" },
+    { "title": "Tela SP-SE-004 pausada", "desc": "15 fev 2026 · Problema técnico no mobiliário urbano", "date": "15 fev", "dot": "warn" },
+    { "title": "Checking Tancredo Neves pendente", "desc": "22 fev 2026 · Aguardando envio do operador local", "date": "22 fev", "dot": "" },
+    { "title": "Previsão de encerramento", "desc": "28 fev 2026 · Último dia da campanha", "date": "28 fev", "dot": "" }
+  ]
+}
