@@ -597,6 +597,90 @@ th[data-sort].sort-desc .sort-arrow {
 
 
 
+/* ── Formatos tab ── */
+/* ── Formatos table ── */
+.formatos-table-wrap {
+  overflow-x: auto;
+}
+
+.formatos-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.formatos-table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.formatos-table th.num {
+  text-align: right;
+}
+
+.formatos-table th.thumb-col {
+  width: 44px;
+  padding-right: 0;
+}
+
+.formatos-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.formatos-table td.num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.formatos-table td.thumb-col {
+  padding: 6px 0 6px 12px;
+  width: 44px;
+}
+
+.midia-thumb {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.midia-name {
+  font-weight: 600;
+}
+
+.formato-group-row td {
+  padding: 16px 12px 8px;
+  border-bottom: none;
+  font-size: 13px;
+}
+
+.formato-group-row strong {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.formato-group-row .pill {
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+.formatos-table tbody tr:not(.formato-group-row):hover {
+  background: color-mix(in oklch, var(--bg) 50%, var(--surface));
+}
+
 /* ── Responsive: medium ── */
 @media (max-width: 1180px) {
   .grid-overview {
@@ -687,6 +771,13 @@ th[data-sort].sort-desc .sort-arrow {
     left: 16px;
     right: 16px;
     bottom: 16px;
+  }
+
+  .formatos-table th:nth-child(4),
+  .formatos-table td:nth-child(4),
+  .formatos-table th:nth-child(6),
+  .formatos-table td:nth-child(6) {
+    display: none;
   }
 }
 

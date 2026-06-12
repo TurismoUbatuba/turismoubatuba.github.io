@@ -43,12 +43,23 @@ document.querySelectorAll("[data-tab-group]").forEach((group) => {
 
 document.querySelectorAll("[data-copy-report]").forEach((button) => {
   button.addEventListener("click", async () => {
-    const text = [
-      "Campanha: Verão nas Capitais 2026",
-      "Investimento: R$ 184.200,00 de R$ 240.000,00",
-      "Impressões entregues: 3.482.910",
-      "Locais ativos: 42 de 45",
-      "Checking aprovado: 87%"
+    var data = (function () {
+      var el = document.getElementById("campaign-data");
+      if (!el) return null;
+      try { return JSON.parse(el.textContent); } catch (e) { return null; }
+    })();
+    var h = data ? data.header : { title: "Verão nas Capitais 2026" };
+    var k = data ? data.kpis : [];
+    var invested = (k[0] && k[0].value) || "R$ 184.200";
+    var impressions = (k[1] && k[1].value) || "3.482.910";
+    var locsStr = (k[2] && k[2].value) || "42 / 45";
+    var approvedStr = (k[3] && k[3].value) || "87%";
+    var text = [
+      "Campanha: " + h.title,
+      "Investimento: " + invested,
+      "Impressões entregues: " + impressions,
+      "Locais ativos: " + locsStr,
+      "Checking aprovado: " + approvedStr
     ].join("\n");
 
     try {

@@ -1,0 +1,95 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NIROOH | Protótipo de campanhas DOOH</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="brand">
+        <div>
+          <div class="brand-word">NIRO<span>OH</span></div>
+          <p class="muted" style="font-size: 11px;">Unbox the Programmatic DOOH</p>
+        </div>
+        <span class="brand-mark" aria-hidden="true"></span>
+      </div>
+      <nav class="nav-group">
+        <a class="nav-link active" href="index.html"><span class="nav-icon"></span>Protótipo</a>
+        <a class="nav-link" href="dashboard.html"><span class="nav-icon"></span>Dashboard</a>
+        <a class="nav-link" href="campaigns.html"><span class="nav-icon"></span>Campanhas</a>
+        <a class="nav-link" href="campaign-detail.html"><span class="nav-icon"></span>Detalhe</a>
+      </nav>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button class="hamburger" aria-label="Abrir menu">☰</button>
+          <span class="mobile-brand">NIROOH</span>
+        </div>
+        <div class="user-card">
+          <div class="avatar">MS</div>
+          <div>
+            <strong>Aky Mídia | Admin</strong>
+            <p class="muted">Marco Santos</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="page-head" data-od-id="launcher-head">
+          <div>
+            <h1 class="page-title">Protótipo de acompanhamento de campanhas DOOH</h1>
+            <p class="page-subtitle">Três telas responsivas para acompanhar verba, impressões, locais, formatos, telas e fotos de checking com uma postura visual baseada nas referências NIROOH enviadas.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="dashboard.html">Abrir dashboard</a>
+          </div>
+        </section>
+
+        <section class="launcher-grid" data-od-id="screen-launcher">
+          <a class="card screen-card" href="dashboard.html">
+            <div>
+              <div class="mini-preview" aria-hidden="true">
+                <div class="mini-lines"><span></span><span></span><span></span></div>
+                <div class="mini-lines"><span></span><span></span><span></span></div>
+              </div>
+              <h2 style="margin-top: 18px;">Dashboard</h2>
+              <p class="muted">Resumo executivo com verba gasta/faltante, pacing, impressões por dia, formato e local.</p>
+            </div>
+            <span class="pill info">Performance</span>
+          </a>
+
+          <a class="card screen-card" href="campaigns.html">
+            <div>
+              <div class="mini-preview" aria-hidden="true">
+                <div class="mini-lines"><span></span><span></span><span></span></div>
+                <div class="mini-lines"><span></span><span></span><span></span></div>
+              </div>
+              <h2 style="margin-top: 18px;">Listagem</h2>
+              <p class="muted">Tabela de campanhas e praças com busca, status, orçamento, entregas e checking.</p>
+            </div>
+            <span class="pill success">Operação</span>
+          </a>
+
+          <a class="card screen-card" href="campaign-detail.html">
+            <div>
+              <div class="mini-preview" aria-hidden="true">
+                <div class="mini-lines"><span></span><span></span><span></span></div>
+                <div class="mini-lines"><span></span><span></span><span></span></div>
+              </div>
+              <h2 style="margin-top: 18px;">Detalhe</h2>
+              <p class="muted">Visão profunda da campanha com locais, telas, formatos, checking e relatório copiável.</p>
+            </div>
+            <span class="pill warn">Checking</span>
+          </a>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
