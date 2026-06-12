@@ -9,46 +9,59 @@
     renderHeader(data);
     renderKpis(data);
     renderOverview(data);
-    renderLocations(data);
-    renderFormatos(data);
-    renderImpactos(data);
-    renderChecking(data);
-    renderTimeline(data);
+    if (data.locations) renderLocations(data);
+    if (data.formatos) renderFormatos(data);
+    if (data.impactos) renderImpactos(data);
+    if (data.checking) renderChecking(data);
+    if (data.timeline) renderTimeline(data);
 
     updateTabBadges(data);
+    toggleConditionalTabs(data);
   }
 
+ function isNullOrEmptyOrUndefined(value) {
+    return value == null || value === "" || (Array.isArray(value) && value.length === 0);
+ }
+
   function loadData() {
-    fetch('api/campaign.json')
+    const urlParams = new URLSearchParams(window.location.search);
+    var campaignName = urlParams.get('c');
+    if (isNullOrEmptyOrUndefined(campaignName)) {
+      campaignName = "campaign";
+    }
+    fetch('https://turismoubatuba.com.br/tmp/api/' + campaignName + '.json')
       .then(function (r) { if (!r.ok) throw new Error('Erro ao carregar campaign.json'); return r.json(); })
       .then(renderAll)
       .catch(function (e) { console.error(e); });
   }
 
   function renderHeader(data) {
-    var h = data.header;
+    var h = data.header || {};
     var badges = document.querySelector("[data-header-badges]");
-    if (badges) badges.innerHTML = '<span class="pill ' + h.statusClass + '">' + h.status + '</span><span class="pill">' + h.id + '</span>';
+    if (badges) badges.innerHTML = '<span class="pill ' + (h.statusClass || "") + '">' + (h.status || "") + '</span><span class="pill">' + (h.id || "") + '</span>';
     var title = document.querySelector("[data-header-title]");
-    if (title) title.textContent = h.title;
+    if (title) title.textContent = h.title || "";
     var sub = document.querySelector("[data-header-subtitle]");
-    if (sub) sub.textContent = h.subtitle;
+    if (sub) sub.textContent = h.subtitle || "";
   }
 
   function renderKpis(data) {
     var c = document.querySelector('[data-render="kpis"]');
     if (!c) return;
-    c.innerHTML = data.kpis.map(function (k) {
-      var h = '<article class="card kpi"><span class="kpi-label">' + k.label + '</span>';
-      if (k.tooltip) h += '<strong class="kpi-value" data-tooltip="' + k.tooltip + '">' + k.value + '</strong>';
-      else h += '<strong class="kpi-value">' + k.value + '</strong>';
+    c.innerHTML = (data.kpis || []).map(function (k) {
+      if (k.type === "ecpm") {
+        return '<article class="card kpi-ecpm"><span class="kpi-label">' + (k.label || "") + '</span><strong class="kpi-value">' + (k.value || "") + '</strong><span class="kpi-note">' + (k.note || "") + '</span></article>';
+      }
+      var h = '<article class="card kpi"><span class="kpi-label">' + (k.label || "") + '</span>';
+      if (k.tooltip) h += '<strong class="kpi-value" data-tooltip="' + k.tooltip + '">' + (k.value || "") + '</strong>';
+      else h += '<strong class="kpi-value">' + (k.value || "") + '</strong>';
       if (k.type === "ring") {
-        h += '<div class="ring-progress" role="img" aria-label="' + k.value + ' aprovado" style="--pct:' + k.pct + '"><svg viewBox="0 0 40 40" class="ring-svg"><circle class="ring-bg" cx="20" cy="20" r="17"/><circle class="ring-fg" cx="20" cy="20" r="17" style="stroke-dashoffset:calc(106.9 - (106.9 * var(--pct))/100)"/></svg></div>';
+        h += '<div class="ring-progress" role="img" aria-label="' + (k.value || "") + ' aprovado" style="--pct:' + (k.pct || 0) + '"><svg viewBox="0 0 40 40" class="ring-svg"><circle class="ring-bg" cx="20" cy="20" r="17"/><circle class="ring-fg" cx="20" cy="20" r="17" style="stroke-dashoffset:calc(106.9 - (106.9 * var(--pct))/100)"/></svg></div>';
       } else {
-        h += '<div class="progress' + (k.warn ? " warn" : "") + '" aria-label="' + k.progress + '%"><span style="width:' + k.progress + '%;"></span></div>';
+        h += '<div class="progress' + (k.warn ? " warn" : "") + '" aria-label="' + (k.progress || 0) + '%"><span style="width:' + (k.progress || 0) + '%;"></span></div>';
       }
       var nc = k.type === "ring" ? "kpi-note" : "trend" + (k.warn ? " warn" : "");
-      h += '<span class="' + nc + '">' + k.note + '</span></article>';
+      h += '<span class="' + nc + '">' + (k.note || "") + '</span></article>';
       return h;
     }).join("");
   }
@@ -56,33 +69,33 @@
   function renderOverview(data) {
     var c = document.querySelector('[data-render="overview"]');
     if (!c) return;
-    var o = data.overview;
+    var o = data.overview || {};
     var h = '<div class="grid-overview"><div class="grid-overview-main">';
 
     h += '<article><div class="card-title"><h2>Entrega por tela</h2><span class="pill info">Top 4</span></div>';
-    o.topScreens.forEach(function (s) {
-      h += '<div class="screen-row" data-hover-card><div><strong>' + s.name + '</strong><p class="muted">' + s.desc + '</p></div><span class="num">' + s.formatted + '</span><div class="hover-card">' + s.hover + '</div></div>';
+    (o.topScreens || []).forEach(function (s) {
+      h += '<div class="screen-row" data-hover-card><div><strong>' + (s.name || "") + '</strong><p class="muted">' + (s.desc || "") + '</p></div><span class="num">' + (s.formatted || "") + '</span><div class="hover-card">' + (s.hover || "") + '</div></div>';
     });
     h += '</article>';
 
     h += '<article><div class="card-title"><h2>Impressões por dia</h2><span class="pill info">Últimos 10 dias</span></div><div class="chart-bars" role="img" aria-label="Barras de impressões diárias">';
-    o.dailyImpressions.forEach(function (d) {
-      h += '<span class="bar" style="height:' + d.pct + '%;" data-label="' + d.date + '"><span class="bar-tooltip">' + d.value + '</span></span>';
+    (o.dailyImpressions || []).forEach(function (d) {
+      h += '<span class="bar" style="height:' + (d.pct || 0) + '%;" data-label="' + (d.date || "") + '"><span class="bar-tooltip">' + (d.value || "") + '</span></span>';
     });
     h += '</div></article></div>';
 
-    h += '<article class="card budget-card"><div class="card-title"><h2>Distribuição de verba</h2><span class="pill">CPM médio ' + o.cpmMedio + '</span></div>';
-    o.budgetDistribution.forEach(function (b) {
-      h += '<div class="format-row"><div><strong>' + b.city + '</strong><div class="format-meter"><span style="width:' + b.pct + '%;"></span></div></div><span class="num">' + b.value + '</span></div>';
+    h += '<article class="card budget-card"><div class="card-title"><h2>Distribuição de verba</h2><span class="pill">CPM médio ' + (o.cpmMedio || "") + '</span></div>';
+    (o.budgetDistribution || []).forEach(function (b) {
+      h += '<div class="format-row"><div><strong>' + (b.city || "") + '</strong><div class="format-meter"><span style="width:' + (b.pct || 0) + '%;"></span></div></div><span class="num">' + (b.value || "") + '</span></div>';
     });
-    h += '<div class="budget-summary"><div class="budget-summary-item"><span>Total</span><strong>' + o.totalBudget + '</strong></div><div class="budget-summary-item"><span>Saldo</span><strong class="trend">' + o.remaining + '</strong></div></div></article></div>';
+    h += '<div class="budget-summary"><div class="budget-summary-item"><span>Total</span><strong>' + (o.totalBudget || "") + '</strong></div><div class="budget-summary-item"><span>Saldo</span><strong class="trend">' + (o.remaining || "") + '</strong></div></div></article></div>';
     c.innerHTML = h;
   }
 
   function renderLocations(data) {
     var c = document.querySelector('[data-render="locations"]');
     if (!c) return;
-    var locs = data.locations;
+    var locs = data.locations || [];
     var h = '<div class="locations-toolbar">';
     h += '<div class="field" style="max-width:360px"><label for="location-search">Buscar local ou tela</label><input class="input" id="location-search" data-filter-input="locations" placeholder="Ex: Paulista, SP-PAUL, Copacabana"/></div>';
     h += '<div class="field" style="max-width:200px"><label for="location-status">Status</label><select class="select" id="location-status" data-filter-select="locations"><option value="">Todos</option><option value="Ativo">Ativo</option><option value="Checking">Checking</option><option value="Pausado">Pausado</option></select></div>';
@@ -93,19 +106,20 @@
     locs.forEach(function (l) {
       h += '<tr data-filter-row="locations"><td>' + l.local + '</td><td>' + l.tela + '</td><td>' + l.formato + '</td><td class="num">' + l.impressoes + '</td><td class="num">' + l.impactos + '</td><td><span class="pill ' + l.statusClass + '">' + l.status + '</span></td></tr>';
     });
-    h += '</tbody></table><div class="empty-state" data-empty-state="locations" hidden>Nenhum local encontrado.</div></div>';
+    h += '</tbody></table><div class="empty-state" data-empty-state="locations" ' + (locs.length === 0 ? '' : 'hidden') + '>Nenhum local encontrado.</div></div>';
     c.innerHTML = h;
   }
 
   function renderFormatos(data) {
     var c = document.querySelector('[data-render="formatos"]');
     if (!c) return;
+    var formatos = data.formatos || [];
     var h = '<div class="formatos-table-wrap"><table class="formatos-table"><thead><tr>';
     h += '<th class="thumb-col"></th><th data-sort="text">Mídia <span class="sort-arrow"></span></th><th class="num" data-sort="number">Telas <span class="sort-arrow"></span></th><th class="num" data-sort="number">Impressões <span class="sort-arrow"></span></th><th class="num" data-sort="number">Impactos <span class="sort-arrow"></span></th><th class="num" data-sort="number">CPM <span class="sort-arrow"></span></th>';
     h += '</tr></thead><tbody>';
-    data.formatos.forEach(function (f) {
+    formatos.forEach(function (f) {
       h += '<tr class="formato-group-row"><td colspan="6"><strong>' + f.name + '</strong><span class="pill info">' + f.telas + ' telas</span></td></tr>';
-      f.midias.forEach(function (m) {
+      (f.midias || []).forEach(function (m) {
         h += '<tr><td class="thumb-col"><div class="midia-thumb" style="background:' + m.thumb + ';"></div></td>';
         h += '<td><span class="midia-name">' + m.name + '</span></td>';
         h += '<td class="num">' + m.telas + '</td><td class="num">' + m.impressoes + '</td><td class="num">' + m.impactos + '</td><td class="num">' + m.cpm + '</td></tr>';
@@ -117,7 +131,7 @@
 
   function renderImpactos(data) {
     var c = document.querySelector('[data-render="impactos"]');
-    if (!c) return;
+    if (!c || !data.impactos) return;
     var imp = data.impactos;
     var h = '<div class="grid-impactos">';
     h += '<article class="card impacto-kpi"><span class="kpi-label">Alcance estimado</span><strong class="kpi-value">' + imp.alcance + '</strong><span class="kpi-note">pessoas únicas na área de cobertura</span></article>';
@@ -126,24 +140,24 @@
     h += '</div><div class="grid-impactos-two">';
 
     h += '<article class="card"><div class="card-title"><h2>Faixa etária</h2></div>';
-    imp.faixaEtaria.forEach(function (d) {
+    (imp.faixaEtaria || []).forEach(function (d) {
       h += '<div class="demo-row"><span>' + d.label + '</span><div class="demo-bar"><span style="width:' + d.pct + '%;"></span></div><span class="num">' + d.pct + '%</span></div>';
     });
     h += '</article>';
 
     h += '<article class="card"><div class="card-title"><h2>Gênero</h2></div>';
-    imp.genero.forEach(function (d) {
+    (imp.genero || []).forEach(function (d) {
       h += '<div class="demo-row"><span>' + d.label + '</span><div class="demo-bar"><span style="width:' + d.pct + '%;"></span></div><span class="num">' + d.pct + '%</span></div>';
     });
     h += '<div class="card-title" style="margin-top:20px"><h2>Renda</h2></div>';
-    imp.renda.forEach(function (d) {
+    (imp.renda || []).forEach(function (d) {
       h += '<div class="demo-row"><span>' + d.label + '</span><div class="demo-bar"><span style="width:' + d.pct + '%;"></span></div><span class="num">' + d.pct + '%</span></div>';
     });
     h += '</article></div>';
 
     h += '<article class="card"><div class="card-title"><h2>Performance por período</h2><span class="pill info">Impressões</span></div>';
     h += '<div class="daypart-grid">';
-    imp.daypart.forEach(function (d) {
+    (imp.daypart || []).forEach(function (d) {
       var bg = d.accent ? 'background:var(--accent);' : '';
       h += '<div class="daypart-item"><div class="daypart-bar" style="height:' + d.pct + '%;' + bg + '"></div><strong>' + d.periodo + '</strong><span class="muted">' + d.horario + '</span><span class="num">' + d.pct + '%</span></div>';
     });
@@ -154,11 +168,12 @@
   function renderChecking(data) {
     var c = document.querySelector('[data-render="checking"]');
     if (!c) return;
+    var checking = data.checking || [];
     var h = '<div class="checking-toolbar">';
     h += '<div class="field" style="max-width:320px"><label for="checking-filter">Filtrar fotos</label><input class="input" id="checking-filter" data-filter-input="checking" placeholder="Local ou criativo"/></div>';
     h += '<div class="field" style="max-width:180px"><label for="checking-status">Aprovação</label><select class="select" id="checking-status" data-filter-select="checking"><option value="">Todas</option><option value="Aprovado">Aprovado</option><option value="Pendente">Pendente</option></select></div>';
     h += '</div><div class="checking-grid" data-checking-grid>';
-    data.checking.forEach(function (ch) {
+    checking.forEach(function (ch) {
       var pendingCls = ch.aprovado ? "" : " pending";
       var btnPrimary = ch.aprovado ? " btn-primary" : "";
       var pressed = ch.aprovado ? "true" : "false";
@@ -168,7 +183,7 @@
       h += '<div class="photo-meta"><strong>' + ch.local + '</strong><span class="muted">' + ch.meta + '</span><button class="btn btn-sm' + btnPrimary + '" data-status-toggle aria-pressed="' + pressed + '">' + btnText + '</button></div>';
       h += '</article>';
     });
-    h += '</div><div class="empty-state" data-empty-state="checking" hidden>Nenhuma foto encontrada.</div>';
+    h += '</div><div class="empty-state" data-empty-state="checking" ' + (checking.length === 0 ? '' : 'hidden') + '>Nenhuma foto encontrada.</div>';
     c.innerHTML = h;
   }
 
@@ -176,9 +191,9 @@
     var c = document.querySelector('[data-render="timeline"]');
     if (!c) return;
     var h = '<div class="timeline">';
-    data.timeline.forEach(function (t) {
+    (data.timeline || []).forEach(function (t) {
       var dotCls = t.dot ? " " + t.dot : "";
-      h += '<div class="timeline-item"><div class="timeline-dot' + dotCls + '"></div><div class="timeline-body"><strong>' + t.title + '</strong><p class="muted">' + t.desc + '</p></div><span class="timeline-date">' + t.date + '</span></div>';
+      h += '<div class="timeline-item"><div class="timeline-dot' + dotCls + '"></div><div class="timeline-body"><strong>' + (t.title || "") + '</strong><p class="muted">' + (t.desc || "") + '</p></div><span class="timeline-date">' + (t.date || "") + '</span></div>';
     });
     h += '</div>';
     c.innerHTML = h;
@@ -191,9 +206,35 @@
       var target = btn.getAttribute("data-tab-target");
       var countEl = btn.querySelector(".tab-count");
       if (!countEl) return;
-      if (target === "locations") countEl.textContent = data.locations.length;
-      else if (target === "checking") countEl.textContent = data.checking.length;
+      if (target === "locations") countEl.textContent = (data.locations || []).length;
+      else if (target === "checking") countEl.textContent = (data.checking || []).length;
     });
+  }
+
+  function toggleConditionalTabs(data) {
+    var tabGroup = document.querySelector('[data-tab-group="campaign"]');
+    if (!tabGroup) return;
+    var btns = Array.from(tabGroup.querySelectorAll('[data-tab-target]'));
+
+    btns.forEach(function (btn) {
+      var target = btn.getAttribute('data-tab-target');
+      if (target === 'overview') return;
+
+      var dataValue = data[target];
+      var hasContent = dataValue != null;
+      if (Array.isArray(dataValue) && dataValue.length === 0) hasContent = false;
+
+      btn.style.display = hasContent ? '' : 'none';
+
+      var panel = document.querySelector('[data-panel-id="' + target + '"]');
+      if (panel && !hasContent) panel.hidden = true;
+    });
+
+    var activeBtn = tabGroup.querySelector('.tab.active');
+    if (activeBtn && activeBtn.style.display === 'none') {
+      var firstVisible = tabGroup.querySelector('[data-tab-target]:not([style*="display: none"])');
+      if (firstVisible) firstVisible.click();
+    }
   }
 
   /* =============================================

@@ -544,6 +544,35 @@ th[data-sort].sort-desc .sort-arrow {
   font-size: clamp(28px, 2.6vw, 38px);
 }
 
+.kpi-ecpm {
+  background: color-mix(in oklch, var(--info) 16%, var(--surface));
+  border-color: color-mix(in oklch, var(--info) 40%, var(--border));
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.kpi-ecpm .kpi-label {
+  color: color-mix(in oklch, var(--info) 80%, var(--fg));
+}
+
+.kpi-ecpm .kpi-value {
+  color: var(--info);
+  font-size: clamp(30px, 2.8vw, 42px);
+}
+
+.kpi-ecpm .kpi-note {
+  color: color-mix(in oklch, var(--info) 70%, var(--muted));
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.kpi-ecpm .kpi-value,
+.kpi-ecpm .kpi-label,
+.kpi-ecpm .kpi-note {
+  text-align: center;
+}
+
 .grid-impactos-two {
   display: grid;
   grid-template-columns: 1fr 1fr;

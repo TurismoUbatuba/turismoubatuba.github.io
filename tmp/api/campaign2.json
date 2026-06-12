@@ -1,6 +1,6 @@
 {
   "header": {
-    "title": "Verão nas Capitais 2026",
+    "title": "Campaign 2",
     "subtitle": "Bebidas Aurora · 12 jan a 28 fev · 45 locais contratados · 126 telas programáticas.",
     "status": "Ativa",
     "statusClass": "info",
@@ -10,8 +10,7 @@
     { "type": "progress", "label": "Verba gasta", "value": "R$ 184.200", "progress": 76.8, "note": "R$ 55.800 faltante" },
     { "type": "progress", "label": "Impressões", "value": "3.482.910", "progress": 92, "note": "92% da meta", "tooltip": "Meta: 3.785.000", "warn": true },
     { "type": "progress", "label": "Locais ativos", "value": "42 / 45", "progress": 93.3, "note": "3 aguardando checking" },
-    { "type": "ring", "label": "Fotos aprovadas", "value": "87%", "pct": 87, "note": "112 de 129 evidências" },
-    { "type": "ecpm", "label": "eCPM", "value": "R$ 52,88", "note": "custo efetivo por mil impressões" }
+    { "type": "ring", "label": "Fotos aprovadas", "value": "87%", "pct": 87, "note": "112 de 129 evidências" }
   ],
   "overview": {
     "topScreens": [
@@ -42,13 +41,6 @@
     "remaining": "R$ 55.800",
     "cpmMedio": "R$ 52,88"
   },
-  "locations": [
-    { "local": "Av. Paulista, 1578", "tela": "SP-PAUL-014", "formato": "Outdoor digital / LED", "impressoes": "428.900", "impactos": "1,2M", "status": "Ativo", "statusClass": "success" },
-    { "local": "Orla de Copacabana", "tela": "RJ-COPA-022", "formato": "Relógio urbano / Digital", "impressoes": "376.240", "impactos": "942K", "status": "Ativo", "statusClass": "success" },
-    { "local": "Shopping Recife", "tela": "REC-SHOP-006", "formato": "Indoor / LCD", "impressoes": "312.870", "impactos": "687K", "status": "Ativo", "statusClass": "success" },
-    { "local": "Av. Tancredo Neves", "tela": "SSA-TANC-011", "formato": "Painel urbano / Backlight", "impressoes": "294.120", "impactos": "612K", "status": "Checking", "statusClass": "warn" },
-    { "local": "Praça da Sé", "tela": "SP-SE-004", "formato": "Mobiliário urbano / Digital", "impressoes": "188.430", "impactos": "420K", "status": "Pausado", "statusClass": "danger" }
-  ],
   "formatos": [
     {
       "name": "Outdoor digital", "telas": 42,
@@ -86,42 +78,6 @@
         { "thumb": "#7a6b5a", "name": "Static", "telas": 6, "impressoes": "108.600", "impactos": "264K", "cpm": "R$ 28,90" }
       ]
     }
-  ],
-  "impactos": {
-    "alcance": "892.400",
-    "frequencia": "3,9×",
-    "grp": "22,4%",
-    "faixaEtaria": [
-      { "label": "18-24", "pct": 22 },
-      { "label": "25-34", "pct": 38 },
-      { "label": "35-44", "pct": 24 },
-      { "label": "45-54", "pct": 12 },
-      { "label": "55+", "pct": 4 }
-    ],
-    "genero": [
-      { "label": "Feminino", "pct": 52 },
-      { "label": "Masculino", "pct": 48 }
-    ],
-    "renda": [
-      { "label": "A", "pct": 15 },
-      { "label": "B", "pct": 42 },
-      { "label": "C", "pct": 33 },
-      { "label": "D/E", "pct": 10 }
-    ],
-    "daypart": [
-      { "periodo": "Manhã", "horario": "06-12h", "pct": 32 },
-      { "periodo": "Tarde", "horario": "12-18h", "pct": 41, "accent": true },
-      { "periodo": "Noite", "horario": "18-00h", "pct": 22 },
-      { "periodo": "Madrugada", "horario": "00-06h", "pct": 5 }
-    ]
-  },
-  "checking": [
-    { "local": "Av. Paulista, 1578", "meta": "25 fev · 18:42 · Criativo V3", "aprovado": true },
-    { "local": "Orla de Copacabana", "meta": "25 fev · 19:10 · Criativo V2", "aprovado": true },
-    { "local": "Shopping Recife", "meta": "26 fev · 12:06 · Criativo V1", "aprovado": true },
-    { "local": "Av. Tancredo Neves", "meta": "Pendente · aguardando operador", "aprovado": false },
-    { "local": "Praça da Sé", "meta": "Pendente · tela pausada", "aprovado": false },
-    { "local": "Barra Shopping", "meta": "27 fev · 16:21 · Criativo V3", "aprovado": true }
   ],
   "timeline": [
     { "title": "Campanha iniciada", "desc": "12 jan 2026 · Primeira veiculação em SP, RJ, Recife e Salvador", "date": "12 jan", "dot": "success" },
