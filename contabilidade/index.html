@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contabilidade em Ubatuba/SP | Contabilidade Ubatuba</title>
+  <meta name="description" content="Contabilidade em Ubatuba/SP com experiência consolidada. Especialistas em MEI, abertura de empresas, imposto de renda e assessoria tributária no Litoral Norte.">
+  <meta name="keywords" content="contabilidade Ubatuba, contador Ubatuba, serviços contábeis, MEI Ubatuba, abrir empresa Ubatuba">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.contabilidadeubatuba.com.br/">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contabilidade em Ubatuba/SP | Contabilidade Ubatuba">
+  <meta property="og:description" content="Experiência consolidada em contabilidade no Litoral Norte. Especialistas em MEI, abertura de empresas, imposto de renda e assessoria tributária.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.contabilidadeubatuba.com.br/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Contabilidade Ubatuba">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contabilidade em Ubatuba/SP | Contabilidade Ubatuba">
+  <meta name="twitter:description" content="Experiência consolidada em contabilidade no Litoral Norte.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; transition: color 0.3s; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 80px 0; }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 48px;
+    }
+    .text-center { text-align: center; }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      text-align: center;
+    }
+    .btn-primary {
+      background: #c9a84c;
+      color: #1a2744;
+    }
+    .btn-primary:hover { background: #b8973a; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(201,168,76,0.4); }
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+    .btn-secondary:hover { background: #fff; color: #1a2744; }
+    .btn-dark {
+      background: #1a2744;
+      color: #fff;
+    }
+    .btn-dark:hover { background: #0f1a2e; transform: translateY(-2px); }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+    }
+    .btn-whatsapp:hover { background: #1ebe5c; transform: translateY(-2px); }
+    /* ===== HEADER / NAV ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(26,39,68,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.3s;
+    }
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #c9a84c;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: #fff; }
+    .logo i { margin-right: 8px; }
+    .nav { display: flex; align-items: center; gap: 32px; }
+    .nav a {
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+    }
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #c9a84c;
+      transition: width 0.3s;
+    }
+    .nav a:hover::after,
+    .nav a.active::after { width: 100%; }
+    .nav a:hover, .nav a.active { color: #c9a84c; }
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #c9a84c !important;
+      font-weight: 600;
+    }
+    .nav-phone i { font-size: 1rem; }
+    /* Mobile menu */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 4px;
+    }
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #1a2744 0%, #0f1a2e 50%, #1a2744 100%);
+      position: relative;
+      overflow: hidden;
+      padding-top: 70px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-content { max-width: 720px; }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: #c9a84c; }
+    .hero p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 32px;
+      max-width: 600px;
+    }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+    .hero-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #c9a84c;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      transition: color 0.3s;
+    }
+    .hero-phone:hover { color: #dbb95c; }
+    .hero-phone i { font-size: 1.3rem; }
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-stat h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #c9a84c;
+    }
+    .hero-stat p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0;
+    }
+    /* ===== SERVICES OVERVIEW ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .service-card {
+      background: #f8f9fc;
+      border-radius: 16px;
+      padding: 36px 28px;
+      transition: all 0.3s;
+      border: 1px solid #eef0f5;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(26,39,68,0.1);
+      border-color: #c9a84c;
+    }
+    .service-card .icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #1a2744, #2a3f64);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .service-card .icon i {
+      font-size: 1.5rem;
+      color: #c9a84c;
+    }
+    .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+    .service-card .saiba-mais {
+      color: #c9a84c;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .service-card .saiba-mais:hover { gap: 10px; }
+    /* ===== ABOUT SNIPPET ===== */
+    .about-snippet {
+      background: #f0f2f6;
+    }
+    .about-snippet .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-snippet h2 { text-align: left; }
+    .about-snippet p {
+      color: #555;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+    .about-snippet .leia-mais {
+      color: #c9a84c;
+      font-weight: 600;
+      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .about-snippet .leia-mais:hover { gap: 10px; }
+    /* ===== WHY US ===== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    .why-card {
+      text-align: center;
+      padding: 36px 20px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid #eef0f5;
+      transition: all 0.3s;
+    }
+    .why-card:hover {
+      box-shadow: 0 8px 30px rgba(26,39,68,0.08);
+      border-color: #c9a84c;
+    }
+    .why-card .icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #1a2744;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .why-card .icon i { font-size: 1.5rem; color: #c9a84c; }
+    .why-card h3 { font-size: 1.15rem; font-weight: 700; color: #1a2744; margin-bottom: 8px; }
+    .why-card p { font-size: 0.92rem; color: #666; }
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      background: #f0f2f6;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid #eef0f5;
+    }
+    .testimonial-card .stars {
+      color: #f5b342;
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+    .testimonial-card blockquote {
+      font-style: italic;
+      color: #444;
+      margin-bottom: 20px;
+      font-size: 0.98rem;
+    }
+    .testimonial-card .author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-card .author .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #1a2744;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c9a84c;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .testimonial-card .author .name { font-weight: 600; color: #1a2744; font-size: 0.95rem; }
+    .testimonial-card .author .role { font-size: 0.82rem; color: #888; }
+    /* ===== CONTACT FORM SECTION ===== */
+    .contact-section .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .contact-info h3 {
+      font-size: 1.5rem;
+      color: #1a2744;
+      margin-bottom: 16px;
+    }
+    .contact-info p { color: #666; margin-bottom: 24px; }
+    .contact-info .info-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    .contact-info .info-item i {
+      width: 40px;
+      height: 40px;
+      background: #1a2744;
+      color: #c9a84c;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-info .info-item a { color: #333; }
+    .contact-info .info-item a:hover { color: #c9a84c; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e0e2e8;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+      background: #fff;
+      margin-bottom: 16px;
+      outline: none;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: #c9a84c; }
+    .contact-form textarea { min-height: 140px; resize: vertical; }
+    .contact-form .btn { width: 100%; }
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #1a2744;
+      color: rgba(255,255,255,0.8);
+      padding: 60px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer h4 {
+      color: #c9a84c;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .footer p, .footer a { font-size: 0.92rem; color: rgba(255,255,255,0.7); }
+    .footer a:hover { color: #c9a84c; }
+    .footer-logo { font-size: 1.3rem; font-weight: 800; color: #c9a84c; margin-bottom: 14px; }
+    .footer-logo span { color: #fff; }
+    .footer .description { margin-bottom: 20px; line-height: 1.7; }
+    .footer .social-links { display: flex; gap: 12px; }
+    .footer .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+    }
+    .footer .social-links a:hover { background: #c9a84c; color: #1a2744; }
+    .footer .footer-links li { margin-bottom: 10px; }
+    .footer .footer-links a::before { content: '› '; color: #c9a84c; margin-right: 4px; }
+    .footer .footer-contact li {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+    }
+    .footer .footer-contact li i {
+      color: #c9a84c;
+      width: 18px;
+      margin-top: 3px;
+    }
+    .footer .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+    /* ===== WHATSAPP FLOATING ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: all 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+      color: #fff;
+    }
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 60px 0; }
+      .section-title { font-size: 1.6rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+      .hero-stats { gap: 24px; }
+      .hero-stat h3 { font-size: 1.6rem; }
+      .menu-toggle { display: block; }
+      .nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #1a2744;
+        flex-direction: column;
+        padding: 24px 20px;
+        gap: 18px;
+        transform: translateY(-120%);
+        transition: transform 0.4s ease;
+        border-bottom: 2px solid rgba(201,168,76,0.2);
+      }
+      .nav.open { transform: translateY(0); }
+      .nav a { font-size: 1.05rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .about-snippet .container { grid-template-columns: 1fr; gap: 30px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .contact-section .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero-phone { font-size: 1.1rem; }
+      .hero-buttons .btn { width: 100%; text-align: center; }
+      .container { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo"><i class="fas fa-calculator"></i> Contabilidade <span>Ubatuba</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav" id="mainNav">
+        <a href="index.html" class="active">Início</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+        <a href="tel:+5512999999999" class="nav-phone"><i class="fas fa-phone-alt"></i> (12) 99999-9999</a>
+      </nav>
+    </div>
+  </header>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Contabilidade em <span>Ubatuba/SP</span><br>Confiança que move seu negócio</h1>
+        <p>Com anos de atuação cuidando da contabilidade de empresas e profissionais em Ubatuba e todo o Litoral Norte. Soluções completas em gestão fiscal, tributária e empresarial.</p>
+        <div class="hero-buttons">
+          <a href="contato.html" class="btn btn-primary"><i class="fas fa-envelope"></i> Fale Conosco</a>
+          <a href="https://wa.me/5512999999999" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <a href="tel:+5512999999999" class="hero-phone"><i class="fas fa-phone-alt"></i> (12) 99999-9999</a>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <h3>Décadas</h3>
+            <p>Anos de Experiência</p>
+          </div>
+          <div class="hero-stat">
+            <h3>Centenas</h3>
+            <p>Clientes Atendidos</p>
+          </div>
+          <div class="hero-stat">
+            <h3>Excelência</h3>
+            <p>Satisfação</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== SERVICES OVERVIEW ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <p class="section-subtitle">Soluções contábeis completas para sua empresa, do MEI ao grande negócio.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-building"></i></div>
+          <h3>Abertura de Empresas</h3>
+          <p>Regularização completa: viabilidade, CNPJ, alvará, inscrição municipal e estadual.</p>
+          <a href="abertura-de-empresas.html" class="saiba-mais">Saiba Mais <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-store"></i></div>
+          <h3>Contabilidade para MEI</h3>
+          <p>Declaração anual, emissão de guias DAS, controle de faturamento e orientação completa.</p>
+          <a href="contabilidade-mei.html" class="saiba-mais">Saiba Mais <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3>Declaração de Imposto de Renda</h3>
+          <p>Declaração de IRPF para pessoas físicas e IRPJ para empresas. Entregue dentro do prazo.</p>
+          <a href="declaracao-imposto-de-renda.html" class="saiba-mais">Saiba Mais <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-balance-scale"></i></div>
+          <h3>Assessoria Tributária</h3>
+          <p>Planejamento tributário, redução de carga fiscal, regime tributário ideal para seu negócio.</p>
+          <a href="assessoria-tributaria.html" class="saiba-mais">Saiba Mais <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-users"></i></div>
+          <h3>Folha de Pagamento</h3>
+          <p>Gestão completa de colaboradores: admissão, férias, 13º, rescisão e encargos trabalhistas.</p>
+          <a href="folha-de-pagamento.html" class="saiba-mais">Saiba Mais <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Consultoria Financeira</h3>
+          <p>Análise de fluxo de caixa, planejamento orçamentário e estratégias para crescimento saudável.</p>
+          <a href="consultoria-financeira.html" class="saiba-mais">Saiba Mais <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== ABOUT SNIPPET ===== -->
+  <section class="section about-snippet">
+    <div class="container">
+      <div>
+        <h2 class="section-title">Quem Somos</h2>
+        <p>A <strong>Contabilidade Ubatuba</strong> nasceu da visão de oferecer serviços contábeis com excelência, transparência e proximidade. Desde 2010, nossa equipe de profissionais experientes atua em Ubatuba e região, ajudando empreendedores a manterem suas empresas em dia com as obrigações fiscais e contábeis.</p>
+        <p>Temos centenas de clientes ativos e uma sólida taxa de satisfação. Acreditamos que uma contabilidade bem feita é a base para o crescimento sustentável de qualquer negócio.</p>
+      </div>
+      <div>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23eef0f5'/%3E%3Ctext x='300' y='200' font-family='Inter,sans-serif' font-size='20' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EEscritório Contabilidade Ubatuba%3C/text%3E%3C/svg%3E"
+             alt="Escritório da Contabilidade Ubatuba em Ubatuba/SP"
+             style="border-radius:16px; width:100%;">
+      </div>
+    </div>
+  </section>
+  <!-- ===== WHY US ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Por que escolher a Contabilidade Ubatuba?</h2>
+      <p class="section-subtitle">Diferenciais que fazem a diferença no dia a dia da sua empresa.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="icon"><i class="fas fa-bolt"></i></div>
+          <h3>Atendimento Ágil</h3>
+          <p>Respostas rápidas e canais diretos de comunicação via telefone, WhatsApp e e-mail.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon"><i class="fas fa-user-graduate"></i></div>
+          <h3>Equipe Especializada</h3>
+          <p>Contadores atualizados com a legislação e prontos para resolver seu caso.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>Presença Local</h3>
+          <p>Escritório em Ubatuba com conhecimento da realidade do Litoral Norte.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon"><i class="fas fa-lock"></i></div>
+          <h3>Sigilo Profissional</h3>
+          <p>Compromisso total com a confidencialidade das informações dos nossos clientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials">
+    <div class="container">
+      <h2 class="section-title">O que nossos clientes dizem</h2>
+      <p class="section-subtitle">A satisfação de quem confia no nosso trabalho.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <blockquote>"Excelente trabalho! A equipe da Contabilidade Ubatuba me ajudou a abrir minha empresa de forma rápida e sem burocracia. Recomendo de olhos fechados."</blockquote>
+          <div class="author">
+            <div class="avatar">CM</div>
+            <div>
+              <div class="name">Carlos Menezes</div>
+              <div class="role">Empresário, Ubatuba</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <blockquote>"Fazem a contabilidade do meu MEI há 3 anos. Nunca tive problemas e sempre me avisam com antecedência sobre prazos. Muito profissionais!"</blockquote>
+          <div class="author">
+            <div class="avatar">AS</div>
+            <div>
+              <div class="name">Ana Silva</div>
+              <div class="role">Microempreendedora, Ubatuba</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <blockquote>"Contabilidade de confiança e atendimento nota 10. O planejamento tributário que fizeram reduziu significativamente os impostos da minha empresa."</blockquote>
+          <div class="author">
+            <div class="avatar">RL</div>
+            <div>
+              <div class="name">Roberto Lima</div>
+              <div class="role">Diretor Financeiro, Caraguatatuba</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section contact-section" id="contato">
+    <div class="container">
+      <h2 class="section-title">Entre em Contato</h2>
+      <p class="section-subtitle">Pronto para cuidar da sua contabilidade? Fale com a gente.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Informações de Contato</h3>
+          <p>Estamos prontos para atender você. Escolha o canal mais conveniente.</p>
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+5512999999999"><strong>(12) 99999-9999</strong></a>
+          </div>
+          <div class="info-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/5512999999999" target="_blank"><strong>(12) 99999-9999</strong> (WhatsApp)</a>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:contato@contabilidadeubatuba.com.br"><strong>contato@contabilidadeubatuba.com.br</strong></a>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Rua Exemplo, 123 - Centro, Ubatuba - SP, 11680-000</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <span>Seg a Sex: 8h às 18h | Sáb: 8h às 12h</span>
+          </div>
+        </div>
+        <form class="contact-form" action="contato.html" method="GET">
+          <input type="text" name="nome" placeholder="Seu nome completo" required>
+          <input type="email" name="email" placeholder="Seu e-mail" required>
+          <input type="tel" name="telefone" placeholder="Seu telefone" required>
+          <textarea name="mensagem" placeholder="Como podemos ajudar?" required></textarea>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><i class="fas fa-calculator"></i> Contabilidade <span>Ubatuba</span></div>
+          <p class="description">Soluções contábeis completas em Ubatuba/SP e Litoral Norte. Experiência consolidada em gestão empresarial, tributos e assessoria financeira.</p>
+          <p style="margin-bottom:12px; font-size:0.85rem;"><strong>CNPJ:</strong> 00.000.000/0001-00</p>
+          <div class="social-links">
+            <a href="https://instagram.com/contabilidadeubatuba" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5512999999999" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Páginas</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Serviços</h4>
+          <ul class="footer-links">
+            <li><a href="abertura-de-empresas.html">Abertura de Empresas</a></li>
+            <li><a href="contabilidade-mei.html">Contabilidade para MEI</a></li>
+            <li><a href="declaracao-imposto-de-renda.html">Declaração de IR</a></li>
+            <li><a href="assessoria-tributaria.html">Assessoria Tributária</a></li>
+            <li><a href="folha-de-pagamento.html">Folha de Pagamento</a></li>
+            <li><a href="consultoria-financeira.html">Consultoria Financeira</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-phone-alt"></i> <a href="tel:+5512999999999">(12) 99999-9999</a></li>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5512999999999" target="_blank">(12) 99999-9999</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@contabilidadeubatuba.com.br">contato@contabilidadeubatuba.com.br</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123, Centro, Ubatuba/SP</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Contabilidade Ubatuba. Todos os direitos reservados.</span>
+        <span>CNPJ: 00.000.000/0001-00</span>
+      </div>
+    </div>
+  </footer>
+  <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+  <a href="https://wa.me/5512999999999" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function() {
+        mainNav.classList.toggle('open');
+        const icon = this.querySelector('i');
+        if (mainNav.classList.contains('open')) {
+          icon.className = 'fas fa-times';
+          this.setAttribute('aria-label', 'Fechar menu');
+        } else {
+          icon.className = 'fas fa-bars';
+          this.setAttribute('aria-label', 'Abrir menu');
+        }
+      });
+      // Close menu on link click
+      mainNav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mainNav.classList.remove('open');
+          menuToggle.querySelector('i').className = 'fas fa-bars';
+          menuToggle.setAttribute('aria-label', 'Abrir menu');
+        });
+      });
+    }
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+    // Sticky header blur enhancement
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.style.background = 'rgba(26,39,68,0.97)';
+      } else {
+        header.style.background = 'rgba(26,39,68,0.92)';
+      }
+    });
+    // Form validation
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        const inputs = this.querySelectorAll('input[required], textarea[required]');
+        let valid = true;
+        inputs.forEach(function(input) {
+          if (!input.value.trim()) {
+            valid = false;
+            input.style.borderColor = '#e74c3c';
+          } else {
+            input.style.borderColor = '';
+          }
+        });
+        if (!valid) {
+          e.preventDefault();
+          alert('Por favor, preencha todos os campos obrigatórios.');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
