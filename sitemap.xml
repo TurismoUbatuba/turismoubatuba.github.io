@@ -6,6 +6,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.turismoubatuba.com.br/servicos.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.turismoubatuba.com.br/contabilidade/</loc>
     <priority>1.0</priority>
     <changefreq>monthly</changefreq>
