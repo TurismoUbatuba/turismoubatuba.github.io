@@ -364,19 +364,13 @@
     .map-placeholder {
       width: 100%;
       height: 350px;
-      background: #e0e2e8;
       border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      font-size: 1.1rem;
+      overflow: hidden;
     }
 
-    .map-placeholder i {
-      font-size: 2rem;
-      margin-right: 12px;
-      color: #c9a84c;
+    .map-placeholder #map {
+      width: 100%;
+      height: 100%;
     }
 
     .footer {
@@ -718,31 +712,21 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    // 📍 Coordenadas de Ubatuba (SP)
     const ubatuba = [-23.4332, -45.0834];
-
-    // 🗺️ Criar mapa
     const map = L.map("map").setView(ubatuba, 12);
-
-    // 🧱 Tile layer (OpenStreetMap)
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap contributors",
       maxZoom: 19,
     }).addTo(map);
-
-    // 📌 Marcador principal
     L.marker(ubatuba)
       .addTo(map)
       .bindPopup("<b>Ubatuba</b><br>São Paulo - Brasil")
       .openPopup();
-
-    // 🌊 Alguns pontos turísticos (exemplo)
     const pontos = [
       { name: "Praia Grande", coords: [-23.4510, -45.0650] },
       { name: "Itamambuca", coords: [-23.4040, -45.0150] },
       { name: "Praia do Félix", coords: [-23.4055, -45.0442] }
     ];
-
     pontos.forEach((p) => {
       L.marker(p.coords)
         .addTo(map)
