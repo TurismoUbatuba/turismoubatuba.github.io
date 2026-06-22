@@ -1,0 +1,6 @@
+[
+  { "url": "https://imagine-public.x.ai/imagine-public/share-videos/5aeb42ae-fbc2-4573-b702-3ecdc9072bd0_thumbnail.jpg", "formato": "imagem", "fade": 200 },
+  { "url": "https://imagine-public.x.ai/imagine-public/share-videos/203a2c37-9ee3-43c1-96fa-bfcae6d945d0.mp4", "formato": "video", "fade": 0 },
+  { "url": "https://imagine-public.x.ai/imagine-public/share-videos/1e23c1e8-8beb-472e-a434-c918af4cb267.mp4", "formato": "video", "duracao": 3, "fade": 300 },
+  { "url": "https://picsum.photos/id/40/1920/1080", "formato": "imagem" }
+]
