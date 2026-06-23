@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Previsão do Tempo</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    height:100vh;
+    overflow:hidden;
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    padding:40px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.city{
+    font-size:3rem;
+    font-weight:700;
+}
+
+.date{
+    font-size:1.5rem;
+    opacity:.8;
+}
+
+.current{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:40px;
+    margin-bottom:40px;
+}
+
+.current img{
+    width:180px;
+}
+
+.temp{
+    font-size:7rem;
+    font-weight:800;
+    line-height:1;
+}
+
+.description{
+    font-size:2rem;
+    text-transform:capitalize;
+}
+
+.details{
+    display:flex;
+    gap:40px;
+    margin-top:15px;
+    font-size:1.2rem;
+}
+
+.forecast{
+    display:grid;
+    grid-template-columns:repeat(8,1fr);
+    gap:20px;
+    flex:1;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(8px);
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card img{
+    width:80px;
+}
+
+.hour{
+    font-size:1.3rem;
+    font-weight:600;
+}
+
+.card-temp{
+    font-size:2rem;
+    font-weight:700;
+    margin:10px 0;
+}
+
+.rain{
+    color:#7dd3fc;
+}
+
+.footer{
+    text-align:center;
+    opacity:.6;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div>
+            <div class="city" id="city"></div>
+            <div class="date" id="date"></div>
+        </div>
+    </div>
+
+    <div class="current">
+        <img id="currentIcon">
+        
+        <div>
+            <div class="temp" id="currentTemp"></div>
+            <div class="description" id="currentDesc"></div>
+
+            <div class="details">
+                <span id="humidity"></span>
+                <span id="wind"></span>
+                <span id="pressure"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="forecast" id="forecast"></div>
+
+    <div class="footer">
+        Atualização automática OpenWeatherMap
+    </div>
+
+</div>
+
+<script>
+
+// COLE O JSON AQUI
+let weatherData;
+
+async function loadWeather() {
+    try {
+       fetch('https://turismoubatuba.com.br/tmp/tempo.json')
+          .then(r => r.text())
+          .then(console.log);
+
+        const response = await fetch(
+            'https://turismoubatuba.com.br/tmp/tempo.json?' + Date.now()
+        );
+
+        weatherData = await response.json();
+
+        renderWeather(weatherData);
+
+    } catch (error) {
+        console.error('Erro ao carregar previsão:', error);
+
+        document.body.innerHTML = `
+            <div style="
+                color:white;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                height:100vh;
+                font-size:2rem;
+                background:#0f172a;">
+                Falha ao carregar previsão do tempo
+            </div>
+        `;
+    }
+}
+
+// Cidade
+document.getElementById('city').textContent =
+    weatherData.city.name + ' - ' + weatherData.city.country;
+
+// Data atual
+document.getElementById('date').textContent =
+    new Date().toLocaleDateString('pt-BR',{
+        weekday:'long',
+        day:'2-digit',
+        month:'long'
+    });
+
+// Primeiro registro como destaque
+const current = weatherData.list[0];
+
+document.getElementById('currentTemp').textContent =
+    Math.round(current.main.temp) + '°';
+
+document.getElementById('currentDesc').textContent =
+    current.weather[0].description;
+
+document.getElementById('humidity').textContent =
+    '💧 ' + current.main.humidity + '%';
+
+document.getElementById('wind').textContent =
+    '🌬 ' + current.wind.speed + ' m/s';
+
+document.getElementById('pressure').textContent =
+    '📈 ' + current.main.pressure + ' hPa';
+
+document.getElementById('currentIcon').src =
+    `https://openweathermap.org/img/wn/${current.weather[0].icon}@4x.png`;
+
+
+// Timeline
+const forecast = document.getElementById('forecast');
+
+weatherData.list.forEach(item => {
+
+    const hour =
+        new Date(item.dt * 1000)
+        .toLocaleTimeString('pt-BR',{
+            hour:'2-digit',
+            minute:'2-digit'
+        });
+
+    const rain =
+        item.rain?.["3h"] || 0;
+
+    forecast.innerHTML += `
+        <div class="card">
+            <div class="hour">${hour}</div>
+
+            <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png">
+
+            <div class="card-temp">
+                ${Math.round(item.main.temp)}°
+            </div>
+
+            <div>
+                ${item.weather[0].description}
+            </div>
+
+            <div class="rain">
+                🌧 ${rain.toFixed(1)} mm
+            </div>
+        </div>
+    `;
+});
+
+</script>
+
+</body>
+</html>
