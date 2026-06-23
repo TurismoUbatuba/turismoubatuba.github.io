@@ -153,9 +153,6 @@ body{
 
 <script>
 
-// COLE O JSON AQUI
-let weatherData;
-
 async function loadWeather() {
     try {
        fetch('https://turismoubatuba.com.br/tmp/tempo.json')
@@ -188,8 +185,10 @@ async function loadWeather() {
     }
 }
 
-// Cidade
-document.getElementById('city').textContent =
+function renderWeather(weatherData){
+    console.log(weatherData);
+/*
+    document.getElementById('city').textContent =
     weatherData.city.name + ' - ' + weatherData.city.country;
 
 // Data atual
@@ -257,6 +256,8 @@ weatherData.list.forEach(item => {
         </div>
     `;
 });
+*/
+}
 
 </script>
 
