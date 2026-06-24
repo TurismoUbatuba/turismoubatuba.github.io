@@ -53,19 +53,6 @@
       margin-bottom: 60px;
     }
 
-    .clock {
-      font-size: 96px;
-      font-weight: 300;
-      letter-spacing: 6px;
-      color: var(--text-primary);
-      line-height: 1;
-      transition: opacity 0.6s ease;
-    }
-
-    .clock.fade {
-      opacity: 0;
-    }
-
     /* Box do anunciante */
     .ad-box {
       width: 100%;
@@ -284,10 +271,6 @@
         padding: 6vh 4vw;
       }
 
-      .clock {
-        font-size: 8vw;
-      }
-
       .temperature {
         font-size: 14vw;
       }
@@ -448,7 +431,6 @@
 
     function updateClock() {
       if (!lastUpdate) return;
-      document.getElementById('clock').textContent = formatTime(lastUpdate);
       document.getElementById('updateTime').textContent = formatTime(lastUpdate) + ' - ' + formatDate(lastUpdate);
     }
 
@@ -483,7 +465,7 @@
     function renderWeather(data) {
       lastUpdate = new Date(data.lastUpdate);
       applyFade(
-        ['clock', 'adBox', 'temperature', 'conditionText', 'details', 'day0', 'day1', 'day2', 'weatherIconMain'],
+        ['adBox', 'temperature', 'conditionText', 'details', 'day0', 'day1', 'day2', 'weatherIconMain'],
         () => {
           document.getElementById('city').textContent = data.city;
           document.getElementById('temperature').innerHTML =
