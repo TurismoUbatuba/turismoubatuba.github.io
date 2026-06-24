@@ -1,0 +1,16 @@
+{
+  "lastUpdate": "2026-06-24T14:30:00-03:00",
+  "city": "São Paulo, SP",
+  "current": {
+    "temp": 28,
+    "feelsLike": 31,
+    "humidity": 65,
+    "condition": "Parcialmente Nublado",
+    "icon": "cloud-sun"
+  },
+  "forecast": [
+    { "dayOffset": 0, "max": 28, "min": 22, "condition": "cloud-sun" },
+    { "dayOffset": 1, "max": 26, "min": 19, "condition": "cloud-rain" },
+    { "dayOffset": 2, "max": 31, "min": 23, "condition": "sun" }
+  ]
+}
