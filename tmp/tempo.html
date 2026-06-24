@@ -85,6 +85,8 @@
       opacity: 0;
     }
 
+    .ad-box.has-link { cursor: pointer; }
+
     .ad-placeholder {
       font-size: 28px;
       color: var(--text-secondary);
@@ -389,21 +391,31 @@
   </div>
 
   <script>
-    const MOCK_DATA = {
-      city: 'São Paulo, SP',
-      current: {
-        temp: 28,
-        feelsLike: 31,
-        humidity: 65,
-        condition: 'Parcialmente Nublado',
-        icon: 'cloud-sun'
-      },
-      forecast: [
-        { dayOffset: 0, max: 28, min: 22, condition: 'cloud-sun' },
-        { dayOffset: 1, max: 26, min: 19, condition: 'cloud-rain' },
-        { dayOffset: 2, max: 31, min: 23, condition: 'sun' }
-      ]
-    };
+    async function loadAdvertiser() {
+      try {
+        const res = await fetch('advertiser.json');
+        const ad = await res.json();
+        const box = document.getElementById('adBox');
+        if (ad.imageUrl) {
+          const img = document.createElement('img');
+          img.src = ad.imageUrl;
+          img.alt = ad.name;
+          img.style.cssText = 'width:100%;height:100%;object-fit:contain;border-radius:22px;';
+          box.innerHTML = '';
+          box.style.border = 'none';
+          box.style.background = 'transparent';
+          box.appendChild(img);
+          if (ad.url) {
+            box.classList.add('has-link');
+            box.onclick = () => window.open(ad.url, '_blank');
+          }
+        } else {
+          box.innerHTML = '<span class="ad-placeholder">' + ad.name + '</span>';
+        }
+      } catch (e) {
+        // continua com o placeholder padrão
+      }
+    }
 
     const LUCIDE_ICONS = {
       'sun': '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>',
@@ -412,15 +424,6 @@
       'cloud': '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>',
       'cloud-lightning': '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="m13 9-3 6h4l-2 4"/></svg>',
       'cloud-snow': '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 14v3"/><path d="M9.5 16.5 12 14l2.5 2.5"/><path d="M9.5 19.5 12 17l2.5 2.5"/></svg>'
-    };
-
-    const CONDITION_LABELS = {
-      'sun': 'Ensolarado',
-      'cloud-sun': 'Parcialmente Nublado',
-      'cloud': 'Nublado',
-      'cloud-rain': 'Chuvoso',
-      'cloud-lightning': 'Tempestade',
-      'cloud-snow': 'Neve'
     };
 
     function getShortDayName(offset) {
@@ -435,9 +438,18 @@
       return String(date.getHours()).padStart(2, '0') + ':' + String(date.getMinutes()).padStart(2, '0');
     }
 
+    function formatDate(date) {
+      const dias = ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+      const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+      return dias[date.getDay()] + ', ' + date.getDate() + ' de ' + meses[date.getMonth()] + ' de ' + date.getFullYear();
+    }
+
+    let lastUpdate = null;
+
     function updateClock() {
-      const now = new Date();
-      document.getElementById('updateTime').textContent = formatTime(now);
+      if (!lastUpdate) return;
+      document.getElementById('clock').textContent = formatTime(lastUpdate);
+      document.getElementById('updateTime').textContent = formatTime(lastUpdate) + ' - ' + formatDate(lastUpdate);
     }
 
     function applyFade(ids, callback) {
@@ -458,9 +470,18 @@
 
 
 
-    function renderWeather() {
-      const data = MOCK_DATA;
+    async function loadWeather() {
+      try {
+        const res = await fetch('weather.json');
+        const data = await res.json();
+        renderWeather(data);
+      } catch (e) {
+        // fallback silencioso
+      }
+    }
 
+    function renderWeather(data) {
+      lastUpdate = new Date(data.lastUpdate);
       applyFade(
         ['clock', 'adBox', 'temperature', 'conditionText', 'details', 'day0', 'day1', 'day2', 'weatherIconMain'],
         () => {
@@ -487,8 +508,8 @@
       );
     }
 
-    renderWeather();
-    setInterval(updateClock, 1000);
+    loadWeather();
+    loadAdvertiser();
   </script>
 </body>
 
