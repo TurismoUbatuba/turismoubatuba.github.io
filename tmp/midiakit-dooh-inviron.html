@@ -1,0 +1,626 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Midiakit DOOH — Inviron</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      oklch(0% 0 0);
+      --surface: oklch(9% 0.005 250);
+      --fg:      oklch(100% 0 0);
+      --muted:   oklch(62% 0.02 55);
+      --border:  oklch(18% 0.01 55);
+      --accent:  oklch(64% 0.175 55);
+      --accent2: oklch(67% 0.17 53);
+      --shell:   #000;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%; height: 100%; overflow: hidden;
+      background: var(--shell);
+      color: var(--fg);
+      font: 18px/1.5 "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .deck-shell { position: fixed; inset: 0; overflow: hidden; }
+    .deck-stage {
+      width: 1920px; height: 1080px;
+      background: var(--bg);
+      position: relative; transform-origin: top left;
+      box-shadow: none;
+    }
+    .slide { position: absolute; inset: 0; overflow: hidden; }
+    .slide:not(.active) { display: none !important; }
+    :where(.slide.active) { display: flex; flex-direction: column; }
+    .deck-counter {
+      position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%);
+      display: inline-flex; align-items: center; gap: 4px;
+      background: rgba(255,255,255,.1); backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); padding: 6px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08); color: #fff;
+      font: 12px/1 "JetBrains Mono", ui-monospace, monospace;
+      letter-spacing: .18em; z-index: 1000;
+    }
+    .deck-counter button {
+      width: 36px; height: 36px; background: transparent; color: #fff;
+      border: 0; border-radius: 50%; font-size: 18px; line-height: 1;
+      cursor: pointer; display: grid; place-items: center; transition: background .15s;
+    }
+    .deck-counter button:hover { background: rgba(255,255,255,.12); }
+    .deck-counter button[disabled] { opacity: .3; cursor: default; }
+    .deck-counter .deck-count { padding: 0 14px; letter-spacing: .22em; }
+    .deck-counter .deck-count .total { color: rgba(255,255,255,.5); }
+    .deck-hint {
+      position: fixed; bottom: 26px; right: 28px;
+      color: rgba(255,255,255,.25);
+      font: 11px/1 "JetBrains Mono", ui-monospace, monospace;
+      letter-spacing: .2em; text-transform: uppercase; z-index: 999;
+      pointer-events: none;
+    }
+    @media print {
+      @page { size: 1920px 1080px; margin: 0; }
+      html, body {
+        width: 1920px !important; height: auto !important;
+        overflow: visible !important; background: var(--bg) !important;
+      }
+      .deck-shell { position: static !important; display: block !important; inset: auto !important; }
+      .deck-stage {
+        width: 1920px !important; height: auto !important;
+        transform: none !important; box-shadow: none !important; position: static !important;
+      }
+      .slide { display: flex !important; position: relative !important; inset: auto !important; width: 1920px !important; height: 1080px !important; page-break-after: always; break-after: page; }
+      .slide:last-child { page-break-after: auto; break-after: auto; }
+      .deck-counter, .deck-hint { display: none !important; }
+    }
+  </style>
+  <style>
+    .display { font-family: "Raleway", sans-serif; font-weight: 800; letter-spacing: -.015em; line-height: .92; text-transform: uppercase; }
+    .body { font-family: "Raleway", sans-serif; font-weight: 400; }
+    .mono { font-family: "JetBrains Mono", monospace; }
+
+    .slide-meta {
+      position: absolute; left: 64px; right: 64px; bottom: 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: "JetBrains Mono", monospace; font-size: 22px;
+      letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
+    }
+    .slide-meta .dot {
+      width: 8px; height: 8px; background: var(--accent);
+      border-radius: 50%; display: inline-block; margin: 0 14px; transform: translateY(-2px);
+    }
+    .topbar {
+      position: absolute; left: 64px; right: 64px; top: 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: "JetBrains Mono", monospace; font-size: 22px;
+      letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    }
+    .topbar .pill {
+      border: 1px solid var(--muted); padding: 6px 16px; border-radius: 999px; color: var(--muted);
+      letter-spacing: .12em;
+    }
+
+    .s1 .tagline {
+      position: absolute; left: 96px; top: 160px;
+      font-family: "JetBrains Mono", monospace; font-size: 22px;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--muted);
+    }
+    .s1 .tagline span {
+      display: inline-block; width: 50px; height: 3px;
+      background: var(--accent); vertical-align: middle; margin-right: 18px;
+      transform: translateY(-3px);
+    }
+    .s1 .title {
+      position: absolute; left: 96px; top: 50%; transform: translateY(-50%);
+      font-size: 140px; color: var(--fg); width: 900px;
+    }
+    .s1 .title .row { display: block; }
+    .s1 .poster {
+      position: absolute; right: 96px; top: 140px; bottom: 140px;
+      width: 720px; background: var(--accent);
+      border-radius: 25px; display: flex;
+      align-items: center; justify-content: center;
+      flex-direction: column; gap: 20px;
+    }
+    .s1 .poster .big-icon {
+      font-family: "Raleway", sans-serif; font-weight: 800;
+      font-size: 100px; color: var(--bg); line-height: 1;
+    }
+    .s1 .poster .big-sub {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 24px; color: var(--bg); letter-spacing: .12em;
+      text-transform: uppercase; text-align: center; opacity: .85;
+    }
+    .s1 .footnote {
+      position: absolute; left: 96px; bottom: 140px;
+      font-size: 22px; color: var(--muted); max-width: 640px; line-height: 1.4;
+    }
+
+    .s2 .kicker {
+      position: absolute; left: 96px; top: 200px;
+      font-family: "JetBrains Mono", monospace; font-size: 22px;
+      letter-spacing: .14em; text-transform: uppercase;
+      background: var(--accent); color: var(--bg);
+      padding: 8px 16px; display: inline-block; white-space: nowrap;
+    }
+    .s2 .h {
+      position: absolute; left: 96px; top: 300px; right: 960px;
+      font-size: 120px; line-height: .92; color: var(--fg);
+    }
+    .s2 .body-col {
+      position: absolute; left: 1020px; top: 300px; right: 96px;
+      font-size: 26px; line-height: 1.45; color: var(--muted);
+    }
+    .s2 .body-col p + p { margin-top: 24px; }
+    .s2 .marker {
+      position: absolute; left: 96px; bottom: 160px;
+      padding: 24px 40px; background: var(--surface);
+      border: 1px solid var(--accent); border-radius: 25px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Raleway", sans-serif; font-weight: 800; font-size: 40px; color: var(--accent);
+    }
+    .s2 .ix {
+      position: absolute; right: 96px; top: 640px;
+      width: 240px; height: 240px;
+      border: 2px solid var(--accent); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .s2 .ix .circ {
+      width: 160px; height: 160px; background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Raleway", sans-serif; font-weight: 800; font-size: 34px; color: var(--bg);
+    }
+
+    .s3 .h {
+      position: absolute; left: 96px; top: 130px; right: 96px;
+      font-size: 72px; line-height: .95; color: var(--fg);
+    }
+    .s3 .grid {
+      position: absolute; left: 96px; right: 96px; top: 400px;
+      display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+      gap: 24px; bottom: 110px;
+    }
+    .s3 .cell {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 25px;
+      padding: 28px 32px; position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .s3 .cell .num-wrap { padding-top: 16px; }
+    .s3 .cell .num { font-family: "Raleway", sans-serif; font-weight: 800; font-size: 80px; line-height: .9; color: var(--accent); }
+    .s3 .cell .lbl { font-family: "JetBrains Mono", monospace; font-size: 20px; letter-spacing: .1em; text-transform: uppercase; color: var(--fg); }
+    .s3 .cell .desc { font-size: 20px; line-height: 1.4; max-width: 520px; color: var(--muted); margin-top: 6px; }
+    .s3 .cell .corner {
+      position: absolute; top: 20px; right: 24px;
+      font-family: "JetBrains Mono", monospace; font-size: 20px; letter-spacing: .08em;
+      color: var(--accent);
+    }
+
+    .s4 .kicker {
+      position: absolute; left: 96px; top: 200px;
+      font-family: "JetBrains Mono", monospace; font-size: 22px;
+      letter-spacing: .14em; text-transform: uppercase;
+      background: var(--accent); color: var(--bg);
+      padding: 8px 16px; display: inline-block; white-space: nowrap;
+    }
+    .s4 .h {
+      position: absolute; left: 96px; top: 300px; right: 960px;
+      font-size: 120px; line-height: .92; color: var(--fg);
+    }
+    .s4 .body-col {
+      position: absolute; left: 1020px; top: 300px; right: 96px;
+      font-size: 26px; line-height: 1.45; color: var(--muted);
+    }
+    .s4 .body-col p + p { margin-top: 24px; }
+    .s4 .stat-row {
+      position: absolute; left: 96px; bottom: 160px;
+      display: flex; gap: 24px;
+    }
+    .s4 .stat-item {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 25px;
+      padding: 24px 40px; display: flex; flex-direction: column; align-items: center;
+      min-width: 180px;
+    }
+    .s4 .stat-item .val { font-family: "Raleway", sans-serif; font-weight: 800; font-size: 48px; line-height: .9; color: var(--accent); }
+    .s4 .stat-item .lbl { font-family: "JetBrains Mono", monospace; font-size: 18px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+
+    .s5 .h {
+      position: absolute; left: 96px; top: 96px; right: 500px;
+      font-size: 80px; color: var(--fg);
+    }
+    .s5 .table {
+      position: absolute; left: 96px; right: 96px; top: 380px; bottom: 140px;
+      border: 1px solid var(--border); border-radius: 25px; overflow: hidden;
+      display: grid; grid-template-rows: 80px repeat(4, 1fr);
+    }
+    .s5 .table .row {
+      display: grid; grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .s5 .table .row:last-child { border-bottom: 0; }
+    .s5 .table .row > div {
+      padding: 16px 24px; border-right: 1px solid var(--border);
+      display: flex; align-items: center; font-size: 22px; color: var(--fg);
+    }
+    .s5 .table .row > div:last-child { border-right: 0; }
+    .s5 .table .head { background: var(--accent); color: var(--bg); }
+    .s5 .table .head > div {
+      font-family: "Raleway", sans-serif; font-weight: 800; font-size: 22px; text-transform: uppercase;
+      border-right: 1px solid rgba(0,0,0,.15); color: var(--bg);
+    }
+    .s5 .table .row .label { font-family: "Raleway", sans-serif; font-weight: 700; font-size: 22px; text-transform: uppercase; background: var(--surface); }
+    .s5 .table .row .col-accent { background: rgba(239,125,0,.08); color: var(--accent); font-weight: 600; }
+    .s5 .badge {
+      position: absolute; right: 120px; top: 200px;
+      background: var(--accent); border: none; border-radius: 25px;
+      padding: 12px 24px; font-family: "Raleway", sans-serif; font-weight: 800; font-size: 24px;
+      color: var(--bg); text-transform: uppercase; transform: rotate(-3deg);
+    }
+
+    .s6 .h {
+      position: absolute; left: 96px; top: 96px; right: 96px;
+      font-size: 80px; color: var(--fg);
+    }
+    .s6 .flow {
+      position: absolute; left: 96px; right: 96px; top: 340px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .s6 .case {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 25px;
+      padding: 28px; height: 500px; position: relative; display: flex; flex-direction: column;
+    }
+    .s6 .case .n { font-family: "Raleway", sans-serif; font-weight: 800; font-size: 80px; line-height: .85; color: var(--accent); }
+    .s6 .case .t { font-family: "Raleway", sans-serif; font-weight: 800; font-size: 30px; margin-top: 10px; line-height: 1; text-transform: uppercase; color: var(--fg); }
+    .s6 .case .d { font-size: 22px; line-height: 1.4; margin-top: 10px; color: var(--muted); flex: 1; }
+    .s6 .case .tag {
+      font-family: "JetBrains Mono", monospace; font-size: 18px; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--accent); margin-top: auto; padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .s7 .h {
+      position: absolute; left: 96px; top: 130px; right: 500px;
+      font-size: 80px; color: var(--fg);
+    }
+    .s7 .chart {
+      position: absolute; left: 160px; right: 96px; top: 400px; height: 460px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-end; justify-content: space-around;
+      gap: 32px; padding: 0 40px;
+    }
+    .s7 .bar {
+      flex: 1; background: var(--accent); border-radius: 12px 12px 0 0; position: relative;
+      max-width: 140px; min-height: 8px;
+    }
+    .s7 .bar .v {
+      position: absolute; left: 0; right: 0; top: -42px; text-align: center;
+      font-family: "Raleway", sans-serif; font-weight: 800; font-size: 28px; color: var(--fg);
+    }
+    .s7 .bar .x {
+      position: absolute; left: 0; right: 0; bottom: -48px; text-align: center;
+      font-family: "JetBrains Mono", monospace; font-size: 20px; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .s7 .axis-y {
+      position: absolute; left: 96px; top: 400px; width: 64px; height: 460px;
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column-reverse; justify-content: space-between;
+      font-family: "JetBrains Mono", monospace; font-size: 20px; color: var(--muted);
+    }
+    .s7 .axis-y span { transform: translate(-10px, 6px); text-align: right; width: 60px; }
+    .s7 .note {
+      position: absolute; left: 160px; right: 600px; bottom: 90px;
+      font-family: "JetBrains Mono", monospace; font-size: 18px; letter-spacing: .04em; color: var(--muted); opacity: .6;
+    }
+    .s7 .legend2 {
+      position: absolute; right: 96px; top: 150px;
+      display: flex; flex-direction: column; gap: 12px;
+      font-family: "JetBrains Mono", monospace; font-size: 20px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
+    }
+    .s7 .legend2 .row { display: flex; align-items: center; gap: 10px; }
+    .s7 .legend2 .sw { width: 18px; height: 18px; border-radius: 4px; }
+
+    .s8 .h {
+      position: absolute; left: 96px; top: 130px; right: 96px;
+      font-size: 68px; line-height: .95; color: var(--fg);
+    }
+    .s8 .grid {
+      position: absolute; left: 96px; right: 96px; top: 400px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px; bottom: 110px;
+    }
+    .s8 .cell {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 25px;
+      padding: 28px 24px; position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .s8 .cell .num { font-family: "Raleway", sans-serif; font-weight: 800; font-size: 48px; line-height: .9; word-break: break-word; color: var(--accent); }
+    .s8 .cell .desc { font-size: 20px; line-height: 1.4; margin-top: 12px; color: var(--muted); flex: 1; }
+    .s8 .cell .desc strong { color: var(--fg); font-weight: 700; }
+
+    .s9 .h {
+      position: absolute; left: 96px; top: 96px; right: 96px;
+      font-size: 80px; color: var(--fg);
+    }
+    .s9 .flow {
+      position: absolute; left: 96px; right: 96px; top: 360px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    }
+    .s9 .step {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 25px;
+      padding: 24px; height: 440px; position: relative; display: flex; flex-direction: column;
+    }
+    .s9 .step .n { font-family: "Raleway", sans-serif; font-weight: 800; font-size: 100px; line-height: .85; color: var(--accent); }
+    .s9 .step .t { font-family: "Raleway", sans-serif; font-weight: 800; font-size: 28px; margin-top: 10px; line-height: 1; text-transform: uppercase; color: var(--fg); }
+    .s9 .step .d { font-size: 20px; line-height: 1.4; margin-top: 10px; color: var(--muted); }
+    .s9 .step .arrow {
+      position: absolute; right: -18px; top: 50%; transform: translateY(-50%);
+      width: 0; height: 0; border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent; border-left: 18px solid var(--accent); z-index: 2;
+    }
+    .s9 .step:last-child .arrow { display: none; }
+
+    .s10 { background: var(--surface) !important; }
+    .s10 .h {
+      position: absolute; left: 96px; top: 200px; right: 700px;
+      font-size: 180px; color: var(--fg);
+    }
+    .s10 .btns {
+      position: absolute; left: 96px; bottom: 160px;
+      display: flex; gap: 20px; align-items: center;
+    }
+    .s10 .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: "Raleway", sans-serif; font-weight: 700; font-size: 24px; line-height: 1;
+      padding: 18px 36px; border: none; border-radius: 25px;
+      cursor: pointer; text-decoration: none; transition: transform .15s, opacity .15s;
+      text-transform: uppercase;
+    }
+    .s10 .btn:hover { transform: scale(1.04); }
+    .s10 .btn-wa { background: #25D366; color: var(--bg); }
+    .s10 .btn-wa:hover { opacity: .9; }
+    .s10 .btn-buy { background: var(--accent); color: var(--bg); }
+    .s10 .btn-buy:hover { opacity: .9; }
+    .s10 .stamp {
+      position: absolute; right: 120px; bottom: 160px;
+      width: 320px; height: 320px; border: 2px solid var(--accent); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      text-align: center; padding: 20px;
+    }
+    .s10 .stamp .contact-line { font-family: "Raleway", sans-serif; font-weight: 800; font-size: 28px; color: var(--accent); }
+    .s10 .stamp .lbl { font-family: "JetBrains Mono", monospace; font-size: 18px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="deck-shell">
+    <div class="deck-stage" id="deck-stage">
+
+      <section class="slide active s1" data-screen-label="01 Capa">
+        <div class="tagline"><span></span>MIDIAKIT &nbsp;/&nbsp; 2026</div>
+        <div class="title display">
+          <span class="row">DOOH</span>
+          <span class="row" style="color:var(--accent)">INVENTÁRIO</span>
+          <span class="row" style="font-size:56px;line-height:1.2;margin-top:20px;">DIGITAL OUT OF HOME</span>
+        </div>
+        <div class="footnote">Solução completa em mídia OOH digital<br/>para sua marca alcançar audiências qualificadas nos melhores pontos da cidade.</div>
+        <div class="poster" aria-hidden="true">
+          <div class="big-icon">DOOH</div>
+          <div class="big-sub">Conectamos<br/>sua marca<br/>ao mundo real</div>
+        </div>
+        <div class="slide-meta"><div>MIDIAKIT DOOH</div><div>01<span class="dot"></span>10</div></div>
+      </section>
+
+      <section class="slide s2" data-screen-label="02 O que é DOOH">
+        <div class="topbar"><div>INTRODUÇÃO</div><div class="pill">O&nbsp;MEIO</div></div>
+        <div class="kicker mono">Digital Out of Home</div>
+        <h1 class="h display">O NOVO<br/>OLHAR DA<br/>CIDADE.</h1>
+        <div class="body-col body">
+          <p>DOOH (Digital Out of Home) é a evolução da mídia OOH tradicional: telas digitais conectadas em pontos de alto fluxo — avenidas, shoppings, aeroportos, estações, elevadores — que exibem conteúdo dinâmico em tempo real.</p>
+          <p>Diferente do OOH estático, o DOOH permite segmentação por horário, clima, localização e audiência, com criatividade em vídeo, áudio e interatividade. Resultado: campanhas mais relevantes e mensuráveis.</p>
+          <p>O Brasil é o 4º maior mercado de DOOH do mundo, com crescimento anual de +18% e investimento projetado de R$ 3,2 bi em 2026.</p>
+        </div>
+        <div class="marker display">+18% AO ANO</div>
+        <div class="ix" aria-hidden="true"><div class="circ">DOOH</div></div>
+        <div class="slide-meta"><div>O MEIO</div><div>02<span class="dot"></span>10</div></div>
+      </section>
+
+      <section class="slide s3" data-screen-label="03 Cobertura">
+        <div class="topbar"><div>PRESENÇA</div><div class="pill">LOCALIZAÇÕES</div></div>
+        <h1 class="h display">ONDE SUA MARCA<br/>APARECE.</h1>
+        <div class="grid">
+          <div class="cell">
+            <div class="corner mono">/01</div>
+            <div class="num-wrap"><div class="num">120+</div></div>
+            <div><div class="lbl">Telas Instaladas</div><div class="desc">Rede própria de painéis digitais Full HD e 4K nos principais corredores comerciais da cidade.</div></div>
+          </div>
+          <div class="cell">
+            <div class="corner mono">/02</div>
+            <div class="num-wrap"><div class="num">15</div></div>
+            <div><div class="lbl">Bairros Cobertos</div><div class="desc">Presença nas zonas com maior densidade de público qualificado — Centro, Zona Sul, Zona Oeste e região metropolitana.</div></div>
+          </div>
+          <div class="cell">
+            <div class="corner mono">/03</div>
+            <div class="num-wrap"><div class="num">8</div></div>
+            <div><div class="lbl">Aeroportos</div><div class="desc">Telas em saguões de embarque e desembarque com tempo médio de exposição de 18 minutos por visitante.</div></div>
+          </div>
+          <div class="cell">
+            <div class="corner mono">/04</div>
+            <div class="num-wrap"><div class="num">40</div></div>
+            <div><div class="lbl">Shoppings</div><div class="desc">Painéis em corredores, praças de alimentação e fachadas dos principais centros de compras da região.</div></div>
+          </div>
+        </div>
+        <div class="slide-meta"><div>COBERTURA</div><div>03<span class="dot"></span>10</div></div>
+      </section>
+
+      <section class="slide s4" data-screen-label="04 Audiência">
+        <div class="topbar"><div>AUDIÊNCIA</div><div class="pill">PERFIL</div></div>
+        <div class="kicker mono">Quem vê</div>
+        <h1 class="h display">A CIDADE<br/>QUE COMPRA.</h1>
+        <div class="body-col body">
+          <p>Nossas telas alcançam um público diverso e segmentável: consumidores reais em deslocamento, com poder de compra e atenção disponível. Diferente do digital indoor, o DOOH captura o momento da decisão — perto da loja, do ponto de venda, da experiência.</p>
+          <p>Classe AB: 62% | Idade 25–49: 71% | Tempo médio de exposição: 12s por passagem. Cada tela gera em média 4.200 impactos/dia em horário comercial.</p>
+        </div>
+        <div class="stat-row">
+          <div class="stat-item"><div class="val">4,2M</div><div class="lbl">Impactos/mês</div></div>
+          <div class="stat-item"><div class="val">62%</div><div class="lbl">Classe AB</div></div>
+          <div class="stat-item"><div class="val">71%</div><div class="lbl">25–49 anos</div></div>
+        </div>
+        <div class="slide-meta"><div>AUDIÊNCIA</div><div>04<span class="dot"></span>10</div></div>
+      </section>
+
+      <section class="slide s5" data-screen-label="05 Formatos">
+        <div class="topbar"><div>ESPECIFICAÇÕES</div><div class="pill">FORMATOS</div></div>
+        <h1 class="h display">PRA CADA MOMENTO,<br/>UM FORMATO.</h1>
+        <div class="badge">VEJA&nbsp;MAIS</div>
+        <div class="table">
+          <div class="row head"><div>Formato</div><div>Resolução</div><div>Duração</div><div>Diferencial</div></div>
+          <div class="row"><div class="label">Painel Digital</div><div class="col-accent">Full HD</div><div class="col-accent">15–30s</div><div class="col-accent">Alto impacto visual</div></div>
+          <div class="row"><div class="label">Videowall</div><div class="col-accent">4K</div><div class="col-accent">30–60s</div><div class="col-accent">Imersão total</div></div>
+          <div class="row"><div class="label">Totem Interativo</div><div class="col-accent">HD Touch</div><div class="col-accent">Livre</div><div class="col-accent">Engajamento ativo</div></div>
+          <div class="row"><div class="label">Elevador Digital</div><div class="col-accent">HD</div><div class="col-accent">15s loop</div><div class="col-accent">Proximidade forçada</div></div>
+        </div>
+        <div class="slide-meta"><div>FORMATOS</div><div>05<span class="dot"></span>10</div></div>
+      </section>
+
+      <section class="slide s6" data-screen-label="06 Cases">
+        <div class="topbar"><div>NA PRÁTICA</div><div class="pill">CASES</div></div>
+        <h1 class="h display">CAMPANHAS QUE<br/>FIZERAM BARULHO.</h1>
+        <div class="flow">
+          <div class="case"><div class="n">01</div><div class="t">App de Mobilidade</div><div class="d">Campanha de aquisição em 40 painéis nas zonas Sul e Oeste. Resultado: +34% de downloads na região em 4 semanas.</div><div class="tag">Aquisição · 4 sem</div></div>
+          <div class="case"><div class="n">02</div><div class="t">Varejo Fashion</div><div class="d">Lançamento de coleção sazonal em videowalls de shopping. Recorde de visitação na loja física da marca: +52% no período.</div><div class="tag">Varejo · 2 sem</div></div>
+          <div class="case"><div class="n">03</div><div class="t">Bebidas</div><div class="d">Ativação em aeroportos durante alta temporada. Alcance de 1,2M de passageiros com recall de marca medido em 78%.</div><div class="tag">Branding · 8 sem</div></div>
+        </div>
+        <div class="slide-meta"><div>CASES</div><div>06<span class="dot"></span>10</div></div>
+      </section>
+
+      <section class="slide s7" data-screen-label="07 Métricas">
+        <div class="topbar"><div>RESULTADOS</div><div class="pill">MÉTRICAS</div></div>
+        <h1 class="h display">DOOH EM NÚMEROS.</h1>
+        <div class="legend2">
+          <div class="row"><span class="sw" style="background:var(--accent)"></span> Impactos (milhões)</div>
+          <div class="row"><span class="sw" style="background:var(--muted)"></span> Taxa de recall (%)</div>
+        </div>
+        <div class="axis-y"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div>
+        <div class="chart">
+          <div class="bar" style="height:42%"><span class="v">42</span><span class="x">2022</span></div>
+          <div class="bar" style="height:58%;background:var(--muted)"><span class="v">58</span><span class="x">2023</span></div>
+          <div class="bar" style="height:73%"><span class="v">73</span><span class="x">2024</span></div>
+          <div class="bar" style="height:82%;background:var(--muted)"><span class="v">82</span><span class="x">2025</span></div>
+          <div class="bar" style="height:91%"><span class="v">91</span><span class="x">2026*</span></div>
+        </div>
+        <div class="note mono">* PROJEÇÃO. FONTE: ASSOCIAÇÃO BRASILEIRA DE OOH (ABOOH) / DADOS INTERNOS.</div>
+        <div class="slide-meta"><div>MÉTRICAS</div><div>07<span class="dot"></span>10</div></div>
+      </section>
+
+      <section class="slide s8" data-screen-label="08 Exclusividade">
+        <div class="topbar"><div>OPORTUNIDADE</div><div class="pill">EXCLUSIVIDADE</div></div>
+        <h1 class="h display">10 COTAS.<br/>SEM CONCORRENTES.<br/><span style="color:var(--accent)">PREÇO ÚNICO.</span></h1>
+        <div class="grid">
+          <div class="cell"><div class="num" style="font-size:72px">10</div><div class="desc"><strong>Cotas Disponíveis</strong><br/>Apenas 10 anunciantes terão presença garantida no nosso circuito de telas. Exclusividade que valoriza sua marca.</div></div>
+          <div class="cell"><div class="num" style="font-size:54px">SEM<br/>CONCORRENTES</div><div class="desc"><strong>Exclusividade por Categoria</strong><br/>Seu segmento é seu. Nenhum concorrente direto aparece no mesmo circuito durante sua campanha.</div></div>
+          <div class="cell"><div class="num" style="font-size:60px">R$ 49.900</div><div class="desc"><strong>Preço Fechado</strong><br/>Cobertura completa por 4 semanas em toda a rede. Custo por impacto mais competitivo do mercado.</div></div>
+        </div>
+        <div class="slide-meta"><div>EXCLUSIVIDADE</div><div>08<span class="dot"></span>10</div></div>
+      </section>
+
+      <section class="slide s9" data-screen-label="09 Processo">
+        <div class="topbar"><div>COMO FUNCIONA</div><div class="pill">4 PASSOS</div></div>
+        <h1 class="h display">DO BRIEF À TELA.</h1>
+        <div class="flow">
+          <div class="step"><div class="n">01</div><div class="t">Briefing</div><div class="d">Entendemos seus objetivos, público-alvo, período e orçamento para desenhar a melhor estratégia.</div><div class="arrow"></div></div>
+          <div class="step"><div class="n">02</div><div class="t">Planejamento</div><div class="d">Selecionamos as telas, horários e formatos ideais com base em dados de audiência e tráfego.</div><div class="arrow"></div></div>
+          <div class="step"><div class="n">03</div><div class="t">Criação</div><div class="d">Produzimos o material criativo com nossa equipe ou aprovamos o envio do seu conteúdo.</div><div class="arrow"></div></div>
+          <div class="step"><div class="n">04</div><div class="t">Veiculação</div><div class="d">Campanha no ar com monitoramento em tempo real e relatório de resultados pós-campanha.</div></div>
+        </div>
+        <div class="slide-meta"><div>PROCESSO</div><div>09<span class="dot"></span>10</div></div>
+      </section>
+
+      <section class="slide s10" data-screen-label="10 Contato">
+        <div class="topbar"><div class="pill">CONTATO</div></div>
+        <h1 class="h display">VAMOS<br/>FALAR?</h1>
+        <div class="btns">
+          <a class="btn btn-wa" href="https://wa.me/5511999990000" target="_blank" rel="noopener"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Fale conosco</a>
+          <a class="btn btn-buy" href="#">Comprar agora</a>
+        </div>
+        <div class="stamp" aria-hidden="true">
+          <div class="contact-line">oi@inviron.com.br</div>
+          <div class="lbl">(11) 99999-0000</div>
+        </div>
+        <div class="slide-meta"><div>CONTATO</div><div>10<span class="dot"></span>10</div></div>
+      </section>
+
+    </div>
+  </div>
+
+  <nav class="deck-counter" role="navigation" aria-label="Navegação do deck">
+    <button type="button" id="deck-prev" aria-label="Slide anterior">‹</button>
+    <span class="deck-count"><span id="deck-cur">01</span> <span class="total">/ <span id="deck-total">10</span></span></span>
+    <button type="button" id="deck-next" aria-label="Próximo slide">›</button>
+  </nav>
+  <div class="deck-hint">← / → · espaço</div>
+
+  <script>
+    (function () {
+      var stage = document.getElementById('deck-stage');
+      var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+      var prev = document.getElementById('deck-prev');
+      var next = document.getElementById('deck-next');
+      var cur = document.getElementById('deck-cur');
+      var total = document.getElementById('deck-total');
+      var STORE = 'deck:idx:' + (location.pathname || '/');
+      var idx = 0;
+
+      function fit() {
+        var sw = window.innerWidth, sh = window.innerHeight, pad = 32;
+        var s = Math.min((sw - pad) / 1920, (sh - pad) / 1080);
+        if (!isFinite(s) || s <= 0) s = 1;
+        stage.style.transform = 'translate(' + ((sw - 1920 * s) / 2) + 'px,' + ((sh - 1080 * s) / 2) + 'px) scale(' + s + ')';
+      }
+
+      function pad2(n) { return (n < 10 ? '0' : '') + n; }
+      function paint() {
+        slides.forEach(function (el, i) { el.classList.toggle('active', i === idx); });
+        if (cur) cur.textContent = pad2(idx + 1);
+        if (total) total.textContent = pad2(slides.length);
+        if (prev) prev.toggleAttribute('disabled', idx <= 0);
+        if (next) next.toggleAttribute('disabled', idx >= slides.length - 1);
+      }
+      function go(i) {
+        idx = Math.max(0, Math.min(slides.length - 1, i));
+        paint();
+        try { localStorage.setItem(STORE, String(idx)); } catch (_) {}
+      }
+      function onKey(e) {
+        var t = e.target;
+        if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); go(idx + 1); }
+        else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(idx - 1); }
+        else if (e.key === 'Home') { e.preventDefault(); go(0); }
+        else if (e.key === 'End') { e.preventDefault(); go(slides.length - 1); }
+      }
+      window.addEventListener('keydown', onKey, true);
+      document.addEventListener('keydown', onKey, true);
+      if (prev) prev.addEventListener('click', function () { go(idx - 1); });
+      if (next) next.addEventListener('click', function () { go(idx + 1); });
+
+      document.body.setAttribute('tabindex', '-1');
+      document.body.style.outline = 'none';
+      function focusDeck() { try { window.focus(); document.body.focus({ preventScroll: true }); } catch (_) {} }
+      document.addEventListener('mousedown', focusDeck);
+      window.addEventListener('load', focusDeck);
+
+      try { var saved = parseInt(localStorage.getItem(STORE) || '0', 10); if (!isNaN(saved) && saved >= 0 && saved < slides.length) idx = saved; } catch (_) {}
+
+      window.addEventListener('resize', fit);
+      fit();
+      paint();
+      focusDeck();
+    })();
+  </script>
+</body>
+</html>
