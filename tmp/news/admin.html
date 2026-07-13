@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin — Conferência</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html,body { width:100%; height:100%; overflow:hidden; font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+    body { background:#000; }
+
+    #bg-video-light,#bg-video-dark {
+      position:fixed; inset:0; width:100%; height:100%;
+      object-fit:cover; z-index:-1;
+      transition:opacity 0.8s ease;
+    }
+    #bg-video-dark { opacity:0; }
+
+    :root {
+      --glass-bg:rgba(255,255,255,0.55); --glass-border:rgba(255,255,255,0.6);
+      --glass-blur:8px; --text-main:#1a1a1a; --text-muted:#6b7280;
+      --accent:#000; --card-radius:40px;
+      --transition:all 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .dark-mode {
+      --glass-bg:rgba(0,0,0,0.45); --glass-border:rgba(255,255,255,0.08);
+      --text-main:#fff; --text-muted:#b0b0b0; --accent:#fff;
+    }
+    .dark-mode #bg-video-light { opacity:0; }
+    .dark-mode #bg-video-dark { opacity:1; }
+
+    .glass {
+      background:var(--glass-bg);
+      backdrop-filter:blur(var(--glass-blur)) saturate(1.8);
+      -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(1.8);
+      border-radius:var(--card-radius);
+      box-shadow:0 4px 24px rgba(0,0,0,0.06),0 1px 4px rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.5);
+      position:relative;
+    }
+    .glass::after {
+      content:''; position:absolute; inset:0; border-radius:inherit;
+      pointer-events:none; filter:url(#noise-filter); opacity:0.06; mix-blend-mode:overlay;
+    }
+
+    .app-shell { width:100%; height:100%; display:flex; flex-direction:column; padding:32px 40px; gap:20px; }
+
+    .top-nav {
+      display:grid; grid-template-columns:auto 1fr auto auto;
+      gap:16px; align-items:center;
+    }
+    .profile-btn {
+      width:48px; height:48px; border-radius:50%;
+      overflow:hidden; cursor:pointer; border:2px solid var(--glass-border);
+    }
+    .profile-btn img { width:100%; height:100%; object-fit:cover; }
+    .page-title { font-size:1.25rem; font-weight:600; color:var(--text-main); }
+    .theme-switch { width:48px;height:26px;border-radius:999px;background:#3b82f6;position:relative;cursor:pointer; }
+    .theme-switch .handle {
+      width:22px;height:22px;border-radius:50%;background:#fff;
+      position:absolute;top:2px;left:2px;transition:var(--transition);
+      display:flex;align-items:center;justify-content:center;font-size:12px;
+    }
+    .dark-mode .theme-switch .handle { left:24px; }
+    .btn-icon {
+      width:48px;height:48px;border-radius:50%;
+      background:rgba(255,255,255,0.1);backdrop-filter:blur(8px);
+      border:none;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--text-main);font-size:18px;transition:var(--transition);
+    }
+    .btn-icon:hover { background:rgba(255,255,255,0.2);transform:scale(1.05); }
+
+    /* Content split */
+    .admin-content {
+      flex:1; display:flex; gap:24px; overflow:hidden;
+    }
+    .users-panel {
+      flex:1; display:flex; flex-direction:column; gap:16px;
+    }
+    .panel-header {
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .panel-header h2 {
+      font-size:1.1rem; font-weight:600; color:var(--text-main);
+    }
+    .btn-add {
+      padding:10px 20px; border-radius:14px;
+      border:none; background:#3b82f6; color:#fff;
+      font:600 0.85rem/1 'Inter',system-ui,sans-serif;
+      cursor:pointer; transition:var(--transition);
+    }
+    .btn-add:hover { background:#2563eb; transform:scale(1.03); }
+
+    .users-list {
+      flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:12px;
+      padding:4px;
+    }
+    .users-list::-webkit-scrollbar { width:6px; }
+    .users-list::-webkit-scrollbar-track { background:transparent; }
+    .users-list::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.15); border-radius:999px; }
+
+    .user-card {
+      padding:20px 24px; border-radius:28px;
+      background:var(--glass-bg);
+      backdrop-filter:blur(var(--glass-blur)) saturate(1.8);
+      display:flex; gap:16px; align-items:center;
+      transition:var(--transition);
+    }
+    .user-card:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,0.06); }
+    .user-card .uc-avatar {
+      width:44px; height:44px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:600; font-size:16px; flex-shrink:0;
+    }
+    .user-card .uc-info { flex:1; display:flex; flex-direction:column; gap:2px; }
+    .user-card .uc-name { font-size:0.95rem; font-weight:600; color:var(--text-main); }
+    .user-card .uc-email { font-size:0.8rem; color:var(--text-muted); }
+    .user-card .uc-type {
+      font-size:0.7rem; padding:3px 10px; border-radius:999px;
+      font-weight:500; width:fit-content;
+    }
+    .user-card .uc-actions { display:flex; gap:8px; flex-shrink:0; }
+    .user-card .uc-actions button {
+      padding:6px 14px; border-radius:999px;
+      border:none; cursor:pointer;
+      font:500 0.75rem/1 'Inter',system-ui,sans-serif;
+      transition:var(--transition);
+    }
+    .uc-actions .btn-channels { background:rgba(16,185,129,0.15); color:#10b981; }
+    .uc-actions .btn-channels:hover { background:rgba(16,185,129,0.25); }
+    .uc-actions .btn-del { background:rgba(255,69,69,0.15); color:#ff4545; }
+    .uc-actions .btn-del:hover { background:rgba(255,69,69,0.25); }
+
+    /* Right panel — canais do usuário */
+    .channels-panel {
+      width:360px; display:flex; flex-direction:column; gap:16px;
+      padding:24px; border-radius:var(--card-radius);
+      background:var(--glass-bg);
+      backdrop-filter:blur(var(--glass-blur)) saturate(1.8);
+      flex-shrink:0;
+    }
+    .channels-panel .cp-header {
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .channels-panel .cp-header h3 {
+      font-size:1rem; font-weight:600; color:var(--text-main);
+    }
+    .channels-panel .cp-user {
+      font-size:0.8rem; color:var(--text-muted);
+      margin-top:-8px;
+    }
+    .channels-panel .cp-list {
+      flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:8px;
+    }
+    .cp-list::-webkit-scrollbar { width:6px; }
+    .cp-list::-webkit-scrollbar-track { background:transparent; }
+    .cp-list::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.15); border-radius:999px; }
+
+    .cp-channel-item {
+      padding:12px 16px; border-radius:16px;
+      display:flex; align-items:center; gap:12px;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(4px);
+    }
+    .cp-channel-item .cpi-icon {
+      width:32px; height:32px; border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:14px; font-weight:600;
+    }
+    .cp-channel-item .cpi-name {
+      flex:1; font-size:0.85rem; font-weight:500; color:var(--text-main);
+    }
+    .cp-channel-item .cpi-remove {
+      width:28px; height:28px; border-radius:50%;
+      border:none; background:rgba(255,69,69,0.15); color:#ff4545;
+      cursor:pointer; font-size:14px;
+      display:flex; align-items:center; justify-content:center;
+      transition:var(--transition);
+    }
+    .cp-channel-item .cpi-remove:hover { background:rgba(255,69,69,0.3); }
+
+    .cp-empty {
+      font-size:0.85rem; color:var(--text-muted);
+      text-align:center; padding:32px 0;
+    }
+    .cp-add-btn {
+      padding:12px; border-radius:14px;
+      border:2px dashed var(--glass-border);
+      background:transparent; cursor:pointer;
+      color:var(--text-muted); font-size:0.85rem;
+      transition:var(--transition);
+    }
+    .cp-add-btn:hover { border-color:var(--accent); color:var(--accent); }
+
+    /* Modals */
+    .modal-overlay {
+      position:fixed; inset:0; z-index:100;
+      background:rgba(0,0,0,0.5); backdrop-filter:blur(4px);
+      display:none; align-items:center; justify-content:center;
+    }
+    .modal-overlay.open { display:flex; }
+
+    .modal-card {
+      width:480px; padding:36px 32px;
+      display:flex; flex-direction:column; gap:20px;
+    }
+    .modal-card h2 { font-size:1.2rem; font-weight:600; color:var(--text-main); }
+    .modal-card label { font-size:0.8rem; font-weight:500; color:var(--text-muted); }
+    .modal-card input,.modal-card select {
+      width:100%; padding:12px 16px;
+      border-radius:14px; border:1px solid var(--glass-border);
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(4px);
+      font:0.9rem/1.4 'Inter',system-ui,sans-serif;
+      color:var(--text-main); outline:none;
+      transition:var(--transition);
+    }
+    .modal-card input:focus,.modal-card select:focus {
+      border-color:#3b82f6; box-shadow:0 0 0 3px rgba(59,130,246,0.2);
+    }
+    .modal-card .modal-actions { display:flex; gap:12px; justify-content:flex-end; }
+    .modal-card .btn-secondary {
+      padding:10px 24px; border-radius:14px;
+      border:1px solid var(--glass-border);
+      background:var(--glass-bg); color:var(--text-main);
+      font:500 0.9rem/1 'Inter',system-ui,sans-serif;
+      cursor:pointer; transition:var(--transition);
+    }
+    .modal-card .btn-primary {
+      padding:10px 24px; border-radius:14px;
+      border:none; background:#3b82f6; color:#fff;
+      font:600 0.9rem/1 'Inter',system-ui,sans-serif;
+      cursor:pointer; transition:var(--transition);
+    }
+    .modal-card .btn-primary:hover { background:#2563eb; }
+    .modal-card .btn-danger {
+      padding:10px 24px; border-radius:14px;
+      border:none; background:#ff4545; color:#fff;
+      font:600 0.9rem/1 'Inter',system-ui,sans-serif;
+      cursor:pointer; transition:var(--transition);
+    }
+
+    .empty-state {
+      flex:1; display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      gap:16px; color:var(--text-muted);
+    }
+    .empty-state .empty-icon { font-size:3rem; opacity:0.5; }
+
+    @media (max-width:1024px) {
+      .admin-content { flex-direction:column; }
+      .channels-panel { width:100%; }
+    }
+    @media (max-width:600px) {
+      .app-shell { padding:16px; }
+    }
+  </style>
+</head>
+<body>
+  <video id="bg-video-light" autoplay muted loop playsInline
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_103318_2aa26b55-df1a-43a6-903d-941e718c9366.mp4">
+  </video>
+  <video id="bg-video-dark" autoplay muted loop playsInline
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_102933_4e8f73b5-775a-4179-b2fb-472f59063dcd.mp4">
+  </video>
+
+  <div class="app-shell">
+    <!-- Top nav -->
+    <nav class="top-nav" data-od-id="top-nav">
+      <div class="profile-btn" data-od-id="profile-btn" onclick="window.location.href='login.html'">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%233b82f6' width='100' height='100'/%3E%3Ccircle fill='%23fff' cx='50' cy='38' r='22'/%3E%3Cpath fill='%23fff' d='M18 85c0-18 14-33 32-33s32 15 32 33'/%3E%3C/svg%3E" alt="Perfil" />
+      </div>
+      <div class="page-title" data-od-id="page-title">Administração</div>
+      <div class="theme-switch" id="themeSwitch" onclick="toggleTheme()">
+        <div class="handle">☀</div>
+      </div>
+      <button class="btn-icon" onclick="window.location.href='index.html'" data-od-id="btn-home" title="Início">⌂</button>
+    </nav>
+
+    <!-- Content -->
+    <div class="admin-content">
+      <!-- Users panel -->
+      <div class="users-panel" data-od-id="users-panel">
+        <div class="panel-header">
+          <h2>Usuários</h2>
+          <button class="btn-add" onclick="openUserModal()" data-od-id="btn-add-user">+ Novo usuário</button>
+        </div>
+        <div class="users-list" id="usersList" data-od-id="users-list"></div>
+      </div>
+
+      <!-- Channels panel -->
+      <div class="channels-panel" data-od-id="channels-panel">
+        <div class="cp-header">
+          <h3>Canais vinculados</h3>
+        </div>
+        <div class="cp-user" id="cpUserName" data-od-id="cp-user-name">Selecione um usuário</div>
+        <div class="cp-list" id="cpList" data-od-id="cp-list">
+          <div class="cp-empty">Selecione um usuário para ver seus canais</div>
+        </div>
+        <button class="cp-add-btn" id="cpAddBtn" onclick="openChannelLinkModal()" data-od-id="btn-link-channel" style="display:none">+ Vincular canal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Novo/Editar Usuário -->
+  <div class="modal-overlay" id="userModal" data-od-id="user-modal">
+    <div class="modal-card glass">
+      <h2 id="userModalTitle">Novo Usuário</h2>
+      <div>
+        <label for="userName">Nome</label>
+        <input type="text" id="userName" placeholder="Nome completo" />
+      </div>
+      <div>
+        <label for="userEmail">E-mail</label>
+        <input type="email" id="userEmail" placeholder="email@exemplo.com" />
+      </div>
+      <div>
+        <label for="userPass">Senha</label>
+        <input type="password" id="userPass" placeholder="••••••••" />
+      </div>
+      <div>
+        <label for="userType">Tipo</label>
+        <select id="userType">
+          <option value="admin">Administrador</option>
+          <option value="moderador">Moderador</option>
+          <option value="editor">Editor</option>
+          <option value="visualizador">Visualizador</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="closeModal('userModal')">Cancelar</button>
+        <button class="btn-primary" onclick="saveUser()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Vincular Canal -->
+  <div class="modal-overlay" id="channelLinkModal" data-od-id="channel-link-modal">
+    <div class="modal-card glass">
+      <h2>Vincular Canal</h2>
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-top:-12px;">Selecione um canal para vincular ao usuário</p>
+      <div>
+        <label for="channelSelect">Canal</label>
+        <select id="channelSelect"></select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="closeModal('channelLinkModal')">Cancelar</button>
+        <button class="btn-primary" onclick="linkChannel()">Vincular</button>
+      </div>
+    </div>
+  </div>
+
+  <svg style="position:absolute;width:0;height:0;" aria-hidden="true">
+    <filter id="noise-filter">
+      <feTurbulence baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </svg>
+
+  <script>
+    const avatarColors = ['#3b82f6','#10b981','#f59e0b','#ef4444','#8b5cf6','#ec4899','#06b6d4','#f97316'];
+    const ICON_MAP = ['📡','💻','🎮','🎵','📰','🎙','📺','🛠','🎨','📊','🔬','📖'];
+
+    let users = [
+      { id:1, name:'Marco Silva', email:'marco@exemplo.com', password:'123456', type:'admin', channels:[1,3,7] },
+      { id:2, name:'Ana Oliveira', email:'ana@exemplo.com', password:'123456', type:'moderador', channels:[2,4] },
+      { id:3, name:'Carlos Santos', email:'carlos@exemplo.com', password:'123456', type:'editor', channels:[5] },
+      { id:4, name:'Juliana Costa', email:'juliana@exemplo.com', password:'123456', type:'visualizador', channels:[] },
+    ];
+
+    let channels = [
+      { id:1, name:'Produto', color:'#3b82f6' },
+      { id:2, name:'Design', color:'#ec4899' },
+      { id:3, name:'Engenharia', color:'#10b981' },
+      { id:4, name:'Marketing', color:'#f59e0b' },
+      { id:5, name:'Suporte', color:'#f97316' },
+      { id:6, name:'RH', color:'#8b5cf6' },
+      { id:7, name:'Vendas', color:'#06b6d4' },
+      { id:8, name:'Finanças', color:'#ef4444' },
+    ];
+
+    let selectedUserId = null;
+    let editingUserId = null;
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      const h = document.querySelector('#themeSwitch .handle');
+      h.textContent = document.body.classList.contains('dark-mode') ? '☾' : '☀';
+    }
+
+    function getInitials(name) {
+      return name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+    }
+
+    function renderUsers() {
+      const list = document.getElementById('usersList');
+      list.innerHTML = '';
+      users.forEach((u, i) => {
+        const card = document.createElement('div');
+        card.className = 'user-card';
+        card.dataset.odId = 'user-' + u.id;
+        const color = avatarColors[i % avatarColors.length];
+        const typeLabel = { admin:'Admin', moderador:'Moderador', editor:'Editor', visualizador:'Visualizador' }[u.type] || u.type;
+        card.innerHTML = `
+          <div class="uc-avatar" style="background:${color}22;color:${color}">${getInitials(u.name)}</div>
+          <div class="uc-info">
+            <div class="uc-name">${u.name}</div>
+            <div class="uc-email">${u.email}</div>
+          </div>
+          <div class="uc-type" style="background:${color}15;color:${color}">${typeLabel}</div>
+          <div class="uc-actions">
+            <button class="btn-channels" onclick="selectUser(${u.id})">Canais</button>
+            <button class="btn-del" onclick="deleteUser(${u.id})">Excluir</button>
+          </div>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    function selectUser(id) {
+      selectedUserId = id;
+      const u = users.find(x => x.id === id);
+      document.getElementById('cpUserName').textContent = u ? u.name : 'Selecione um usuário';
+      const addBtn = document.getElementById('cpAddBtn');
+      addBtn.style.display = u ? 'block' : 'none';
+      renderUserChannels();
+    }
+
+    function renderUserChannels() {
+      const list = document.getElementById('cpList');
+      if (!selectedUserId) {
+        list.innerHTML = '<div class="cp-empty">Selecione um usuário para ver seus canais</div>';
+        return;
+      }
+      const u = users.find(x => x.id === selectedUserId);
+      if (!u || !u.channels.length) {
+        list.innerHTML = '<div class="cp-empty">Nenhum canal vinculado</div>';
+        return;
+      }
+      list.innerHTML = '';
+      u.channels.forEach(chId => {
+        const ch = channels.find(c => c.id === chId);
+        if (!ch) return;
+        const item = document.createElement('div');
+        item.className = 'cp-channel-item';
+        item.dataset.odId = 'user-channel-' + ch.id;
+        const icon = ICON_MAP[channels.indexOf(ch) % ICON_MAP.length];
+        item.innerHTML = `
+          <div class="cpi-icon" style="background:${ch.color}22;color:${ch.color}">${icon}</div>
+          <div class="cpi-name">${ch.name}</div>
+          <button class="cpi-remove" onclick="unlinkChannel(${ch.id})" title="Desvincular">✕</button>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    function unlinkChannel(chId) {
+      if (!selectedUserId) return;
+      const u = users.find(x => x.id === selectedUserId);
+      if (!u) return;
+      u.channels = u.channels.filter(id => id !== chId);
+      renderUserChannels();
+    }
+
+    // ---- User CRUD ----
+    function openUserModal() {
+      editingUserId = null;
+      document.getElementById('userModalTitle').textContent = 'Novo Usuário';
+      document.getElementById('userName').value = '';
+      document.getElementById('userEmail').value = '';
+      document.getElementById('userPass').value = '';
+      document.getElementById('userType').value = 'visualizador';
+      document.getElementById('userModal').classList.add('open');
+    }
+
+    function saveUser() {
+      const name = document.getElementById('userName').value.trim();
+      const email = document.getElementById('userEmail').value.trim();
+      const password = document.getElementById('userPass').value.trim();
+      const type = document.getElementById('userType').value;
+      if (!name || !email) return;
+
+      if (editingUserId) {
+        const u = users.find(x => x.id === editingUserId);
+        if (u) { u.name = name; u.email = email; u.type = type; if (password) u.password = password; }
+      } else {
+        users.push({ id: Date.now(), name, email, password: password || '123456', type, channels: [] });
+      }
+      closeModal('userModal');
+      renderUsers();
+    }
+
+    function deleteUser(id) {
+      if (!confirm('Excluir este usuário?')) return;
+      users = users.filter(u => u.id !== id);
+      if (selectedUserId === id) { selectedUserId = null; renderUserChannels(); }
+      renderUsers();
+    }
+
+    // ---- Channel linking ----
+    function openChannelLinkModal() {
+      if (!selectedUserId) return;
+      const select = document.getElementById('channelSelect');
+      const u = users.find(x => x.id === selectedUserId);
+      select.innerHTML = '';
+      channels.forEach(ch => {
+        if (u && u.channels.includes(ch.id)) return;
+        const opt = document.createElement('option');
+        opt.value = ch.id;
+        opt.textContent = ch.name;
+        select.appendChild(opt);
+      });
+      document.getElementById('channelLinkModal').classList.add('open');
+    }
+
+    function linkChannel() {
+      if (!selectedUserId) return;
+      const chId = parseInt(document.getElementById('channelSelect').value);
+      const u = users.find(x => x.id === selectedUserId);
+      if (u && !u.channels.includes(chId)) u.channels.push(chId);
+      closeModal('channelLinkModal');
+      renderUserChannels();
+    }
+
+    // ---- Modal utils ----
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('open');
+    }
+    document.querySelectorAll('.modal-overlay').forEach(el => {
+      el.addEventListener('click', function(e) { if (e.target === this) this.classList.remove('open'); });
+    });
+
+    renderUsers();
+  </script>
+</body>
+</html>
