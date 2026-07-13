@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canais — Conferência</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width:100%; height:100%; overflow:hidden; font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+    body { background:#000; }
+
+    #bg-video-light,#bg-video-dark {
+      position:fixed; inset:0; width:100%; height:100%;
+      object-fit:cover; z-index:-1;
+      transition:opacity 0.8s ease;
+    }
+    #bg-video-dark { opacity:0; }
+
+    :root {
+      --glass-bg:rgba(255,255,255,0.55); --glass-border:rgba(255,255,255,0.6);
+      --glass-blur:8px; --text-main:#1a1a1a; --text-muted:#6b7280;
+      --accent:#000; --card-radius:40px;
+      --transition:all 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .dark-mode {
+      --glass-bg:rgba(0,0,0,0.45); --glass-border:rgba(255,255,255,0.08);
+      --text-main:#fff; --text-muted:#b0b0b0; --accent:#fff;
+    }
+    .dark-mode #bg-video-light { opacity:0; }
+    .dark-mode #bg-video-dark { opacity:1; }
+
+    .glass {
+      background:var(--glass-bg);
+      backdrop-filter:blur(var(--glass-blur)) saturate(1.8);
+      -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(1.8);
+      border-radius:var(--card-radius);
+      box-shadow:0 4px 24px rgba(0,0,0,0.06),0 1px 4px rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.5);
+      position:relative;
+    }
+    .glass::after {
+      content:''; position:absolute; inset:0; border-radius:inherit;
+      pointer-events:none; filter:url(#noise-filter); opacity:0.06; mix-blend-mode:overlay;
+    }
+
+    .app-shell {
+      width:100%; height:100%;
+      display:flex; flex-direction:column;
+      padding:32px 40px; gap:24px;
+    }
+
+    /* Top nav */
+    .top-nav {
+      display:grid;
+      grid-template-columns:auto 1fr auto auto;
+      gap:16px; align-items:center;
+    }
+    .profile-btn {
+      width:48px; height:48px; border-radius:50%;
+      overflow:hidden; cursor:pointer; border:2px solid var(--glass-border);
+    }
+    .profile-btn img { width:100%; height:100%; object-fit:cover; }
+    .page-title { font-size:1.25rem; font-weight:600; color:var(--text-main); }
+    .theme-switch {
+      width:48px; height:26px; border-radius:999px;
+      background:#3b82f6; position:relative; cursor:pointer;
+    }
+    .theme-switch .handle {
+      width:22px; height:22px; border-radius:50%; background:#fff;
+      position:absolute; top:2px; left:2px;
+      transition:var(--transition);
+      display:flex; align-items:center; justify-content:center;
+      font-size:12px;
+    }
+    .dark-mode .theme-switch .handle { left:24px; }
+    .btn-icon {
+      width:48px; height:48px; border-radius:50%;
+      background:rgba(255,255,255,0.1); backdrop-filter:blur(8px);
+      border:none; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--text-main); font-size:18px;
+      transition:var(--transition);
+    }
+    .btn-icon:hover { background:rgba(255,255,255,0.2); transform:scale(1.05); }
+
+    /* Channel grid */
+    .channels-grid {
+      flex:1; overflow-y:auto;
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:20px; align-content:start;
+      padding:4px;
+    }
+    .channels-grid::-webkit-scrollbar { width:6px; }
+    .channels-grid::-webkit-scrollbar-track { background:transparent; }
+    .channels-grid::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.15); border-radius:999px; }
+
+    .channel-card {
+      padding:28px 20px; border-radius:var(--card-radius);
+      background:var(--glass-bg);
+      backdrop-filter:blur(var(--glass-blur)) saturate(1.8);
+      display:flex; flex-direction:column; gap:12px;
+      cursor:pointer; transition:var(--transition);
+      min-height:180px;
+    }
+    .channel-card:hover {
+      transform:translateY(-3px) scale(1.01);
+      box-shadow:0 8px 32px rgba(0,0,0,0.1);
+    }
+    .channel-card .ch-header {
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .channel-card .ch-icon {
+      width:44px; height:44px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:20px; font-weight:600;
+    }
+    .channel-card .ch-name {
+      font-size:1.1rem; font-weight:600; color:var(--text-main);
+    }
+    .channel-card .ch-desc {
+      font-size:0.8rem; color:var(--text-muted);
+      line-height:1.4; flex:1;
+    }
+    .channel-card .ch-meta {
+      display:flex; align-items:center; justify-content:space-between;
+      font-size:0.75rem; color:var(--text-muted);
+    }
+    .ch-actions {
+      display:flex; gap:8px;
+    }
+    .ch-actions button {
+      width:32px; height:32px; border-radius:50%;
+      border:none; cursor:pointer;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(4px);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--text-main); font-size:14px;
+      transition:var(--transition);
+    }
+    .ch-actions button:hover { background:rgba(255,255,255,0.3); }
+
+    /* Modal */
+    .modal-overlay {
+      position:fixed; inset:0; z-index:100;
+      background:rgba(0,0,0,0.5);
+      backdrop-filter:blur(4px);
+      display:none; align-items:center; justify-content:center;
+    }
+    .modal-overlay.open { display:flex; }
+    .modal-card {
+      width:480px; padding:36px 32px;
+      display:flex; flex-direction:column; gap:20px;
+    }
+    .modal-card h2 {
+      font-size:1.2rem; font-weight:600; color:var(--text-main);
+    }
+    .modal-card label {
+      font-size:0.8rem; font-weight:500; color:var(--text-muted);
+    }
+    .modal-card input, .modal-card textarea, .modal-card select {
+      width:100%; padding:12px 16px;
+      border-radius:14px; border:1px solid var(--glass-border);
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(4px);
+      font:0.9rem/1.4 'Inter',system-ui,sans-serif;
+      color:var(--text-main); outline:none;
+      transition:var(--transition);
+    }
+    .modal-card input:focus, .modal-card textarea:focus, .modal-card select:focus {
+      border-color:#3b82f6; box-shadow:0 0 0 3px rgba(59,130,246,0.2);
+    }
+    .modal-card textarea { resize:vertical; min-height:80px; }
+    .modal-card .modal-actions {
+      display:flex; gap:12px; justify-content:flex-end;
+    }
+    .modal-card .btn-secondary {
+      padding:10px 24px; border-radius:14px;
+      border:1px solid var(--glass-border);
+      background:var(--glass-bg); color:var(--text-main);
+      font:500 0.9rem/1 'Inter',system-ui,sans-serif;
+      cursor:pointer; transition:var(--transition);
+    }
+    .modal-card .btn-primary {
+      padding:10px 24px; border-radius:14px;
+      border:none; background:#3b82f6; color:#fff;
+      font:600 0.9rem/1 'Inter',system-ui,sans-serif;
+      cursor:pointer; transition:var(--transition);
+    }
+    .modal-card .btn-primary:hover { background:#2563eb; }
+    .modal-card .btn-danger {
+      padding:10px 24px; border-radius:14px;
+      border:none; background:#ff4545; color:#fff;
+      font:600 0.9rem/1 'Inter',system-ui,sans-serif;
+      cursor:pointer; transition:var(--transition);
+    }
+    .modal-card .btn-danger:hover { background:#d93636; }
+
+    .add-channel-btn {
+      border:2px dashed var(--glass-border);
+      background:transparent;
+      backdrop-filter:blur(4px);
+      display:flex; align-items:center; justify-content:center;
+      font-size:2rem; color:var(--text-muted);
+      min-height:180px;
+    }
+    .add-channel-btn:hover {
+      border-color:var(--accent); color:var(--accent);
+    }
+
+    @media (max-width:1200px) {
+      .channels-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width:600px) {
+      .app-shell { padding:16px; }
+      .channels-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <video id="bg-video-light" autoplay muted loop playsInline
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_103318_2aa26b55-df1a-43a6-903d-941e718c9366.mp4">
+  </video>
+  <video id="bg-video-dark" autoplay muted loop playsInline
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_102933_4e8f73b5-775a-4179-b2fb-472f59063dcd.mp4">
+  </video>
+
+  <div class="app-shell">
+    <!-- Top nav -->
+    <nav class="top-nav" data-od-id="top-nav">
+      <div class="profile-btn" data-od-id="profile-btn" onclick="window.location.href='login.html'">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%233b82f6' width='100' height='100'/%3E%3Ccircle fill='%23fff' cx='50' cy='38' r='22'/%3E%3Cpath fill='%23fff' d='M18 85c0-18 14-33 32-33s32 15 32 33'/%3E%3C/svg%3E" alt="Perfil" />
+      </div>
+      <div class="page-title" data-od-id="page-title">Canais</div>
+      <div class="theme-switch" id="themeSwitch" onclick="toggleTheme()">
+        <div class="handle">☀</div>
+      </div>
+      <button class="btn-icon" onclick="window.location.href='index.html'" data-od-id="btn-home" title="Início">⌂</button>
+    </nav>
+
+    <!-- Channel grid -->
+    <div class="channels-grid" id="channelsGrid" data-od-id="channels-grid"></div>
+  </div>
+
+  <!-- Modal de edição -->
+  <div class="modal-overlay" id="editModal" data-od-id="edit-modal">
+    <div class="modal-card glass">
+      <h2 id="modalTitle">Editar Canal</h2>
+      <div>
+        <label for="editName">Nome do canal</label>
+        <input type="text" id="editName" placeholder="Ex: Produto" />
+      </div>
+      <div>
+        <label for="editDesc">Descrição</label>
+        <textarea id="editDesc" placeholder="Descrição do canal"></textarea>
+      </div>
+      <div>
+        <label for="editColor">Cor do ícone</label>
+        <select id="editColor">
+          <option value="#3b82f6">Azul</option>
+          <option value="#10b981">Verde</option>
+          <option value="#f59e0b">Amarelo</option>
+          <option value="#ef4444">Vermelho</option>
+          <option value="#8b5cf6">Roxo</option>
+          <option value="#ec4899">Rosa</option>
+          <option value="#06b6d4">Ciano</option>
+          <option value="#f97316">Laranja</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="closeModal()">Cancelar</button>
+        <button class="btn-primary" onclick="saveChannel()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <svg style="position:absolute;width:0;height:0;" aria-hidden="true">
+    <filter id="noise-filter">
+      <feTurbulence baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </svg>
+
+  <script>
+    const ICON_MAP = ['📡','💻','🎮','🎵','📰','🎙','📺','🛠','🎨','📊','🔬','📖'];
+
+    let channels = [
+      { id:1, name:'Produto', desc:'Discussões sobre o roadmap e features do produto', color:'#3b82f6', count:24 },
+      { id:2, name:'Design', desc:'Compartilhamento de layouts, protótipos e feedbacks', color:'#ec4899', count:18 },
+      { id:3, name:'Engenharia', desc:'Sprints, PRs e arquitetura técnica', color:'#10b981', count:31 },
+      { id:4, name:'Marketing', desc:'Campanhas, conteúdo e análise de métricas', color:'#f59e0b', count:12 },
+      { id:5, name:'Suporte', desc:'Atendimento ao cliente e FAQ', color:'#f97316', count:8 },
+      { id:6, name:'RH', desc:'Vagas, onboarding e cultura', color:'#8b5cf6', count:6 },
+      { id:7, name:'Vendas', desc:'Pipeline, propostas e fechamentos', color:'#06b6d4', count:15 },
+      { id:8, name:'Finanças', desc:'Orçamento, relatórios e aprovações', color:'#ef4444', count:9 },
+    ];
+
+    let editingId = null;
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      const h = document.querySelector('#themeSwitch .handle');
+      h.textContent = document.body.classList.contains('dark-mode') ? '☾' : '☀';
+    }
+
+    function renderChannels() {
+      const grid = document.getElementById('channelsGrid');
+      grid.innerHTML = '';
+
+      channels.forEach((ch,i) => {
+        const card = document.createElement('div');
+        card.className = 'channel-card';
+        card.dataset.odId = 'channel-' + ch.id;
+        card.innerHTML = `
+          <div class="ch-header">
+            <div class="ch-icon" style="background:${ch.color}22;color:${ch.color}">${ICON_MAP[i % ICON_MAP.length]}</div>
+            <div class="ch-actions">
+              <button onclick="event.stopPropagation();openEdit(${ch.id})" title="Editar">✎</button>
+              <button onclick="event.stopPropagation();window.location.href='noticias.html?channel=${ch.id}&name=${encodeURIComponent(ch.name)}'" title="Notícias">→</button>
+            </div>
+          </div>
+          <div class="ch-name">${ch.name}</div>
+          <div class="ch-desc">${ch.desc}</div>
+          <div class="ch-meta">
+            <span>${ch.count} notícias</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // Add channel button
+      const addCard = document.createElement('div');
+      addCard.className = 'channel-card add-channel-btn';
+      addCard.onclick = () => openNew();
+      addCard.textContent = '+';
+      grid.appendChild(addCard);
+    }
+
+    function openEdit(id) {
+      editingId = id;
+      const ch = channels.find(c => c.id === id);
+      if (!ch) return;
+      document.getElementById('modalTitle').textContent = 'Editar Canal';
+      document.getElementById('editName').value = ch.name;
+      document.getElementById('editDesc').value = ch.desc;
+      document.getElementById('editColor').value = ch.color;
+      document.getElementById('editModal').classList.add('open');
+    }
+
+    function openNew() {
+      editingId = null;
+      document.getElementById('modalTitle').textContent = 'Novo Canal';
+      document.getElementById('editName').value = '';
+      document.getElementById('editDesc').value = '';
+      document.getElementById('editColor').value = '#3b82f6';
+      document.getElementById('editModal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('editModal').classList.remove('open');
+      editingId = null;
+    }
+
+    function saveChannel() {
+      const name = document.getElementById('editName').value.trim();
+      const desc = document.getElementById('editDesc').value.trim();
+      const color = document.getElementById('editColor').value;
+      if (!name) return;
+
+      if (editingId) {
+        const ch = channels.find(c => c.id === editingId);
+        if (ch) { ch.name = name; ch.desc = desc; ch.color = color; }
+      } else {
+        channels.push({
+          id: Date.now(),
+          name, desc, color,
+          count: 0
+        });
+      }
+      closeModal();
+      renderChannels();
+    }
+
+    // Close modal on overlay click
+    document.getElementById('editModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    renderChannels();
+  </script>
+</body>
+</html>

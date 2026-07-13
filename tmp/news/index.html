@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard de Conferência</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width:100%; height:100%; overflow:hidden; font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+    body { background:#000; }
+
+    #bg-video-light,#bg-video-dark {
+      position:fixed; inset:0; width:100%; height:100%;
+      object-fit:cover; z-index:-1;
+      transition:opacity 0.8s ease;
+    }
+    #bg-video-dark { opacity:0; }
+
+    :root {
+      --glass-bg:rgba(255,255,255,0.55); --glass-border:rgba(255,255,255,0.6);
+      --glass-blur:8px; --text-main:#1a1a1a; --text-muted:#6b7280;
+      --accent:#000; --card-radius:40px;
+      --transition:all 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .dark-mode {
+      --glass-bg:rgba(0,0,0,0.45); --glass-border:rgba(255,255,255,0.08);
+      --text-main:#fff; --text-muted:#b0b0b0; --accent:#fff;
+    }
+    .dark-mode #bg-video-light { opacity:0; }
+    .dark-mode #bg-video-dark { opacity:1; }
+
+    .glass {
+      background:var(--glass-bg);
+      backdrop-filter:blur(var(--glass-blur)) saturate(1.8);
+      -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(1.8);
+      border-radius:var(--card-radius);
+      box-shadow:0 4px 24px rgba(0,0,0,0.06),0 1px 4px rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.5);
+      position:relative;
+    }
+    .glass::after {
+      content:''; position:absolute; inset:0; border-radius:inherit;
+      pointer-events:none; filter:url(#noise-filter); opacity:0.06; mix-blend-mode:overlay;
+    }
+
+    .app-shell { width:100%; height:100%; display:flex; flex-direction:column; padding:32px 40px; gap:24px; }
+
+    .top-nav {
+      display:grid; grid-template-columns:auto 1fr auto auto;
+      gap:16px; align-items:center;
+    }
+    .profile-btn {
+      width:48px; height:48px; border-radius:50%;
+      overflow:hidden; cursor:pointer; border:2px solid var(--glass-border);
+    }
+    .profile-btn img { width:100%; height:100%; object-fit:cover; }
+    .brand-title { font-size:1.35rem; font-weight:600; color:var(--text-main); }
+    .theme-switch { width:48px;height:26px;border-radius:999px;background:#3b82f6;position:relative;cursor:pointer; }
+    .theme-switch .handle {
+      width:22px;height:22px;border-radius:50%;background:#fff;
+      position:absolute;top:2px;left:2px;transition:var(--transition);
+      display:flex;align-items:center;justify-content:center;font-size:12px;
+    }
+    .dark-mode .theme-switch .handle { left:24px; }
+    .btn-icon {
+      width:48px;height:48px;border-radius:50%;
+      background:rgba(255,255,255,0.1);backdrop-filter:blur(8px);
+      border:none;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--text-main);font-size:18px;transition:var(--transition);
+    }
+    .btn-icon:hover { background:rgba(255,255,255,0.2);transform:scale(1.05); }
+
+    .hero-section {
+      display:flex; flex-direction:column; gap:8px;
+      padding:16px 0;
+    }
+    .hero-section h1 {
+      font-size:2.2rem; font-weight:700; color:var(--text-main);
+      letter-spacing:-0.03em;
+    }
+    .hero-section p {
+      font-size:1rem; color:var(--text-muted);
+      max-width:500px;
+    }
+
+    .page-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:24px; flex:1;
+    }
+    .page-card {
+      padding:36px 28px; border-radius:var(--card-radius);
+      background:var(--glass-bg);
+      backdrop-filter:blur(var(--glass-blur)) saturate(1.8);
+      display:flex; flex-direction:column; gap:16px;
+      cursor:pointer; transition:var(--transition);
+      text-decoration:none; color:inherit;
+    }
+    .page-card:hover {
+      transform:translateY(-6px) scale(1.02);
+      box-shadow:0 12px 40px rgba(0,0,0,0.12);
+    }
+    .page-card .pc-icon {
+      width:64px; height:64px; border-radius:20px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:28px;
+    }
+    .page-card .pc-title {
+      font-size:1.3rem; font-weight:600; color:var(--text-main);
+    }
+    .page-card .pc-desc {
+      font-size:0.9rem; color:var(--text-muted);
+      line-height:1.5; flex:1;
+    }
+    .page-card .pc-meta {
+      display:flex; align-items:center; gap:8px;
+      font-size:0.8rem; color:var(--text-muted);
+    }
+    .pc-meta .arrow {
+      font-size:1.2rem;
+      transition:var(--transition);
+    }
+    .page-card:hover .arrow {
+      transform:translateX(4px);
+    }
+
+    /* Voice-wave indicator (decorative) */
+    .voice-indicator {
+      display:flex; align-items:center; gap:4px;
+      margin-top:8px;
+    }
+    .voice-indicator .bar {
+      width:4px; border-radius:999px;
+      background:#3b82f6;
+      animation:voice-wave 1s ease-in-out infinite;
+    }
+    .voice-indicator .bar:nth-child(1) { height:8px; animation-delay:0s; }
+    .voice-indicator .bar:nth-child(2) { height:14px; animation-delay:0.2s; }
+    .voice-indicator .bar:nth-child(3) { height:10px; animation-delay:0.4s; }
+
+    @keyframes voice-wave {
+      0%,100% { transform:scaleY(0.5); }
+      50% { transform:scaleY(1); }
+    }
+
+    @media (max-width:900px) {
+      .page-grid { grid-template-columns:1fr; }
+      .app-shell { padding:20px; }
+    }
+  </style>
+</head>
+<body>
+  <video id="bg-video-light" autoplay muted loop playsInline
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_103318_2aa26b55-df1a-43a6-903d-941e718c9366.mp4">
+  </video>
+  <video id="bg-video-dark" autoplay muted loop playsInline
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_102933_4e8f73b5-775a-4179-b2fb-472f59063dcd.mp4">
+  </video>
+
+  <div class="app-shell">
+    <!-- Top nav -->
+    <nav class="top-nav" data-od-id="top-nav">
+      <div class="profile-btn" data-od-id="profile-btn" onclick="window.location.href='login.html'">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%233b82f6' width='100' height='100'/%3E%3Ccircle fill='%23fff' cx='50' cy='38' r='22'/%3E%3Cpath fill='%23fff' d='M18 85c0-18 14-33 32-33s32 15 32 33'/%3E%3C/svg%3E" alt="Perfil" />
+      </div>
+      <div class="brand-title" data-od-id="brand-title">Conferência</div>
+      <div class="theme-switch" id="themeSwitch" onclick="toggleTheme()">
+        <div class="handle">☀</div>
+      </div>
+      <button class="btn-icon" onclick="window.location.href='login.html'" data-od-id="btn-login" title="Login">🔒</button>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero-section" data-od-id="hero">
+      <h1 data-od-id="hero-title">Dashboard de Conferência</h1>
+      <p data-od-id="hero-desc">Plataforma completa para gerenciar sua conferência com transmissão ao vivo, canais de conteúdo e notícias em tempo real.</p>
+      <div class="voice-indicator" data-od-id="voice-indicator" aria-label="Participantes ativos">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      </div>
+    </div>
+
+    <!-- Page cards -->
+    <div class="page-grid" data-od-id="page-grid">
+      <a href="login.html" class="page-card" data-od-id="card-login">
+        <div class="pc-icon" style="background:#3b82f622;color:#3b82f6">🔐</div>
+        <div class="pc-title">Login</div>
+        <div class="pc-desc">Acesse o painel da conferência com suas credenciais. Entre como participante ou moderador para gerenciar salas e conteúdo.</div>
+        <div class="pc-meta"><span>Acessar</span><span class="arrow">→</span></div>
+      </a>
+
+      <a href="canais.html" class="page-card" data-od-id="card-canais">
+        <div class="pc-icon" style="background:#10b98122;color:#10b981">📡</div>
+        <div class="pc-title">Canais</div>
+        <div class="pc-desc">Navegue pelos canais da conferência, edite informações, cores e descrições. Organize o conteúdo por tema ou área.</div>
+        <div class="pc-meta"><span>Gerenciar</span><span class="arrow">→</span></div>
+      </a>
+
+      <a href="canais.html" class="page-card" data-od-id="card-noticias">
+        <div class="pc-icon" style="background:#f59e0b22;color:#f59e0b">📰</div>
+        <div class="pc-title">Notícias</div>
+        <div class="pc-desc">Visualize e gerencie as notícias publicadas em cada canal. Crie, edite ou exclua conteúdos com um clique.</div>
+        <div class="pc-meta"><span>Explorar</span><span class="arrow">→</span></div>
+      </a>
+    </div>
+  </div>
+
+  <svg style="position:absolute;width:0;height:0;" aria-hidden="true">
+    <filter id="noise-filter">
+      <feTurbulence baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </svg>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      const h = document.querySelector('#themeSwitch .handle');
+      h.textContent = document.body.classList.contains('dark-mode') ? '☾' : '☀';
+    }
+  </script>
+</body>
+</html>

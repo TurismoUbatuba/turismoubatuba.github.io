@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — Conferência</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      background: #000;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Background videos */
+    #bg-video-light, #bg-video-dark {
+      position: fixed;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      transition: opacity 0.8s ease;
+    }
+    #bg-video-dark { opacity: 0; }
+
+    :root {
+      --glass-bg: rgba(255,255,255,0.55);
+      --glass-border: rgba(255,255,255,0.6);
+      --glass-blur: 8px;
+      --text-main: #1a1a1a;
+      --text-muted: #6b7280;
+      --accent: #000000;
+      --card-radius: 40px;
+      --transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .dark-mode {
+      --glass-bg: rgba(0,0,0,0.45);
+      --glass-border: rgba(255,255,255,0.08);
+      --text-main: #fff;
+      --text-muted: #b0b0b0;
+      --accent: #fff;
+    }
+    .dark-mode #bg-video-light { opacity: 0; }
+    .dark-mode #bg-video-dark { opacity: 1; }
+
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur)) saturate(1.8);
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.8);
+      border-radius: var(--card-radius);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.5);
+      position: relative;
+    }
+    .glass::after {
+      content:''; position:absolute; inset:0; border-radius:inherit;
+      pointer-events:none;
+      filter:url(#noise-filter); opacity:0.06; mix-blend-mode:overlay;
+    }
+
+    .login-card {
+      width: 420px;
+      padding: 48px 40px;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 28px;
+      z-index: 1;
+    }
+    .login-card .logo {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; font-weight: 700; color: var(--text-main);
+    }
+    .login-card h1 {
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--text-main);
+      text-align: center;
+    }
+    .login-card p {
+      font-size: 0.9rem; color: var(--text-muted);
+      text-align: center; margin-top: -16px;
+    }
+    .login-card form {
+      width: 100%;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .login-card label {
+      font-size: 0.8rem; font-weight: 500;
+      color: var(--text-muted); letter-spacing: 0.02em;
+    }
+    .login-card input {
+      width: 100%; padding: 14px 18px;
+      border-radius: 16px; border: 1px solid var(--glass-border);
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(4px);
+      font: 0.95rem/1.4 'Inter', system-ui, sans-serif;
+      color: var(--text-main);
+      outline: none;
+      transition: var(--transition);
+    }
+    .login-card input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+    }
+    .login-card input::placeholder { color: var(--text-muted); }
+    .login-card .btn-primary {
+      width: 100%; padding: 14px;
+      border: none; border-radius: 16px;
+      background: #3b82f6; color: #fff;
+      font: 600 1rem/1 'Inter', system-ui, sans-serif;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .login-card .btn-primary:hover {
+      background: #2563eb;
+      transform: scale(1.02);
+    }
+    .login-card .theme-toggle {
+      display: flex; align-items: center; gap: 12px;
+      margin-top: 4px;
+    }
+    .theme-toggle label {
+      font-size: 0.8rem; cursor: pointer;
+    }
+    .switch-track {
+      width: 48px; height: 26px;
+      border-radius: 999px;
+      background: #3b82f6;
+      position: relative; cursor: pointer;
+      transition: var(--transition);
+    }
+    .switch-track .handle {
+      width: 22px; height: 22px;
+      border-radius: 50%; background: #fff;
+      position: absolute; top: 2px; left: 2px;
+      transition: var(--transition);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+    }
+    .dark-mode .switch-track .handle {
+      left: 24px;
+    }
+    .login-card .error-msg {
+      color: #ff4545;
+      font-size: 0.8rem;
+      text-align: center;
+      min-height: 1.2em;
+    }
+    .login-card .footer-link {
+      font-size: 0.8rem; color: var(--text-muted);
+    }
+    .login-card .footer-link a {
+      color: #3b82f6; text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <video id="bg-video-light" autoplay muted loop playsInline
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_103318_2aa26b55-df1a-43a6-903d-941e718c9366.mp4">
+  </video>
+  <video id="bg-video-dark" autoplay muted loop playsInline
+    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_102933_4e8f73b5-775a-4179-b2fb-472f59063dcd.mp4">
+  </video>
+
+  <div class="login-card glass" data-od-id="login-card">
+    <div class="logo" data-od-id="login-logo">LC</div>
+    <h1 data-od-id="login-title">Acessar Conferência</h1>
+    <p data-od-id="login-subtitle">Entre com suas credenciais para participar</p>
+
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <div>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="seu@email.com" required autocomplete="email" />
+      </div>
+      <div>
+        <label for="password">Senha</label>
+        <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password" />
+      </div>
+      <div class="error-msg" id="loginError"></div>
+      <button type="submit" class="btn-primary" data-od-id="btn-entrar">Entrar</button>
+    </form>
+
+    <div class="theme-toggle" data-od-id="theme-toggle">
+      <label>Modo escuro</label>
+      <div class="switch-track" id="themeSwitch" onclick="toggleTheme()">
+        <div class="handle">☀</div>
+      </div>
+    </div>
+
+    <div class="footer-link">
+      <a href="index.html">Voltar ao início</a>
+    </div>
+  </div>
+
+  <svg style="position:absolute;width:0;height:0;" aria-hidden="true">
+    <filter id="noise-filter">
+      <feTurbulence baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+  </svg>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      const handle = document.querySelector('#themeSwitch .handle');
+      handle.textContent = document.body.classList.contains('dark-mode') ? '☾' : '☀';
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const errorEl = document.getElementById('loginError');
+
+      if (!email || !password) {
+        errorEl.textContent = 'Preencha todos os campos.';
+        return false;
+      }
+
+      // Simula login — redireciona para canais
+      window.location.href = 'canais.html';
+      return false;
+    }
+  </script>
+</body>
+</html>
