@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 
-Sitemap: https://www.turismoubatuba.com.br/sitemap.xml
+Sitemap: https://turismoubatuba.com.br/sitemap.xml
