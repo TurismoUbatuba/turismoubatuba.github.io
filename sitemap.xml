@@ -440,14 +440,4 @@
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
   </url>
-  <url>
-    <loc>https://turismoubatuba.com.br/asset/dolar.html</loc>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://turismoubatuba.com.br/asset/dolar_old.html</loc>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
-  </url>
 </urlset>
