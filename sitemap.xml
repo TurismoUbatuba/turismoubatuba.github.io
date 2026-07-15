@@ -11,6 +11,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://turismoubatuba.com.br/videos.html</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://turismoubatuba.com.br/contabilidade/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
