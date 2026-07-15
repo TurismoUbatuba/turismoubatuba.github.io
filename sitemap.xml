@@ -271,6 +271,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://turismoubatuba.com.br/post/102-praias-de-ubatuba-o-top-geo-do-litoral-paulista.html</loc>
+    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://turismoubatuba.com.br/post/todas-as-praias-de-ubatuba.html</loc>
     <priority>0.6</priority>
     <changefreq>weekly</changefreq>

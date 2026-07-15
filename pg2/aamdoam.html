@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>e-Card USP</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f5f5f5;
+}
+
+.header {
+    background: #0097A7;
+    color: #000;
+    padding: 10px 10px 10px 30px;
+    font-size: 28px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.card {
+    background: white;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 16px;
+}
+
+.logo {
+    max-width: 140px;
+    width: 35%;
+    margin: 4px auto;
+}
+
+.university {
+    font-size: clamp(14px, 3.5vw, 18px);
+    margin-bottom: 8px;
+}
+
+.status {
+    font-size: clamp(20px, 5vw, 28px);
+    margin-bottom: 8px;
+}
+
+.photo {
+    max-width: 140px;
+    width: 45%;
+    height: auto;
+    aspect-ratio: 220 / 260;
+    object-fit: cover;
+    background: #ddd;
+}
+
+.name {
+    font-size: clamp(16px, 4.5vw, 22px);
+    margin-top: 8px;
+}
+
+.number {
+    font-size: clamp(16px, 4vw, 20px);
+    margin: 4px 0;
+}
+
+.course {
+    font-size: clamp(13px, 3vw, 16px);
+    margin-bottom: 8px;
+}
+
+.qrcode {
+    max-width: 160px;
+    width: 45%;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 8px auto;
+}
+
+.expiration {
+    margin-top: 8px;
+    font-size: clamp(12px, 3vw, 15px);
+    color: #444;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    e-Card
+</div>
+
+<div class="card">
+
+    <img src="logo.jpg" alt="USP" class="logo">
+
+    <div class="university">
+        Universidade de São Paulo
+    </div>
+
+    <div class="status">
+        ALUNOCEU
+    </div>
+
+    <img src="https://media.licdn.com/dms/image/v2/D4D03AQHfo3HGS7uVSA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704472513782?e=1783555200&v=beta&t=_kXrKrvRutBNNIZbwhtPlYBw7NHsYdDwxF_5hd2TYk4" alt="Aluno" class="photo">
+
+    <div class="name">
+        Marco Aurelio Santos
+    </div>
+
+    <div class="number">
+        1721656
+    </div>
+
+    <div class="course">
+        Faculdade de Arquitetura e Urbanismo
+    </div>
+
+    <img src="qrcode12719.png" alt="QR Code" class="qrcode">
+
+    <div class="expiration">
+        Código QR expira em 20/06/2026 23:59
+    </div>
+
+</div>
+
+</body>
+</html>
