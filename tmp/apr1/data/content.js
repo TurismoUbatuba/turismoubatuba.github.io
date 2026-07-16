@@ -2,7 +2,7 @@ const SLIDES_DATA = [
   {
     id: "cover",
     section: "Capa",
-    title: "EdgeSalesHUB",
+    title: "EdgeMarket",
     subtitle: "O Marketplace de Espaços Publicitários OOH",
     body: "Conectamos fornecedores de espaços publicitários físicos a marcas e anunciantes — em uma plataforma white-label personalizável.",
     cta: "Apresentação Comercial 2026"
@@ -47,7 +47,7 @@ const SLIDES_DATA = [
     id: "solucao",
     section: "Solução",
     title: "A Solução",
-    subtitle: "EdgeSalesHUB — o marketplace que conecta o OOH ao digital",
+    subtitle: "EdgeMarket — o marketplace que conecta o OOH ao digital",
     description: "Uma plataforma completa que digitaliza toda a jornada de compra e venda de espaços publicitários físicos, desde a catalogação até a gestão de campanhas.",
     highlights: [
       "Catálogo digital com geolocalização e disponibilidade em tempo real",
@@ -123,24 +123,6 @@ const SLIDES_DATA = [
     ]
   },
   {
-    id: "prova-social",
-    section: "Prova Social",
-    title: "Prova Social",
-    subtitle: "Números que demonstram o impacto",
-    metrics: [
-      { value: "2.500+", label: "Espaços cadastrados na plataforma" },
-      { value: "R$ 18M", label: "Em transações processadas no piloto" },
-      { value: "340+", label: "Anunciantes ativos na plataforma" },
-      { value: "98%", label: "Taxa de satisfação dos fornecedores" }
-    ],
-    testimonial: {
-      quote: "O EdgeSalesHUB transformou nossa operação. Antes levávamos 15 dias para fechar uma campanha. Agora leva 48 horas.",
-      author: "Diretor Comercial",
-      company: "Rede de Painéis Digitais — SP"
-    },
-    footnote: "*Dados do programa piloto Q3-Q4 2025"
-  },
-  {
     id: "pricing",
     section: "Pricing",
     title: "Planos",
@@ -191,32 +173,6 @@ const SLIDES_DATA = [
     ]
   },
   {
-    id: "roadmap",
-    section: "Roadmap",
-    title: "Roadmap",
-    subtitle: "Nossa visão de evolução",
-    phases: [
-      {
-        phase: "Fase 1",
-        period: "Q1-Q2 2026",
-        title: "MVP & Validação",
-        items: ["Catálogo de espaços", "Booking básico", "Pagamentos integrados", "Painel do fornecedor"]
-      },
-      {
-        phase: "Fase 2",
-        period: "Q3-Q4 2026",
-        title: "Expansão",
-        items: ["White-label completo", "API pública", "Analytics avançado", "Mobile app"]
-      },
-      {
-        phase: "Fase 3",
-        period: "2027",
-        title: "Escala & Ecossistema",
-        items: ["Integração com grandes redes", "Expansão LATAM", "IA para precificação", "Programa de parceiros"]
-      }
-    ]
-  },
-  {
     id: "seguranca",
     section: "Segurança",
     title: "Segurança & Compliance",
@@ -232,7 +188,7 @@ const SLIDES_DATA = [
     id: "comparativo",
     section: "Comparativo",
     title: "Antes vs. Depois",
-    subtitle: "A transformação que o EdgeSalesHUB proporciona",
+    subtitle: "A transformação que o EdgeMarket proporciona",
     comparison: {
       before: [
         "Processo 100% manual e demorado",
@@ -256,7 +212,7 @@ const SLIDES_DATA = [
     id: "cta",
     section: "Próximos Passos",
     title: "Vamos Começar?",
-    subtitle: "Dê o próximo passo com o EdgeSalesHUB",
+    subtitle: "Dê o próximo passo com o EdgeMarket",
     steps: [
       { number: "01", title: "Agende uma Demo", desc: "Apresentação personalizada para sua operação em 30 minutos." },
       { number: "02", title: "Piloto Gratuito", desc: "Teste a plataforma com até 20 espaços por 30 dias sem custo." },
@@ -269,10 +225,10 @@ const SLIDES_DATA = [
     title: "Contato",
     subtitle: "Estamos prontos para conversar",
     contact: {
-      email: "comercial@edgesaleshub.com.br",
+      email: "comercial@edgemarket.com.br",
       phone: "+55 (11) 4002-8922",
-      website: "www.edgesaleshub.com.br",
-      linkedin: "linkedin.com/company/edgesaleshub"
+      website: "www.edgemarket.com.br",
+      linkedin: "linkedin.com/company/edgemarket"
     },
     closing: "Obrigado pela atenção. Vamos transformar o mercado OOH juntos."
   }
