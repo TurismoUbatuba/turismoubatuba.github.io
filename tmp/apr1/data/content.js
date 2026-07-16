@@ -8,6 +8,12 @@ const SLIDES_DATA = [
     cta: "Apresentação Comercial 2026"
   },
   {
+    id: "automatize",
+    section: "Automatize",
+    title: "Automatize suas vendas para os pequenos e medios anunciantes",
+    body: "Tenha uma plataforma white-label que permite empresas e anunciantes conectarem-se diretamente ao seus espaços publicitários, sem intermediários."
+  },
+  {
     id: "quem-somos",
     section: "Quem Somos",
     title: "Quem Somos",
@@ -130,7 +136,7 @@ const SLIDES_DATA = [
     plans: [
       {
         name: "Starter",
-        price: "R$ 497",
+        price: "R$ ---",
         period: "/mês",
         features: [
           "Até 50 espaços cadastrados",
@@ -143,7 +149,7 @@ const SLIDES_DATA = [
       },
       {
         name: "Business",
-        price: "R$ 1.497",
+        price: "R$ ---",
         period: "/mês",
         features: [
           "Até 500 espaços cadastrados",
