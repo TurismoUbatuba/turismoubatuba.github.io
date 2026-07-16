@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EdgeSalesHUB — Apresentação Comercial</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231B2A4A'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='white' font-weight='bold'>E</text></svg>">
+</head>
+<body>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Slide Counter -->
+  <div class="slide-counter" id="slideCounter">1 / 17</div>
+
+  <!-- Fullscreen Button -->
+  <button class="btn-fullscreen" id="btnFullscreen" title="Tela Cheia">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+    </svg>
+  </button>
+
+  <!-- Slides Container -->
+  <div class="slides-container" id="slidesContainer">
+
+    <!-- SLIDE 1: Capa -->
+    <section class="slide slide--cover active" data-slide="0">
+      <div class="slide__content">
+        <img src="assets/logo.svg" alt="EdgeSalesHUB" class="slide__logo">
+        <h1 class="slide__title slide__title--hero">O Marketplace de Espaços Publicitários OOH</h1>
+        <p class="slide__subtitle">Conectamos fornecedores de espaços publicitários físicos a marcas e anunciantes — em uma plataforma white-label personalizável.</p>
+        <div class="slide__cta-badge">Apresentação Comercial 2026</div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Quem Somos -->
+    <section class="slide" data-slide="1">
+      <div class="slide__content">
+        <span class="slide__section-label">Quem Somos</span>
+        <h2 class="slide__title">Missão e Visão</h2>
+        <div class="cards-grid cards-grid--3" id="quemSomosCards"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: Mercado OOH -->
+    <section class="slide" data-slide="2">
+      <div class="slide__content">
+        <span class="slide__section-label">Mercado OOH</span>
+        <h2 class="slide__title">O Mercado OOH no Brasil</h2>
+        <p class="slide__subtitle" style="margin-bottom:2rem">Números que comprovam a oportunidade</p>
+        <div class="stats-grid" id="mercadoStats"></div>
+        <p class="slide__footnote" id="mercadoFootnote"></p>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Problema -->
+    <section class="slide" data-slide="3">
+      <div class="slide__content">
+        <span class="slide__section-label">Problema / Dor</span>
+        <h2 class="slide__title">O Problema</h2>
+        <p class="slide__subtitle">Por que o mercado OOH ainda é manual e ineficiente</p>
+        <div class="cards-grid cards-grid--2" id="problemaCards"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: Solução -->
+    <section class="slide" data-slide="4">
+      <div class="slide__content">
+        <span class="slide__section-label">Solução</span>
+        <h2 class="slide__title">A Solução</h2>
+        <p class="slide__subtitle">EdgeSalesHUB — o marketplace que conecta o OOH ao digital</p>
+        <p class="slide__description" id="solucaoDesc"></p>
+        <ul class="check-list" id="solucaoHighlights"></ul>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Como Funciona -->
+    <section class="slide" data-slide="5">
+      <div class="slide__content">
+        <span class="slide__section-label">Como Funciona</span>
+        <h2 class="slide__title">Como Funciona</h2>
+        <p class="slide__subtitle">4 passos para começar</p>
+        <div class="steps-grid" id="comoFuncionaSteps"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: Para os Fornecedores -->
+    <section class="slide" data-slide="6">
+      <div class="slide__content">
+        <span class="slide__section-label">Para os Fornecedores</span>
+        <h2 class="slide__title">Para os Fornecedores</h2>
+        <p class="slide__subtitle">Maximize a ocupação dos seus espaços</p>
+        <div class="cards-grid cards-grid--2" id="fornecedoresCards"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: Para os Parceiros -->
+    <section class="slide" data-slide="7">
+      <div class="slide__content">
+        <span class="slide__section-label">Para os Parceiros</span>
+        <h2 class="slide__title">Para os Parceiros</h2>
+        <p class="slide__subtitle">Uma nova fonte de receita para sua operação</p>
+        <div class="cards-grid cards-grid--2" id="parceirosCards"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: Features -->
+    <section class="slide" data-slide="8">
+      <div class="slide__content">
+        <span class="slide__section-label">Features</span>
+        <h2 class="slide__title">Features Principais</h2>
+        <p class="slide__subtitle">Tudo que você precisa em uma plataforma</p>
+        <div class="features-grid" id="featuresGrid"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: White-Label -->
+    <section class="slide" data-slide="9">
+      <div class="slide__content">
+        <span class="slide__section-label">White-Label</span>
+        <h2 class="slide__title">Plataforma White-Label</h2>
+        <p class="slide__subtitle">Personalize cada detalhe para sua marca</p>
+        <div class="custom-grid" id="customGrid"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11: Prova Social -->
+    <section class="slide" data-slide="10">
+      <div class="slide__content">
+        <span class="slide__section-label">Prova Social</span>
+        <h2 class="slide__title">Prova Social</h2>
+        <p class="slide__subtitle">Números que demonstram o impacto</p>
+        <div class="stats-grid" id="socialStats"></div>
+        <blockquote class="testimonial" id="testimonialBlock"></blockquote>
+        <p class="slide__footnote" id="socialFootnote"></p>
+      </div>
+    </section>
+
+    <!-- SLIDE 12: Pricing -->
+    <section class="slide" data-slide="11">
+      <div class="slide__content">
+        <span class="slide__section-label">Pricing</span>
+        <h2 class="slide__title">Planos</h2>
+        <p class="slide__subtitle">Escolha o plano ideal para sua operação</p>
+        <div class="pricing-grid" id="pricingGrid"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 13: Roadmap -->
+    <section class="slide" data-slide="12">
+      <div class="slide__content">
+        <span class="slide__section-label">Roadmap</span>
+        <h2 class="slide__title">Roadmap</h2>
+        <p class="slide__subtitle">Nossa visão de evolução</p>
+        <div class="roadmap-timeline" id="roadmapTimeline"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 14: Segurança -->
+    <section class="slide" data-slide="13">
+      <div class="slide__content">
+        <span class="slide__section-label">Segurança</span>
+        <h2 class="slide__title">Segurança & Compliance</h2>
+        <p class="slide__subtitle">Seus dados protegidos em cada camada</p>
+        <div class="cards-grid cards-grid--2" id="segurancaCards"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 15: Comparativo -->
+    <section class="slide" data-slide="14">
+      <div class="slide__content">
+        <span class="slide__section-label">Comparativo</span>
+        <h2 class="slide__title">Antes vs. Depois</h2>
+        <p class="slide__subtitle">A transformação que o EdgeSalesHUB proporciona</p>
+        <div class="comparison-container" id="comparisonContainer"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 16: CTA -->
+    <section class="slide slide--cta" data-slide="15">
+      <div class="slide__content">
+        <span class="slide__section-label">Próximos Passos</span>
+        <h2 class="slide__title">Vamos Começar?</h2>
+        <p class="slide__subtitle">Dê o próximo passo com o EdgeSalesHUB</p>
+        <div class="cta-steps" id="ctaSteps"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 17: Contato -->
+    <section class="slide slide--final" data-slide="16">
+      <div class="slide__content">
+        <img src="assets/logo.svg" alt="EdgeSalesHUB" class="slide__logo slide__logo--small">
+        <h2 class="slide__title">Contato</h2>
+        <p class="slide__subtitle">Estamos prontos para conversar</p>
+        <div class="contact-grid" id="contactGrid"></div>
+        <p class="slide__closing">Obrigado pela atenção. Vamos transformar o mercado OOH juntos.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Navigation Arrows -->
+  <button class="nav-arrow nav-arrow--prev" id="btnPrev" title="Slide Anterior">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+  </button>
+  <button class="nav-arrow nav-arrow--next" id="btnNext" title="Próximo Slide">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </button>
+
+  <!-- Slide Indicators -->
+  <div class="indicators" id="indicators"></div>
+
+  <script src="data/content.js"></script>
+  <script src="js/slides.js"></script>
+</body>
+</html>
