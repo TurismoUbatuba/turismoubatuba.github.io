@@ -14,17 +14,6 @@ const SLIDES_DATA = [
     body: "Tenha uma plataforma white-label que permite empresas e anunciantes conectarem-se diretamente ao seus espaços publicitários, sem intermediários."
   },
   {
-    id: "quem-somos",
-    section: "Quem Somos",
-    title: "Quem Somos",
-    subtitle: "Missão e Visão",
-    items: [
-      { icon: "mission", label: "Missão", text: "Digitalizar o mercado de mídia exterior, conectando de forma inteligente quem tem espaço a quem quer divulgar." },
-      { icon: "vision", label: "Visão", text: "Ser a principal plataforma B2B de compra e venda de espaços OOH na América Latina até 2028." },
-      { icon: "value", label: "Proposta de Valor", text: "Uma plataforma white-label que permite empresas e anunciantes conectarem-se diretamente com fornecedores de espaços publicitários físicos." }
-    ]
-  },
-  {
     id: "mercado",
     section: "Mercado OOH",
     title: "O Mercado OOH no Brasil",
@@ -129,6 +118,12 @@ const SLIDES_DATA = [
     ]
   },
   {
+    id: "interfaces",
+    section: "Interfaces",
+    title: "Interfaces",
+    subtitle: "Conheça a plataforma em detalhes"
+  },
+  {
     id: "pricing",
     section: "Pricing",
     title: "Planos",
@@ -231,10 +226,10 @@ const SLIDES_DATA = [
     title: "Contato",
     subtitle: "Estamos prontos para conversar",
     contact: {
-      email: "comercial@edgemarket.com.br",
-      phone: "+55 (11) 4002-8922",
-      website: "www.edgemarket.com.br",
-      linkedin: "linkedin.com/company/edgemarket"
+      nome: "Rodrigo Brandini",
+      phone: "+55 (11) 5118-3700",
+      email: "comercial@inviron.com.br",
+      website: "www.inviron.com.br"     
     },
     closing: "Obrigado pela atenção. Vamos transformar o mercado OOH juntos."
   }

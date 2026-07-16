@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EdgeMarket — Apresentação Comercial</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23141416'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%23F58220' font-weight='bold'>E</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23141416'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%23F58220' font-weight='bold'>E</text></svg>">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
 
   <!-- Progress Bar -->
@@ -21,7 +24,7 @@
   <!-- Fullscreen Button -->
   <button class="btn-fullscreen" id="btnFullscreen" title="Tela Cheia">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+      <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3" />
     </svg>
   </button>
 
@@ -33,7 +36,8 @@
       <div class="slide__content">
         <img src="assets/logo.svg" alt="EdgeMarket" width="300">
         <h1 class="slide__title slide__title--hero">O Marketplace de Espaços Publicitários OOH</h1>
-        <p class="slide__subtitle">Conectamos fornecedores de espaços publicitários físicos a marcas e anunciantes — em uma plataforma white-label personalizável.</p>
+        <p class="slide__subtitle">Conectamos fornecedores de espaços publicitários físicos a marcas e anunciantes — em
+          uma plataforma white-label personalizável.</p>
         <div class="slide__cta-badge">Apresentação Comercial 2026</div>
       </div>
     </section>
@@ -42,20 +46,14 @@
     <section class="slide slide--cover" data-slide="1">
       <div class="slide__content">
         <h1 class="slide__title slide__title--hero">Automatize suas vendas para os pequenos e medios anunciantes</h1>
+        <div class="stat">
+          <div class="stat__value" id="automatizeBody"></div>
+        </div>
       </div>
     </section>
 
-    <!-- SLIDE 3: Quem Somos -->
+    <!-- SLIDE 3: Mercado OOH -->
     <section class="slide" data-slide="2">
-      <div class="slide__content">
-        <span class="slide__section-label">Quem Somos</span>
-        <h2 class="slide__title">Missão e Visão</h2>
-        <div class="cards-grid cards-grid--3" id="quemSomosCards"></div>
-      </div>
-    </section>
-
-    <!-- SLIDE 4: Mercado OOH -->
-    <section class="slide" data-slide="3">
       <div class="slide__content">
         <span class="slide__section-label">Mercado OOH</span>
         <h2 class="slide__title">O Mercado OOH no Brasil</h2>
@@ -65,8 +63,8 @@
       </div>
     </section>
 
-    <!-- SLIDE 5: Problema -->
-    <section class="slide" data-slide="4">
+    <!-- SLIDE 4: Problema -->
+    <section class="slide" data-slide="3">
       <div class="slide__content">
         <span class="slide__section-label">Problema / Dor</span>
         <h2 class="slide__title">O Problema</h2>
@@ -75,8 +73,8 @@
       </div>
     </section>
 
-    <!-- SLIDE 6: Solução -->
-    <section class="slide" data-slide="5">
+    <!-- SLIDE 5: Solução -->
+    <section class="slide" data-slide="4">
       <div class="slide__content">
         <span class="slide__section-label">Solução</span>
         <h2 class="slide__title">A Solução</h2>
@@ -86,8 +84,8 @@
       </div>
     </section>
 
-    <!-- SLIDE 7: Como Funciona -->
-    <section class="slide" data-slide="6">
+    <!-- SLIDE 6: Como Funciona -->
+    <section class="slide" data-slide="5">
       <div class="slide__content">
         <span class="slide__section-label">Como Funciona</span>
         <h2 class="slide__title">Como Funciona</h2>
@@ -96,8 +94,8 @@
       </div>
     </section>
 
-    <!-- SLIDE 8: Para os Fornecedores -->
-    <section class="slide" data-slide="7">
+    <!-- SLIDE 7: Para os Fornecedores -->
+    <section class="slide" data-slide="6">
       <div class="slide__content">
         <span class="slide__section-label">Para os Fornecedores</span>
         <h2 class="slide__title">Para os Fornecedores</h2>
@@ -106,8 +104,8 @@
       </div>
     </section>
 
-    <!-- SLIDE 9: Para os Parceiros -->
-    <section class="slide" data-slide="8">
+    <!-- SLIDE 8: Para os Parceiros -->
+    <section class="slide" data-slide="7">
       <div class="slide__content">
         <span class="slide__section-label">Para os Parceiros</span>
         <h2 class="slide__title">Para os Parceiros</h2>
@@ -116,8 +114,8 @@
       </div>
     </section>
 
-    <!-- SLIDE 10: Features -->
-    <section class="slide" data-slide="9">
+    <!-- SLIDE 9: Features -->
+    <section class="slide" data-slide="8">
       <div class="slide__content">
         <span class="slide__section-label">Features</span>
         <h2 class="slide__title">Features Principais</h2>
@@ -126,13 +124,26 @@
       </div>
     </section>
 
-    <!-- SLIDE 11: White-Label -->
-    <section class="slide" data-slide="10">
+    <!-- SLIDE 10: White-Label -->
+    <section class="slide" data-slide="9">
       <div class="slide__content">
         <span class="slide__section-label">White-Label</span>
         <h2 class="slide__title">Plataforma White-Label</h2>
         <p class="slide__subtitle">Personalize cada detalhe para sua marca</p>
         <div class="custom-grid" id="customGrid"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11: Interfaces -->
+    <section class="slide" data-slide="10">
+      <div class="slide__content">
+        <span class="slide__section-label">Interfaces</span>
+        <h2 class="slide__title">Interfaces</h2>
+        <p class="slide__subtitle">Conheça a plataforma em detalhes</p>
+        <div class="slide__image-wrapper">
+          <img src="assets/preview1.png" alt="Preview da plataforma EdgeMarket" width="50%">
+          <img src="assets/preview2.png" alt="Preview da plataforma EdgeMarket" width="50%">
+        </div>
       </div>
     </section>
 
@@ -191,13 +202,15 @@
 
   <!-- Navigation Arrows -->
   <button class="nav-arrow nav-arrow--prev" id="btnPrev" title="Slide Anterior">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"/>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6" />
     </svg>
   </button>
   <button class="nav-arrow nav-arrow--next" id="btnNext" title="Próximo Slide">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="9 18 15 12 9 6"/>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6" />
     </svg>
   </button>
 
@@ -207,4 +220,5 @@
   <script src="data/content.js"></script>
   <script src="js/slides.js"></script>
 </body>
+
 </html>

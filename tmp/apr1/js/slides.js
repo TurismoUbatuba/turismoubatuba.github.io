@@ -62,17 +62,17 @@
   function renderContent() {
     const d = SLIDES_DATA;
 
-    renderCards('quemSomosCards', d[2].items, 'icon', 'label', 'text');
-    renderStats('mercadoStats', d[3].stats);
-    setText('mercadoFootnote', d[3].footnote);
-    renderCards('problemaCards', d[4].painPoints, 'icon', 'title', 'desc');
-    setText('solucaoDesc', d[5].description);
-    renderCheckList('solucaoHighlights', d[5].highlights);
-    renderSteps('comoFuncionaSteps', d[6].steps);
-    renderCards('fornecedoresCards', d[7].benefits, 'icon', 'title', 'text');
-    renderCards('parceirosCards', d[8].benefits, 'icon', 'title', 'text');
-    renderFeatures('featuresGrid', d[9].features);
-    renderCustom('customGrid', d[10].customization);
+    setText('automatizeBody', d[1].body);
+    renderStats('mercadoStats', d[2].stats);
+    setText('mercadoFootnote', d[2].footnote);
+    renderCards('problemaCards', d[3].painPoints, 'icon', 'title', 'desc');
+    setText('solucaoDesc', d[4].description);
+    renderCheckList('solucaoHighlights', d[4].highlights);
+    renderSteps('comoFuncionaSteps', d[5].steps);
+    renderCards('fornecedoresCards', d[6].benefits, 'icon', 'title', 'text');
+    renderCards('parceirosCards', d[7].benefits, 'icon', 'title', 'text');
+    renderFeatures('featuresGrid', d[8].features);
+    renderCustom('customGrid', d[9].customization);
     renderPricing('pricingGrid', d[11].plans);
     renderCards('segurancaCards', d[12].items, 'icon', 'title', 'desc');
     renderComparison('comparisonContainer', d[13].comparison);
@@ -203,6 +203,10 @@
     if (!el) return;
     el.innerHTML = `
       <div class="contact-item">
+        <span class="contact-item__icon"><i data-lucide="linkedin"></i></span>
+        <span class="contact-item__text">${contact.nome}</span>
+      </div>
+      <div class="contact-item">
         <span class="contact-item__icon"><i data-lucide="mail"></i></span>
         <span class="contact-item__text">${contact.email}</span>
       </div>
@@ -213,10 +217,6 @@
       <div class="contact-item">
         <span class="contact-item__icon"><i data-lucide="globe"></i></span>
         <span class="contact-item__text">${contact.website}</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item__icon"><i data-lucide="linkedin"></i></span>
-        <span class="contact-item__text">${contact.linkedin}</span>
       </div>
     `;
   }
