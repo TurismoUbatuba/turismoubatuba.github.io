@@ -174,18 +174,6 @@ const SLIDES_DATA = [
     ]
   },
   {
-    id: "seguranca",
-    section: "Segurança",
-    title: "Segurança & Compliance",
-    subtitle: "Seus dados protegidos em cada camada",
-    items: [
-      { icon: "lgpd", title: "LGPD", desc: "Total conformidade com a Lei Geral de Proteção de Dados brasileira." },
-      { icon: "encrypt", title: "Criptografia", desc: "Dados em trânsito (TLS 1.3) e em repouso (AES-256)." },
-      { icon: "sla", title: "SLA 99.9%", desc: "Infraestrutura em cloud com alta disponibilidade e redundância." },
-      { icon: "audit", title: "Auditoria", desc: "Logs de auditoria completos para todas as ações na plataforma." }
-    ]
-  },
-  {
     id: "comparativo",
     section: "Comparativo",
     title: "Antes vs. Depois",

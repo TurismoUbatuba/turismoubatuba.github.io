@@ -43,10 +43,6 @@
     api: 'settings',
     multi: 'building-2',
     mobile: 'smartphone',
-    lgpd: 'shield-check',
-    encrypt: 'lock',
-    sla: 'timer',
-    audit: 'clipboard-list',
     mail: 'mail',
     phone: 'phone',
     globe: 'globe',
@@ -62,6 +58,7 @@
   function renderContent() {
     const d = SLIDES_DATA;
 
+    setText('automatizeTitle', d[1].title);
     setText('automatizeBody', d[1].body);
     renderStats('mercadoStats', d[2].stats);
     setText('mercadoFootnote', d[2].footnote);
@@ -74,10 +71,9 @@
     renderFeatures('featuresGrid', d[8].features);
     renderCustom('customGrid', d[9].customization);
     renderPricing('pricingGrid', d[11].plans);
-    renderCards('segurancaCards', d[12].items, 'icon', 'title', 'desc');
-    renderComparison('comparisonContainer', d[13].comparison);
-    renderCTASteps('ctaSteps', d[14].steps);
-    renderContact('contactGrid', d[15].contact);
+    renderComparison('comparisonContainer', d[12].comparison);
+    renderCTASteps('ctaSteps', d[13].steps);
+    renderContact('contactGrid', d[14].contact);
 
     initLucide();
   }
