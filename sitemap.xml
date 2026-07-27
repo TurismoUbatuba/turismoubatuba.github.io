@@ -61,6 +61,51 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://turismoubatuba.com.br/encanador/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/encanador/servicos.html</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/encanador/emergencia-24h.html</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/encanador/desentupimento.html</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/encanador/reparo-de-tubulacao.html</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/encanador/deteccao-de-vazamentos.html</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/encanador/instalacao-hidraulica.html</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/encanador/manutencao-preventiva.html</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/encanador/contato.html</loc>
+    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://turismoubatuba.com.br/stories/cachoeiras.html</loc>
     <priority>0.6</priority>
     <changefreq>weekly</changefreq>
