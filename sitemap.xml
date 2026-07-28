@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://sitemaps.org/schemas/sitemap/0.9">
+<sitemapindex xmlns="http://sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://turismoubatuba.com.br/</loc>
     <priority>1.0</priority>
@@ -495,4 +495,4 @@
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
   </url>
-</urlset>
+</sitemapindex>
