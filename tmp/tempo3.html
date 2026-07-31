@@ -225,6 +225,7 @@
       letter-spacing: 0.03em;
     }
   </style>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 </head>
 
 <body>
@@ -273,16 +274,14 @@
     </section>
 
     <div class="ad-box" id="adBox">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4829490089497715"
-           crossorigin="anonymous"></script>
-      <!-- precisaodotempo -->
-      <ins class="adsbygoogle"
-           style="display:inline-block;width:728px;height:90px"
+      <amp-ad
+           layout="fixed"
+           width="728"
+           height="90"
+           type="adsense"
            data-ad-client="ca-pub-4829490089497715"
-           data-ad-slot="8859449056"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+           data-ad-slot="8859449056">
+      </amp-ad>
     </div>
 
     <div class="forecast" id="forecast">
