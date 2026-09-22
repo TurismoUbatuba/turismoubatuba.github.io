@@ -1,1192 +1,1988 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="utf-8" />
-    <link rel="canonical" href="https://turismoubatuba.com.br/" />
+    <meta charset="UTF-8">
 
-    <title>Seu guia sobre Ubatuba | TurismoUbatuba.com.br</title>
-    <meta content="Seu guia sobre Ubatuba | TurismoUbatuba.com.br" property="og:title" />
-    <meta content="Seu guia sobre Ubatuba | TurismoUbatuba.com.br" property="twitter:title" />
+    <title>Turismo em Ubatuba: Guia Completo de Praias, Passeios e O que Fazer</title>
 
+    <meta name="description"
+          content="Turismo em Ubatuba: descubra as melhores praias, passeios, trilhas, cachoeiras, ilhas, restaurantes, hospedagens e roteiros para conhecer Ubatuba.">
 
-    <meta content="Seu guia sobre Ubatuba, o que fazer, aonde ir" name="description" />
-    <meta content="Seu guia sobre Ubatuba, o que fazer, aonde ir" name="twitter:description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="canonical" href="https://turismoubatuba.com.br/turismo-em-ubatuba">
 
-    <meta content="ubatuba, praias, litoral norte" name="keywords" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Turismo em Ubatuba — Guia Completo">
+    <meta property="og:description"
+          content="Tudo para conhecer Ubatuba: praias, passeios, trilhas, hospedagem, gastronomia e roteiros.">
+    <meta property="og:url"
+          content="https://turismoubatuba.com.br/turismo-em-ubatuba">
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Turismo em Ubatuba">
+    <meta name="twitter:description"
+          content="Guia completo de turismo em Ubatuba.">
 
-    <meta property="og:image" content="https://turismoubatuba.com.br/static/img/ubatuba-og.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="og:type" content="website" />
-    <meta name="lomadee-verification" content="31776" />
-    <meta name="twitter:site" content="@tur_ubatuba" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link
-        href="https://assets-global.website-files.com/656905ad09fa6cc663983961/css/codecias-stellar-site.webflow.7f32dd2d0.css"
-        rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        WebFont.load({
-            google: {
-                families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Tenor Sans:regular", "Source Serif Pro:regular,700", "Libre Franklin:regular,600"]
-            }
-        });
-    </script>
-    <script type="text/javascript">
-        !function (o, c) {
-            var n = c.documentElement
-                , t = " w-mod-";
-            n.className += t + "js",
-                ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
-        }(window, document);
-    </script>
-    <link href="/static/img/beach.png" rel="shortcut icon" type="image/x-icon" />
-    <link href="/static/img/beach.png" rel="apple-touch-icon" />
     <style>
-        body {
-            -moz-font-feature-settings: "liga" on;
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-font-smoothing: antialiased;
-            font-feature-settings: "liga" on;
-            text-rendering: optimizeLegibility;
+
+        :root {
+            --primary: #087f8c;
+            --primary-dark: #05636d;
+            --secondary: #f2a900;
+            --green: #3c8d40;
+            --dark: #1e2930;
+            --text: #34454c;
+            --light: #f5f7f7;
+            --white: #ffffff;
+            --border: #e4e8e9;
+            --shadow: 0 8px 25px rgba(0,0,0,.08);
+            --radius: 12px;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 32px));
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .topbar {
+            background: var(--primary);
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .topbar-inner {
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .topbar a {
+            opacity: .95;
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -.5px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .menu-button {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 510px;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0, 60, 70, .86),
+                    rgba(0, 100, 110, .45)
+                ),
+                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85")
+                center / cover;
+        }
+
+        .hero-content {
+            max-width: 760px;
+            padding: 70px 0;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 13px;
+            background: rgba(255,255,255,.16);
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.05;
+            margin: 0 0 22px;
+            letter-spacing: -1.5px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 0 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 22px;
+            border-radius: 7px;
+            font-weight: 700;
+            transition: .2s;
+        }
+
+        .button-primary {
+            background: var(--secondary);
+            color: #202020;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-light {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        /* =========================
+           QUICK NAV
+        ========================= */
+
+        .quick-nav {
+            background: #fff;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 5;
+        }
+
+        .quick-nav-inner {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .quick-item {
+            padding: 22px 10px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--dark);
+        }
+
+        .quick-item:last-child {
+            border-right: 0;
+        }
+
+        .quick-icon {
+            display: block;
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .quick-item:hover {
+            color: var(--primary);
+            background: #f8fbfb;
+        }
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-header {
+            max-width: 760px;
+            margin-bottom: 35px;
+        }
+
+        .section-header h2 {
+            color: var(--dark);
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.2;
+            margin: 0 0 14px;
+        }
+
+        .section-header p {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        .intro {
+            background: #fff;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.4fr .8fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .intro-text p {
+            font-size: 17px;
+        }
+
+        .highlight-box {
+            background: var(--light);
+            border-left: 5px solid var(--primary);
+            padding: 25px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .highlight-box strong {
+            display: block;
+            color: var(--dark);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           CATEGORIES
+        ========================= */
+
+        .categories {
+            background: var(--light);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: .2s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .category-image {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .category-content {
+            padding: 20px;
+        }
+
+        .category-content h3 {
+            color: var(--dark);
+            margin: 0 0 8px;
+            font-size: 20px;
+        }
+
+        .category-content p {
+            margin: 0 0 12px;
+            font-size: 14px;
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* =========================
+           PRAIAS
+        ========================= */
+
+        .beaches {
+            background: #fff;
+        }
+
+        .region-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .region {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 25px;
+            background: #fff;
+        }
+
+        .region h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 22px;
+        }
+
+        .region ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .region li {
+            margin-bottom: 7px;
+        }
+
+        .region a {
+            color: var(--text);
+        }
+
+        .region a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .all-beaches {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        /* =========================
+           FEATURED
+        ========================= */
+
+        .featured {
+            background: var(--light);
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .article {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: .2s;
+        }
+
+        .article:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .article-image {
+            height: 190px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .article-content {
+            padding: 22px;
+        }
+
+        .article-tag {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .article h3 {
+            color: var(--dark);
+            line-height: 1.3;
+            margin: 7px 0 10px;
+            font-size: 21px;
+        }
+
+        .article p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           ROUTES
+        ========================= */
+
+        .routes {
+            background: #fff;
+        }
+
+        .route-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .route {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: #fff;
+        }
+
+        .route strong {
+            display: block;
+            font-size: 25px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .route h3 {
+            margin: 0 0 10px;
+            color: var(--dark);
+        }
+
+        .route p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* =========================
+           MAP
+        ========================= */
+
+        .map-section {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .map-section .section-header h2 {
+            color: #fff;
+        }
+
+        .map-box {
+            min-height: 330px;
+            border-radius: var(--radius);
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.15),
+                    rgba(0,0,0,.15)
+                ),
+                url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80")
+                center / cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .map-box-content {
+            background: rgba(0,0,0,.58);
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 500px;
+        }
+
+        /* =========================
+           HOSPEDAGEM / GASTRONOMIA
+        ========================= */
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .info-card {
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: #fff;
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            font-size: 25px;
+            margin-top: 0;
+        }
+
+        .info-card ul {
+            padding-left: 20px;
+        }
+
+        /* =========================
+           FAQ
+        ========================= */
+
+        .faq {
+            background: var(--light);
+        }
+
+        .faq-list {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        details {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 18px 22px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        details p {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            padding: 75px 0;
+            text-align: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
+            color: #fff;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin: 0 0 15px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            font-size: 18px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #182329;
+            color: #cbd5d8;
+            padding: 55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.1);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .quick-nav-inner {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .quick-item:nth-child(3) {
+                border-right: 0;
+            }
+
+            .intro-grid,
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .region-grid,
+            .article-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .route-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: min(100% - 24px, 1180px);
+            }
+
+            .topbar-inner {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .topbar-inner span:last-child {
+                display: none;
+            }
+
+            .hero {
+                min-height: 560px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .quick-nav-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quick-item {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .category-grid,
+            .region-grid,
+            .article-grid,
+            .route-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-inner {
+                min-height: 65px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+        }
+
     </style>
 
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENJKSW4HVY"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-ENJKSW4HVY');
-    </script>
+    <!--
+        SCHEMA.ORG
+        ==============================
+        Estrutura de dados para ajudar
+        o Google a compreender a página.
+    -->
 
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Turismo Ubatuba",
-  "description": "Seu guia sobre Ubatuba, o que fazer, aonde ir",
-  "url": "https://turismoubatuba.com.br/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://turismoubatuba.com.br/?s={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  }
-}
-    </script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://turismoubatuba.com.br/"
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Turismo em Ubatuba",
+      "url": "https://turismoubatuba.com.br/turismo-em-ubatuba",
+      "description": "Guia completo de turismo em Ubatuba com praias, passeios, trilhas, hospedagem, gastronomia e roteiros.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "TurismoUbatuba.com.br",
+        "url": "https://turismoubatuba.com.br/"
+      },
+      "about": {
+        "@type": "City",
+        "name": "Ubatuba",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ubatuba",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        }
+      }
     }
-  ]
-}
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://turismoubatuba.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Turismo em Ubatuba",
+          "item": "https://turismoubatuba.com.br/turismo-em-ubatuba"
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O que fazer em Ubatuba?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ubatuba oferece praias, trilhas, cachoeiras, passeios de barco, mergulho, surf, ecoturismo, gastronomia e atrações culturais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais são as melhores praias de Ubatuba?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ubatuba possui dezenas de praias com características diferentes. Entre as mais conhecidas estão Praia Grande, Itamambuca, Félix, Lagoinha, Fortaleza, Tenório e Praia da Fazenda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onde ficar em Ubatuba?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A escolha depende do perfil da viagem. O centro e Itaguá oferecem maior concentração de serviços, enquanto regiões próximas às praias podem ser interessantes para quem busca ficar mais próximo da natureza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que fazer em Ubatuba em dois dias?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Um roteiro de dois dias pode combinar praias, passeio de barco, gastronomia e uma trilha ou atração natural."
+          }
+        }
+      ]
+    }
+    </script>
+
 </head>
 
 <body>
-    <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease"
-        role="banner" class="navigation w-nav">
-        <div class="navigation-container">
-            <a href="/" aria-current="page" class="logo w-inline-block w--current">
-                <img src="/img/logo_pk.png" width="294" alt="" class="image-logo" />
+
+    <!-- TOP BAR -->
+
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <span>Seu guia para conhecer Ubatuba</span>
+            <span>Praias • Natureza • Passeios • Gastronomia</span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="container header-inner">
+
+            <a href="/" class="logo">
+                <img src="https://turismoubatuba.com.br/static/img/logo.png" />
             </a>
-            <nav role="navigation" class="nav-menu w-nav-menu">
-                <a href='/c/praias.html' html' class="navigation-link w-inline-block">
-                    <div class="navigation-link-text">Praias</div>
-                    <div class="navigation-hover"></div>
-                </a>
-                <a href='/c/lugares.html' class="navigation-link w-inline-block">
-                    <div class="navigation-link-text">Onde Ir</div>
-                    <div class="navigation-hover"></div>
-                </a>
-                <a href='/c/hospedagem.html' class="navigation-link w-inline-block">
-                    <div class="navigation-link-text">Onde Ficar</div>
-                    <div class="navigation-hover"></div>
-                </a>
-                <a href='/c/alimentacao.html' class="navigation-link w-inline-block">
-                    <div class="navigation-link-text">Onde Comer</div>
-                    <div class="navigation-hover"></div>
-                </a>
-                <a href='/servicos.html' class="navigation-link w-inline-block">
-                    <div class="navigation-link-text">Serviços</div>
-                    <div class="navigation-hover"></div>
-                </a>
-                <a href='/videos.html' class="navigation-link w-inline-block">
-                    <div class="navigation-link-text">Vídeos</div>
-                    <div class="navigation-hover"></div>
+
+            <nav>
+                <a href="/c/praias">Praias</a>
+                <a href="/c/lugares">O que fazer</a>
+                <a href="/c/parque-estadual-da-serra-do-mar">Natureza</a>
+                <a href="/c/praias">Hospedagem</a>
+                <a href="/c/lugares">Gastronomia</a>
+                <a href="/post/roteiro-de-fim-de-semana-em-ubatuba-o-que-fazer-e-onde-ir-em-dois-dias">
+                    Roteiros
                 </a>
             </nav>
-            <div class="menu-button w-nav-button">
-                <div class="icon-2 w-icon-nav-menu"></div>
-            </div>
+
+            <button class="menu-button" aria-label="Abrir menu">
+                ☰
+            </button>
+
         </div>
-    </div>
+    </header>
 
 
-    <div class="top-post">
-        <div class="container">
-            <div class="posts-wrapper cc-top-post">
-                <div class="w-dyn-list">
-                    <div role="list" class="w-dyn-items">
-                        <div role="listitem" class="top-post-item w-dyn-item">
-                            <a href="/post/as-cachoeiras-mais-bonitas-para-visitar-em-ubatuba.html"
-                                class="top-post-image w-inline-block">
+    <!-- HERO -->
 
-                                <img src="/img/posts/whaterfalls_1.jpg"
-                                    alt="As cachoeiras mais bonitas para visitar em Ubatuba" class="post-image" />
+    <main>
 
-                            </a>
-                            <div class="top-post-text">
-                                <a href="/post/as-cachoeiras-mais-bonitas-para-visitar-em-ubatuba.html"
-                                    class="category-link">Destaque</a>
-                                <a href="/post/as-cachoeiras-mais-bonitas-para-visitar-em-ubatuba.html"
-                                    class="top-post-link-block w-inline-block">
-                                    <h2 class="h2">As cachoeiras mais bonitas para visitar em Ubatuba</h2>
-                                </a>
-                                <div class="post-short-text">Descubra as cachoeiras mais bonitas para visitar em
-                                    Ubatuba, no litoral norte de São Paulo. Conheça esses paraísos naturais, cercados
-                                    pela exuberante vegetação da Mata Atlântica, e desfrute de momentos de relaxamento e
-                                    contato com a natureza.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <section class="hero">
 
+            <div class="container">
 
-    <div class="_3-posts">
-        <div class="container">
-            <div class="posts-wrapper">
-                <div class="posts-collection-list-wrapper w-dyn-list">
-                    <div role="list" class="posts-collection-list w-dyn-items w-row">
+                <div class="hero-content">
 
+                    <span class="eyebrow">
+                        Guia de Ubatuba
+                    </span>
 
-                        <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                            <a href="/post/ubatuba-a-cidade-que-vive-em-harmonia-com-a-natureza.html"
-                                class="posts-image w-inline-block">
+                    <h1>
+                        Turismo em Ubatuba
+                    </h1>
 
-                                <img alt="Ubatuba: A Cidade que Vive em Harmonia com a Natureza"
-                                    src="/img/posts/506.png" width="400" height="400" style="object-fit: cover;" />
+                    <p>
+                        Descubra praias, trilhas, cachoeiras, ilhas,
+                        passeios, gastronomia, hospedagem e tudo o que
+                        você precisa para aproveitar Ubatuba.
+                    </p>
 
-                            </a>
-                            <div class="post-info-text">
-                                <a href="/post/ubatuba-a-cidade-que-vive-em-harmonia-com-a-natureza.html"
-                                    class="category-link">Praias</a>
-                                <a href="/post/ubatuba-a-cidade-que-vive-em-harmonia-com-a-natureza.html"
-                                    class="post-title w-inline-block">
-                                    <h3 class="h3">Ubatuba: A Cidade que Vive em Harmonia com a Natureza</h3>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="hero-buttons">
 
-                        <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                            <a href="/post/eco-turismo-em-ubatuba-preservacao-e-desenvolvimento-sustentavel.html"
-                                class="posts-image w-inline-block">
+                        <a href="#o-que-fazer"
+                           class="button button-primary">
+                            O que fazer em Ubatuba
+                        </a>
 
-                                <img alt="Eco-Turismo em Ubatuba: Preservação e Desenvolvimento Sustentável"
-                                    src="/img/posts/501.png" width="400" height="400" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-                                <a href="/post/eco-turismo-em-ubatuba-preservacao-e-desenvolvimento-sustentavel.html"
-                                    class="category-link">ecoturismo</a>
-                                <a href="/post/eco-turismo-em-ubatuba-preservacao-e-desenvolvimento-sustentavel.html"
-                                    class="post-title w-inline-block">
-                                    <h3 class="h3">Eco-Turismo em Ubatuba: Preservação e Desenvolvimento Sustentável
-                                    </h3>
-                                </a>
-                            </div>
-                        </div>
-
-
-
-                        <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                            <a href="/post/ubatuba-a-cidade-dos-artistas-e-a-arte-em-todas-as-formas.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Ubatuba: A Cidade dos Artistas e a Arte em Todas as Formas"
-                                    src="/img/posts/500.png" width="400" height="400" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-                                <a href="/post/ubatuba-a-cidade-dos-artistas-e-a-arte-em-todas-as-formas.html"
-                                    class="category-link">Ubatuba</a>
-                                <a href="/post/ubatuba-a-cidade-dos-artistas-e-a-arte-em-todas-as-formas.html"
-                                    class="post-title w-inline-block">
-                                    <h3 class="h3">Ubatuba: A Cidade dos Artistas e a Arte em Todas as Formas</h3>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                            <a href="/post/praias-e-pontos-de-interesse-turistico-em-ubatuba.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Praias e Pontos de Interesse Turístico em Ubatuba" src="/img/posts/495.png"
-                                    width="400" height="400" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-                                <a href="/post/praias-e-pontos-de-interesse-turistico-em-ubatuba.html"
-                                    class="category-link">Ubatuba</a>
-                                <a href="/post/praias-e-pontos-de-interesse-turistico-em-ubatuba.html"
-                                    class="post-title w-inline-block">
-                                    <h3 class="h3">Praias e Pontos de Interesse Turístico em Ubatuba</h3>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                            <a href="/post/ubatuba-um-paraiso-para-ciclistas-roteiros-e-dicas-para-uma-viagem-de-bicicleta.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Ubatuba, um Paraíso para Ciclistas: Roteiros e Dicas para uma Viagem de Bicicleta"
-                                    src="/img/posts/491.png" width="400" height="400" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-                                <a href="/post/ubatuba-um-paraiso-para-ciclistas-roteiros-e-dicas-para-uma-viagem-de-bicicleta.html"
-                                    class="category-link">Ubatuba</a>
-                                <a href="/post/ubatuba-um-paraiso-para-ciclistas-roteiros-e-dicas-para-uma-viagem-de-bicicleta.html"
-                                    class="post-title w-inline-block">
-                                    <h3 class="h3">Ubatuba, um Paraíso para Ciclistas: Roteiros e Dicas para uma Viagem
-                                        de Bicicleta</h3>
-                                </a>
-                            </div>
-                        </div>
-
-
-
-                        <div class="collection-item-advertising">
-                            <div class="div-block-3">
-                                <img src='/static/img/anunciantes/upg.png' loading="lazy"
-                                    alt="Ubatuba Praia Grande Hotel" loading="lazy" width="233" class="image-2">
-                                <div class="advertiser_title">Ubatuba Praia Grande Hotel</div>
-                                <div class="advertiser_subtitle">De frente para a Praia Grande, este hotel discreto com
-                                    vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do
-                                    Aquário de Ubatuba.</div>
-                                <a href="https://www.ubatubapraiagrandehotel.com.br/" target="_blank"
-                                    class="button-2 w-button">Conheça</a>
-                            </div>
-                        </div>
-
-
-
-                        <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                            <a href="/post/ubatuba-a-cidade-dos-artistas---a-arte-e-a-cultura-em-ubatuba.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Ubatuba: A Cidade dos Artistas - A arte e a cultura em Ubatuba"
-                                    src="/img/posts/490.png" width="400" height="400" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-                                <a href="/c/praias.html" class="category-link">Praias</a>
-                                <a href="/post/ubatuba-a-cidade-dos-artistas---a-arte-e-a-cultura-em-ubatuba.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Ubatuba: A Cidade dos Artistas - A arte e a cultura em Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_3-collection-item w-dyn-item w-col w-col-4">
-                            <a href="/post/desenvolvimento-sustentavel-no-parque-estadual-da-serra-do-mar-estrategias-e-acoes.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Desenvolvimento Sustentável no Parque Estadual da Serra do Mar: Estratégias e Ações"
-                                    src="/img/posts/346.png" width="400" height="400" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-                                <a href="/c/parque-estadual-da-serra-do-mar.html" class="category-link">Parque Estadual
-                                    da
-                                    Serra do Mar</a>
-                                <a href="/post/desenvolvimento-sustentavel-no-parque-estadual-da-serra-do-mar-estrategias-e-acoes.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Desenvolvimento Sustentável no Parque Estadual da Serra do Mar:
-                                        Estratégias e Ações</h2>
-                                </a>
-                            </div>
-                        </div>
-
+                        <a href="/c/praias"
+                           class="button button-light">
+                            Conhecer as praias
+                        </a>
 
                     </div>
+
                 </div>
+
             </div>
+
+        </section>
+
+
+        <!-- QUICK NAV -->
+
+        <div class="quick-nav">
+
+            <div class="container quick-nav-inner">
+
+                <a href="#praias" class="quick-item">
+                    <span class="quick-icon">🏖️</span>
+                    Praias
+                </a>
+
+                <a href="#o-que-fazer" class="quick-item">
+                    <span class="quick-icon">🌿</span>
+                    O que fazer
+                </a>
+
+                <a href="#roteiros" class="quick-item">
+                    <span class="quick-icon">🗺️</span>
+                    Roteiros
+                </a>
+
+                <a href="#hospedagem" class="quick-item">
+                    <span class="quick-icon">🏨</span>
+                    Onde ficar
+                </a>
+
+                <a href="#gastronomia" class="quick-item">
+                    <span class="quick-icon">🍽️</span>
+                    Gastronomia
+                </a>
+
+                <a href="#faq" class="quick-item">
+                    <span class="quick-icon">❓</span>
+                    Dúvidas
+                </a>
+
+            </div>
+
         </div>
-    </div>
-    <div class="separator">
-        <div class="separator-container">
-            <div class="line-color"></div>
-        </div>
-    </div>
-    <div class="latest-posts">
-        <div class="container">
-            <div class="section-title-text">LATEST POSTS</div>
-            <div class="posts-wrapper">
-                <div class="posts-collection-list-wrapper w-dyn-list">
-                    <div role="list" class="posts-collection-list w-dyn-items w-row">
 
 
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/trilha-do-saco-grande-em-ubatuba.html" class="posts-image w-inline-block">
+        <!-- INTRO -->
 
-                                <img alt="Trilha do Saco Grande em Ubatuba" src="/img/posts/332.png" width="300"
-                                    height="300" style="object-fit: cover;" />
+        <section class="intro">
 
-                            </a>
-                            <div class="post-info-text">
+            <div class="container">
 
-                                <a href="/c/trilhas.html" class="category-link">trilhas</a>
+                <div class="intro-grid">
 
-                                <a href="/post/trilha-do-saco-grande-em-ubatuba.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Trilha do Saco Grande em Ubatuba</h2>
-                                </a>
-                            </div>
+                    <div class="intro-text">
+
+                        <div class="section-header">
+
+                            <h2>
+                                Guia de turismo em Ubatuba
+                            </h2>
+
                         </div>
 
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/baleia-jubarte-encontrada-morta-no-sul-de-ubatuba-sp.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Baleia jubarte encontrada morta no sul de Ubatuba (SP)"
-                                    src="/img/posts/313.png" width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/baleia.html" class="category-link">baleia</a>
-
-                                <a href="/post/baleia-jubarte-encontrada-morta-no-sul-de-ubatuba-sp.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Baleia jubarte encontrada morta no sul de Ubatuba (SP)</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/a-gestao-de-residuos-solidos-em-ubatuba-politicas-publicas-e-praticas-sustentaveis.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="A gestão de resíduos sólidos em Ubatuba: políticas públicas e práticas sustentáveis"
-                                    src="/img/posts/312.png" width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/ubatuba.html" class="category-link">Ubatuba</a>
-
-                                <a href="/post/a-gestao-de-residuos-solidos-em-ubatuba-politicas-publicas-e-praticas-sustentaveis.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">A gestão de resíduos sólidos em Ubatuba: políticas públicas e
-                                        práticas sustentáveis</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/ubatuba-a-cidade-dos-surfistas-e-amantes-do-mar.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Ubatuba: A Cidade dos Surfistas e Amantes do Mar" src="/img/posts/287.png"
-                                    width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/ubatuba.html" class="category-link">Ubatuba</a>
-
-                                <a href="/post/ubatuba-a-cidade-dos-surfistas-e-amantes-do-mar.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Ubatuba: A Cidade dos Surfistas e Amantes do Mar</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/a-historia-do-turismo-em-ubatuba.html" class="posts-image w-inline-block">
-
-                                <img alt="A História do Turismo em Ubatuba" src="/img/posts/207.png" width="300"
-                                    height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/turismo.html" class="category-link">turismo</a>
-
-                                <a href="/post/a-historia-do-turismo-em-ubatuba.html" class="post-title w-inline-block">
-                                    <h2 class="h3">A História do Turismo em Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/culinaria-de-ubatuba-receitas-e-tradicionais-gastronomicas.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas"
-                                    src="/img/posts/188.png" width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/culinaria-de-ubatuba.html" class="category-link">Culinária de Ubatuba</a>
-
-                                <a href="/post/culinaria-de-ubatuba-receitas-e-tradicionais-gastronomicas.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Culinária de Ubatuba: Receitas e Tradicionais Gastronômicas</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/festa-junina-tradicional-em-ubatuba.html" class="posts-image w-inline-block">
-
-                                <img alt="Festa Junina Tradicional em Ubatuba" src="/img/posts/198.png" width="300"
-                                    height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/mar.html" class="category-link">mar</a>
-
-                                <a href="/post/festa-junina-tradicional-em-ubatuba.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Festa Junina Tradicional em Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/a-historia-e-a-cultura-dos-pescadores-de-ubatuba.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="A História e a Cultura dos Pescadores de Ubatuba"
-                                    src="/img/posts/2e216511-e9f0-4371-af5a-996ba50082be.png" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/peixe.html" class="category-link">peixe</a>
-
-                                <a href="/post/a-historia-e-a-cultura-dos-pescadores-de-ubatuba.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">A História e a Cultura dos Pescadores de Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/ubatuba-um-paraiso-para-surfistas-dicas-e-locais-para-praticar-o-surf.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Ubatuba, um Paraíso para Surfistas: Dicas e Locais para Praticar o Surf"
-                                    src="/img/posts/161.png" width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/surfistas.html" class="category-link">surfistas</a>
-
-                                <a href="/post/ubatuba-um-paraiso-para-surfistas-dicas-e-locais-para-praticar-o-surf.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Ubatuba, um Paraíso para Surfistas: Dicas e Locais para Praticar o
-                                        Surf</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/a-festa-de-nossa-senhora-da-aparecida.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="A Festa de Nossa Senhora da Aparecida"
-                                    src="/img/posts/6d62035b-f2eb-4449-9ea3-13fe620c1093.jfif" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/nossa-senhora-da-aparecida.html" class="category-link">Nossa Senhora da
-                                    Aparecida</a>
-
-                                <a href="/post/a-festa-de-nossa-senhora-da-aparecida.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">A Festa de Nossa Senhora da Aparecida</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/a-festa-de-sao-pedro-historia-significado-e-tradicionais.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="A Festa de São Pedro: História, Significado e Tradicionais"
-                                    src="/img/posts/475cbdf4-001f-44a5-aea7-43a8020b4ffb.jfif" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/sao-pedro-apostolo-cristianismo-festa.html" class="category-link">São Pedro,
-                                    apostolo, cristianismo, festa</a>
-
-                                <a href="/post/a-festa-de-sao-pedro-historia-significado-e-tradicionais.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">A Festa de São Pedro: História, Significado e Tradicionais</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/as-regras-da-festa-de-nossa-senhora-da-conceicao.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="As Regras da Festa de Nossa Senhora da Conceição"
-                                    src="/img/posts/6163270c-46bf-433f-bf2e-76eb2e025dd1.jfif" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/festa-de-nossa-senhora-da-conceicao.html" class="category-link">Festa de
-                                    Nossa
-                                    Senhora da Conceição</a>
-
-                                <a href="/post/as-regras-da-festa-de-nossa-senhora-da-conceicao.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">As Regras da Festa de Nossa Senhora da Conceição</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/a-festa-de-iemanja-heranca-afro-brasileira.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="A Festa de Iemanjá: Herança Afro-Brasileira"
-                                    src="/img/posts/9217744c-3289-4864-8822-328e0472ee66.png" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/praia.html" class="category-link">praia</a>
-
-                                <a href="/post/a-festa-de-iemanja-heranca-afro-brasileira.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">A Festa de Iemanjá: Herança Afro-Brasileira</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/todas-as-praias-de-ubatuba.html" class="posts-image w-inline-block">
-
-                                <img alt="Todas as Praias de Ubatuba" src="/img/posts/vermelha-do-sul.jpg" width="300"
-                                    height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/praias.html" class="category-link">Praias</a>
-
-                                <a href="/post/todas-as-praias-de-ubatuba.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Todas as Praias de Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/praia-da-palmira.html" class="posts-image w-inline-block">
-
-                                <img alt="Praia da Palmira" src="/img/posts/praia-da-palmira.png" width="300"
-                                    height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/praias.html" class="category-link">Praias</a>
-
-                                <a href="/post/praia-da-palmira.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Praia da Palmira</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/reveillon-2024-litoral-norte-deve-receber-3-milhoes-de-pessoas.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Réveillon 2024: Litoral Norte deve receber 3 milhões de pessoas"
-                                    src="/img/posts/9a051945-229f-4d12-be0f-16afd9ecd168.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/reveillon.html" class="category-link">reveillon</a>
-
-                                <a href="/post/reveillon-2024-litoral-norte-deve-receber-3-milhoes-de-pessoas.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Réveillon 2024: Litoral Norte deve receber 3 milhões de pessoas</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/praia-da-vermelha-do-sul-a-praia-mais-bonita-de-ubatuba.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Praia da Vermelha do Sul: a praia mais bonita de Ubatuba"
-                                    src="/img/posts/vermelha-do-sul.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/praias.html" class="category-link">Praias</a>
-
-                                <a href="/post/praia-da-vermelha-do-sul-a-praia-mais-bonita-de-ubatuba.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Praia da Vermelha do Sul: a praia mais bonita de Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/museu-da-vida-marinha-ubatuba.html" class="posts-image w-inline-block">
-
-                                <img alt="Museu da Vida Marinha em Ubatuba: Guia Completo"
-                                    src="/img/posts/instituto-argonauta.png" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/museu-da-vida-marinha-ubatuba.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Museu da Vida Marinha em Ubatuba: Guia Completo</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/explorando-as-maravilhas-aquaticas-o-fascinante-aquario-de-ubatuba.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Explorando as Maravilhas Aquáticas: O Fascinante Aquário de Ubatuba"
-                                    src="/img/posts/aquario-ubatuba.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/explorando-as-maravilhas-aquaticas-o-fascinante-aquario-de-ubatuba.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Explorando as Maravilhas Aquáticas: O Fascinante Aquário de Ubatuba
-                                    </h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/taxa-de-preservacao-ambiental-contribuindo-para-o-desenvolvimento-sustentavel-de-ubatuba.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Taxa de Preservação Ambiental ( TPA ): Contribuindo para o Desenvolvimento Sustentável de Ubatuba"
-                                    src="/img/posts/estrada-litoranea.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/taxa.html" class="category-link">taxa</a>
-
-                                <a href="/post/taxa-de-preservacao-ambiental-contribuindo-para-o-desenvolvimento-sustentavel-de-ubatuba.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Taxa de Preservação Ambiental ( TPA ): Contribuindo para o
-                                        Desenvolvimento Sustentável de Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/praia-do-pulso-em-ubatuba---um-paraiso-escondido-na-costa-paulista.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Praia do Pulso em Ubatuba - Um Paraíso Escondido na Costa Paulista"
-                                    src="/img/posts/pulso.jpg" width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/praias.html" class="category-link">Praias</a>
-
-                                <a href="/post/praia-do-pulso-em-ubatuba---um-paraiso-escondido-na-costa-paulista.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Praia do Pulso em Ubatuba - Um Paraíso Escondido na Costa Paulista
-                                    </h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/o-que-fazer-em-ubatuba-com-chuva.html" class="posts-image w-inline-block">
-
-                                <img alt="O que fazer em ubatuba com chuva" src="/img/posts/chuvoso.jpg" width="300"
-                                    height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/ubatuba-chuvoso.html" class="category-link">ubatuba chuvoso</a>
-
-                                <a href="/post/o-que-fazer-em-ubatuba-com-chuva.html" class="post-title w-inline-block">
-                                    <h2 class="h3">O que fazer em ubatuba com chuva</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/praia-da-lagoinha.html" class="posts-image w-inline-block">
-
-                                <img alt="Praia da Lagoinha" src="/img/posts/lagoinha.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/praias.html" class="category-link">Praias</a>
-
-                                <a href="/post/praia-da-lagoinha.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Praia da Lagoinha</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/praia-do-sape.html" class="posts-image w-inline-block">
-
-                                <img alt="Praia do Sape" src="/img/posts/20230902_104332.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/praias.html" class="category-link">Praias</a>
-
-                                <a href="/post/praia-do-sape.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Praia do Sape</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/passeio-de-barco-em-ubatuba-descubra-as-belezas-marinhas-e-os-pontos-de-mergulho-mais-incriveis.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Passeio de Barco em Ubatuba: Mergulho e Belezas Marinhas"
-                                    src="/img/posts/barco.jpg" width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/passeio-de-barco-em-ubatuba-descubra-as-belezas-marinhas-e-os-pontos-de-mergulho-mais-incriveis.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Passeio de Barco em Ubatuba: Mergulho e Belezas Marinhas</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/paraty.html" class="posts-image w-inline-block">
-
-                                <img alt="Cidades próximas: Paraty"
-                                    src="/img/posts/3D_Animation_Style_A_bustling_colonialstyle_cityscape_of_Parat_4.jpg"
-                                    width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/paraty.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Cidades próximas: Paraty</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/trilha-das-sete-praias.html" class="posts-image w-inline-block">
-
-                                <img alt="Trilha das 7 praias" src="/img/posts/7-praias.jpeg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/trilha-das-sete-praias.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Trilha das 7 praias</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/surf-em-ubatuba-conheca-as-melhores-praias-para-pegar-ondas.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Surf em Ubatuba: Conheça as melhores praias para pegar ondas."
-                                    src="/img/posts/surfe.jpg" width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/surf-em-ubatuba-conheca-as-melhores-praias-para-pegar-ondas.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Surf em Ubatuba: Conheça as melhores praias para pegar ondas.</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/mergulho-esportivo-em-ubatuba.html" class="posts-image w-inline-block">
-
-                                <img alt="Mergulho esportivo em ubatuba"
-                                    src="/img/posts/5f1ba326-5ac8-4d69-955d-ea15dd3506d5.png" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/mergulho-esportivo-em-ubatuba.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Mergulho esportivo em ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/roteiro-de-fim-de-semana-em-ubatuba-o-que-fazer-e-onde-ir-em-dois-dias.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Roteiro de Fim de Semana em Ubatuba: O que Fazer em 2 Dias"
-                                    src="/img/posts/beaches1.jpg" width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/roteiro-de-fim-de-semana-em-ubatuba-o-que-fazer-e-onde-ir-em-dois-dias.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Roteiro de fim de semana em Ubatuba: O que fazer e onde ir em dois
-                                        dias.</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/ubatuba-onde-a-natureza-encontra-a-diversidade.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Ubatuba: onde a natureza encontra a diversidade" src="/img/posts/sunset.jpg"
-                                    width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/ubatuba-onde-a-natureza-encontra-a-diversidade.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Ubatuba: onde a natureza encontra a diversidade</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/pico-do-piuva.html" class="posts-image w-inline-block">
-
-                                <img alt="Pico do Piuva" src="/img/posts/pico-piuva.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/pico-do-piuva.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Pico do Piuva</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/praia-de-maranduba.html" class="posts-image w-inline-block">
-
-                                <img alt="Praia de Maranduba" src="/img/posts/into_the_beach.jpg" width="300"
-                                    height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/praias.html" class="category-link">Praias</a>
-
-                                <a href="/post/praia-de-maranduba.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Praia de Maranduba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/a-historia-e-cultura-de-ubatuba-pontos-turisticos-para-visitar.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="A história e cultura de Ubatuba: pontos turísticos para visitar"
-                                    src="/img/posts/Bandeira_Ubatuba.png" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/a-historia-e-cultura-de-ubatuba-pontos-turisticos-para-visitar.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">A história e cultura de Ubatuba: pontos turísticos para visitar</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/dicas-para-viajar-para-ubatuba-com-criancas.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Dicas para viajar para Ubatuba com crianças"
-                                    src="/img/posts/kids_in_park_1.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/dicas-para-viajar-para-ubatuba-com-criancas.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Dicas para viajar para Ubatuba com crianças</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/as-cachoeiras-mais-bonitas-para-visitar-em-ubatuba.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="As cachoeiras mais bonitas para visitar em Ubatuba"
-                                    src="/img/posts/whaterfalls_1.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/as-cachoeiras-mais-bonitas-para-visitar-em-ubatuba.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">As cachoeiras mais bonitas para visitar em Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/guia-de-hospedagem-em-ubatuba-hoteis-pousadas-e-aluguel-de-casas.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Guia de Hospedagem em Ubatuba: Hotéis, Pousadas e Aluguel de Casas"
-                                    src="/img/posts/hospitability_beach_1.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/natureza.html" class="category-link">natureza</a>
-
-                                <a href="/post/guia-de-hospedagem-em-ubatuba-hoteis-pousadas-e-aluguel-de-casas.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Guia de Hospedagem em Ubatuba: Hotéis, Pousadas e Aluguel de Casas
-                                    </h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/sugestao-de-lugares-para-comer-em-ubatuba.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Sugestão de lugares para comer em Ubatuba" src="/img/posts/beach_view.jpg"
-                                    width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares-para-comer-em-ubatuba.html" class="category-link">lugares para comer
-                                    em
-                                    Ubatuba</a>
-
-                                <a href="/post/sugestao-de-lugares-para-comer-em-ubatuba.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Sugestão de lugares para comer em Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/guia-completo-para-caminhadas-e-trilhas-em-ubatuba.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Guia completo para caminhadas e trilhas em Ubatuba"
-                                    src="/img/posts/hikking_tropical.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/guia-completo-para-caminhadas-e-trilhas-em-ubatuba.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Guia completo para caminhadas e trilhas em Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/tainha.html" class="posts-image w-inline-block">
-
-                                <img alt="Tainha" src="/img/posts/tainha.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/alimentacao.html" class="category-link">Alimentação</a>
-
-                                <a href="/post/tainha.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Tainha</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/descubra-as-maravilhas-das-melhores-praias-de-ubatuba.html"
-                                class="posts-image w-inline-block">
-
-                                <img alt="Descubra as Maravilhas das Melhores Praias de Ubatuba"
-                                    src="/img/posts/DSC_0033.JPG" width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/lugares.html" class="category-link">Lugares</a>
-
-                                <a href="/post/descubra-as-maravilhas-das-melhores-praias-de-ubatuba.html"
-                                    class="post-title w-inline-block">
-                                    <h2 class="h3">Descubra as Maravilhas das Melhores Praias de Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/ilha-anchieta.html" class="posts-image w-inline-block">
-
-                                <img alt="Ilha Anchieta" src="/img/posts/profundezas.jpg" width="300" height="300"
-                                    style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/praias.html" class="category-link">Praias</a>
-
-                                <a href="/post/ilha-anchieta.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Ilha Anchieta</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div role="listitem" class="_4-collection-item w-dyn-item w-col w-col-3">
-                            <a href="/post/flats.html" class="posts-image w-inline-block">
-
-                                <img alt="Flats em Ubatuba" src="/img/posts/4351f409-2a57-4173-b363-c06a08199dc0.jpg"
-                                    width="300" height="300" style="object-fit: cover;" />
-
-                            </a>
-                            <div class="post-info-text">
-
-                                <a href="/c/ubatuba.html" class="category-link">Ubatuba</a>
-
-                                <a href="/post/flats.html" class="post-title w-inline-block">
-                                    <h2 class="h3">Flats em Ubatuba</h2>
-                                </a>
-                            </div>
-                        </div>
+                        <p>
+                            Ubatuba é um dos principais destinos do
+                            litoral norte de São Paulo e reúne praias,
+                            Mata Atlântica, ilhas, trilhas, cachoeiras,
+                            esportes de aventura e uma rica cultura
+                            caiçara.
+                        </p>
+
+                        <p>
+                            Neste guia você encontra informações para
+                            planejar sua viagem, conhecer diferentes
+                            regiões da cidade e descobrir o que fazer
+                            em Ubatuba de acordo com o seu perfil.
+                        </p>
+
+                        <p>
+                            Se você está procurando <strong>turismo em
+                            Ubatuba</strong>, comece pelas praias,
+                            conheça os principais passeios e depois
+                            explore os roteiros e atrações espalhados
+                            pelo município.
+                        </p>
 
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="footer">
-        <div class="div-block-2">
-            <div class="w-row">
-                <div class="column-2 w-col w-col-6">
-                    <div class="footer-small-text">All right reserved</div>
+                    <div class="highlight-box">
+
+                        <strong>
+                            Planeje sua viagem
+                        </strong>
+
+                        <p>
+                            Encontre praias, passeios, trilhas,
+                            hospedagens, restaurantes e roteiros
+                            para aproveitar melhor sua estadia.
+                        </p>
+
+                        <a class="read-more"
+                           href="/c/praias">
+                            Explorar Ubatuba →
+                        </a>
+
+                    </div>
+
                 </div>
-                <div class="column w-col w-col-6">
-                    <a target="_blank" href="https://sociap.io/" class="w-inline-block">
-                        <div class="footer-small-text">Made By Sociap</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIAS -->
+
+        <section class="categories" id="o-que-fazer">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        O que fazer em Ubatuba
+                    </h2>
+
+                    <p>
+                        Descubra as principais experiências para
+                        incluir no seu roteiro.
+                    </p>
+
+                </div>
+
+                <div class="category-grid">
+
+                    <article class="category-card">
+
+                        <div class="category-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80')">
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>Praias</h3>
+
+                            <p>
+                                Conheça as praias do litoral sul,
+                                centro e litoral norte de Ubatuba.
+                            </p>
+
+                            <a class="read-more"
+                               href="/c/praias">
+                                Ver praias →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="category-card">
+
+                        <div class="category-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80')">
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>Trilhas</h3>
+
+                            <p>
+                                Explore trilhas, Mata Atlântica,
+                                mirantes e caminhos pela natureza.
+                            </p>
+
+                            <a class="read-more"
+                               href="/c/lugares">
+                                Ver trilhas →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="category-card">
+
+                        <div class="category-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80')">
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>Cachoeiras</h3>
+
+                            <p>
+                                Descubra quedas d'água e lugares
+                                para entrar em contato com a natureza.
+                            </p>
+
+                            <a class="read-more"
+                               href="/c/lugares">
+                                Descobrir →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="category-card">
+
+                        <div class="category-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80')">
+                        </div>
+
+                        <div class="category-content">
+
+                            <h3>Ilhas e passeios</h3>
+
+                            <p>
+                                Conheça ilhas, passeios de barco,
+                                mergulho e outras experiências.
+                            </p>
+
+                            <a class="read-more"
+                               href="/c/lugares">
+                                Ver passeios →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRAIAS -->
+
+        <section class="beaches" id="praias">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Praias de Ubatuba
+                    </h2>
+
+                    <p>
+                        O litoral de Ubatuba oferece praias com
+                        diferentes características. Organize sua
+                        visita por região.
+                    </p>
+
+                </div>
+
+                <div class="region-grid">
+
+                    <div class="region">
+
+                        <h3>Litoral Norte</h3>
+
+                        <ul>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Itamambuca</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Félix</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Prumirim</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Puruba</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Ubatumirim</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Picinguaba</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Fazenda</a></li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="region">
+
+                        <h3>Região Central</h3>
+
+                        <ul>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Praia Grande</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Tenório</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Vermelha</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Itaguá</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Perequê-Açu</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Toninhas</a></li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="region">
+
+                        <h3>Litoral Sul</h3>
+
+                        <ul>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Lagoinha</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Lázaro</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Domingas Dias</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Fortaleza</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Maranduba</a></li>
+                            <li><a href="/post/todas-as-praias-de-ubatuba">Pulso</a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="all-beaches">
+
+                    <a href="/post/todas-as-praias-de-ubatuba"
+                       class="button button-primary">
+                        Ver todas as praias de Ubatuba
                     </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=656905ad09fa6cc663983961"
-        type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        crossorigin="anonymous"></script>
-    <script src="https://assets-global.website-files.com/656905ad09fa6cc663983961/js/webflow.5da01452a.js"
-        type="text/javascript"></script>
-</body>
 
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTEÚDOS -->
+
+        <section class="featured">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Guias para conhecer Ubatuba
+                    </h2>
+
+                    <p>
+                        Conteúdos para ajudar você a montar sua viagem.
+                    </p>
+
+                </div>
+
+                <div class="article-grid">
+
+
+                    <article class="article">
+
+                        <div class="article-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=80')">
+                        </div>
+
+                        <div class="article-content">
+
+                            <span class="article-tag">
+                                Roteiro
+                            </span>
+
+                            <h3>
+                                Roteiro de fim de semana em Ubatuba
+                            </h3>
+
+                            <p>
+                                Veja como organizar dois dias de
+                                praias, passeios, natureza e gastronomia.
+                            </p>
+
+                            <a class="read-more"
+                               href="/post/roteiro-de-fim-de-semana-em-ubatuba-o-que-fazer-e-onde-ir-em-dois-dias">
+                                Ler roteiro →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="article">
+
+                        <div class="article-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=80')">
+                        </div>
+
+                        <div class="article-content">
+
+                            <span class="article-tag">
+                                Natureza
+                            </span>
+
+                            <h3>
+                                Trilhas e natureza em Ubatuba
+                            </h3>
+
+                            <p>
+                                Conheça trilhas e experiências para
+                                explorar a Mata Atlântica.
+                            </p>
+
+                            <a class="read-more"
+                               href="/c/lugares">
+                                Explorar →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="article">
+
+                        <div class="article-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80')">
+                        </div>
+
+                        <div class="article-content">
+
+                            <span class="article-tag">
+                                Hospedagem
+                            </span>
+
+                            <h3>
+                                Onde ficar em Ubatuba
+                            </h3>
+
+                            <p>
+                                Conheça opções de hospedagem e escolha
+                                a região mais adequada para sua viagem.
+                            </p>
+
+                            <a class="read-more"
+                               href="/post/guia-de-hospedagem-em-ubatuba-hoteis-pousadas-e-aluguel-de-casas">
+                                Ver guia →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="article">
+
+                        <div class="article-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=80')">
+                        </div>
+
+                        <div class="article-content">
+
+                            <span class="article-tag">
+                                Aventura
+                            </span>
+
+                            <h3>
+                                Trilha das 7 Praias
+                            </h3>
+
+                            <p>
+                                Uma das experiências de natureza que
+                                podem fazer parte de um roteiro por Ubatuba.
+                            </p>
+
+                            <a class="read-more"
+                               href="/post/trilha-das-sete-praias">
+                                Conhecer trilha →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="article">
+
+                        <div class="article-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80')">
+                        </div>
+
+                        <div class="article-content">
+
+                            <span class="article-tag">
+                                Passeios
+                            </span>
+
+                            <h3>
+                                Passeios de barco
+                            </h3>
+
+                            <p>
+                                Descubra experiências pelo litoral,
+                                ilhas e praias de Ubatuba.
+                            </p>
+
+                            <a class="read-more"
+                               href="/c/lugares">
+                                Ver passeios →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="article">
+
+                        <div class="article-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=1000&q=80')">
+                        </div>
+
+                        <div class="article-content">
+
+                            <span class="article-tag">
+                                Família
+                            </span>
+
+                            <h3>
+                                Ubatuba com crianças
+                            </h3>
+
+                            <p>
+                                Ideias para aproveitar Ubatuba
+                                com crianças e família.
+                            </p>
+
+                            <a class="read-more"
+                               href="/post/dicas-para-viajar-para-ubatuba-com-criancas">
+                                Ver dicas →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ROTEIROS -->
+
+        <section class="routes" id="roteiros">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Roteiros em Ubatuba
+                    </h2>
+
+                    <p>
+                        Escolha quanto tempo você tem e comece a
+                        planejar sua viagem.
+                    </p>
+
+                </div>
+
+                <div class="route-grid">
+
+                    <a href="#" class="route">
+                        <strong>1 dia</strong>
+                        <h3>Ubatuba em um dia</h3>
+                        <p>
+                            Uma programação compacta para conhecer
+                            alguns dos principais atrativos.
+                        </p>
+                    </a>
+
+                    <a href="/post/roteiro-de-fim-de-semana-em-ubatuba-o-que-fazer-e-onde-ir-em-dois-dias"
+                       class="route">
+                        <strong>2 dias</strong>
+                        <h3>Fim de semana</h3>
+                        <p>
+                            Praias, natureza, gastronomia e passeios.
+                        </p>
+                    </a>
+
+                    <a href="#" class="route">
+                        <strong>3 dias</strong>
+                        <h3>Ubatuba completo</h3>
+                        <p>
+                            Combine praias, trilhas e experiências.
+                        </p>
+                    </a>
+
+                    <a href="#" class="route">
+                        <strong>5 dias</strong>
+                        <h3>Uma semana de viagem</h3>
+                        <p>
+                            Mais tempo para explorar diferentes
+                            regiões de Ubatuba.
+                        </p>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MAPA -->
+
+        <section class="map-section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Explore Ubatuba no mapa
+                    </h2>
+
+                    <p>
+                        Organize sua viagem conhecendo as diferentes
+                        regiões e praias da cidade.
+                    </p>
+
+                </div>
+
+                <div class="map-box">
+
+                    <div class="map-box-content">
+
+                        <h3>
+                            Mapa turístico de Ubatuba
+                        </h3>
+
+                        <p>
+                            Esta área pode receber futuramente um
+                            mapa interativo com praias, atrações,
+                            restaurantes, hotéis, trilhas e pontos
+                            turísticos.
+                        </p>
+
+                        <a href="/post/todas-as-praias-de-ubatuba"
+                           class="button button-primary">
+                            Explorar praias
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOSPEDAGEM / GASTRONOMIA -->
+
+        <section>
+
+            <div class="container">
+
+                <div class="two-columns">
+
+                    <div class="info-card" id="hospedagem">
+
+                        <h3>
+                            Onde ficar em Ubatuba
+                        </h3>
+
+                        <p>
+                            Escolha a região de hospedagem de acordo
+                            com o tipo de viagem que você pretende fazer.
+                        </p>
+
+                        <ul>
+                            <li>Hotéis</li>
+                            <li>Pousadas</li>
+                            <li>Casas de temporada</li>
+                            <li>Flats e apartamentos</li>
+                            <li>Hospedagens próximas às praias</li>
+                        </ul>
+
+                        <a href="/post/guia-de-hospedagem-em-ubatuba-hoteis-pousadas-e-aluguel-de-casas"
+                           class="read-more">
+                            Ver guia de hospedagem →
+                        </a>
+
+                    </div>
+
+
+                    <div class="info-card" id="gastronomia">
+
+                        <h3>
+                            Gastronomia em Ubatuba
+                        </h3>
+
+                        <p>
+                            A gastronomia faz parte da experiência
+                            de conhecer o litoral e a cultura caiçara.
+                        </p>
+
+                        <ul>
+                            <li>Peixes e frutos do mar</li>
+                            <li>Culinária caiçara</li>
+                            <li>Restaurantes</li>
+                            <li>Comida regional</li>
+                            <li>Opções para diferentes estilos</li>
+                        </ul>
+
+                        <a href="/c/lugares"
+                           class="read-more">
+                            Descobrir lugares para comer →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FAQ -->
+
+        <section class="faq" id="faq">
+
+            <div class="container">
+
+                <div class="section-header"
+                     style="margin-left:auto;margin-right:auto;text-align:center;">
+
+                    <h2>
+                        Perguntas frequentes sobre Ubatuba
+                    </h2>
+
+                    <p>
+                        Algumas das dúvidas mais comuns de quem
+                        está planejando uma viagem.
+                    </p>
+
+                </div>
+
+                <div class="faq-list">
+
+                    <details>
+
+                        <summary>
+                            O que fazer em Ubatuba?
+                        </summary>
+
+                        <p>
+                            Ubatuba oferece praias, trilhas,
+                            cachoeiras, passeios de barco, mergulho,
+                            surf, ecoturismo, gastronomia e atrações
+                            culturais.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            Quais são as principais praias de Ubatuba?
+                        </summary>
+
+                        <p>
+                            Ubatuba possui muitas praias com
+                            características diferentes. Entre as
+                            conhecidas estão Praia Grande, Itamambuca,
+                            Félix, Lagoinha, Fortaleza, Tenório e
+                            Praia da Fazenda.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            Onde ficar em Ubatuba?
+                        </summary>
+
+                        <p>
+                            A escolha depende do perfil da viagem.
+                            Regiões como o centro e Itaguá oferecem
+                            acesso a diversos serviços, enquanto
+                            outras áreas podem ser interessantes para
+                            quem deseja ficar próximo às praias e à
+                            natureza.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            O que fazer em Ubatuba em dois dias?
+                        </summary>
+
+                        <p>
+                            Um roteiro de dois dias pode combinar
+                            praias, passeios, gastronomia e uma
+                            experiência de natureza. Consulte nosso
+                            roteiro de fim de semana para uma sugestão
+                            de programação.
+                        </p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            Ubatuba é um destino para ecoturismo?
+                        </summary>
+
+                        <p>
+                            Sim. Além das praias, a região possui
+                            Mata Atlântica, trilhas, cachoeiras,
+                            áreas protegidas e diversas atividades
+                            relacionadas à natureza.
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="cta">
+
+            <div class="container">
+
+                <h2>
+                    Comece a explorar Ubatuba
+                </h2>
+
+                <p>
+                    Encontre praias, passeios, trilhas, hospedagem,
+                    gastronomia e roteiros para planejar sua viagem.
+                </p>
+
+                <a href="/c/praias"
+                   class="button button-primary">
+                    Explorar Ubatuba
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <h3>
+                        TurismoUbatuba
+                    </h3>
+
+                    <p>
+                        Um guia para descobrir praias, natureza,
+                        passeios, gastronomia e experiências
+                        em Ubatuba.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Praias
+                    </h3>
+
+                    <ul>
+                        <li>
+                            <a href="/c/praias">
+                                Todas as praias
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/post/todas-as-praias-de-ubatuba">
+                                Guia de praias
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        O que fazer
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="/c/lugares">
+                                Passeios
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/post/trilha-das-sete-praias">
+                                Trilhas
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/c/lugares">
+                                Natureza
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Planeje
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="/post/guia-de-hospedagem-em-ubatuba-hoteis-pousadas-e-aluguel-de-casas">
+                                Hospedagem
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/post/roteiro-de-fim-de-semana-em-ubatuba-o-que-fazer-e-onde-ir-em-dois-dias">
+                                Roteiros
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/post/dicas-para-viajar-para-ubatuba-com-criancas">
+                                Viajar com crianças
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+
+                © 2026 TurismoUbatuba.com.br —
+                Guia de Turismo em Ubatuba
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- MENU MOBILE -->
+
+    <script>
+
+        const menuButton =
+            document.querySelector('.menu-button');
+
+        const nav =
+            document.querySelector('nav');
+
+        menuButton.addEventListener('click', () => {
+
+            if (nav.style.display === 'flex') {
+
+                nav.style.display = '';
+
+            } else {
+
+                nav.style.display = 'flex';
+                nav.style.position = 'absolute';
+                nav.style.top = '65px';
+                nav.style.left = '0';
+                nav.style.right = '0';
+                nav.style.background = '#fff';
+                nav.style.padding = '20px';
+                nav.style.flexDirection = 'column';
+                nav.style.alignItems = 'flex-start';
+                nav.style.boxShadow =
+                    '0 8px 20px rgba(0,0,0,.12)';
+
+            }
+
+        });
+
+    </script>
+
+</body>
 </html>
+```
+
