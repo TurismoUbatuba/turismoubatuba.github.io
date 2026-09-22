@@ -301,6 +301,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://turismoubatuba.com.br/post/roteiro-de-1-dia-em-ubatuba-o-que-fazer-e-onde-ir</loc>
+    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://turismoubatuba.com.br/post/sugestao-de-lugares-para-comer-em-ubatuba.html</loc>
     <priority>0.6</priority>
     <changefreq>weekly</changefreq>
