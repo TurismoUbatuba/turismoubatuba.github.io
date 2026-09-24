@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://turismoubatuba.com.br/</loc>
     <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/praias.html</loc>
+    <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -103,6 +108,26 @@
   <url>
     <loc>https://turismoubatuba.com.br/encanador/contato.html</loc>
     <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/pintor/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/ilhas/ilhas-das-couves.html</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/praias/praia-grande.html</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://turismoubatuba.com.br/praias/praia-das-galhetas.html</loc>
+    <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -256,6 +281,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://turismoubatuba.com.br/post/praia-da-fazenda.html</loc>
+    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://turismoubatuba.com.br/post/praia-da-lagoinha.html</loc>
     <priority>0.6</priority>
     <changefreq>weekly</changefreq>
@@ -301,7 +331,7 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://turismoubatuba.com.br/post/roteiro-de-1-dia-em-ubatuba-o-que-fazer-e-onde-ir</loc>
+    <loc>https://turismoubatuba.com.br/post/roteiro-de-1-dia-em-ubatuba-o-que-fazer-e-onde-ir.html</loc>
     <priority>0.6</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -500,4 +530,4 @@
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
   </url>
-</sitemapindex>
+</urlset>
