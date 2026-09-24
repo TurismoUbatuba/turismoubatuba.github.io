@@ -48,14 +48,14 @@ function updateAnunciantes(jsonName) {
         });
 };
 
-function renderSponsors(jsonName, containerId) {
+function renderSponsors(jsonName, jsonLocal, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
     var inactive = function () {
         var section = container.closest('section');
         if (section) section.style.display = 'none';
     };
-    fetch('/anunciantes/' + jsonName + '.json')
+    fetch('/anunciantes/' + jsonName + '/' + jsonLocal + '.json')
         .then(function (res) { return res.json(); })
         .then(function (data) {
             const anunciantes = data && data.sponsor;
