@@ -401,6 +401,13 @@ section {
     background-position: center;
 }
 
+.article-image.ad-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f4f7f6;
+}
+
 .article-content {
     padding: 22px;
 }
