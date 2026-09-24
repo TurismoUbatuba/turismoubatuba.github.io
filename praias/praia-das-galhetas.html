@@ -713,26 +713,18 @@
     </script>
 
     <!-- ANUNCIANTE DINÂMICO -->
-
     <script>
-
         (function () {
-
             const sponsorEl = document.getElementById('sponsor');
-
             if (!sponsorEl) return;
-
-            fetch('/anunciantes/praias-das-galhetas.json')
+            fetch('/anunciantes/litoral-sul.json')
                 .then(function (res) { return res.json(); })
                 .then(function (data) {
-
                     const anunciantes = data && data.sponsor;
-
                     if (!Array.isArray(anunciantes) || anunciantes.length === 0) {
                         sponsorEl.style.display = 'none';
                         return;
                     }
-
                     const ad =
                         anunciantes[Math.floor(
                             Math.random() * anunciantes.length
@@ -763,18 +755,14 @@
                     if (ad.link && link) {
                         link.href = ad.link;
                     }
-
                     if (ad['link-text'] && link) {
                         link.textContent = ad['link-text'];
                     }
-
                 })
                 .catch(function () {
                     sponsorEl.style.display = 'none';
                 });
-
         })();
-
     </script>
 
 </body>
