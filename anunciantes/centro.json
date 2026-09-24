@@ -5,14 +5,14 @@
             "link": "https://ubatubapraiahotel.com/",
             "link-text": "Conheça",
             "descricao": "O Ubatuba Praia Hotel fica situado na orla do Itaguá em Ubatuba de frente a praia.",
-            "imagem": "/static/img/anunciantes/uph.png"
+            "imagem": "/img/anunciantes/uph.png"
         },
         {
             "nome": "Ubatuba Praia Grande Hotel",
             "link": "https://www.ubatubapraiagrandehotel.com.br/",
             "link-text": "Conheça",
             "descricao": "De frente para a Praia Grande, este hotel discreto com vista para o Oceano Atlântico Sul fica a 4 km das exposições sobre a vida marinha do Aquário de Ubatuba.",
-            "imagem": "/static/img/anunciantes/upg.png"
+            "imagem": "/img/anunciantes/upg.png"
         },
         {
             "nome": "Ubatuba Itaguá Hotel",
