@@ -59,6 +59,25 @@
         .intro-text .highlight-box {
             margin-top: 25px;
         }
+
+        .map-container {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin: 25px 0 10px;
+            line-height: 0;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 380px;
+            border: 0;
+            display: block;
+        }
+
+        .map-link {
+            margin-top: 14px;
+        }
     </style>
 
     <!--
@@ -328,6 +347,27 @@
                             </li>
                         </ul>
 
+                        <div class="map-container">
+
+                            <iframe
+                                src="https://www.google.com/maps?q=-23.5819,-45.2769&z=14&hl=pt-BR&output=embed"
+                                title="Mapa com a localização da Praia das Galhetas"
+                                loading="lazy"
+                                allowfullscreen
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+
+                        </div>
+
+                        <p class="map-link">
+                            <a href="https://www.google.com/maps/search/?api=1&query=-23.5819,-45.2769"
+                               target="_blank"
+                               rel="noopener"
+                               class="read-more">
+                                Abrir no Google Maps →
+                            </a>
+                        </p>
+
                         <h3>
                             O que esperar da Galhetas
                         </h3>
@@ -524,6 +564,36 @@
                         </div>
 
                     </article>
+
+
+                    <div class="collection-item-advertising">
+
+                        <div class="div-block-3">
+
+                            <img src="/static/img/anunciantes/uph.png"
+                                 loading="lazy"
+                                 alt="Ubatuba Praia Hotel"
+                                 width="233"
+                                 class="image-2">
+
+                            <div class="advertiser_title">
+                                Ubatuba Praia Hotel
+                            </div>
+
+                            <div class="advertiser_subtitle">
+                                O Ubatuba Praia Hotel fica situado na orla
+                                do Itaguá em Ubatuba de frente a praia.
+                            </div>
+
+                            <a href="https://ubatubapraiahotel.com/"
+                               target="_blank"
+                               class="button-2">
+                                Conheça
+                            </a>
+
+                        </div>
+
+                    </div>
 
 
                     <article class="article">
