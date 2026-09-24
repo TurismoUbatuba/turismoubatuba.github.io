@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Praias de Ubatuba: Todas as Praias por Região</title>
+
+    <meta name="description"
+          content="Todas as praias de Ubatuba: organize a visita por região, da Praia Grande às praias selvagens do norte, do centro às ilhas e praias isoladas do litoral sul.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="https://turismoubatuba.com.br/praias.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Praias de Ubatuba — Todas as Praias por Região">
+    <meta property="og:description" content="Todas as praias de Ubatuba organizadas por regiões: litoral sul, centro, litoral norte e ilhas.">
+    <meta property="og:url" content="https://turismoubatuba.com.br/praias.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Praias de Ubatuba">
+    <meta name="twitter:description"
+          content="Todas as praias de Ubatuba organizadas por região.">
+
+    <style>
+
+        :root {
+            --primary: #087f8c;
+            --primary-dark: #05636d;
+            --secondary: #f2a900;
+            --green: #3c8d40;
+            --dark: #1e2930;
+            --text: #34454c;
+            --light: #f5f7f7;
+            --white: #ffffff;
+            --border: #e4e8e9;
+            --shadow: 0 8px 25px rgba(0,0,0,.08);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 32px));
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .topbar {
+            background: var(--primary);
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .topbar-inner {
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .topbar a {
+            opacity: .95;
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -.5px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a.active {
+            color: var(--primary);
+        }
+
+        .menu-button {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0, 60, 70, .86),
+                    rgba(0, 100, 110, .45)
+                ),
+                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85")
+                center / cover;
+        }
+
+        .hero-content {
+            max-width: 760px;
+            padding: 70px 0;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 13px;
+            background: rgba(255,255,255,.16);
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.05;
+            margin: 0 0 22px;
+            letter-spacing: -1.5px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 0 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 22px;
+            border-radius: 7px;
+            font-weight: 700;
+            transition: .2s;
+        }
+
+        .button-primary {
+            background: var(--secondary);
+            color: #202020;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-light {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        /* =========================
+           QUICK NAV
+        ========================= */
+
+        .quick-nav {
+            background: #fff;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 5;
+        }
+
+        .quick-nav-inner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .quick-item {
+            padding: 22px 10px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--dark);
+        }
+
+        .quick-item:last-child {
+            border-right: 0;
+        }
+
+        .quick-icon {
+            display: block;
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .quick-item:hover {
+            color: var(--primary);
+            background: #f8fbfb;
+        }
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-header {
+            max-width: 760px;
+            margin-bottom: 35px;
+        }
+
+        .section-header h2 {
+            color: var(--dark);
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.2;
+            margin: 0 0 14px;
+        }
+
+        .section-header p {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        .intro {
+            background: #fff;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.4fr .8fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .intro-text p {
+            font-size: 17px;
+        }
+
+        .highlight-box {
+            background: var(--light);
+            border-left: 5px solid var(--primary);
+            padding: 25px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .highlight-box strong {
+            display: block;
+            color: var(--dark);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           PRAIAS
+        ========================= */
+
+        .beaches {
+            background: var(--light);
+        }
+
+        .beach-section {
+            margin-bottom: 55px;
+        }
+
+        .beach-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .beach-region-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .beach-region-head h3 {
+            color: var(--primary);
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .beach-count {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            background: rgba(8,127,140,.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .beach-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .beach {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: .2s;
+        }
+
+        .beach::before {
+            content: "🏖️";
+            font-size: 14px;
+        }
+
+        .beach:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .all-beaches {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        /* =========================
+           DESTAQUES
+        ========================= */
+
+        .featured {
+            background: #fff;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .article {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: .2s;
+        }
+
+        .article:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .article-image {
+            height: 190px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .article-content {
+            padding: 22px;
+        }
+
+        .article-tag {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .article h3 {
+            color: var(--dark);
+            line-height: 1.3;
+            margin: 7px 0 10px;
+            font-size: 21px;
+        }
+
+        .article p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            padding: 75px 0;
+            text-align: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
+            color: #fff;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin: 0 0 15px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            font-size: 18px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #182329;
+            color: #cbd5d8;
+            padding: 55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.1);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .quick-nav-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quick-item:nth-child(2) {
+                border-right: 0;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .beach-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: min(100% - 24px, 1180px);
+            }
+
+            .topbar-inner {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .topbar-inner span:last-child {
+                display: none;
+            }
+
+            .hero {
+                min-height: 480px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .quick-nav-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quick-item {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .beach-grid,
+            .article-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-inner {
+                min-height: 65px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+        }
+
+    </style>
+
+    <!--
+        SCHEMA.ORG
+        ==============================
+        Estrutura de dados para ajudar
+        o Google a compreender a página.
+    -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Praias de Ubatuba",
+      "url": "https://turismoubatuba.com.br/praias.html",
+      "description": "Todas as praias de Ubatuba organizadas por regiões: litoral sul, centro, litoral norte e ilhas.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "TurismoUbatuba.com.br",
+        "url": "https://turismoubatuba.com.br/"
+      },
+      "about": {
+        "@type": "City",
+        "name": "Ubatuba",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ubatuba",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        }
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://turismoubatuba.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Praias",
+          "item": "https://turismoubatuba.com.br/praias.html"
+        }
+      ]
+    }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <span>Seu guia para conhecer Ubatuba</span>
+            <span>Praias • Natureza • Passeios • Gastronomia</span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="container header-inner">
+
+            <a href="/" class="logo">
+                <img src="https://turismoubatuba.com.br/static/img/logo.png" />
+            </a>
+
+            <nav>
+                <a href="/praias.html" class="active">Praias</a>
+                <a href="/c/lugares">O que fazer</a>
+                <a href="/c/parque-estadual-da-serra-do-mar">Natureza</a>
+                <a href="/c/hospedagem">Hospedagem</a>
+                <a href="/c/lugares">Gastronomia</a>
+                <a href="/post/roteiro-de-fim-de-semana-em-ubatuba-o-que-fazer-e-onde-ir-em-dois-dias">
+                    Roteiros
+                </a>
+            </nav>
+
+            <button class="menu-button" aria-label="Abrir menu">
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        Praias de Ubatuba
+                    </span>
+
+                    <h1>
+                        Todas as praias, por região
+                    </h1>
+
+                    <p>
+                        Da Praia Grande às praias selvagens do norte,
+                        passando pelo centro e pelas ilhas: organize sua
+                        visita conhecendo as melhores praias de Ubatuba.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#litoral-sul"
+                           class="button button-primary">
+                            Litoral Sul
+                        </a>
+
+                        <a href="#litoral-norte"
+                           class="button button-light">
+                            Litoral Norte
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK NAV -->
+
+        <div class="quick-nav">
+
+            <div class="container quick-nav-inner">
+
+                <a href="#litoral-sul" class="quick-item">
+                    <span class="quick-icon">🌊</span>
+                    Litoral Sul
+                </a>
+
+                <a href="#centro" class="quick-item">
+                    <span class="quick-icon">🏖️</span>
+                    Centro
+                </a>
+
+                <a href="#litoral-norte" class="quick-item">
+                    <span class="quick-icon">🌿</span>
+                    Litoral Norte
+                </a>
+
+                <a href="#ilhas" class="quick-item">
+                    <span class="quick-icon">🏝️</span>
+                    Ilhas
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- INTRO -->
+
+        <section class="intro">
+
+            <div class="container">
+
+                <div class="intro-grid">
+
+                    <div class="intro-text">
+
+                        <div class="section-header">
+
+                            <h2>
+                                Guia de praias de Ubatuba
+                            </h2>
+
+                        </div>
+
+                        <p>
+                            Ubatuba é o município com mais praias do
+                            litoral paulista, com mais de 100 praias
+                            ao longo de aproximadamente 106 km de costa
+                            cercada pela Mata Atlântica.
+                        </p>
+
+                        <p>
+                            Para facilitar o planejamento, separamos as
+                            praias por regiões: litoral sul, região
+                            central, litoral norte e ilhas. Cada região
+                            tem características próprias, de enseadas
+                            tranquilas a praias de surf e pontos de
+                            natureza mais preservada.
+                        </p>
+
+                        <p>
+                            Se você está procurando <strong>praias em
+                            Ubatuba</strong>, comece navegando pelas
+                            regiões abaixo e escolha as que combinam
+                            com o seu roteiro.
+                        </p>
+
+                    </div>
+
+                    <div class="highlight-box">
+
+                        <strong>
+                            Mais de 100 praias
+                        </strong>
+
+                        <p>
+                            Do efervescente centro urbano às praias
+                            selvagens e ilhas preservadas, existe uma
+                            praia de Ubatuba para cada perfil de
+                            viajante.
+                        </p>
+
+                        <a class="read-more"
+                           href="/post/todas-as-praias-de-ubatuba">
+                            Ver guia completo →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRAIAS -->
+
+        <section class="beaches">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Lista de praias de Ubatuba
+                    </h2>
+
+                    <p>
+                        Todas as praias de Ubatuba organizadas por
+                        região. Clique no nome para saber mais.
+                    </p>
+
+                </div>
+
+
+                <!-- LITORAL SUL -->
+
+                <div class="beach-section" id="litoral-sul">
+
+                    <div class="beach-region-head">
+
+                        <h3>Litoral Sul</h3>
+
+                        <span class="beach-count">+50 praias</span>
+
+                    </div>
+
+                    <div class="beach-grid">
+
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia das Galhetas</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Figueira</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Porta</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Ponta Aguda</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Lagoa</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Simão</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Frade</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Raposa</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Cacandoquinha</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Caccandoca</a>
+                        <a href="/post/praia-do-pulso-em-ubatuba---um-paraiso-escondido-na-costa-paulista" class="beach">Praia do Pulso</a>
+                        <a href="/post/praia-de-maranduba" class="beach">Praia de Maranduba</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Sapê</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Pontal</a>
+                        <a href="/post/praia-da-lagoinha" class="beach">Praia da Lagoinha</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Oeste</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Peres</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Bonete</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Grande Bonete</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Cedro do Sul</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Pontal da Fortaleza</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Fortaleza</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Brava da Fortaleza</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Costa</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Moçó</a>
+                        <a href="/post/praia-da-vermelha-do-sul-a-praia-mais-bonita-de-ubatuba" class="beach">Praia Vermelha do Sul</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Brava do Sul</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Dura</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Barra</a>
+                        <a href="/post/praia-da-palmira" class="beach">Praia da Palmira</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Domingas Dias</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Lázaro</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Sununga</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia das Sete Fontes</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Flamenguinho</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Flamengo</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Dionísia</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Ribeira</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Lamberto</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Perequê-Mirim</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Santa Rita</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Enseada</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Prainha da Enseada</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia dos Tupinambás</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia de Fora</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Tapiá</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia de Itapecerica</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Godói</a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CENTRO -->
+
+                <div class="beach-section" id="centro">
+
+                    <div class="beach-region-head">
+
+                        <h3>Região Central</h3>
+
+                        <span class="beach-count">12 praias</span>
+
+                    </div>
+
+                    <div class="beach-grid">
+
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia das Toninhas</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Grande</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Tenório</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Vermelha</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Cedro</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Flávio</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Piscininha do Caizão</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Itaguá</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia de Iperoig</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Prainha do Matarazzo</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Perequê-Açu</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Barra Seca</a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LITORAL NORTE -->
+
+                <div class="beach-section" id="litoral-norte">
+
+                    <div class="beach-region-head">
+
+                        <h3>Litoral Norte</h3>
+
+                        <span class="beach-count">30 praias</span>
+
+                    </div>
+
+                    <div class="beach-grid">
+
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Vermelha do Norte</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Alto</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia de Itamambuca</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Brava de Itamambuca</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Português (Félix)</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Félix</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia das Conchas</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Prumirim</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Canto do Itaipu</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Léo</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Izidoro</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Meio</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Puruba</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Surutuba</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Justa</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Ubatumirim</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Estaleiro do Padre</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Estaleiro</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia do Engenho</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Lança da Cavala</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Prainha do Costão</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Brava da Almada</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Taquara</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Fazenda</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia das Bicas</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia de Picinguaba</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia Brava do Camburi</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Prainha do Camburi</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia de Camburi</a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ILHAS -->
+
+                <div class="beach-section" id="ilhas">
+
+                    <div class="beach-region-head">
+
+                        <h3>Ilhas e praias de ilhas</h3>
+
+                        <span class="beach-count">14 ilhas</span>
+
+                    </div>
+
+                    <div class="beach-grid">
+
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Ilha das Couves</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia de Fora (Ilha Anchieta)</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Ilha Comprida</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Ilha da Rapada</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Ilhas Paraíso do Norte</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Praia da Ilha dos Porcos</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Ilha do Prumirim</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Ilha Redonda</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Ilha das Cabras</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Ilha das Palmas</a>
+                        <a href="/post/ilha-anchieta" class="beach">Parque Estadual da Ilha Anchieta</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Ilha do Mar Virado</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Ilha do Tamanduá</a>
+                        <a href="/post/todas-as-praias-de-ubatuba" class="beach">Ilha da Cocanha</a>
+
+                    </div>
+
+                </div>
+
+                <div class="all-beaches">
+
+                    <a href="/post/todas-as-praias-de-ubatuba"
+                       class="button button-primary">
+                        Ver todas as praias de Ubatuba
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DESTAQUES -->
+
+        <section class="featured">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Praias em destaque
+                    </h2>
+
+                    <p>
+                        Algumas das praias mais conhecidas e visitadas
+                        de Ubatuba.
+                    </p>
+
+                </div>
+
+                <div class="article-grid">
+
+                    <article class="article">
+
+                        <div class="article-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80')">
+                        </div>
+
+                        <div class="article-content">
+
+                            <span class="article-tag">
+                                Litoral Sul
+                            </span>
+
+                            <h3>
+                                Vermelha do Sul
+                            </h3>
+
+                            <p>
+                                Considerada uma das praias mais bonitas
+                                de Ubatuba, com mar de águas claras.
+                            </p>
+
+                            <a class="read-more"
+                               href="/post/praia-da-vermelha-do-sul-a-praia-mais-bonita-de-ubatuba">
+                                Conhecer a praia →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="article">
+
+                        <div class="article-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=80')">
+                        </div>
+
+                        <div class="article-content">
+
+                            <span class="article-tag">
+                                Centro
+                            </span>
+
+                            <h3>
+                                Praia Grande
+                            </h3>
+
+                            <p>
+                                Uma das praias mais urbanas e movimentadas,
+                                com boa estrutura de serviços.
+                            </p>
+
+                            <a class="read-more"
+                               href="/post/todas-as-praias-de-ubatuba">
+                                Ver na lista →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="article">
+
+                        <div class="article-image"
+                             style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=80')">
+                        </div>
+
+                        <div class="article-content">
+
+                            <span class="article-tag">
+                                Litoral Norte
+                            </span>
+
+                            <h3>
+                                Itamambuca
+                            </h3>
+
+                            <p>
+                                Referência do surf no litoral norte,
+                                cercada por preservada vegetação.
+                            </p>
+
+                            <a class="read-more"
+                               href="/post/todas-as-praias-de-ubatuba">
+                                Ver na lista →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="cta">
+
+            <div class="container">
+
+                <h2>
+                    Planeje seus dias de praia
+                </h2>
+
+                <p>
+                    Escolha as praias de Ubatuba que combinam com seu
+                    roteiro, conheça os detalhes de cada região e
+                    monte sua programação.
+                </p>
+
+                <a href="/post/todas-as-praias-de-ubatuba"
+                   class="button button-primary">
+                    Ler o guia completo de praias
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <h3>
+                        TurismoUbatuba
+                    </h3>
+
+                    <p>
+                        Um guia para descobrir praias, natureza,
+                        passeios, gastronomia e experiências
+                        em Ubatuba.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Praias
+                    </h3>
+
+                    <ul>
+                        <li>
+                            <a href="/praias.html">
+                                Todas as praias
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/post/todas-as-praias-de-ubatuba">
+                                Guia de praias
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/post/mapa-das-praias-de-ubatuba">
+                                Mapa das praias
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        O que fazer
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="/c/lugares">
+                                Passeios
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/post/trilha-das-sete-praias">
+                                Trilhas
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/c/lugares">
+                                Natureza
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Planeje
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="/post/guia-de-hospedagem-em-ubatuba-hoteis-pousadas-e-aluguel-de-casas">
+                                Hospedagem
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/post/roteiro-de-fim-de-semana-em-ubatuba-o-que-fazer-e-onde-ir-em-dois-dias">
+                                Roteiros
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/post/dicas-para-viajar-para-ubatuba-com-criancas">
+                                Viajar com crianças
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+
+                © 2026 TurismoUbatuba.com.br —
+                Guia de Turismo em Ubatuba
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- MENU MOBILE -->
+
+    <script>
+
+        const menuButton =
+            document.querySelector('.menu-button');
+
+        const nav =
+            document.querySelector('nav');
+
+        menuButton.addEventListener('click', () => {
+
+            if (nav.style.display === 'flex') {
+
+                nav.style.display = '';
+
+            } else {
+
+                nav.style.display = 'flex';
+                nav.style.position = 'absolute';
+                nav.style.top = '65px';
+                nav.style.left = '0';
+                nav.style.right = '0';
+                nav.style.background = '#fff';
+                nav.style.padding = '20px';
+                nav.style.flexDirection = 'column';
+                nav.style.alignItems = 'flex-start';
+                nav.style.boxShadow =
+                    '0 8px 20px rgba(0,0,0,.12)';
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
