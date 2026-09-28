@@ -213,6 +213,10 @@ nav a.active {
     grid-template-columns: repeat(7, 1fr);
 }
 
+.quick-nav-inner.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
 .quick-item {
     padding: 22px 10px;
     text-align: center;
@@ -502,8 +506,247 @@ section {
 }
 
 /* =========================
+    GASTRONOMIA
+    ========================= */
+
+.gastro {
+    background: var(--light);
+}
+
+.gastro-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 9px 16px;
+    border: 1px solid var(--border);
+    background: #fff;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark);
+    cursor: pointer;
+    transition: .2s;
+    font-family: inherit;
+}
+
+.filter-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.gastro-search {
+    padding: 11px 18px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    font-size: 14px;
+    font-family: inherit;
+    min-width: 260px;
+    color: var(--dark);
+    background: #fff;
+}
+
+.gastro-search:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.restaurant {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+}
+
+.restaurant:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.restaurant-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.restaurant-rating {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,.65);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.restaurant-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.restaurant-region {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--primary);
+    background: rgba(8,127,140,.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    align-self: flex-start;
+}
+
+.restaurant h3 {
+    color: var(--dark);
+    font-size: 19px;
+    line-height: 1.3;
+    margin: 10px 0 8px;
+}
+
+.restaurant-meta {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0 0 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+}
+
+.restaurant p {
+    font-size: 14px;
+    margin: 0 0 15px;
+}
+
+.restaurant-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: auto 0 16px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+}
+
+.restaurant-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--dark);
+    background: var(--light);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.restaurant-price {
+    color: var(--secondary);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 45px;
+}
+
+.page-btn {
+    min-width: 42px;
+    height: 42px;
+    padding: 0 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark);
+    cursor: pointer;
+    transition: .2s;
+    font-family: inherit;
+}
+
+.page-btn:hover:not(:disabled) {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.page-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.page-btn:disabled {
+    opacity: .4;
+    cursor: default;
+}
+
+.page-ellipsis {
+    color: var(--text);
+    padding: 0 4px;
+    font-weight: 700;
+}
+
+.gastro-status {
+    text-align: center;
+    color: var(--text);
+    font-size: 15px;
+    margin: 0 0 25px;
+}
+
+.gastro-empty {
+    background: #fff;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 55px 25px;
+    text-align: center;
+    color: var(--text);
+}
+
+.gastro-loading {
+    text-align: center;
+    color: var(--text);
+    padding: 40px 0;
+}
+
+/* =========================
     CTA
-========================= */
+    ========================= */
 
 .cta {
     padding: 75px 0;
@@ -601,6 +844,14 @@ footer a:hover {
         grid-template-columns: 1fr 1fr;
     }
 
+    .restaurant-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gastro-search {
+        min-width: 100%;
+    }
+
     .article-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -653,6 +904,27 @@ footer a:hover {
     .article-grid,
     .footer-grid {
         grid-template-columns: 1fr;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gastro-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 5px;
+    }
+
+    .page-btn {
+        min-width: 38px;
+        height: 38px;
+        font-size: 14px;
     }
 
     .header-inner {
