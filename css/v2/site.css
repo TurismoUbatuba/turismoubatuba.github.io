@@ -771,6 +771,10 @@ section {
     font-size: 18px;
 }
 
+.cta .button {
+    margin: 0 6px 10px;
+}
+
 /* =========================
     FOOTER
 ========================= */
@@ -812,6 +816,256 @@ footer a:hover {
     border-top: 1px solid rgba(255,255,255,.1);
     font-size: 13px;
     text-align: center;
+}
+
+/* =========================
+    CADASTRO DE RESTAURANTE
+========================= */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+}
+
+.step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 800;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.step strong {
+    display: block;
+    color: var(--dark);
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.step p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.cadastro {
+    background: var(--light);
+}
+
+.cadastro-grid {
+    display: grid;
+    grid-template-columns: 1.5fr .8fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.form-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 35px;
+    box-shadow: var(--shadow);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-field-full {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--dark);
+    background: #fff;
+    transition: .2s;
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(8,127,140,.12);
+}
+
+.form-field input:user-invalid,
+.form-field select:user-invalid,
+.form-field textarea:user-invalid {
+    border-color: #c0392b;
+}
+
+.form-hint {
+    font-size: 13px;
+    color: #74868c;
+}
+
+.form-check {
+    gap: 10px;
+}
+
+.form-check-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.form-check-label input {
+    margin-top: 4px;
+    width: 17px;
+    height: 17px;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+}
+
+.form-actions button {
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.form-actions button:disabled {
+    opacity: .6;
+    cursor: wait;
+    transform: none;
+}
+
+.form-link {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.form-status {
+    display: none;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.form-status.sucesso {
+    display: block;
+    background: rgba(60,141,64,.12);
+    border: 1px solid rgba(60,141,64,.4);
+    color: #2c6e30;
+}
+
+.form-status.erro {
+    display: block;
+    background: rgba(192,57,43,.1);
+    border: 1px solid rgba(192,57,43,.4);
+    color: #a5281b;
+}
+
+.cadastro-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.cadastro-aside .highlight-box {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 25px;
+    border-left: 5px solid var(--primary);
+}
+
+.highlight-box-alt {
+    border-left-color: var(--secondary) !important;
+}
+
+.aside-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+.aside-list li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 9px;
+    font-size: 15px;
+}
+
+.aside-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--green);
+    font-weight: 800;
+}
+
+.faq {
+    margin: 12px 0 0;
+}
+
+.faq dt {
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 15px;
+    margin-top: 14px;
+}
+
+.faq dd {
+    margin: 4px 0 0;
+    font-size: 15px;
 }
 
 /* =========================
@@ -857,6 +1111,14 @@ footer a:hover {
     }
 
     .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cadastro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -933,6 +1195,20 @@ footer a:hover {
 
     .logo {
         font-size: 21px;
+    }
+
+    .form-card {
+        padding: 24px 18px;
+    }
+
+    .form-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
     }
 }
 
