@@ -20,20 +20,20 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6.0.0
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5.0.0
         with:
           # Upload entire repository
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v5.0.1
       - name: Get changed HTML files
         id: changed
         shell: bash
@@ -68,6 +68,6 @@ jobs:
             -d "{
               \"host\": \"turismoubatuba.com.br\",
               \"key\": \"09e83a67efa0478dbf3220a5d4bae97c\",
-              \"keyLocation\": \"https://seudominio.com/09e83a67efa0478dbf3220a5d4bae97c.txt\",
+              \"keyLocation\": \"https://turismoubatuba.com.br/09e83a67efa0478dbf3220a5d4bae97c.txt\",
               \"urlList\": ${URLS}
             }"
