@@ -151,6 +151,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://turismoubatuba.com.br/trilhas/trilha-do-saco-das-bananas.html</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://turismoubatuba.com.br/stories/cachoeiras.html</loc>
     <priority>0.6</priority>
     <changefreq>weekly</changefreq>

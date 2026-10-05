@@ -38,7 +38,12 @@ jobs:
         id: changed
         shell: bash
         run: |
-          git diff --name-only HEAD^ HEAD > changed.txt
+          git diff --name-only HEAD^ HEAD -- '*.html' > changed.txt
+          if [ ! -s changed.txt ]; then
+            echo "Nenhum arquivo HTML alterado. Encerrando."
+            echo "urls=[]" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           echo "Arquivos alterados:"
           cat changed.txt
           urls=""
