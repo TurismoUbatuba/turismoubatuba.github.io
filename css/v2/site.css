@@ -217,6 +217,10 @@ nav a.active {
     grid-template-columns: repeat(4, 1fr);
 }
 
+.quick-nav-inner.cols-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
 .quick-item {
     padding: 22px 10px;
     text-align: center;
@@ -745,6 +749,148 @@ section {
 }
 
 /* =========================
+    SERVIÇOS
+    ========================= */
+
+.services {
+    background: var(--light);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.service {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+}
+
+.service:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.service-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(8, 127, 140, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.service-tag {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.service h3 {
+    color: var(--dark);
+    font-size: 21px;
+    line-height: 1.3;
+    margin: 8px 0 10px;
+}
+
+.service p {
+    font-size: 15px;
+    margin: 0 0 18px;
+}
+
+.service .read-more {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.service-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.service-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .2s;
+}
+
+.service-btn-primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.service-btn-primary:hover {
+    background: var(--primary-dark);
+    color: #fff;
+}
+
+.service-btn-outline {
+    border: 1px solid var(--border);
+    color: var(--dark);
+}
+
+.service-btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* =========================
+    FAQ (details)
+    ========================= */
+
+.faq-section {
+    background: var(--light);
+}
+
+.section-header.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.faq-list {
+    max-width: 850px;
+    margin: auto;
+}
+
+.faq-list details {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 18px 22px;
+}
+
+.faq-list summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.faq-list details p {
+    margin-bottom: 0;
+}
+
+/* =========================
     CTA
     ========================= */
 
@@ -1110,6 +1256,10 @@ footer a:hover {
         grid-template-columns: 1fr 1fr;
     }
 
+    .service-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -1164,6 +1314,7 @@ footer a:hover {
 
     .beach-grid,
     .article-grid,
+    .service-grid,
     .footer-grid {
         grid-template-columns: 1fr;
     }
